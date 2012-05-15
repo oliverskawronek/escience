@@ -1,0 +1,3737 @@
+BASH=/bin/bash
+BASH_ARGC=()
+BASH_ARGV=()
+BASH_LINENO=()
+BASH_REMATCH=()
+BASH_SOURCE=()
+BASH_VERSINFO=([0]="3" [1]="2" [2]="48" [3]="1" [4]="release" [5]="x86_64-apple-darwin11")
+BASH_VERSION='3.2.48(1)-release'
+COLUMNS=177
+DIRSTACK=()
+DYLD_LIBRARY_PATH=/usr/local/mysql/lib:/usr/local/mysql/lib:/usr/local/mysql/lib:/usr/local/mysql/lib::/usr/local/ImageMagick-6.7.5/lib/
+EUID=501
+GROUPS=()
+HISTFILE=/Users/Melmoth/.bash_history
+HISTFILESIZE=500
+HISTSIZE=500
+HOME=/Users/Melmoth
+HOSTNAME=Melmoth-2.local
+HOSTTYPE=x86_64
+IFS=$' \t\n'
+LANG=en_US.utf8
+LC_MESSAGES=en_US.utf8
+LINES=22
+LOGNAME=root
+MACHTYPE=x86_64-apple-darwin11
+MAGICK_HOME=/usr/local/ImageMagick-6.7.5
+MAIL=/var/mail/Melmoth
+MAILCHECK=60
+OLDPWD=/usr/local/mysql/lib
+OPTERR=1
+OPTIND=1
+OSTYPE=darwin11
+PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/ImageMagick-6.7.5/bin:/Users/Melmoth/.rvm/bin
+PIPESTATUS=([0]="0")
+PPID=4571
+PS1='\s-\v\$ '
+PS2='> '
+PS4='+ '
+PWD=/Users/Melmoth/Sites/escience
+SHELL=/bin/bash
+SHELLOPTS=braceexpand:emacs:hashall:histexpand:history:interactive-comments:monitor
+SHLVL=4
+STY=1641.ttys001.Melmoth-2
+SUDO_COMMAND=/usr/bin/su
+SUDO_GID=20
+SUDO_UID=501
+SUDO_USER=Melmoth
+TERM=screen.linux
+TERMCAP=$'SC|screen.linux|VT 100/ANSI X3.64 virtual terminal:\\\n\t:DO=\\E[%dB:LE=\\E[%dD:RI=\\E[%dC:UP=\\E[%dA:bs:bt=\\E[Z:\\\n\t:cd=\\E[J:ce=\\E[K:cl=\\E[H\\E[J:cm=\\E[%i%d;%dH:ct=\\E[3g:\\\n\t:do=^J:nd=\\E[C:pt:rc=\\E8:rs=\\Ec:sc=\\E7:st=\\EH:up=\\EM:\\\n\t:le=^H:bl=^G:cr=^M:it#8:ho=\\E[H:nw=\\EE:ta=^I:is=\\E)0:\\\n\t:li#45:co#177:am:xn:xv:LP:sr=\\EM:al=\\E[L:AL=\\E[%dL:\\\n\t:cs=\\E[%i%d;%dr:dl=\\E[M:DL=\\E[%dM:dc=\\E[P:DC=\\E[%dP:\\\n\t:im=\\E[4h:ei=\\E[4l:mi:IC=\\E[%d@:ks=\\E[?1h\\E=:\\\n\t:ke=\\E[?1l\\E>:vi=\\E[?25l:ve=\\E[34h\\E[?25h:vs=\\E[34l:\\\n\t:ti=\\E[?1049h:te=\\E[?1049l:us=\\E[4m:ue=\\E[24m:so=\\E[3m:\\\n\t:se=\\E[23m:mb=\\E[5m:md=\\E[1m:mh=\\E[2m:mr=\\E[7m:\\\n\t:me=\\E[m:ms:\\\n\t:Co#8:pa#64:AF=\\E[3%dm:AB=\\E[4%dm:op=\\E[39;49m:AX:\\\n\t:vb=\\Eg:as=\\E(0:ae=\\E(B:\\\n\t:ac=\\140\\140aaffggjjkkllmmnnooppqqrrssttuuvvwwxxyyzz{{||}}~~..--++,,hhII00:\\\n\t:k0=\\E[10~:k1=\\EOP:k2=\\EOQ:k3=\\EOR:k4=\\EOS:k5=\\E[15~:\\\n\t:k6=\\E[17~:k7=\\E[18~:k8=\\E[19~:k9=\\E[20~:k;=\\E[21~:\\\n\t:F1=\\E[23~:F2=\\E[24~:F3=\\E[25~:F4=\\E[26~:F5=\\E[28~:\\\n\t:F6=\\E[29~:F7=\\E[31~:F8=\\E[32~:F9=\\E[33~:FA=\\E[34~:kb=\177:\\\n\t:K2=\\E[G:kB=\\E[Z:kh=\\E[1~:@1=\\E[1~:kH=\\E[4~:@7=\\E[4~:\\\n\t:kN=\\E[6~:kP=\\E[5~:kI=\\E[2~:kD=\\E[3~:ku=\\EOA:kd=\\EOB:\\\n\t:kr=\\EOC:kl=\\EOD:'
+UID=501
+USER=Melmoth
+USERNAME=root
+WINDOW=1
+_=set
+__CF_USER_TEXT_ENCODING=0x0:0:3
+__array_start=0
+_first=0
+_second=1
+after_cd_hook=/Users/Melmoth/.rvm/hooks/after_cd_bundler
+after_cd_hooks=([0]="/Users/Melmoth/.rvm/hooks/after_cd_bundler")
+after_use_hook=/Users/Melmoth/.rvm/hooks/after_use_jruby_opts
+after_use_hooks=([0]="/Users/Melmoth/.rvm/hooks/after_use_jruby" [1]="/Users/Melmoth/.rvm/hooks/after_use_jruby_opts")
+disk_version='1.12.2 (master)'
+escape_flag=1
+hook=/Users/Melmoth/.rvm/hooks/after_use
+patch_level=125
+rvm_bin_path=/Users/Melmoth/.rvm/bin
+rvm_create_default_wrappers=0
+rvm_current_rvmrc=/Users/Melmoth/Sites/escience/Gemfile
+rvm_debug_clr=$'\E[35m'
+rvm_delete_flag=0
+rvm_env_string=
+rvm_error_clr=$'\E[31m'
+rvm_ignore_rvmrc=0
+rvm_notify_clr=$'\E[32m'
+rvm_path=/Users/Melmoth/.rvm
+rvm_prefix=/Users/Melmoth
+rvm_previous_environment=ruby-1.9.3-p125
+rvm_reset_clr=$'\E[m\017'
+rvm_ruby_global_gems_path=/Users/Melmoth/.rvm/gems/@global
+rvm_ruby_string=system
+rvm_rubygems_path=/Users/Melmoth/.rvm/rubygems
+rvm_stored_umask=0022
+rvm_version='1.12.2 (master)'
+rvm_warn_clr=$'\E[33m'
+rvmrc=/Users/Melmoth/.rvmrc
+script=override_gem
+string=system
+strings=([0]="system")
+__function_on_stack () 
+{ 
+    typeset fun;
+    for fun in "$@";
+    do
+        if [[ " ${FUNCNAME[*]} " =~ " $fun " ]]; then
+            return 0;
+        fi;
+    done;
+    return $#
+}
+__rvm_add_to_path () 
+{ 
+    export PATH;
+    if (( $# != 2 )) || [[ -z "$2" ]]; then
+        rvm_error "__rvm_add_to_path requires two parameters";
+        return 1;
+    fi;
+    __rvm_remove_from_path "$2";
+    case "$1" in 
+        prepend)
+            PATH="$2:$PATH"
+        ;;
+        append)
+            PATH="$PATH:$2"
+        ;;
+    esac;
+    if [[ -n "${rvm_user_path_prefix:-}" ]]; then
+        __rvm_remove_from_path "${rvm_user_path_prefix}";
+        PATH="${rvm_user_path_prefix}:$PATH";
+    fi;
+    builtin hash -r
+}
+__rvm_after_cd () 
+{ 
+    typeset rvm_hook;
+    rvm_hook="after_cd";
+    if [[ -n "${rvm_scripts_path:-}" || -n "${rvm_path:-}" ]]; then
+        source "${rvm_scripts_path:-$rvm_path/scripts}/hook";
+    fi
+}
+__rvm_ask_to_trust () 
+{ 
+    typeset trusted value anykey _rvmrc;
+    _rvmrc="${1}";
+    if [[ ! -t 0 ]] || (( ${rvm_promptless:=0} == 1 )) || [[ -n "$MC_SID" ]]; then
+        return 2;
+    fi;
+    printf "====================================================================================
+= NOTICE                                                                           =
+====================================================================================
+= %-80s =
+= This is a shell script and therefore may contain any shell commands.             =
+=                                                                                  =
+= Examine the contents of this file carefully to be sure the contents are          =
+= safe before trusting it! ( Choose v[iew] below to view the contents )            =
+====================================================================================
+" "RVM has encountered a new or modified $(basename "${_rvmrc}") file in the current directory";
+    trusted=0;
+    while (( ! trusted )); do
+        printf "Do you wish to trust this $(basename "${_rvmrc}") file? (%b)\n" "${_rvmrc}";
+        printf "%b" 'y[es], n[o], v[iew], c[ancel]> ';
+        builtin read response;
+        value="$(echo -n "${response}" | tr '[[:upper:]]' '[[:lower:]]' | __rvm_strip)";
+        case "${value:-n}" in 
+            v | view)
+                __rvm_display_rvmrc
+            ;;
+            y | yes)
+                trusted=1
+            ;;
+            n | no)
+                break
+            ;;
+            c | cancel)
+                return 1
+            ;;
+        esac;
+    done;
+    if (( trusted )); then
+        __rvm_trust_rvmrc "$1";
+        return 0;
+    else
+        __rvm_untrust_rvmrc "$1";
+        return 1;
+    fi
+}
+__rvm_become () 
+{ 
+    typeset string rvm_rvmrc_flag;
+    string="$1";
+    rvm_rvmrc_flag=0;
+    [[ -n "$string" ]] && rvm_ruby_string="$string";
+    __rvm_use > /dev/null 2>&1;
+    rvm_ruby_string="${rvm_ruby_string}${rvm_gemset_name:+${rvm_gemset_separator:-'@'}}${rvm_gemset_name:-}";
+    return 0
+}
+__rvm_bin_script () 
+{ 
+    "$rvm_scripts_path/wrapper" "$rvm_ruby_string"
+}
+__rvm_bin_scripts () 
+{ 
+    for rvm_ruby_binary in "$rvm_rubies_path"/*/bin/ruby;
+    do
+        if [[ -x "$rvm_ruby_binary" ]]; then
+            rvm_ruby_string=$(
+        dirname "$rvm_ruby_binary" | xargs dirname | xargs basename
+      );
+            __rvm_select;
+            __rvm_bin_script;
+        fi;
+    done;
+    return 0
+}
+__rvm_check_rvmrc_trustworthiness () 
+{ 
+    typeset saveIFS trust result;
+    if [[ -n "$1" && ${rvm_trust_rvmrcs_flag:-0} == 0 ]]; then
+        saveIFS="$IFS";
+        IFS=';';
+        trust=($( __rvm_rvmrc_stored_trust "$1" ));
+        IFS="$saveIFS";
+        if [[ "${trust[${_second}]:-'#'}" != "$(__rvm_md5_for_contents "$1")$(__rvm_sha256_for_contents "$1")" ]]; then
+            __rvm_ask_to_trust "$1";
+        else
+            [[ "${trust[${_first}]}" == '1' ]];
+        fi;
+    fi;
+    result=$?;
+    unset escape_flag;
+    return $result
+}
+__rvm_clean_path () 
+{ 
+    PATH="$(printf "%b" "$PATH"           | awk -v RS=: -v ORS=: '!($0 in a){a[$0];print}')";
+    PATH="${PATH/%:/}";
+    export PATH;
+    builtin hash -r
+}
+__rvm_cleanse_variables () 
+{ 
+    __rvm_unset_ruby_variables;
+    if [[ ${rvm_sticky_flag:-0} -eq 1 ]]; then
+        export rvm_gemset_name;
+    else
+        unset rvm_gemset_name;
+    fi;
+    unset rvm_env_string rvm_ruby_string rvm_action rvm_irbrc_file rvm_command rvm_error_message rvm_force_flag rvm_all_flag rvm_reconfigure_flag rvm_make_flags rvm_bin_flag rvm_import_flag rvm_export_flag rvm_self_flag rvm_gem_flag rvm_rubygems_flag rvm_debug_flag rvm_delete_flag rvm_summary_flag rvm_test_flag _rvm_spec_flag rvm_json_flag rvm_yaml_flag rvm_shebang_flag rvm_env_flag rvm_tail_flag rvm_use_flag rvm_dir_flag rvm_list_flag rvm_empty_flag rvm_file_name rvm_benchmark_flag rvm_clear_flag rvm_name_flag rvm_verbose_flag rvm_user_flag rvm_system_flag rvm_configure_flags rvm_uninstall_flag rvm_install_flag rvm_llvm_flag rvm_ruby_bits rvm_sticky_flag rvm_rvmrc_flag rvm_gems_flag rvm_only_path_flag rvm_docs_flag rvm_ruby_aliases rvm_patch_names rvm_install_args rvm_dump_environment_flag rvm_ruby_alias rvm_static_flag rvm_archive_extension rvm_hook rvm_ruby_name;
+    __rvm_load_rvmrc
+}
+__rvm_cleanup_tmp () 
+{ 
+    if [[ -d "${rvm_tmp_path}/" ]]; then
+        case "${rvm_tmp_path%\/}" in 
+            *tmp)
+                __rvm_rm_rf "${rvm_tmp_path}/${1:-$$}*"
+            ;;
+        esac;
+    fi;
+    return 0
+}
+__rvm_conditionally_add_bin_path () 
+{ 
+    if printf "%b" "${PATH//:/ }" | \grep -vF "${rvm_bin_path}" > /dev/null 2>&1; then
+        case "${rvm_ruby_string:-"system"}" in 
+            system)
+                PATH="$PATH:${rvm_bin_path}"
+            ;;
+            *)
+                PATH="${rvm_bin_path}:$PATH"
+            ;;
+        esac;
+        builtin hash -r;
+    fi;
+    return 0
+}
+__rvm_conditionally_do_with_env () 
+{ 
+    if (( __rvm_env_loaded > 0 )); then
+        "$@";
+    else
+        __rvm_do_with_env "$@";
+    fi
+}
+__rvm_current_gemcache_dir () 
+{ 
+    if __rvm_using_gemset_globalcache; then
+        echo "$rvm_gems_cache_path";
+    else
+        echo "${rvm_ruby_gem_home:-"$GEM_HOME"}/cache";
+    fi;
+    return 0
+}
+__rvm_current_gemset () 
+{ 
+    typeset current_gemset;
+    current_gemset="${GEM_HOME:-}";
+    current_gemset="${current_gemset##*${rvm_gemset_separator:-@}}";
+    if [[ "${current_gemset}" == "${GEM_HOME:-}" ]]; then
+        echo '';
+    else
+        echo "${current_gemset}";
+    fi
+}
+__rvm_db () 
+{ 
+    typeset value key variable;
+    key=${1:-""};
+    key=${key#go};
+    variable=${2:-""};
+    if [[ -f "$rvm_user_path/db" ]]; then
+        value="$("$rvm_scripts_path/db" "$rvm_user_path/db" "$key")";
+    fi;
+    if [[ -z "$value" ]]; then
+        value="$("$rvm_scripts_path/db" "$rvm_path/config/db" "$key")";
+    fi;
+    if [[ -n "$value" ]]; then
+        if [[ -z "$variable" ]]; then
+            echo $value;
+        else
+            eval "$variable='$value'";
+        fi;
+    fi;
+    return 0
+}
+__rvm_default_flags () 
+{ 
+    true ${rvm_head_flag:=0} ${rvm_delete_flag:=0}
+}
+__rvm_detect_xcode_version () 
+{ 
+    typeset version_file;
+    for version_file in /Applications/Xcode.app/Contents/version.plist /Developer/Applications/Xcode.app/Contents/version.plist;
+    do
+        if [[ -f $version_file ]]; then
+            if [[ -x /usr/libexec/PlistBuddy ]]; then
+                /usr/libexec/PlistBuddy -c "Print CFBundleShortVersionString" $version_file;
+            else
+                sed -n '/<key>CFBundleShortVersionString<\/key>/{n; s/^.*>\(.*\)<.*$/\1/; p;}' < $version_file;
+            fi;
+            return 0;
+        fi;
+    done;
+    if builtin command -v xcodebuild > /dev/null; then
+        xcodebuild -version | sed -n '/Xcode/ {s/Xcode //; p;}';
+    fi
+}
+__rvm_detect_xcode_version_is () 
+{ 
+    [[ "$(__rvm_detect_xcode_version)" == "$1" ]] || return 1
+}
+__rvm_display_rvmrc () 
+{ 
+    typeset _rvmrc_base;
+    _rvmrc_base="$(basename "${_rvmrc}")";
+    printf "
+====================================================================================
+= %-80s =
+= After reading the file, you will be prompted again for 'yes or no' to set        =
+= the trust level for this particular version of the file.                         =
+=                                                                                  =
+= %-80s =
+= changes, and may change the trust setting manually at any time.                  =
+====================================================================================
+(( press a key to review the ${_rvmrc_base} file ))
+" "The contents of the ${_rvmrc_base} file will now be displayed." "Note: You will be re-prompted each time the ${_rvmrc_base} file's contents change";
+    builtin read -n 1 -s -r anykey;
+    printf "%b" "${rvm_warn_clr}";
+    command cat -v "${_rvmrc}";
+    printf "%b" "${rvm_reset_clr}";
+    printf "
+====================================================================================
+= %-80s =
+====================================================================================
+= %-80s =
+= %-80s =
+= Note that if the contents of the file change, you will be re-prompted to         =
+= review the file and adjust its trust settings. You may also change the           =
+= trust settings manually at any time with the 'rvm rvmrc' command.                =
+====================================================================================
+
+" "Viewing of ${_rvmrc} complete." "Trusting an ${_rvmrc_base} file means that whenever you cd into this directory," "RVM will run this ${_rvmrc_base} shell script."
+}
+__rvm_do_with_env () 
+{ 
+    typeset result;
+    __rvm_do_with_env_before;
+    "$@";
+    result=$?;
+    __rvm_do_with_env_after;
+    return ${result:-0}
+}
+__rvm_do_with_env_after () 
+{ 
+    __rvm_teardown
+}
+__rvm_do_with_env_before () 
+{ 
+    if [[ -n "${rvm_scripts_path:-}" || -n "${rvm_path:-}" ]]; then
+        source "${rvm_scripts_path:-"$rvm_path/scripts"}/initialize";
+        __rvm_setup;
+    fi
+}
+__rvm_ensure_has_environment_files () 
+{ 
+    typeset environment_id file_name directory identifier variable value variables;
+    environment_id="$(__rvm_env_string)";
+    file_name="${rvm_environments_path}/$environment_id";
+    if [[ ! -d "$rvm_environments_path" ]]; then
+        \mkdir -p "$rvm_environments_path";
+    fi;
+    if [[ ! -s "$file_name" ]] || ! grep 'rvm_env_string=' "$file_name" > /dev/null; then
+        rm -f "$file_name";
+        printf "%b" "export PATH ; PATH=\"${rvm_ruby_gem_home}/bin:${rvm_ruby_global_gems_path}/bin:${rvm_ruby_home}/bin:${rvm_bin_path}:\$PATH\"\n" > "$file_name";
+        for variable in rvm_env_string rvm_path rvm_ruby_string rvm_gemset_name RUBY_VERSION GEM_HOME GEM_PATH MY_RUBY_HOME IRBRC MAGLEV_HOME RBXOPT;
+        do
+            eval "export $variable";
+            eval "value=\${${variable}:-""}";
+            if [[ -n "$value" ]]; then
+                printf "export %b ; %b='%b'\n" "${variable}" "${variable}" "${value}" >> "$file_name";
+            else
+                printf "unset %b\n" "${variable}" >> "$file_name";
+            fi;
+        done;
+    fi;
+    if (( ${rvm_create_default_wrappers:=0} == 1 )) || [[ ! -f "$rvm_wrappers_path/$environment_id/ruby" ]]; then
+        for identifier in "$environment_id" "${environment_id//@*/}@global";
+        do
+            rvm_create_default_wrappers=1;
+            directory="$rvm_wrappers_path/$identifier";
+            if [[ ! -L "$directory" && ! -d "$directory" ]]; then
+                \mkdir -p "$directory";
+                "$rvm_scripts_path/wrapper" "$identifier" >&/dev/null;
+            fi;
+        done;
+        rvm_create_default_wrappers=0;
+    fi;
+    return 0
+}
+__rvm_ensure_is_a_function () 
+{ 
+    if [[ ${rvm_reload_flag:=0} == 1 ]] || ! is_a_function rvm; then
+        for script in version selector selector_gemsets cd cli override_gem;
+        do
+            if [[ -f "$rvm_scripts_path/$script" ]]; then
+                source "$rvm_scripts_path/$script";
+            else
+                printf "%b" "WARNING:
+        Could not source '$rvm_scripts_path/$script' as file does not exist.
+        RVM will likely not work as expected.\n";
+            fi;
+        done;
+    fi
+}
+__rvm_env_string () 
+{ 
+    typeset _path _string;
+    _path="${GEM_HOME:-""}";
+    _string="${_path//*gems\//}";
+    _string="${_string//\/*/}";
+    printf "%b" "${_string:-system}"
+}
+__rvm_expand_ruby_string () 
+{ 
+    typeset string current_ruby;
+    string="$1";
+    case "${string:-all}" in 
+        all)
+            "$rvm_scripts_path/list" strings | tr ' ' "\n"
+        ;;
+        all-gemsets)
+            "$rvm_scripts_path/list" gemsets strings
+        ;;
+        default-with-rvmrc | rvmrc)
+            "$rvm_scripts_path/tools" path-identifier "$PWD"
+        ;;
+        all-rubies | rubies)
+            "$rvm_scripts_path/list" rubies strings
+        ;;
+        current-ruby | gemsets)
+            current_ruby="$(__rvm_env_string)";
+            current_ruby="${current_ruby%@*}";
+            rvm_silence_logging=1 "$rvm_scripts_path/gemsets" list strings | \sed "s/ (default)//; s/^/$current_ruby${rvm_gemset_separator:-@}/ ; s/@default// ;"
+        ;;
+        current)
+            __rvm_env_string
+        ;;
+        aliases)
+            awk -F= '{print $string}' < "$rvm_path/config/alias"
+        ;;
+        *)
+            __rvm_ruby_strings_exist $( echo "$string" | tr "," "\n" | __rvm_strip )
+        ;;
+    esac
+}
+__rvm_export () 
+{ 
+    typeset name;
+    name=${1%%=*};
+    builtin export rvm_old_$name=${!name};
+    export "$@";
+    return $?
+}
+__rvm_gemset_clear () 
+{ 
+    export rvm_gemset_name;
+    rvm_gemset_name="";
+    __rvm_use
+}
+__rvm_gemset_handle_default () 
+{ 
+    rvm_gemset_name="@${rvm_gemset_name:-}@";
+    rvm_gemset_name="${rvm_gemset_name/@default@/@@}";
+    rvm_gemset_name="${rvm_gemset_name#@}";
+    rvm_gemset_name="${rvm_gemset_name%@}"
+}
+__rvm_gemset_select () 
+{ 
+    __rvm_gemset_select_only && __rvm_gemset_select_validation && __rvm_gemset_select_ensure
+}
+__rvm_gemset_select_cli () 
+{ 
+    __rvm_gemset_select_cli_validation && __rvm_gemset_select
+}
+__rvm_gemset_select_cli_validation () 
+{ 
+    typeset orig_gemset;
+    if ! builtin command -v gem > /dev/null; then
+        rvm_log "'gem' command not found, cannot select a gemset.";
+        return 0;
+    fi;
+    orig_gemset="${rvm_gemset_name:-}";
+    __rvm_gemset_handle_default;
+    if [[ -z "${rvm_gemset_name:-}" && "$orig_gemset" != "default" && ${rvm_sticky_flag:-0} -eq 1 ]]; then
+        if [[ -n "${rvm_ruby_gem_home:-}" ]]; then
+            rvm_gemset_name="$rvm_ruby_gem_home";
+        else
+            if [[ -n "${GEM_HOME:-}" ]]; then
+                rvm_gemset_name="$GEM_HOME";
+            fi;
+        fi;
+        rvm_gemset_name="${rvm_gemset_name##*/}";
+        rvm_gemset_name="${rvm_gemset_name#*${rvm_gemset_separator:-"@"}}";
+    fi;
+    if [[ -z "${rvm_ruby_string:-}" && -n "${GEM_HOME:-}" && -n "${GEM_HOME%@*}" ]]; then
+        rvm_ruby_string="${GEM_HOME%@*}";
+        rvm_ruby_string="${rvm_ruby_string##*/}";
+    fi;
+    if [[ -z "${rvm_ruby_string:-}" ]]; then
+        rvm_error "Gemsets can not be used with non rvm controlled rubies (currently).";
+        return 3;
+    fi
+}
+__rvm_gemset_select_ensure () 
+{ 
+    \mkdir -p "$rvm_ruby_gem_home";
+    if __rvm_using_gemset_globalcache && [[ ! -L "$rvm_ruby_gem_home/cache" ]]; then
+        : rvm_gems_cache_path:${rvm_gems_cache_path:=${rvm_gems_path:-"$rvm_path/gems"}/cache};
+        \mv "$rvm_ruby_gem_home/cache/"*.gem "$rvm_gems_cache_path/" 2> /dev/null;
+        __rvm_rm_rf "$rvm_ruby_gem_home/cache";
+        \ln -fs "$rvm_gems_cache_path" "$rvm_ruby_gem_home/cache";
+    fi
+}
+__rvm_gemset_select_only () 
+{ 
+    rvm_ruby_gem_home="${rvm_gems_path:-"$rvm_path/gems"}/$rvm_ruby_string";
+    : rvm_ignore_gemsets_flag:${rvm_ignore_gemsets_flag:=0}:;
+    if (( rvm_ignore_gemsets_flag )); then
+        rvm_ruby_global_gems_path="${rvm_ruby_gem_home}";
+        rvm_ruby_gem_path="${rvm_ruby_gem_home}";
+        rvm_gemset_name="";
+    else
+        rvm_ruby_global_gems_path="${rvm_ruby_gem_home}${rvm_gemset_separator:-"@"}global";
+        __rvm_gemset_handle_default;
+        [[ -z "$rvm_gemset_name" ]] || rvm_ruby_gem_home="${rvm_ruby_gem_home}${rvm_gemset_separator:-"@"}${rvm_gemset_name}";
+        if [[ "$rvm_gemset_name" == "global" ]]; then
+            rvm_ruby_gem_path="${rvm_ruby_gem_home}";
+        else
+            rvm_ruby_gem_path="${rvm_ruby_gem_home}:${rvm_ruby_global_gems_path}";
+        fi;
+    fi;
+    if [[ -n "${rvm_gemset_name}" ]]; then
+        rvm_env_string="${rvm_ruby_string}@${rvm_gemset_name}";
+    else
+        rvm_env_string=${rvm_ruby_string};
+    fi
+}
+__rvm_gemset_select_validation () 
+{ 
+    if [[ ! -d "${rvm_ruby_gem_home}" ]]; then
+        if (( ${rvm_gemset_create_on_use_flag:=0} == 0 && ${rvm_create_flag:=0} == 0 && ${rvm_delete_flag:=0} == 0 )); then
+            rvm_expected_gemset_name="${rvm_gemset_name}";
+            rvm_gemset_name="";
+            __rvm_gemset_select_only;
+            return 2;
+        fi;
+    else
+        if (( ${rvm_delete_flag:=0} == 1 )); then
+            return 4;
+        fi;
+    fi
+}
+__rvm_gemset_use () 
+{ 
+    if __rvm_gemset_select_cli; then
+        rvm_log "Using $rvm_ruby_string with gemset ${rvm_gemset_name:-default}";
+        __rvm_use;
+    else
+        if [[ ! -d "$rvm_ruby_gem_home" || -n "${rvm_expected_gemset_name}" ]]; then
+            if (( ${rvm_gemset_create_on_use_flag:=0} == 1 || ${rvm_create_flag:=0} == 1 )); then
+                rvm_warn "gemset $rvm_gemset_name is not existing, creating.";
+                "$rvm_scripts_path/gemsets" create "$rvm_gemset_name";
+            else
+                rvm_error "Gemset '${rvm_expected_gemset_name}' does not exist, 'rvm gemset create ${rvm_expected_gemset_name}' first, or append '--create'.";
+                return 2;
+            fi;
+        else
+            rvm_error "Gemset was not given.\n  Usage:\n    rvm gemset use <gemsetname>\n";
+            return 1;
+        fi;
+    fi
+}
+__rvm_initialize () 
+{ 
+    export rvm_ruby_load_path rvm_ruby_require;
+    rvm_ruby_load_path=".";
+    rvm_ruby_require="";
+    true ${rvm_scripts_path:="$rvm_path/scripts"};
+    source "$rvm_scripts_path/base";
+    __rvm_clean_path;
+    __rvm_conditionally_add_bin_path;
+    export PATH;
+    if [[ ! -d "${rvm_tmp_path:-/tmp}" ]]; then
+        command mkdir -p "${rvm_tmp_path}";
+    fi;
+    return 0
+}
+__rvm_inspect () 
+{ 
+    for binary in $rvm_ruby_args;
+    do
+        actual_file="$(unset -f gem ; builtin command -v gem )";
+        rvm_log "$actual_file:";
+        if [[ ${rvm_shebang_flag:-0} -eq 1 ]]; then
+            \head -n 1 < "$actual_file";
+        fi;
+        if [[ ${rvm_env_flag:-0} -eq 1 ]]; then
+            \awk '/ENV/' < "$actual_file";
+        fi;
+        if [[ ${rvm_path_flag:-0} -eq 1 ]]; then
+            \awk '/PATH/' < "$actual_file";
+        fi;
+        if [[ ${rvm_head_flag:-0} -eq 1 ]]; then
+            \head -n 5 < "$actual_file";
+        fi;
+        if [[ ${rvm_tail_flag:-0} -eq 1 ]]; then
+            \tail -n 5 < "$actual_file";
+        fi;
+        if [[ ${rvm_all_flag:-0} -eq 1 ]]; then
+            \cat $actual_file;
+        fi;
+    done;
+    return 0
+}
+__rvm_load_environment () 
+{ 
+    typeset string;
+    string="$1";
+    if [[ -f "$rvm_environments_path/$string" ]]; then
+        __rvm_remove_rvm_from_path;
+        \. "$rvm_environments_path/$string";
+        if [[ -s "${rvm_path:-$HOME/.rvm}/hooks/after_use" ]]; then
+            \. "${rvm_path:-$HOME/.rvm}/hooks/after_use";
+        fi;
+        builtin hash -r;
+    else
+        if [[ -n "$string" ]]; then
+            rvm "$string";
+        else
+            :;
+        fi;
+    fi;
+    return 0
+}
+__rvm_load_project_config () 
+{ 
+    typeset __gemfile;
+    : rvm_autoinstall_bundler_flag:${rvm_autoinstall_bundler_flag:=0};
+    case "$1" in 
+        */.rvmrc)
+            if __rvm_check_rvmrc_trustworthiness "$1"; then
+                __rvm_remove_rvm_from_path;
+                __rvm_conditionally_add_bin_path;
+                rvm_previous_environment="$(__rvm_env_string)";
+                rvm_current_rvmrc="$1";
+                __rvm_ensure_is_a_function;
+                source "$1";
+            else
+                return $?;
+            fi
+        ;;
+        */.versions.conf)
+            typeset _gem _gem_names _bundle_install;
+            __rvm_ensure_is_a_function;
+            rvm_previous_environment="$(__rvm_env_string)";
+            rvm_current_rvmrc="$1";
+            rvm_ruby_string="$(sed -n '/^ruby=/ {s/ruby=//;p;}' < "$1")";
+            [[ -n "${rvm_ruby_string}" ]] || return 2;
+            rvm_gemset_name="$(sed -n '/^ruby-gemset=/ {s/ruby-gemset=//;p;}' < "$1")";
+            rvm_create_flag=1 __rvm_use || return 3;
+            _gem_names="$(sed -n '/^ruby-gem-install=/ {s/ruby-gem-install=//;p;}' < "$1")";
+            for _gem in ${_gem_names//,/ };
+            do
+                if ! gem list | \grep "^${_gem} " > /dev/null; then
+                    gem install "${_gem}";
+                fi;
+            done;
+            _bundle_install="$(sed -n '/^ruby-bundle-install=/ {s/ruby-bundle-install=//;p;}' < "$1")";
+            if [[ -n "${_bundle_install}" ]] || [[ "${rvm_autoinstall_bundler_flag:-0}" == 1 ]]; then
+                if [[ "${_bundle_install}" == true ]]; then
+                    __gemfile="$(dirname $1)/Gemfile";
+                else
+                    if [[ -f "${_bundle_install}" ]]; then
+                        __gemfile="${_bundle_install}";
+                    else
+                        if [[ "${rvm_autoinstall_bundler_flag:-0}" == 1 ]]; then
+                            __gemfile="$(dirname $1)/Gemfile";
+                        fi;
+                    fi;
+                fi;
+            fi
+        ;;
+        */Gemfile)
+            typeset _bundler_version;
+            __rvm_ensure_is_a_function;
+            rvm_previous_environment="$(__rvm_env_string)";
+            rvm_current_rvmrc="$1";
+            rvm_ruby_string="$(sed -n '/^#ruby=/ {s/#ruby=//;p;}' < "$1")";
+            [[ -n "${rvm_ruby_string}" ]] || return 2;
+            rvm_gemset_name="$(sed -n '/^#ruby-gemset=/ {s/#ruby-gemset=//;p;}' < "$1")";
+            rvm_create_flag=1 __rvm_use || return 3;
+            if [[ "${rvm_autoinstall_bundler_flag:-0}" == "1" ]]; then
+                _bundler_version="$(sed -n '/^#ruby-bundler-version=/ {s/#ruby-bundler-version=//;p;}' < "$1")";
+                if ! gem list | \grep "^bundler " | \grep "${_bundler_version}" > /dev/null; then
+                    [[ -z "${_bundler_version}" ]] || _bundler_version=" -v ${_bundler_version}";
+                    gem install "bundler${_bundler_version}";
+                fi;
+                __gemfile="$1";
+            fi
+        ;;
+        */.ruby-version | */.rbfu-version | */.rbenv-version)
+            __rvm_ensure_is_a_function;
+            rvm_previous_environment="$(__rvm_env_string)";
+            rvm_current_rvmrc="$1";
+            rvm_ruby_string="$(cat "$1")";
+            [[ -n "${rvm_ruby_string}" ]] || return 2;
+            if [[ -f "$(dirname $1)/.ruby-gemset" ]]; then
+                rvm_gemset_name="$(cat "$(dirname $1)/.ruby-gemset")";
+            fi;
+            rvm_create_flag=1 __rvm_use || return 3;
+            if [[ "${rvm_autoinstall_bundler_flag:-0}" == 1 && -f "$(dirname $1)/Gemfile" ]]; then
+                _bundler_version="$(sed -n '/^#ruby-bundler-version=/ {s/#ruby-bundler-version=//;p;}' < "$1")".strip;
+                if ! gem list | \grep "^bundler " | \grep "${_bundler_version}" > /dev/null; then
+                    [[ -z "${_bundler_version}" ]] || _bundler_version=" -v ${_bundler_version}";
+                    gem install "bundler${_bundler_version}";
+                fi;
+                __gemfile="$(dirname $1)/Gemfile";
+            fi
+        ;;
+        *)
+            rvm_error "Unsupported file format for '$1'";
+            return 1
+        ;;
+    esac;
+    if [[ -n "${__gemfile:-}" && -f "${__gemfile:-}" ]]; then
+        bundle install --gemfile="${__gemfile}" | grep -vE '^Using|Your bundle is complete';
+    fi
+}
+__rvm_load_rvmrc () 
+{ 
+    typeset _file;
+    if (( ${rvm_ignore_rvmrc:=0} == 1 )); then
+        return 0;
+    fi;
+    : rvm_stored_umask:${rvm_stored_umask:=$(umask)};
+    for _file in /etc/rvmrc "$HOME/.rvmrc";
+    do
+        if [[ -s "$_file" ]]; then
+            if \grep '^\s*rvm .*$' "$_file" > /dev/null 2>&1; then
+                rvm_error "
+$_file is for rvm settings only.
+rvm CLI may NOT be called from within $_file.
+Skipping the loading of $_file
+";
+                return 1;
+            else
+                source "$_file";
+            fi;
+        fi;
+    done;
+    return 0
+}
+__rvm_md5_for () 
+{ 
+    if builtin command -v md5 > /dev/null; then
+        echo "$1" | md5;
+    else
+        if builtin command -v md5sum > /dev/null; then
+            echo "$1" | md5sum | awk '{print $1}';
+        else
+            rvm_error "Neither md5 nor md5sum were found in the PATH";
+            return 1;
+        fi;
+    fi;
+    return 0
+}
+__rvm_md5_for_contents () 
+{ 
+    if builtin command -v md5 > /dev/null; then
+        echo "$1" | cat - "$1" | md5;
+    else
+        if builtin command -v md5sum > /dev/null; then
+            echo "$1" | cat - "$1" | md5sum | awk '{print $1}';
+        else
+            rvm_error "Neither md5 nor md5sum were found in the PATH";
+            return 1;
+        fi;
+    fi;
+    return 0
+}
+__rvm_meta () 
+{ 
+    rvm_meta_author="Wayne E. Seguin";
+    rvm_meta_author_email="wayneeseguin@gmail.com";
+    rvm_meta_authors=("Wayne E. Seguin <wayneeseguin@gmail.com>" "Michal Papis <mpapis@gmail.com>");
+    rvm_meta_website="https://rvm.io/";
+    rvm_meta_version="${rvm_version}"
+}
+__rvm_nuke_rvm_variables () 
+{ 
+    unset rvm_head_flag $(env | awk -F= '/^rvm_/{print $1" "}')
+}
+__rvm_pager_or_cat_v () 
+{ 
+    typeset -a _pager;
+    if [[ -n "${PAGER:-}" ]]; then
+        _pager=("${PAGER}");
+    else
+        _pager=("cat" "-v");
+    fi;
+    "${_pager[@]}" "$@"
+}
+__rvm_parse_args () 
+{ 
+    typeset _string;
+    export rvm_ruby_string;
+    rvm_action="${rvm_action:-""}";
+    rvm_parse_break=0;
+    if [[ " $* " =~ " --trace " ]]; then
+        echo "$@";
+        __rvm_version;
+    fi;
+    while [[ -n "$next_token" ]]; do
+        rvm_token="$next_token";
+        if (( $# > 0 )); then
+            next_token="$1";
+            shift;
+        else
+            next_token="";
+        fi;
+        case "$rvm_token" in 
+            [[:alnum:]]* | @*)
+                case "$rvm_token" in 
+                    use)
+                        rvm_action="$rvm_token";
+                        rvm_verbose_flag=1;
+                        if [[ "ruby" == "$next_token" ]]; then
+                            if (( $# > 0 )); then
+                                next_token="$1";
+                                shift;
+                            else
+                                next_token="";
+                            fi;
+                        fi
+                    ;;
+                    install | uninstall | reinstall | try_install)
+                        export ${rvm_token}_flag=1;
+                        rvm_action=$rvm_token;
+                        _string="$*";
+                        if [[ "${_string} " =~ "-- " ]]; then
+                            export rvm_install_args="${_string//*-- /}";
+                        fi
+                    ;;
+                    gemset)
+                        rvm_action=$rvm_token;
+                        rvm_ruby_gem_home="${GEM_HOME:-""}";
+                        if [[ -z "$next_token" ]]; then
+                            rvm_ruby_args=("help");
+                        else
+                            if [[ "clear" == "$next_token" ]]; then
+                                __rvm_gemset_clear;
+                                rvm_ruby_args=("clear");
+                            else
+                                if [[ "use" == "$next_token" ]]; then
+                                    rvm_use_flag=1;
+                                    rvm_ruby_args=("$next_token" "$@");
+                                    rvm_gemset_name="$next_token";
+                                    if (( $# > 0 )); then
+                                        next_token="$1";
+                                        shift;
+                                    else
+                                        next_token="";
+                                    fi;
+                                    if [[ -n "$next_token" ]]; then
+                                        rvm_gemset_name="$next_token";
+                                    else
+                                        rvm_gemset_name="";
+                                    fi;
+                                    if [[ -z "${rvm_gemset_name:-}" ]]; then
+                                        rvm_error "Gemset was not given.\n  Usage:\n    rvm gemset use <gemsetname>\n";
+                                        return 1;
+                                    fi;
+                                    case "$rvm_gemset_name" in 
+                                        *${rvm_gemset_separator:-"@"}*)
+                                            rvm_ruby_string="${rvm_gemset_name%%${rvm_gemset_separator:-"@"}*}";
+                                            rvm_gemset_name="${rvm_gemset_name##*${rvm_gemset_separator:-"@"}}";
+                                            if [[ "${rvm_ruby_string:-""}" != "${rvm_gemset_name:-""}" ]]; then
+                                                rvm_ruby_string="$rvm_ruby_string${rvm_gemset_separator:-"@"}$rvm_gemset_name";
+                                            fi;
+                                            rvm_ruby_gem_home="$rvm_ruby_gem_home${rvm_gemset_separator:-"@"}$rvm_gemset_name"
+                                        ;;
+                                    esac;
+                                else
+                                    if [[ "delete" == "$next_token" ]]; then
+                                        rvm_delete_flag=1;
+                                        rvm_ruby_args=("$next_token" "$@");
+                                        if [[ $# -gt 0 ]]; then
+                                            next_token="$1";
+                                            shift;
+                                        else
+                                            next_token="";
+                                        fi;
+                                        rvm_gemset_name="$next_token";
+                                        if [[ $# -gt 0 ]]; then
+                                            next_token="$1";
+                                            shift;
+                                        else
+                                            next_token="";
+                                        fi;
+                                        case "$rvm_gemset_name" in 
+                                            *${rvm_gemset_separator:-"@"}*)
+                                                rvm_ruby_string="${rvm_gemset_name%%${rvm_gemset_separator:-"@"}*}";
+                                                rvm_gemset_name="${rvm_gemset_name##*${rvm_gemset_separator:-"@"}}";
+                                                if [[ "$rvm_ruby_string" != "$rvm_gemset_name" ]]; then
+                                                    rvm_ruby_string="$rvm_ruby_string${rvm_gemset_separator:-"@"}$rvm_gemset_name";
+                                                fi;
+                                                rvm_ruby_gem_home="$rvm_ruby_gem_home${rvm_gemset_separator:-"@"}$rvm_gemset_name"
+                                            ;;
+                                        esac;
+                                    else
+                                        if [[ "${rvm_ruby_string:-""}" != "${rvm_gemset_name:-""}" ]]; then
+                                            __rvm_ruby_string;
+                                        fi;
+                                        rvm_ruby_args=("$next_token" "$@");
+                                    fi;
+                                fi;
+                            fi;
+                        fi;
+                        : rvm_ruby_args:${rvm_ruby_args[*]}:;
+                        rvm_parse_break=1
+                    ;;
+                    gemdir | gempath | gemhome)
+                        rvm_ruby_args=("$rvm_token");
+                        rvm_action="gemset";
+                        rvm_gemdir_flag=1;
+                        if [[ "system" == "$next_token" ]]; then
+                            rvm_system_flag=1;
+                            if [[ $# -gt 0 ]]; then
+                                next_token="$1";
+                                shift;
+                            else
+                                next_token="";
+                            fi;
+                        fi;
+                        if [[ "user" == "$next_token" ]]; then
+                            rvm_user_flag=1;
+                            if [[ $# -gt 0 ]]; then
+                                next_token="$1";
+                                shift;
+                            else
+                                next_token="";
+                            fi;
+                        fi
+                    ;;
+                    pkg)
+                        rvm_action="$rvm_token";
+                        if [[ "$next_token" == "--only-path" ]]; then
+                            shift;
+                            rvm_only_path_flag=1;
+                        fi;
+                        rvm_ruby_args=("$next_token" "$@");
+                        rvm_parse_break=1
+                    ;;
+                    system | default)
+                        rvm_action=${rvm_action:-use};
+                        rvm_ruby_interpreter="$rvm_token";
+                        rvm_ruby_string="$rvm_token";
+                        rvm_ruby_strings="$rvm_token"
+                    ;;
+                    do | exec | gem | rake | ruby)
+                        if [[ "$rvm_token" == "ruby" ]] && [[ "$rvm_action" == "install" || "$rvm_action" == "use" ]]; then
+                            rvm_ruby_string=ruby;
+                            rvm_ruby_strings=ruby;
+                            continue;
+                        fi;
+                        if [[ -z "$next_token" ]]; then
+                            rvm_action="error";
+                            rvm_error_message="'rvm $rvm_token' must be followed by arguments.";
+                            break;
+                        fi;
+                        rvm_action="do";
+                        rvm_parse_break=1;
+                        case "$rvm_token" in 
+                            do | exec)
+                                rvm_ruby_args=("$next_token" "$@")
+                            ;;
+                            *)
+                                rvm_warn "Please note that \`rvm $rvm_token ...\` is only an alias to \`rvm do $rvm_token ...\`,\n" "it might work different as in earlier versions of RVM and will be shortly removed!\n" "Also note that you do not have to prefix every command with \`rvm\`, they should just work by itself.";
+                                rvm_ruby_args=("$rvm_token" "$next_token" "$@")
+                            ;;
+                        esac
+                    ;;
+                    fetch | version | srcdir | reset | debug | reload | update | monitor | notes | implode | seppuku | question | answer | env | unexport | requirements | automount)
+                        rvm_action=$rvm_token
+                    ;;
+                    mount)
+                        rvm_action=$rvm_token;
+                        while [[ -n "${next_token:-}" ]] && [[ -x "${next_token:-}" || -d "${next_token:-}" ]]; do
+                            rvm_ruby_args=("$next_token" "${rvm_ruby_args[@]}");
+                            if (( $# > 0 )); then
+                                next_token="$1";
+                                shift;
+                            else
+                                next_token="";
+                            fi;
+                        done
+                    ;;
+                    rm | remove)
+                        rvm_action="remove";
+                        rvm_remove_flag=1
+                    ;;
+                    default)
+
+                    ;;
+                    inspect | ls | list | info | strings | get | current)
+                        if [[ "ls" == "$rvm_action" ]]; then
+                            rvm_action="list";
+                        fi;
+                        rvm_action="$rvm_token";
+                        rvm_ruby_args=("$next_token" "$@");
+                        rvm_parse_break=1
+                    ;;
+                    docs | alias | rubygems | cleanup | tools | disk-usage | snapshot | repair | migrate | upgrade)
+                        rvm_action="$rvm_token";
+                        rvm_ruby_args=("$next_token" "$@");
+                        rvm_parse_break=1
+                    ;;
+                    user)
+                        rvm_action="tools";
+                        rvm_ruby_args=("$rvm_token" "$next_token" "$@");
+                        rvm_parse_break=1
+                    ;;
+                    load-rvmrc)
+                        rvm_action="rvmrc";
+                        rvm_ruby_args=("load" "$next_token" "$@");
+                        rvm_parse_break=1
+                    ;;
+                    rvmrc)
+                        rvm_action="rvmrc";
+                        rvm_ruby_args=("$next_token" "$@");
+                        rvm_parse_break=1
+                    ;;
+                    benchmark | bench)
+                        rvm_action="benchmark"
+                    ;;
+                    specs | tests)
+                        rvm_action="rake";
+                        rvm_ruby_args=("${rvm_token/%ss/s}")
+                    ;;
+                    export)
+                        if [[ ! -z "$next_token" ]]; then
+                            rvm_export_args="$next_token$@";
+                            rvm_action="export";
+                            rvm_parse_break=1;
+                        else
+                            rvm_action="error";
+                            rvm_error_message="rvm export must be followed by a NAME=VALUE argument";
+                        fi
+                    ;;
+                    group)
+                        rvm_action="group";
+                        rvm_ruby_args=("$next_token" "$@");
+                        rvm_parse_break=1
+                    ;;
+                    alt*)
+                        rvm_action="help";
+                        rvm_ruby_args=("alt.md");
+                        rvm_parse_break=1
+                    ;;
+                    help | usage)
+                        rvm_action="help";
+                        rvm_ruby_args=("$next_token" "$@");
+                        rvm_parse_break=1
+                    ;;
+                    wrapper)
+                        rvm_action="$rvm_token";
+                        rvm_ruby_string="$next_token";
+                        if (( $# > 0 )); then
+                            next_token="$1";
+                            shift;
+                        else
+                            next_token="";
+                        fi;
+                        rvm_wrapper_name="$next_token";
+                        if (( $# > 0 )); then
+                            next_token="$1";
+                            shift;
+                        else
+                            next_token="";
+                        fi;
+                        rvm_ruby_args=("$next_token" "$@");
+                        rvm_parse_break=1
+                    ;;
+                    rtfm | RTFM)
+                        rvm_action="rtfm";
+                        rvm_parse_break=1
+                    ;;
+                    reboot | damnit | wtf | argh | BOOM | boom | wth)
+                        $rvm_action="reboot"
+                    ;;
+                    *)
+                        if [[ -n "$rvm_token" ]]; then
+                            if [[ "gemset" == "$rvm_action" ]]; then
+                                case "$rvm_token" in 
+                                    *${rvm_gemset_separator:-"@"}*)
+                                        rvm_gemset_name="${rvm_token/*${rvm_gemset_separator:-"@"}/}";
+                                        rvm_ruby_string="${rvm_token/${rvm_gemset_separator:-"@"}*/}"
+                                    ;;
+                                    *.gems)
+                                        rvm_file_name="${rvm_token/.gems/}.gems"
+                                    ;;
+                                    *)
+                                        rvm_gemset_name="${rvm_token/.gems/}";
+                                        rvm_file_name="$rvm_gemset_name.gems"
+                                    ;;
+                                esac;
+                            else
+                                case "$rvm_token" in 
+                                    *,*)
+                                        rvm_ruby_strings="$rvm_token";
+                                        if [[ -z "${rvm_action:-""}" ]]; then
+                                            rvm_action="ruby";
+                                        fi
+                                    ;;
+                                    ${rvm_gemset_separator:-"@"}*)
+                                        rvm_action="${rvm_action:-use}";
+                                        rvm_gemset_name="${rvm_token/*${rvm_gemset_separator:-"@"}/}";
+                                        rvm_ruby_string="${rvm_ruby_string:-""}";
+                                        rvm_ruby_strings="${rvm_ruby_string}${rvm_gemset_separator:-"@"}${rvm_gemset_name}"
+                                    ;;
+                                    *${rvm_gemset_separator:-"@"}*)
+                                        rvm_action="${rvm_action:-use}";
+                                        gemset_name="${rvm_token/*${rvm_gemset_separator:-"@"}/}";
+                                        rvm_ruby_string="$rvm_token";
+                                        rvm_ruby_strings="$rvm_token"
+                                    ;;
+                                    *+*)
+                                        rvm_action="${rvm_action:-use}";
+                                        rvm_ruby_alias="${rvm_token/*+/}";
+                                        rvm_ruby_string="${rvm_token/+*/}";
+                                        rvm_ruby_strings="$rvm_ruby_string"
+                                    ;;
+                                    *-*)
+                                        rvm_action="${rvm_action:-use}";
+                                        rvm_ruby_string="$rvm_token";
+                                        rvm_ruby_strings="$rvm_token"
+                                    ;;
+                                    +([[:digit:]]).+([[:digit:]])*)
+                                        rvm_action="${rvm_action:-use}";
+                                        rvm_ruby_string="$rvm_token";
+                                        rvm_ruby_strings="$rvm_token"
+                                    ;;
+                                    jruby* | ree* | kiji* | macruby* | rbx* | rubinius* | goruby | ironruby* | default* | maglev* | tcs* | all)
+                                        rvm_action="${rvm_action:-use}";
+                                        if [[ "rubinius" == "$rvm_token" ]]; then
+                                            rvm_token="rbx";
+                                        fi;
+                                        rvm_ruby_interpreter="$rvm_token";
+                                        rvm_ruby_string="$rvm_token";
+                                        rvm_ruby_strings="$rvm_token";
+                                        if match "$next_token" "[0-9].[0-9]*"; then
+                                            rvm_ruby_version=$next_token;
+                                            if [[ $# -gt 0 ]]; then
+                                                next_token="$1";
+                                                shift;
+                                            else
+                                                next_token="";
+                                            fi;
+                                        fi
+                                    ;;
+                                    *.rb)
+                                        rvm_ruby_args=("$rvm_token");
+                                        rvm_ruby_file="$rvm_token";
+                                        if [[ -z "${rvm_action:-""}" || "$rvm_action" == "use" ]]; then
+                                            rvm_action="ruby";
+                                        fi
+                                    ;;
+                                    *)
+                                        if [[ -L "$rvm_rubies_path/$rvm_token" ]]; then
+                                            rvm_ruby_string=$rvm_token;
+                                            rvm_ruby_strings="$rvm_token";
+                                            rvm_action="${rvm_action:-use}";
+                                        else
+                                            if __rvm_project_dir_check "$rvm_token"; then
+                                                __rvm_rvmrc_tools try_to_read_ruby $rvm_token;
+                                            else
+                                                rvm_action="error";
+                                                rvm_error_message="Unrecognized command line argument: '$rvm_token'";
+                                            fi;
+                                        fi
+                                    ;;
+                                esac;
+                            fi;
+                        else
+                            rvm_action="error";
+                            rvm_error_message="Unrecognized command line argument(s): '$rvm_token $@'";
+                        fi;
+                        if [[ "error" == "${rvm_action:-""}" ]]; then
+                            break;
+                        fi
+                    ;;
+                esac
+            ;;
+            -*)
+                case "$rvm_token" in 
+                    -S)
+                        rvm_action="ruby";
+                        rvm_ruby_args=("$rvm_token" "$next_token" "$@");
+                        rvm_parse_break=1
+                    ;;
+                    -e)
+                        rvm_action="ruby";
+                        IFS="\n";
+                        rvm_ruby_args=("$rvm_token" "'$next_token $@'");
+                        IFS=" ";
+                        rvm_parse_break=1
+                    ;;
+                    -v | --version)
+                        if [[ -z "$next_token" ]]; then
+                            rvm_action="version";
+                        else
+                            rvm_ruby_version="$next_token";
+                            if [[ $# -gt 0 ]]; then
+                                next_token="$1";
+                                shift;
+                            else
+                                next_token="";
+                            fi;
+                        fi
+                    ;;
+                    -n | --name)
+                        rvm_ruby_name="$next_token";
+                        if [[ $# -gt 0 ]]; then
+                            next_token="$1";
+                            shift;
+                        else
+                            next_token="";
+                        fi
+                    ;;
+                    --branch)
+                        rvm_ruby_repo_branch="$next_token";
+                        next_token="${1:-""}";
+                        shift
+                    ;;
+                    --sha)
+                        rvm_ruby_sha="$next_token";
+                        next_token="${1:-""}";
+                        shift
+                    ;;
+                    --repository | --repo | --url)
+                        rvm_ruby_repo_url="$next_token";
+                        next_token="${1:-""}";
+                        shift
+                    ;;
+                    --ree-options)
+                        if [[ -n "$next_token" ]]; then
+                            export rvm_ree_options="${next_token//,/ }";
+                            next_token="";
+                            if [[ $# -gt 0 ]]; then
+                                next_token="$1";
+                                shift;
+                            fi;
+                        else
+                            rvm_action="error";
+                            rvm_error_message="--ree-options *must* be followed by... well... options.";
+                        fi
+                    ;;
+                    --patches | --patch)
+                        rvm_patch_names="$next_token ${rvm_patch_names:-""}";
+                        if [[ $# -gt 0 ]]; then
+                            next_token="$1";
+                            shift;
+                        else
+                            next_token="";
+                        fi;
+                        rvm_patch_original_pwd="$PWD"
+                    ;;
+                    --arch | --archflags)
+                        rvm_architectures="${rvm_architectures:-},${next_token#-arch }";
+                        rvm_architectures="${rvm_architectures##,}";
+                        if [[ $# -gt 0 ]]; then
+                            next_token="$1";
+                            shift;
+                        else
+                            next_token="";
+                        fi
+                    ;;
+                    --with-arch=*)
+                        rvm_architectures="${rvm_architectures:-},${rvm_token#--with-arch=}";
+                        rvm_architectures="${rvm_architectures##,}"
+                    ;;
+                    --32)
+                        rvm_architectures="${rvm_architectures:-},i386";
+                        rvm_architectures="${rvm_architectures##,}"
+                    ;;
+                    --64)
+                        rvm_architectures="${rvm_architectures:-},x86_64";
+                        rvm_architectures="${rvm_architectures##,}"
+                    ;;
+                    --universal)
+                        rvm_architectures="${rvm_architectures:-},i386,x86_64";
+                        rvm_architectures="${rvm_architectures##,}"
+                    ;;
+                    --head)
+                        rvm_head_flag=1
+                    ;;
+                    --static)
+                        rvm_static_flag=1
+                    ;;
+                    --bin)
+                        if [[ "update" == "${rvm_action:-""}" ]]; then
+                            rvm_bin_flag=1;
+                        else
+                            rvm_bin_path="$next_token";
+                            if [[ $# -gt 0 ]]; then
+                                next_token="$1";
+                                shift;
+                            else
+                                next_token="";
+                            fi;
+                        fi
+                    ;;
+                    -r | --require)
+                        if [[ -z "$next_token" ]]; then
+                            rvm_action="error";
+                            rvm_error_message="-r|--require *must* be followed by a library name.";
+                        else
+                            rvm_ruby_require="$rvm_ruby_require -r$next_token";
+                            if [[ $# -gt 0 ]]; then
+                                next_token="$1";
+                                shift;
+                            else
+                                next_token="";
+                            fi;
+                        fi
+                    ;;
+                    --rdoc | --yard)
+                        rvm_docs_type="$rvm_token";
+                        rvm_docs_type
+                    ;;
+                    -f | --file)
+                        rvm_action="ruby";
+                        rvm_ruby_file="$next_token";
+                        if [[ $# -gt 0 ]]; then
+                            next_token="$1";
+                            shift;
+                        else
+                            next_token="";
+                        fi
+                    ;;
+                    --passenger)
+                        rvm_log "NOTE: If you are using Passenger 3 you no longer need the passenger_ruby,\nuse the wrapper script for your ruby instead (see 'rvm wrapper')";
+                        rvm_wrapper_name="${rvm_token/--/}"
+                    ;;
+                    --editor)
+                        rvm_wrapper_name="${rvm_token/--/}"
+                    ;;
+                    --alias)
+                        if [[ -n "$next_token" ]]; then
+                            rvm_ruby_aliases="$(echo "${rvm_ruby_aliases//,/ } ${1//,/ }" | __rvm_strip)";
+                            if [[ $# -gt 0 ]]; then
+                                next_token="$1";
+                                shift;
+                            else
+                                next_token="";
+                            fi;
+                        fi
+                    ;;
+                    --symlink)
+                        rvm_warn "--symlink has been removed, please see 'rvm wrapper'.";
+                        if [[ $# -gt 0 ]]; then
+                            next_token="$1";
+                            shift;
+                        else
+                            next_token="";
+                        fi
+                    ;;
+                    -h | --help)
+                        rvm_action=help
+                    ;;
+                    --make)
+                        rvm_ruby_make="$next_token";
+                        if [[ $# -gt 0 ]]; then
+                            next_token="$1";
+                            shift;
+                        else
+                            next_token="";
+                        fi
+                    ;;
+                    --make-install)
+                        rvm_ruby_make_install="$next_token";
+                        shift;
+                        if [[ $# -gt 0 ]]; then
+                            next_token="$1";
+                            shift;
+                        else
+                            next_token="";
+                        fi
+                    ;;
+                    --nice)
+                        rvm_niceness="$next_token";
+                        if [[ $# -gt 0 ]]; then
+                            next_token="$1";
+                            shift;
+                        else
+                            next_token="";
+                        fi
+                    ;;
+                    -l | --level)
+                        rvm_ruby_patch_level="p$next_token";
+                        if [[ $# -gt 0 ]]; then
+                            next_token="$1";
+                            shift;
+                        else
+                            next_token="";
+                        fi
+                    ;;
+                    --sdk)
+                        rvm_sdk="$next_token";
+                        if [[ $# -gt 0 ]]; then
+                            next_token="$1";
+                            shift;
+                        else
+                            next_token="";
+                        fi
+                    ;;
+                    --autoconf-flags)
+                        rvm_autoconf_flags="$next_token";
+                        if [[ $# -gt 0 ]]; then
+                            next_token="$1";
+                            shift;
+                        else
+                            next_token="";
+                        fi
+                    ;;
+                    --proxy)
+                        rvm_proxy="$next_token";
+                        if [[ $# -gt 0 ]]; then
+                            next_token="$1";
+                            shift;
+                        else
+                            next_token="";
+                        fi
+                    ;;
+                    -q | --quiet)
+                        rvm_quiet_flag=1
+                    ;;
+                    -s | --silent)
+                        rvm_silent_flag=1
+                    ;;
+                    --disable-llvm | --disable-jit)
+                        rvm_llvm_flag=0
+                    ;;
+                    --enable-llvm | --enable-jit)
+                        rvm_llvm_flag=1
+                    ;;
+                    --install)
+                        rvm_install_on_use_flag=1
+                    ;;
+                    --color=*)
+                        rvm_pretty_print_flag=${rvm_token#--color=}
+                    ;;
+                    --pretty)
+                        rvm_pretty_print_flag=auto
+                    ;;
+                    --1.8 | --1.9)
+                        rvm_token=${rvm_token#--};
+                        rvm_token=${rvm_token//\./};
+                        export "rvm_${rvm_token}_flag"=1
+                    ;;
+                    --rvmrc | --versions-conf | --ruby-version)
+                        rvm_token=${rvm_token#--};
+                        rvm_token=${rvm_token//-/_};
+                        export rvm_rvmrc_flag="${rvm_token}"
+                    ;;
+                    --self | --gem | --rubygems | --reconfigure | --default | --force | --export | --summary | --latest | --yaml | --json | --archive | --shebang | --env | --path | --tail | --delete | --verbose | --import | --sticky | --create | --gems | --docs | --skip-autoreconf | --18 | --19 | --force-autoconf | --auto | --autoinstall-bundler | --ignore-gemsets)
+                        rvm_token=${rvm_token#--};
+                        rvm_token=${rvm_token//-/_};
+                        export "rvm_${rvm_token}_flag"=1
+                    ;;
+                    --dump-environment)
+                        export rvm_dump_environment_flag="$next_token";
+                        if [[ $# -gt 0 ]]; then
+                            next_token="$1";
+                            shift;
+                        else
+                            next_token="";
+                        fi
+                    ;;
+                    --clang)
+                        rvm_configure_flags="${rvm_configure_flags:-""} --with-gcc=clang"
+                    ;;
+                    -j)
+                        if [[ ! -z "$next_token" ]]; then
+                            rvm_make_flags="$rvm_make_flags -j$next_token";
+                            if [[ $# -gt 0 ]]; then
+                                next_token="$1";
+                                shift;
+                            else
+                                next_token="";
+                            fi;
+                        else
+                            rvm_action="error";
+                            rvm_error_message="-j *must* be followed by an integer (normally the # of CPU's in your machine).";
+                        fi
+                    ;;
+                    --with-rubies)
+                        rvm_ruby_strings="$next_token";
+                        if [[ $# -gt 0 ]]; then
+                            next_token="$1";
+                            shift;
+                        else
+                            next_token="";
+                        fi
+                    ;;
+                    -C | --configure)
+                        if [[ ! -z "$next_token" ]]; then
+                            rvm_configure_flags="${next_token//,--/ --}";
+                            if [[ $# -gt 0 ]]; then
+                                next_token="$1";
+                                shift;
+                            else
+                                next_token="";
+                            fi;
+                        else
+                            rvm_action="error";
+                            rvm_error_message="--configure *must* be followed by configure flags.";
+                        fi
+                    ;;
+                    --with-* | --without-* | --enable-* | --disable-*)
+                        rvm_configure_flags="${rvm_configure_flags:-""} $rvm_token"
+                    ;;
+                    -I | --include)
+                        if [[ -z "$next_token" ]]; then
+                            rvm_action="error";
+                            rvm_error_message="-I|--include *must* be followed by a path.";
+                        else
+                            rvm_ruby_load_path="$rvm_ruby_load_path:$next_token";
+                            if [[ $# -gt 0 ]]; then
+                                next_token="$1";
+                                shift;
+                            else
+                                next_token="";
+                            fi;
+                        fi
+                    ;;
+                    --debug)
+                        export rvm_debug_flag=1;
+                        set -o verbose
+                    ;;
+                    --trace | --debug)
+                        typeset option;
+                        [[ -n "${ZSH_VERSION:-""}" ]] || set -o errtrace;
+                        if [[ "$rvm_token" == "--trace" ]]; then
+                            export rvm_trace_flag=1;
+                            set -o xtrace;
+                            [[ -n "${ZSH_VERSION:-""}" ]] || export PS4="+ \${BASH_SOURCE##\${rvm_path:-}} : \${FUNCNAME[0]:+\${FUNCNAME[0]}()}  \${LINENO} > ";
+                        fi
+                    ;;
+                    --)
+                        if [[ "${rvm_action}" == *install ]]; then
+                            rvm_configure_flags="${rvm_configure_flags:-""} $next_token  $*";
+                        else
+                            rvm_ruby_args=("$next_token" "$@");
+                        fi;
+                        rvm_parse_break=1
+                    ;;
+                    *)
+                        rvm_action="error";
+                        rvm_error_message="Unrecognized command line flag: '$rvm_token'"
+                    ;;
+                esac
+            ;;
+            *)
+                if __rvm_project_dir_check "$rvm_token"; then
+                    __rvm_rvmrc_tools try_to_read_ruby "$rvm_token";
+                else
+                    rvm_action="error";
+                    rvm_error_message="Unrecognized command line argument(s): '$rvm_token $@'";
+                fi
+            ;;
+        esac;
+        if [[ -z "${rvm_action:-""}" && -n "${rvm_ruby_string:-""}" ]]; then
+            rvm_action="use";
+        fi;
+        if [[ ${rvm_parse_break:-0} -eq 1 || -n "${rvm_error_message:-""}" ]]; then
+            break;
+        fi;
+    done;
+    while [[ $# -gt 0 ]]; do
+        shift;
+    done;
+    if [[ -n "${rvm_error_message:-""}" ]]; then
+        rvm_error "$rvm_error_message ( see: 'rvm usage' )";
+        return 1;
+    fi
+}
+__rvm_project_dir_check () 
+{ 
+    [[ -n "${1:-}" && -d "$1" ]] && { 
+        [[ -f "$1/.rvmrc" && -s "$1/.rvmrc" ]] || [[ -f "$1/.versions.conf" && -s "$1/.versions.conf" ]] || [[ -f "$1/.ruby-version" && -s "$1/.ruby-version" ]] || [[ -f "$1/.rbfu-version" && -s "$1/.rbfu-version" ]] || [[ -f "$1/.rbenv-version" && -s "$1/.rbenv-version" ]] || { 
+            [[ -f "$1/Gemfile" && -s "$1/Gemfile" ]] && \grep "^#ruby=" "$1/Gemfile" > /dev/null
+        }
+    }
+}
+__rvm_project_rvmrc () 
+{ 
+    export __rvm_project_rvmrc_lock;
+    : __rvm_project_rvmrc_lock:${__rvm_project_rvmrc_lock:=0};
+    : __rvm_project_rvmrc_lock:$((__rvm_project_rvmrc_lock+=1));
+    if (( __rvm_project_rvmrc_lock > 1 )); then
+        return 0;
+    fi;
+    typeset working_dir requested_file found_file rvm_trustworthiness_result;
+    working_dir="${1:-"$PWD"}";
+    requested_file="${2:-}";
+    while :; do
+        if [[ -z "$working_dir" || "$HOME" == "$working_dir" || "/" == "$working_dir" ]]; then
+            if [[ -n "${rvm_current_rvmrc:-""}" ]]; then
+                __rvm_remove_rvm_from_path;
+                __rvm_conditionally_add_bin_path;
+                if (( ${rvm_project_rvmrc_default:-0} == 1 )); then
+                    __rvm_load_environment "default";
+                else
+                    if [[ -n "${rvm_previous_environment:-""}" ]]; then
+                        __rvm_load_environment "$rvm_previous_environment";
+                    fi;
+                fi;
+                unset rvm_current_rvmrc rvm_previous_environment;
+            fi;
+            break;
+        else
+            if [[ -n "${requested_file}" && -f "$working_dir/${requested_file}" ]]; then
+                found_file="$working_dir/${requested_file}";
+            else
+                if [[ -f "$working_dir/.rvmrc" ]]; then
+                    found_file="$working_dir/.rvmrc";
+                else
+                    if [[ -f "$working_dir/.versions.conf" ]]; then
+                        found_file="$working_dir/.versions.conf";
+                    else
+                        if [[ -f "$working_dir/.ruby-version" ]]; then
+                            found_file="$working_dir/.ruby-version";
+                        else
+                            if [[ -f "$working_dir/.rbfu-version" ]]; then
+                                found_file="$working_dir/.rbfu-version";
+                            else
+                                if [[ -f "$working_dir/.rbenv-version" ]]; then
+                                    found_file="$working_dir/.rbenv-version";
+                                else
+                                    if [[ -f "$working_dir/Gemfile" ]]; then
+                                        found_file="$working_dir/Gemfile";
+                                    fi;
+                                fi;
+                            fi;
+                        fi;
+                    fi;
+                fi;
+            fi;
+            if [[ -n "${found_file}" ]]; then
+                if [[ "${rvm_current_rvmrc:-""}" != "${found_file}" ]]; then
+                    if __rvm_conditionally_do_with_env __rvm_load_project_config "${found_file}"; then
+                        true;
+                    else
+                        rvm_trustworthiness_result=$?;
+                        unset __rvm_project_rvmrc_lock;
+                        return "$rvm_trustworthiness_result";
+                    fi;
+                fi;
+                break;
+            else
+                working_dir="$(dirname "$working_dir")";
+            fi;
+        fi;
+    done;
+    unset __rvm_project_rvmrc_lock;
+    return $?
+}
+__rvm_project_rvmrc_with_env () 
+{ 
+    __rvm_do_with_env __rvm_project_rvmrc "$@"
+}
+__rvm_reboot () 
+{ 
+    rvm_warn "Do you wish to reboot rvm?\n('yes', or 'no')> ";
+    typeset response;
+    response="no";
+    read response;
+    if [[ "yes" == "$response" ]]; then
+        builtin cd $rvm_path;
+        command -v __rvm_reset >> /dev/null 2>&1 || source "$rvm_scripts_path/functions/reset";
+        __rvm_reset;
+        mv "$rvm_archives_path" "$HOME/.archives";
+        if [[ "/" == "$rvm_path" ]]; then
+            rvm_error "remove '/' ?!... NO!";
+        else
+            if [[ -d "$rvm_path" ]]; then
+                __rvm_rm_rf "$rvm_path";
+            fi;
+        fi;
+        gem install rvm $rvm_gem_options;
+        "$rvm_scripts_path/get" latest;
+        source "$rvm_scripts_path/rvm";
+    else
+        rvm_log "Carry on then...";
+    fi;
+    return 0
+}
+__rvm_record_install () 
+{ 
+    typeset recorded_ruby_name rvm_install_record_file rvm_install_command;
+    [[ -z "$1" ]] && return;
+    recorded_ruby_name="$("$rvm_scripts_path/tools" strings "$1")";
+    rvm_install_record_file="$rvm_user_path/installs";
+    rvm_install_command=$(printf "%b" "$recorded_ruby_name $rvm_install_args\n");
+    [[ ! -f "$rvm_install_record_file" ]] && \touch "$rvm_install_record_file";
+    \rm -f "$rvm_install_record_file.tmp";
+    \grep -v "^$recorded_ruby_name " < "$rvm_install_record_file" > "$rvm_install_record_file.tmp";
+    echo "$rvm_install_command" >> "$rvm_install_record_file.tmp";
+    \rm -f "$rvm_install_record_file";
+    \mv "$rvm_install_record_file.tmp" "$rvm_install_record_file";
+    return 0
+}
+__rvm_recorded_install_command () 
+{ 
+    typeset recorded_ruby_name recorded_ruby_match;
+    recorded_ruby_name="$("$rvm_scripts_path/tools" strings "$1"     | awk -F"${rvm_gemset_separator:-"@"}" '{print $1}')";
+    [[ -z "$recorded_ruby_name" ]] && return 1;
+    recorded_ruby_match="^$recorded_ruby_name ";
+    if [[ -s "$rvm_user_path/installs" ]] && \grep "$recorded_ruby_match" "$rvm_user_path/installs" > /dev/null 2>&1; then
+        \grep "$recorded_ruby_match" < "$rvm_user_path/installs" | head -n1;
+    else
+        return 1;
+    fi;
+    return $?
+}
+__rvm_remove_from_path () 
+{ 
+    export PATH;
+    PATH=":$PATH:";
+    PATH="${PATH//:$1:/:}";
+    PATH="${PATH//::/:}";
+    PATH="${PATH%:}";
+    PATH="${PATH#:}"
+}
+__rvm_remove_install_record () 
+{ 
+    typeset recorded_ruby_name rvm_install_record_file;
+    recorded_ruby_name="$("$rvm_scripts_path/tools" strings "$1")";
+    rvm_install_record_file="$rvm_user_path/installs";
+    if [[ -s "$rvm_install_record_file" ]]; then
+        \mv "$rvm_install_record_file" "$rvm_install_record_file.tmp";
+        \grep -v "^$recorded_ruby_name " < "$rvm_install_record_file.tmp" > "$rvm_install_record_file";
+        \rm -f "$rvm_install_record_file.tmp";
+    fi;
+    return 0
+}
+__rvm_remove_rvm_from_path () 
+{ 
+    PATH="$(printf "%b" "$PATH"           | awk -v RS=: -v ORS=: "/${rvm_path//\//\/}/ {next} {print}")";
+    PATH="${PATH/%:/}";
+    export PATH;
+    builtin hash -r
+}
+__rvm_reset_rvmrc_trust () 
+{ 
+    if [[ "$1" == all ]]; then
+        echo "" > "$rvm_user_path/rvmrcs";
+    else
+        "$rvm_scripts_path/db" "$rvm_user_path/rvmrcs" "$(__rvm_rvmrc_key "$1")" "delete" > /dev/null 2>&1;
+    fi
+}
+__rvm_rm_rf () 
+{ 
+    typeset result target;
+    result=1;
+    target="${1%%+(/|.)}";
+    if [[ -n "${ZSH_VERSION:-}" ]]; then
+        setopt extendedglob;
+    else
+        if [[ -n "${BASH_VERSION:-}" ]]; then
+            shopt -s extglob;
+        else
+            printf "%b" "What the heck kind of shell are you running here???\n";
+        fi;
+    fi;
+    case "${target}" in 
+        *(/|.)@(|/Applications|/Developer|/Guides|/Information|/Library|/Network|/System|/User|/Users|/Volumes|/backups|/bdsm|/bin|/boot|/cores|/data|/dev|/etc|/home|/lib|/lib64|/mach_kernel|/media|/misc|/mnt|/net|/opt|/private|/proc|/root|/sbin|/selinux|/srv|/sys|/tmp|/usr|/var))
+            false
+        ;;
+        *)
+            if [[ -n "${target}" ]]; then
+                if [[ -d "${target}" ]]; then
+                    \rm -rf "${target}";
+                    result=0;
+                else
+                    if [[ -f "${target}" || -L "${target}" ]]; then
+                        \rm -f "${target}";
+                        result=0;
+                    else
+                        result=0;
+                    fi;
+                fi;
+            fi
+        ;;
+    esac;
+    return $result
+}
+__rvm_ruby_string () 
+{ 
+    typeset ruby_string gemset_name expanded_alias_name repo_url branch_name ruby_name;
+    __rvm_default_flags;
+    rvm_expanding_aliases=;
+    true "${rvm_ruby_version:=}" "${rvm_gemset_name:=}" "${rvm_ruby_interpreter:=}" "${rvm_ruby_version:=}" "${rvm_ruby_tag:=}" "${rvm_ruby_patch_level:=}" "${rvm_ruby_revision:=}" ${rvm_gemset_separator:="@"} "${rvm_ruby_string:=}" ${rvm_expanding_aliases:=0} ${rvm_head_flag:=0};
+    if echo "$rvm_ruby_string" | \grep "${rvm_gemset_separator}" > /dev/null 2>&1; then
+        rvm_gemset_name="${rvm_ruby_string/*${rvm_gemset_separator}/}";
+        rvm_ruby_string="${rvm_ruby_string/${rvm_gemset_separator}*/}";
+    fi;
+    if (( rvm_expanding_aliases == 0 )) && [[ -n "${rvm_ruby_string}" && "$rvm_ruby_string" != "system" ]]; then
+        if expanded_alias_name="$("$rvm_scripts_path/alias" show "$rvm_ruby_string" 2>/dev/null)" && [[ -n "$expanded_alias_name" ]]; then
+            rvm_ruby_string="$expanded_alias_name";
+        else
+            if [[ "$rvm_ruby_string" == default ]]; then
+                rvm_ruby_string="system";
+            fi;
+        fi;
+    fi;
+    if echo "$rvm_ruby_string" | \grep "${rvm_gemset_separator}" > /dev/null 2>&1; then
+        rvm_gemset_name="${rvm_ruby_string/*${rvm_gemset_separator}/}";
+        rvm_ruby_string="${rvm_ruby_string/${rvm_gemset_separator}*/}";
+    fi;
+    ruby_string="${rvm_ruby_string:-}";
+    gemset_name="${rvm_gemset_name:-}";
+    repo_url="${rvm_ruby_repo_url:-}";
+    branch_name="${rvm_ruby_repo_branch:-}";
+    ruby_name="${rvm_ruby_name:-}";
+    __rvm_unset_ruby_variables;
+    rvm_ruby_repo_url="${repo_url:-}";
+    rvm_ruby_repo_branch="${branch_name:-}";
+    rvm_ruby_name="$ruby_name";
+    if [[ -n "$gemset_name" ]]; then
+        rvm_gemset_name="$gemset_name";
+        rvm_sticky_flag=1;
+    fi;
+    strings=($(echo ${ruby_string//-/ }));
+    if (( ${#strings[@]} == 0 )); then
+        if echo "${GEM_HOME:-}" | grep "${rvm_path}" > /dev/null 2>&1; then
+            strings="${GEM_HOME##*\/}";
+            strings="${strings/%${rvm_gemset_separator:-"@"}*}";
+            rvm_ruby_string="$strings";
+            strings=($(echo ${rvm_ruby_string//-/ }));
+        else
+            strings=(system);
+            rvm_ruby_string="system";
+        fi;
+    fi;
+    for string in ${strings[@]};
+    do
+        case "$string" in 
+            head)
+                rvm_ruby_patch_level="";
+                rvm_ruby_revision="";
+                rvm_ruby_tag="";
+                export rvm_head_flag=1
+            ;;
+            system)
+                rvm_ruby_interpreter="system";
+                rvm_ruby_patch_level="";
+                rvm_ruby_tag="";
+                rvm_ruby_revision="";
+                rvm_ruby_version="";
+                rvm_gemset_name="";
+                rvm_head_flag=0;
+                return 0
+            ;;
+            ext | external)
+                rvm_ruby_interpreter="ext";
+                rvm_ruby_patch_level="";
+                rvm_ruby_tag="";
+                rvm_ruby_revision="";
+                rvm_ruby_version="";
+                rvm_head_flag=0;
+                unset strings[__array_start];
+                strings=(${strings[@]});
+                strings="${strings[*]}";
+                rvm_ruby_name="${strings// /-}";
+                break
+            ;;
+            nightly)
+                rvm_ruby_version="nightly";
+                rvm_nightly_flag=1;
+                break
+            ;;
+            preview*)
+                rvm_ruby_patch_level="$string"
+            ;;
+            rc[[:digit:]]*)
+                rvm_ruby_patch_level="$string"
+            ;;
+            [[:digit:]].[[:digit:]]*)
+                if [[ "${rvm_ruby_interpreter}" == "rbx" ]]; then
+                    if [[ -z "${rvm_ruby_version}" ]]; then
+                        rvm_ruby_version="${string}";
+                    else
+                        if [[ -z "${rvm_ruby_patch_level}" ]]; then
+                            rvm_ruby_patch_level="${string}";
+                        else
+                            rvm_error "Unknown ruby interpreter string component: '$string'.";
+                            return 1;
+                        fi;
+                    fi;
+                else
+                    case "$string" in 
+                        0.+([[:digit:]]) | 0.+([[:digit:]]).+([[:digit:]]) | 1.+([[:digit:]]).+([[:digit:]]) | 2.+([[:digit:]]).+([[:digit:]]) | 1.+([[:digit:]]).+([[:digit:]]).+([[:digit:]]) | 1.+([[:digit:]]))
+                            rvm_ruby_version="$string";
+                            rvm_ruby_revision="";
+                            rvm_ruby_tag=""
+                        ;;
+                        1.+([[:digit:]]).+([[:digit:]]).+([[:alnum:]]))
+                            case "${rvm_ruby_interpreter:-""}" in 
+                                jruby)
+                                    rvm_ruby_version="$string"
+                                ;;
+                                *)
+                                    rvm_error "Unknown ruby interpreter version: '$string'.";
+                                    return 1
+                                ;;
+                            esac
+                        ;;
+                        *)
+                            rvm_error "Unknown ruby interpreter version: '$string'.";
+                            return 1
+                        ;;
+                    esac;
+                fi
+            ;;
+            p[[:digit:]]*)
+                rvm_ruby_patch_level="$string"
+            ;;
+            [[:digit:]][[:digit:]]*)
+                case "${rvm_ruby_interpreter:-""}" in 
+                    ree)
+                        rvm_ruby_patch_level="$string";
+                        rvm_ruby_revision=""
+                    ;;
+                    kiji)
+                        rvm_ruby_patch_level="$string";
+                        rvm_ruby_revision=""
+                    ;;
+                    rbx)
+                        rvm_ruby_patch_level="$string"
+                    ;;
+                    maglev)
+                        rvm_ruby_version="$string";
+                        rvm_ruby_revision="";
+                        rvm_ruby_patch_level=""
+                    ;;
+                    *)
+                        rvm_ruby_revision="r$string"
+                    ;;
+                esac
+            ;;
+            r[[:digit:]]*)
+                rvm_ruby_patch_level="";
+                rvm_ruby_revision="$string"
+            ;;
+            s[[:alnum:]]*)
+                rvm_ruby_revision="";
+                rvm_ruby_sha="${string#s}"
+            ;;
+            tv[[:digit:]]* | t[[:digit:]]*)
+                rvm_ruby_patch_level="";
+                rvm_ruby_revision="";
+                rvm_ruby_tag="$string"
+            ;;
+            m[[:digit:]]*)
+                rvm_ruby_mode="$string"
+            ;;
+            u[[:alnum:]]*)
+                rvm_ruby_patch_level="";
+                rvm_ruby_revision="";
+                rvm_ruby_tag="";
+                rvm_ruby_patch="";
+                rvm_ruby_user_tag="$string"
+            ;;
+            a[[:digit:]][[:digit:]]*)
+                rvm_ruby_bits="$string"
+            ;;
+            b[[:digit:]]*)
+                rvm_ruby_repo_branch="${string}";
+                rvm_head_flag=1
+            ;;
+            ruby | rbx | jruby | macruby | ree | kiji | rubinius | maglev | ironruby | goruby | tcs)
+                rvm_ruby_interpreter="$string"
+            ;;
+            [[:alpha:]]*([[:alnum:]]|_))
+                rvm_ruby_name="$string"
+            ;;
+            *)
+                rvm_error "Unknown ruby interpreter string component: '$string'.";
+                return 1
+            ;;
+        esac;
+    done;
+    if [[ -z "${rvm_ruby_interpreter:-""}" ]]; then
+        case "$rvm_ruby_version" in 
+            1.[8-9]*)
+                rvm_ruby_interpreter="ruby"
+            ;;
+            0.[5-6]*)
+                rvm_ruby_interpreter="macruby"
+            ;;
+            1.[0-4]*)
+                rvm_ruby_interpreter="rbx"
+            ;;
+            1.[5-7]*)
+                rvm_ruby_interpreter="jruby"
+            ;;
+            2.*)
+                rvm_error "Version '$rvm_ruby_version' is to confusing to select ruby interpreter.";
+                return 2
+            ;;
+        esac;
+    fi;
+    rvm_ruby_version="${rvm_ruby_version:-}";
+    if [[ -z "${rvm_ruby_version:-}" && "${rvm_ruby_interpreter}" != "ext" ]] && (( ${rvm_head_flag:=0} == 0 )); then
+        rvm_ruby_version="${rvm_ruby_version:-"$(
+    __rvm_db "${rvm_ruby_interpreter}_version"
+    )"}";
+    fi;
+    if [[ -z "${rvm_ruby_version:-}" ]]; then
+        rvm_ruby_string="${rvm_ruby_interpreter}";
+    else
+        rvm_ruby_string="${rvm_ruby_interpreter}-${rvm_ruby_version}";
+    fi;
+    if [[ "${rvm_ruby_interpreter}" == "ext" ]]; then
+        true;
+    else
+        if (( ${rvm_head_flag:=0} == 1 )); then
+            rvm_ruby_string="${rvm_ruby_string}-head";
+        else
+            if [[ -n "${rvm_ruby_revision:-}" ]]; then
+                rvm_ruby_string="${rvm_ruby_string}-${rvm_ruby_revision}";
+            else
+                if [[ -n "${rvm_ruby_sha:-}" ]]; then
+                    rvm_ruby_string="${rvm_ruby_string}-s${rvm_ruby_sha}";
+                else
+                    if [[ -n "${rvm_ruby_tag:-}" ]]; then
+                        rvm_ruby_string="${rvm_ruby_string}-${rvm_ruby_tag}";
+                    else
+                        if [[ -n "${rvm_ruby_patch_level:-}" ]]; then
+                            rvm_ruby_string="${rvm_ruby_string}-${rvm_ruby_patch_level}";
+                        else
+                            if [[ -n "${rvm_ruby_user_tag:-}" ]]; then
+                                rvm_ruby_string="${rvm_ruby_string}-${rvm_ruby_user_tag}";
+                            else
+                                patch_level="$(
+    __rvm_db "${rvm_ruby_interpreter}_${rvm_ruby_version}_patch_level"
+    )";
+                                if [[ -n "${patch_level:-""}" ]]; then
+                                    case "$rvm_ruby_interpreter" in 
+                                        ree | kiji | rbx)
+                                            rvm_ruby_patch_level="${patch_level}"
+                                        ;;
+                                        *)
+                                            rvm_ruby_patch_level="p${patch_level}"
+                                        ;;
+                                    esac;
+                                fi;
+                                if [[ -n "${rvm_ruby_patch_level:-""}" ]]; then
+                                    rvm_ruby_patch_level="${rvm_ruby_patch_level/#pp/p}";
+                                    rvm_ruby_patch_level="${rvm_ruby_patch_level/#prc/rc}";
+                                    rvm_ruby_string="${rvm_ruby_string}-${rvm_ruby_patch_level}";
+                                    case "$rvm_ruby_interpreter" in 
+                                        ree | kiji | rbx)
+                                            rvm_ruby_string="${rvm_ruby_string//-p*/-}"
+                                        ;;
+                                        *)
+                                            rvm_ruby_string="${rvm_ruby_string//-pp/-p}";
+                                            rvm_ruby_string="${rvm_ruby_string//-prc/-rc}"
+                                        ;;
+                                    esac;
+                                fi;
+                            fi;
+                        fi;
+                    fi;
+                fi;
+            fi;
+        fi;
+    fi;
+    if [[ -n "${rvm_ruby_name:-}" ]]; then
+        rvm_ruby_string="${rvm_ruby_string}-${rvm_ruby_name}";
+        detected_rvm_ruby_name="${rvm_ruby_name}";
+        rvm_ruby_name="";
+    else
+        detected_rvm_ruby_name="";
+    fi
+}
+__rvm_ruby_string_paths_under () 
+{ 
+    typeset path part parts;
+    path="${1%/}";
+    parts=(${rvm_ruby_string//-/ });
+    echo "$path";
+    for part in "${parts[@]}";
+    do
+        path="$path/$part";
+        echo "$path";
+    done;
+    return 0
+}
+__rvm_ruby_strings_exist () 
+{ 
+    for rvm_ruby_string in ${@//,/ };
+    do
+        rvm_verbose_flag=0 __rvm_use "${rvm_ruby_string}" > /dev/null 2>&1 || return $?;
+        printf "%b" "${rvm_ruby_string}${rvm_gemset_name:+@}${rvm_gemset_name:-}\n";
+    done;
+    unset rvm_ruby_string
+}
+__rvm_run () 
+{ 
+    typeset name log temp_log_path _command message;
+    true ${rvm_debug_flag:=0} ${rvm_niceness:=0};
+    name="${1:-}";
+    _command="${2:-}";
+    message="${3:-}";
+    if [[ -n "$message" ]]; then
+        rvm_log "$message";
+    fi;
+    if (( rvm_debug_flag > 0 )); then
+        rvm_debug "Executing: $_command";
+    fi;
+    if [[ -n "${rvm_ruby_string:-}" ]]; then
+        temp_log_path="${rvm_log_path}/$rvm_ruby_string";
+    else
+        temp_log_path="${rvm_log_path}";
+    fi;
+    log="$temp_log_path/$name.log";
+    if [[ ! -d "${log%\/*}" ]]; then
+        \mkdir -p "${log%\/*}";
+    fi;
+    if [[ ! -f "$log" ]]; then
+        \touch "$log";
+    fi;
+    printf "%b" "[$(date +'%Y-%m-%d %H:%M:%S')] $_command\n" > "$log";
+    if (( rvm_niceness > 0 )); then
+        _command="nice -n $rvm_niceness $_command";
+    fi;
+    eval "$_command" >> "$log" 2>&1;
+    result=$?;
+    if (( result > 0 )); then
+        rvm_error "Error running '$_command', please read $log";
+    fi;
+    return ${result}
+}
+__rvm_run_script () 
+{ 
+    "$rvm_scripts_path/${1:-"$rvm_action"}" "${rvm_ruby_args[@]}"
+}
+__rvm_run_with_env () 
+{ 
+    typeset name environment _command message log path;
+    name="${1:-""}";
+    environment="${2:-""}";
+    _command="${3:-""}";
+    message="${4:-""}";
+    [[ -n "$environment" ]] || environment="$(__rvm_env_string)";
+    if [[ -n "$message" ]]; then
+        rvm_log "$message";
+    fi;
+    if (( ${rvm_debug_flag:=0} == 1 )); then
+        rvm_debug "Executing: $_command in environment $environment";
+    fi;
+    path="${rvm_log_path}/$rvm_ruby_string";
+    log="$path/$name.log";
+    if [[ ! -d "$path" ]]; then
+        command mkdir -p "$path";
+    fi;
+    if [[ ! -f "$log" ]]; then
+        command touch "$log";
+    fi;
+    printf "%b" "[$(date +'%Y-%m-%d %H:%M:%S')] $_command # under $environment\n" >> "${log}";
+    if (( ${rvm_niceness:=0} > 0 )); then
+        _command="nice -n $rvm_niceness $_command";
+    fi;
+    ( rvm_ruby_string="$environment";
+    __rvm_use;
+    eval "$_command" >> "${log}" 2>&1 );
+    result=$?;
+    if (( result >  0 )); then
+        rvm_error "Error running '$command' under $env_name,\nplease read $log";
+    fi;
+    return ${result:-0}
+}
+__rvm_rvmrc_key () 
+{ 
+    printf "%b" "$1" | tr '[#/.=]' _;
+    return $?
+}
+__rvm_rvmrc_stored_trust () 
+{ 
+    "${rvm_scripts_path:-"$rvm_path/scripts"}/db" "$rvm_user_path/rvmrcs" "$(__rvm_rvmrc_key "$1")";
+    return $?
+}
+__rvm_rvmrc_tools () 
+{ 
+    export escape_flag;
+    typeset rvmrc_action rvmrc_path saveIFS trust rvmrc_ruby;
+    escape_flag=1;
+    rvmrc_action="$1";
+    (( $# )) && shift || true;
+    if [[ "${rvmrc_action}" == "create" ]]; then
+        rvmrc_ruby="${1:-${MY_RUBY_HOME##*/}}";
+        rvmrc_path="$(builtin cd "$PWD" >/dev/null 2>&1; pwd)";
+    else
+        if [[ "${1:-}" == "all" ]]; then
+            rvmrc_path="all";
+        else
+            rvmrc_path="$(builtin cd "${1:-$PWD}" >/dev/null 2>&1; pwd)";
+        fi;
+    fi;
+    (( $# )) && shift || true;
+    if (( $# )); then
+        rvmrc_path="${rvmrc_path}/$1";
+    else
+        if [[ -s "${rvmrc_path}/.rvmrc" ]]; then
+            rvmrc_path="${rvmrc_path}/.rvmrc";
+        else
+            if [[ -s "${rvmrc_path}/.versions.conf" ]]; then
+                rvmrc_path="${rvmrc_path}/.versions.conf";
+            else
+                if [[ -f "${rvmrc_path}/.ruby-version" ]]; then
+                    rvmrc_path="${rvmrc_path}/.ruby-version";
+                else
+                    if [[ -f "${rvmrc_path}/.rbfu-version" ]]; then
+                        rvmrc_path="${rvmrc_path}/.rbfu-version";
+                    else
+                        if [[ -f "${rvmrc_path}/.rbenv-version" ]]; then
+                            rvmrc_path="${rvmrc_path}/.rbenv-version";
+                        else
+                            if [[ -f "${rvmrc_path}/Gemfile" ]]; then
+                                rvmrc_path="${rvmrc_path}/Gemfile";
+                            else
+                                if [[ "${rvmrc_path}" == "all" ]]; then
+                                    rvmrc_path="all";
+                                else
+                                    rvmrc_path="${rvmrc_path}/.rvmrc";
+                                fi;
+                            fi;
+                        fi;
+                    fi;
+                fi;
+            fi;
+        fi;
+    fi;
+    case "$rvmrc_action" in 
+        create)
+            ( rvm_ruby_string="${rvmrc_ruby}";
+            rvm_create_flag=1 __rvm_use;
+            case "${rvmrc_path}" in 
+                */.rvmrc | */--rvmrc)
+                    __rvm_set_rvmrc
+                ;;
+                */.ruby-version | */--ruby-version)
+                    __rvm_set_ruby_version
+                ;;
+                */.versions.conf | */--versions-conf)
+                    __rvm_set_versions_conf
+                ;;
+                *)
+                    rvm_error "Unrecognized project file format";
+                    return 1
+                ;;
+            esac )
+        ;;
+        reset)
+            __rvm_reset_rvmrc_trust "$rvmrc_path";
+            echo "Reset trust for $rvmrc_path"
+        ;;
+        trust)
+            __rvm_trust_rvmrc "$rvmrc_path";
+            echo "Marked $rvmrc_path as trusted"
+        ;;
+        untrust)
+            __rvm_untrust_rvmrc "$rvmrc_path";
+            echo "Marked $rvmrc_path as untrusted"
+        ;;
+        trusted)
+            if [[ -f "$rvmrc_path" ]]; then
+                saveIFS=$IFS;
+                IFS=';';
+                trust=($(__rvm_rvmrc_stored_trust "$rvmrc_path"));
+                IFS=$saveIFS;
+                if [[ "${trust[${_second}]:-'#'}" != "$(__rvm_md5_for_contents "$rvmrc_path")$(__rvm_sha256_for_contents "$rvmrc_path")" ]]; then
+                    echo "The rvmrc at '$rvmrc_path' contains unreviewed changes.";
+                else
+                    if [[ "${trust[${_first}]}" == '1' ]]; then
+                        echo "The rvmrc at '$rvmrc_path' is currently trusted.";
+                    else
+                        if [[ "${trust[${_first}]}" == '0' ]]; then
+                            echo "The rvmrc at '$rvmrc_path' is currently untrusted.";
+                        else
+                            echo "The trustiworthiness of '$rvmrc_path' is currently unknown.";
+                        fi;
+                    fi;
+                fi;
+            else
+                echo "There is no $rvmrc_path";
+            fi
+        ;;
+        is_trusted)
+            if [[ -f "$rvmrc_path" ]]; then
+                saveIFS=$IFS;
+                IFS=';';
+                trust=($(__rvm_rvmrc_stored_trust "$rvmrc_path"));
+                IFS=$saveIFS;
+                if [[ "${trust[${_second}]:-'#'}" != "$(__rvm_md5_for_contents "$rvmrc_path")$(__rvm_sha256_for_contents "$rvmrc_path")" ]]; then
+                    return 1;
+                else
+                    if [[ "${trust[${_first}]}" == '1' ]]; then
+                        return 0;
+                    else
+                        return 1;
+                    fi;
+                fi;
+            else
+                return 1;
+            fi
+        ;;
+        load)
+            rvm_rvmrc_cwd="" rvm_trust_rvmrcs_flag=1 __rvm_project_rvmrc "$(dirname "$rvmrc_path")" "$(basename "$rvmrc_path")"
+        ;;
+        try_to_read_ruby)
+            case "$rvmrc_path" in 
+                */.rvmrc)
+                    if ! __rvm_rvmrc_tools is_trusted "$(dirname "$rvmrc_path")" "$(basename "$rvmrc_path")"; then
+                        ( __rvm_project_rvmrc "$(dirname "$rvmrc_path")" "$(basename "$rvmrc_path")" > /dev/null 2>&1 );
+                    fi;
+                    if __rvm_rvmrc_tools is_trusted "$(dirname "$rvmrc_path")" "$(basename "$rvmrc_path")"; then
+                        rvm_action="${rvm_action:-use}";
+                        rvm_ruby_string="$(
+              rvm_rvmrc_cwd=""
+              rvm_trust_rvmrcs_flag=1
+              __rvm_project_rvmrc "$(dirname "$rvmrc_path")" "$(basename "$rvmrc_path")" >/dev/null 2>&1
+              __rvm_env_string
+            )";
+                        rvm_ruby_strings="$rvm_ruby_string";
+                    else
+                        rvm_action="error";
+                        rvm_error_message="The give path does not contain '$(basename "$rvmrc_path")' (or it is not trusted): '$(dirname "$rvmrc_path")' rest of params: '$@'";
+                    fi
+                ;;
+                *)
+                    rvm_action="${rvm_action:-use}";
+                    rvm_ruby_string="$(
+            rvm_rvmrc_cwd=""
+            rvm_trust_rvmrcs_flag=1
+            __rvm_project_rvmrc "$(dirname "$rvmrc_path")" "$(basename "$rvmrc_path")" >/dev/null 2>&1
+            __rvm_env_string
+          )";
+                    rvm_ruby_strings="$rvm_ruby_string"
+                ;;
+            esac
+        ;;
+        *)
+            echo "Usage: rvm rvmrc {trust,untrust,trusted,load,reset,is_trusted,try_to_read_ruby}";
+            return 1
+        ;;
+    esac;
+    unset escape_flag;
+    return $?
+}
+__rvm_select () 
+{ 
+    true ${rvm_gemset_name:=};
+    typeset _original_env_string;
+    _original_env_string=${rvm_env_string};
+    export GEM_HOME GEM_PATH MY_RUBY_HOME RUBY_VERSION IRBRC;
+    export rvm_env_string rvm_action rvm_alias_expanded rvm_archive_extension rvm_bin_flag rvm_bin_path rvm_configure_flags rvm_debug_flag rvm_default_flag rvm_delete_flag rvm_docs_type rvm_dump_environment_flag rvm_error_message rvm_expanding_aliases rvm_file_name rvm_gemdir_flag rvm_gemset_name rvm_gemstone_package_file rvm_gemstone_url rvm_head_flag rvm_hook rvm_install_args rvm_install_on_use_flag rvm_llvm_flag rvm_loaded_flag rvm_make_flags rvm_niceness rvm_nightly_flag rvm_only_path_flag rvm_parse_break rvm_patch_names rvm_patch_original_pwd rvm_pretty_print_flag rvm_proxy rvm_quiet_flag rvm_ree_options rvm_reload_flag rvm_remove_flag rvm_ruby_alias rvm_ruby_aliases rvm_ruby_args rvm_ruby_binary rvm_ruby_bits rvm_ruby_configure rvm_ruby_file rvm_ruby_gem_home rvm_ruby_gem_path rvm_ruby_global_gems_path rvm_ruby_home rvm_ruby_interpreter rvm_ruby_irbrc rvm_ruby_load_path rvm_ruby_major_version rvm_ruby_make rvm_ruby_make_install rvm_ruby_minor_version rvm_ruby_mode rvm_ruby_name rvm_ruby_package_file rvm_ruby_package_name rvm_ruby_patch rvm_ruby_patch_level rvm_ruby_release_version rvm_ruby_repo_url rvm_ruby_require rvm_ruby_revision rvm_ruby_selected_flag rvm_ruby_sha rvm_ruby_string rvm_ruby_strings rvm_ruby_tag rvm_ruby_url rvm_ruby_user_tag rvm_ruby_version rvm_script_name rvm_sdk rvm_silent_flag rvm_sticky_flag rvm_system_flag rvm_token rvm_trace_flag rvm_use_flag rvm_user_flag rvm_verbose_flag rvm_wrapper_name rvm_architectures;
+    if [[ -z "${rvm_ruby_string:-}" ]]; then
+        if [[ -n "${rvm_ruby_interpreter:-}" ]]; then
+            rvm_ruby_string="$rvm_ruby_interpreter";
+        fi;
+        if [[ -n "${rvm_ruby_version:-}" ]]; then
+            rvm_ruby_string="$rvm_ruby_string-$rvm_ruby_version";
+        fi;
+        if [[ -n "${rvm_ruby_patch_level:-}" ]]; then
+            rvm_ruby_string="$rvm_ruby_string-$rvm_ruby_patch_level";
+        fi;
+        if [[ -n "${rvm_ruby_revision:-}" ]]; then
+            rvm_ruby_string="$rvm_ruby_string-$rvm_ruby_revision";
+        fi;
+        if [[ -n "${rvm_ruby_name:-}" ]]; then
+            rvm_ruby_name="$rvm_ruby_string-$rvm_ruby_name";
+        fi;
+    fi;
+    __rvm_ruby_string || return $?;
+    rvm_archive_extension="tar.gz";
+    if [[ -z "${rvm_ruby_interpreter:-}" ]]; then
+        rvm_ruby_interpreter="${rvm_ruby_string//-*/}";
+    fi;
+    case "$rvm_ruby_interpreter" in 
+        macruby)
+            if [[ "Darwin" == "$(uname)" ]]; then
+                rvm_ruby_package_name="${rvm_ruby_interpreter}-${rvm_ruby_version}";
+                if (( ${rvm_head_flag:=0} == 1 )); then
+                    rvm_ruby_version="";
+                    rvm_ruby_tag="";
+                    rvm_ruby_revision="head";
+                    __rvm_db "macruby_repo_url" "rvm_ruby_repo_url";
+                    rvm_ruby_url="$rvm_ruby_repo_url";
+                else
+                    if [[ "nightly" == "${rvm_ruby_version:-}" ]]; then
+                        __rvm_db "macruby_nightly_url" "rvm_ruby_url";
+                        rvm_ruby_package_name="${rvm_ruby_interpreter}_nightly-${rvm_ruby_version}";
+                        rvm_ruby_package_file="$rvm_ruby_package_name";
+                    else
+                        if [[ -n "${rvm_ruby_version:-}" ]]; then
+                            __rvm_db "macruby_url" "rvm_ruby_url";
+                            rvm_ruby_package_name="MacRuby%20${rvm_ruby_version}.zip";
+                            rvm_ruby_package_file="$rvm_ruby_package_name";
+                            rvm_ruby_url="$rvm_ruby_url/$rvm_ruby_package_name";
+                        else
+                            __rvm_db "macruby_version" "rvm_ruby_version";
+                            __rvm_db "macruby_url" "rvm_ruby_url";
+                            rvm_ruby_package_name="MacRuby%20${rvm_ruby_version}.zip";
+                            rvm_ruby_package_file="$rvm_ruby_package_name";
+                            rvm_ruby_url="$rvm_ruby_url/$rvm_ruby_package_name";
+                        fi;
+                    fi;
+                fi;
+                rvm_ruby_patch_level="";
+            else
+                rvm_error "MacRuby can only be installed on a Darwin OS.";
+            fi
+        ;;
+        rbx | rubinius)
+            rvm_archive_extension="tar.gz";
+            rvm_ruby_interpreter="rbx";
+            rvm_ruby_version=${rvm_ruby_version:-$(__rvm_db "rbx_version")};
+            rvm_ruby_repo_url=${rvm_rbx_repo_url:-$(__rvm_db "rubinius_repo_url")};
+            rbx_url=${rbx_url:-$(__rvm_db "rbx_url")};
+            rvm_ruby_patch_level="";
+            case "${rvm_ruby_version}" in 
+                2.0pre)
+                    rvm_ruby_repo_branch="master"
+                ;;
+                2.0.testing)
+                    rvm_ruby_repo_branch="${rvm_ruby_version}"
+                ;;
+            esac;
+            if (( ${rvm_head_flag:=0} == 0 )); then
+                rvm_ruby_url="${rbx_url}";
+                rvm_ruby_package_file="rubinius-${rvm_ruby_version}.${rvm_archive_extension}";
+                rvm_ruby_url="$rvm_ruby_url/$rvm_ruby_package_file";
+            else
+                rvm_ruby_version="head";
+            fi;
+            if [[ -n "${rvm_rbx_opt:-}" ]]; then
+                export RBXOPT="${RBXOPT:=${rvm_rbx_opt}}";
+            fi
+        ;;
+        jruby)
+            rvm_ruby_patch_level="";
+            if (( ${rvm_head_flag:=0} == 1 )); then
+                rvm_ruby_version="head";
+                rvm_ruby_repo_url="${rvm_ruby_repo_url:-$(__rvm_db "jruby_repo_url")}";
+                rvm_ruby_url="${rvm_ruby_repo_url:-$(__rvm_db "jruby_repo_url")}";
+            else
+                if [[ -n ${rvm_configure_flags:-} ]]; then
+                    rvm_ruby_repo_url="${rvm_ruby_repo_url:-$(__rvm_db "jruby_repo_url")}";
+                    rvm_ruby_url="${rvm_ruby_repo_url:-$(__rvm_db "jruby_repo_url")}";
+                    rvm_ruby_version="${rvm_ruby_version:-"$(__rvm_db "jruby_version")"}";
+                    rvm_ruby_tag="${rvm_ruby_tag:-${rvm_ruby_version}}";
+                else
+                    rvm_archive_extension="tar.gz";
+                    rvm_ruby_version="${rvm_ruby_version:-"$(__rvm_db "jruby_version")"}";
+                    jruby_url="$(__rvm_db "jruby_url")";
+                    rvm_ruby_package_file="${rvm_ruby_interpreter}-bin-${rvm_ruby_version}";
+                    rvm_ruby_package_name="${rvm_ruby_interpreter}-${rvm_ruby_version}";
+                    rvm_ruby_url="${jruby_url}/${rvm_ruby_version}/${rvm_ruby_package_file}.tar.gz";
+                    jruby_url="";
+                fi;
+            fi;
+            alias jruby_ng="jruby --ng";
+            alias jruby_ng_server="jruby --ng-server"
+        ;;
+        maglev)
+            rvm_ruby_patch_level="";
+            maglev_url="$(__rvm_db "maglev_url")";
+            system="$(uname -s)";
+            if [[ "$MACHTYPE" == x86_64-apple-darwin* ]]; then
+                arch="i386";
+            else
+                arch="$(uname -m)";
+            fi;
+            if (( ${rvm_head_flag:=0} == 1 )) || [[ "$rvm_ruby_version" == "head" ]]; then
+                rvm_head_flag=1;
+                rvm_ruby_version="head";
+                rvm_ruby_repo_url="${rvm_ruby_repo_url:-$(__rvm_db "maglev_repo_url")}";
+                rvm_ruby_url="${rvm_ruby_repo_url:-$(__rvm_db "maglev_repo_url")}";
+                rvm_gemstone_version=$(
+          command curl -s https://raw.github.com/MagLev/maglev/master/version.txt |
+            grep ^GEMSTONE | cut -f2 -d-
+        );
+                rvm_gemstone_package_file="GemStone-${rvm_gemstone_version}.${system}-${arch}";
+            else
+                rvm_ruby_package_file="MagLev-${rvm_ruby_version}";
+                rvm_ruby_version="${rvm_ruby_version:-"$(__rvm_db "maglev_version")"}";
+                rvm_ruby_package_name="${rvm_ruby_interpreter}-${rvm_ruby_version}";
+                rvm_ruby_url="${rvm_ruby_url:-"$maglev_url/${rvm_ruby_package_file}.${rvm_archive_extension}"}";
+                rvm_gemstone_version=$(
+          version_tag_commit=$(
+            command curl -s http://github.com/api/v2/yaml/repos/show/MagLev/maglev/tags |
+              awk '/MagLev-'${rvm_ruby_version}':/ {print $2 }'
+          )
+          command curl -s https://raw.github.com/MagLev/maglev/$version_tag_commit/version.txt |
+            grep ^GEMSTONE | cut -f2 -d-
+        );
+                rvm_gemstone_package_file="GemStone-${rvm_gemstone_version}.${system}-${arch}";
+                export MAGLEV_HOME="$rvm_rubies_path/$rvm_ruby_string";
+            fi;
+            rvm_gemstone_url="$maglev_url/${rvm_gemstone_package_file}.${rvm_archive_extension}"
+        ;;
+        ironruby)
+            rvm_ruby_patch_level="";
+            if (( ${rvm_head_flag:=0} == 1 )); then
+                rvm_ruby_version="head";
+                rvm_ruby_package_name="${rvm_ruby_string}";
+                rvm_ruby_repo_url="${rvm_ruby_repo_url:-$(__rvm_db "ironruby_repo_url")}";
+                rvm_ruby_url="${rvm_ruby_repo_url:-$(__rvm_db "ironruby_repo_url")}";
+            else
+                rvm_archive_extension="zip";
+                rvm_ruby_version=${rvm_ruby_version:-"$(__rvm_db "ironruby_version")"};
+                rvm_ruby_package_name="${rvm_ruby_interpreter}-${rvm_ruby_version}";
+                rvm_ruby_package_file="${rvm_ruby_interpreter}-${rvm_ruby_version}.${rvm_archive_extension}";
+                rvm_ruby_url="$(__rvm_db "ironruby_${rvm_ruby_version}_url")${rvm_ruby_package_file}";
+            fi;
+            export rvm_ruby_version rvm_ruby_string rvm_ruby_package_name rvm_ruby_repo_url rvm_ruby_url rvm_archive_extension
+        ;;
+        ree)
+            rvm_ruby_interpreter=ree;
+            rvm_ruby_version=${rvm_ruby_version:-"$(__rvm_db "ree_version")"};
+            case "$rvm_ruby_version" in 
+                1.8.*)
+                    true
+                ;;
+                *)
+                    rvm_error "Unknown Ruby Enterprise Edition version: $rvm_ruby_version"
+                ;;
+            esac;
+            if [[ -n "${rvm_ruby_patch_level:-0}" ]]; then
+                rvm_ruby_patch_level="$(echo $rvm_ruby_patch_level | \sed 's#^p##')";
+            fi;
+            rvm_ruby_package_file="ruby-enterprise-$rvm_ruby_version-$rvm_ruby_patch_level";
+            rvm_ruby_url="$(__rvm_db "${rvm_ruby_interpreter}_${rvm_ruby_version}_${rvm_ruby_patch_level}_url")";
+            rvm_ruby_url="${rvm_ruby_url:-$(__rvm_db "${rvm_ruby_interpreter}_${rvm_ruby_version}_url")}";
+            rvm_ruby_url="${rvm_ruby_url}/$rvm_ruby_package_file.tar.gz"
+        ;;
+        kiji)
+            rvm_ruby_interpreter="kiji";
+            rvm_ruby_version="head";
+            rvm_head_flag=1;
+            rvm_ruby_string="kiji-head";
+            rvm_ruby_patch_level="";
+            rvm_ruby_repo_url=${rvm_mput_repo_url:-"$(__rvm_db "kiji_repo_url")"};
+            rvm_ruby_url=$rvm_ruby_repo_url;
+            rvm_ruby_configure="";
+            rvm_ruby_make="";
+            rvm_ruby_make_install=""
+        ;;
+        goruby)
+            rvm_ruby_interpreter="goruby";
+            rvm_ruby_version="head";
+            rvm_ruby_string="goruby";
+            rvm_ruby_patch_level="";
+            rvm_ruby_repo_url=${rvm_mput_repo_url:-"$(__rvm_db "goruby_repo_url")"};
+            rvm_ruby_url=$rvm_ruby_repo_url;
+            rvm_ruby_configure="";
+            rvm_ruby_make="";
+            rvm_ruby_make_install=""
+        ;;
+        tcs)
+            rvm_ruby_interpreter="tcs";
+            rvm_ruby_version="head";
+            rvm_ruby_string="tcs";
+            rvm_ruby_patch_level="";
+            rvm_ruby_repo_url=${rvm_tcs_repo_url:-"$(__rvm_db "tcs_repo_url")"};
+            rvm_ruby_url=$rvm_ruby_repo_url;
+            rvm_ruby_repo_branch="${rvm_ruby_repo_branch:-"$(__rvm_db "tcs_repo_branch")"}";
+            export rvm_head_flag=1;
+            rvm_ruby_configure="";
+            rvm_ruby_make="";
+            rvm_ruby_make_install=""
+        ;;
+        ruby)
+            if [[ -n "${rvm_ruby_patch_level}" ]]; then
+                rvm_ruby_package_file="${rvm_ruby_interpreter}-${rvm_ruby_version}-${rvm_ruby_patch_level}";
+                rvm_ruby_package_name="${rvm_ruby_interpreter}-${rvm_ruby_version}-${rvm_ruby_patch_level}";
+            else
+                rvm_ruby_package_file="${rvm_ruby_interpreter}-${rvm_ruby_version}";
+                rvm_ruby_package_name="${rvm_ruby_interpreter}-${rvm_ruby_version}";
+            fi;
+            if [[ -z "${rvm_ruby_version:-""}" ]] && (( ${rvm_head_flag:=0} == 0 )); then
+                rvm_error "Ruby version was not specified!";
+            else
+                rvm_ruby_repo_url="${rvm_ruby_repo_url:-"$(__rvm_db "ruby_repo_url")"}";
+                if (( ${rvm_head_flag:=0} == 0 )); then
+                    case "${rvm_ruby_version}" in 
+                        1.8.4)
+                            rvm_archive_extension="tar.gz"
+                        ;;
+                        *)
+                            rvm_archive_extension="tar.bz2"
+                        ;;
+                    esac;
+                fi;
+            fi
+        ;;
+        ext)
+            if [[ -z "${rvm_ruby_name:-${detected_rvm_ruby_name:-}}" ]]; then
+                rvm_error "External ruby name was not specified!";
+            fi
+        ;;
+        current)
+            ruby_binary="$(builtin command -v ruby)";
+            if (( $? == 0)) && match "$ruby_binary" "*rvm*"; then
+                rvm_ruby_string="$(dirname "$ruby_binary" | xargs dirname | xargs basename)";
+            else
+                rvm_ruby_interpreter="system";
+            fi
+        ;;
+        default | system | user)
+
+        ;;
+        *)
+            if [[ -n "${MY_RUBY_HOME:-""}" ]]; then
+                rvm_ruby_string=$(basename $MY_RUBY_HOME);
+                __rvm_select;
+            else
+                if [[ -z "${rvm_ruby_string:-""}" ]]; then
+                    rvm_error "Ruby implementation '$rvm_ruby_interpreter' is not known.";
+                    return 1;
+                fi;
+            fi
+        ;;
+    esac;
+    if [[ -n "$rvm_ruby_version" ]]; then
+        case "$rvm_ruby_version" in 
+            +([[:digit:]]).+([[:digit:]]).+([[:digit:]]))
+                rvm_ruby_release_version="${rvm_ruby_version/.*/}";
+                rvm_ruby_major_version=${rvm_ruby_version%.*};
+                rvm_ruby_major_version=${rvm_ruby_major_version#*.};
+                rvm_ruby_minor_version="${rvm_ruby_version//*.}"
+            ;;
+            +([[:digit:]]).+([[:digit:]]))
+                rvm_ruby_release_version="${rvm_ruby_version/.*/}";
+                rvm_ruby_major_version="${rvm_ruby_version#*.}";
+                rvm_ruby_minor_version=""
+            ;;
+        esac;
+    fi;
+    if [[ "${rvm_ruby_interpreter}" == ext ]]; then
+        rvm_ruby_home="$rvm_externals_path/$rvm_ruby_string";
+        rvm_ruby_irbrc="$rvm_ruby_home/.irbrc";
+        rvm_ruby_binary="$( readlink $rvm_ruby_home/bin/ruby )";
+    else
+        rvm_ruby_package_name="${rvm_ruby_package_name:-${rvm_ruby_string//-n*}}";
+        rvm_ruby_home="$rvm_rubies_path/$rvm_ruby_string";
+        rvm_ruby_irbrc="$rvm_ruby_home/.irbrc";
+        rvm_ruby_binary="$rvm_ruby_home/bin/ruby";
+    fi;
+    if [[ "maglev" == "$rvm_ruby_interpreter" ]]; then
+        export MAGLEV_HOME="$rvm_ruby_home";
+        export GEMSTONE_GLOBAL_DIR=$MAGLEV_HOME;
+    fi;
+    __rvm_gemset_select;
+    case $? in 
+        1 | 3 | 4)
+            return 1
+        ;;
+    esac;
+    rvm_ruby_selected_flag=1;
+    if [[ -d "${rvm_log_path}/$rvm_ruby_string" ]]; then
+        \mkdir -p "${rvm_log_path}/$rvm_ruby_string";
+    fi;
+    rvm_ruby_interpreter="${rvm_ruby_interpreter:-system}"
+}
+__rvm_set_ruby_version () 
+{ 
+    if [[ -s .ruby-version ]]; then
+        mv .ruby-version .ruby-version.$(date +%m.%d.%Y-%H:%M:%S);
+        rvm_warn ".ruby-version is not empty, moving aside to preserve.";
+    fi;
+    echo "$(__rvm_env_string)" >> .ruby-version
+}
+__rvm_set_rvmrc () 
+{ 
+    typeset flags identifier short_identifier gem_file;
+    true ${rvm_verbose_flag:=0};
+    if [[ "$HOME" != "$PWD" ]]; then
+        if (( rvm_verbose_flag )); then
+            flags="use ";
+        fi;
+        if [[ -s .rvmrc ]]; then
+            mv .rvmrc .rvmrc.$(date +%m.%d.%Y-%H:%M:%S);
+            rvm_warn ".rvmrc is not empty, moving aside to preserve.";
+        fi;
+        identifier=$(__rvm_env_string);
+        short_identifier="${identifier#ruby-}";
+        short_identifier="${short_identifier%%-*}";
+        printf "%b" "#!/usr/bin/env bash
+
+# This is an RVM Project .rvmrc file, used to automatically load the ruby
+# development environment upon cd'ing into the directory
+
+# First we specify our desired <ruby>[@<gemset>], the @gemset name is optional,
+# Only full ruby name is supported here, for short names use:
+#     echo \"rvm use ${short_identifier}\" > .rvmrc
+environment_id=\"$identifier\"
+
+# Uncomment the following lines if you want to verify rvm version per project
+# rvmrc_rvm_version=\"${rvm_version}\" # 1.10.1 seams as a safe start
+# eval \"\$(echo \${rvm_version}.\${rvmrc_rvm_version} | awk -F. '{print \"[[ \"\$1*65536+\$2*256+\$3\" -ge \"\$4*65536+\$5*256+\$6\" ]]\"}' )\" || {
+#   echo \"This .rvmrc file requires at least RVM \${rvmrc_rvm_version}, aborting loading.\"
+#   return 1
+# }
+" >> .rvmrc;
+        if [[ "$identifier" =~ jruby* ]]; then
+            printf "%b" "
+# Uncomment following line if you want options to be set only for given project.
+# PROJECT_JRUBY_OPTS=( --1.9 )
+# The variable PROJECT_JRUBY_OPTS requires the following to be run in shell:
+#    chmod +x \${rvm_path}/hooks/after_use_jruby_opts
+" >> .rvmrc;
+        fi;
+        printf "%b" "
+# First we attempt to load the desired environment directly from the environment
+# file. This is very fast and efficient compared to running through the entire
+# CLI and selector. If you want feedback on which environment was used then
+# insert the word 'use' after --create as this triggers verbose mode.
+if [[ -d \"\${rvm_path:-\$HOME/.rvm}/environments\"
+  && -s \"\${rvm_path:-\$HOME/.rvm}/environments/\$environment_id\" ]]
+then
+  \\. \"\${rvm_path:-\$HOME/.rvm}/environments/\$environment_id\"
+  [[ -s \"\${rvm_path:-\$HOME/.rvm}/hooks/after_use\" ]] &&
+    \\. \"\${rvm_path:-\$HOME/.rvm}/hooks/after_use\" || true
+" >> .rvmrc;
+        if [[ " $flags " =~ " use " ]]; then
+            printf "%b" "  if [[ \$- == *i* ]] # check for interactive shells
+  then echo \"Using: \$(tput setaf 2)\$GEM_HOME\$(tput sgr0)\" # show the user the ruby and gemset they are using in green
+  else echo \"Using: \$GEM_HOME\" # don't use colors in non-interactive shells
+  fi
+" >> .rvmrc;
+        fi;
+        printf "%b" "else
+  # If the environment file has not yet been created, use the RVM CLI to select.
+  rvm --create $flags \"\$environment_id\" || {
+    echo \"Failed to create RVM environment '\${environment_id}'.\"
+    return 1
+  }
+fi
+" >> .rvmrc;
+        for gem_file in *.gems;
+        do
+            case "$gem_file" in 
+                \*.gems)
+                    continue
+                ;;
+            esac;
+            printf "%b" "
+# If you use an RVM gemset file to install a list of gems (*.gems), you can have
+# it be automatically loaded. Uncomment the following and adjust the filename if
+# necessary.
+#
+# filename=\".gems\"
+# if [[ -s \"\$filename\" ]]
+# then
+#   rvm gemset import \"\$filename\" | grep -v already | grep -v listed | grep -v complete | sed '/^$/d'
+# fi
+" >> .rvmrc;
+        done;
+        if [[ -s Gemfile ]]; then
+            printf "%b" "
+# If you use bundler, this might be useful to you:
+# if [[ -s Gemfile ]] && {
+#   ! builtin command -v bundle >/dev/null ||
+#   builtin command -v bundle | grep \$rvm_path/bin/bundle >/dev/null
+# }
+# then
+#   printf \"%b\" \"The rubygem 'bundler' is not installed. Installing it now.\\\\n\"
+#   gem install bundler
+# fi
+# if [[ -s Gemfile ]] && builtin command -v bundle >/dev/null
+# then
+#   bundle install | grep -vE '^Using|Your bundle is complete'
+# fi
+" >> .rvmrc;
+        fi;
+    else
+        rvm_error ".rvmrc cannot be set in your home directory.      \nThe home .rvmrc is for global rvm settings only.";
+    fi
+}
+__rvm_set_versions_conf () 
+{ 
+    typeset gemset identifier;
+    if [[ -s .versions.conf ]]; then
+        mv .versions.conf .versions.conf.$(date +%m.%d.%Y-%H:%M:%S);
+        rvm_warn ".version.conf is not empty, moving aside to preserve.";
+    fi;
+    identifier=$(__rvm_env_string);
+    gemset=${identifier#*@};
+    identifier=${identifier%@*};
+    printf "%b" "ruby=$identifier
+" >> .versions.conf;
+    if [[ -n "$gemset" && "$gemset" != "$identifier" ]]; then
+        printf "%b" "ruby-gemset=$gemset
+" >> .versions.conf;
+    else
+        printf "%b" "#ruby-gemset=my-projectit
+" >> .versions.conf;
+    fi;
+    printf "%b" "#ruby-gem-install=bundler rake
+#ruby-bundle-install=true
+" >> .versions.conf
+}
+__rvm_setup () 
+{ 
+    export rvm_head_flag rvm_ruby_selected_flag rvm_user_install_flag rvm_path_flag rvm_static_flag rvm_default_flag rvm_loaded_flag rvm_llvm_flag rvm_skip_autoreconf_flag rvm_18_flag rvm_19_flag rvm_force_autoconf_flag rvm_autoconf_flags rvm_dump_environment_flag rvm_verbose_flag rvm_debug_flag rvm_trace_flag rvm_pretty_print_flag rvm_create_flag rvm_remove_flag rvm_gemdir_flag rvm_reload_flag rvm_auto_reload_flag rvm_ignore_gemsets_flag rvm_install_on_use_flag;
+    export rvm_gems_cache_path rvm_gems_path rvm_man_path rvm_ruby_gem_path rvm_ruby_log_path rvm_ruby_load_path rvm_gems_cache_path rvm_archives_path rvm_docs_path rvm_environments_path rvm_examples_path rvm_gems_path rvm_gemsets_path rvm_help_path rvm_hooks_path rvm_lib_path rvm_log_path rvm_patches_path rvm_repos_path rvm_rubies_path rvm_scripts_path rvm_src_path rvm_tmp_path rvm_user_path rvm_usr_path rvm_wrappers_path rvm_externals_path;
+    export rvm_ruby_strings rvm_ruby_binary rvm_ruby_gem_home rvm_ruby_home rvm_ruby_interpreter rvm_ruby_irbrc rvm_ruby_major_version rvm_ruby_minor_version rvm_ruby_package_name rvm_ruby_patch_level rvm_ruby_release_version rvm_ruby_repo_url rvm_ruby_repo_branch rvm_ruby_revision rvm_ruby_tag rvm_ruby_sha rvm_ruby_version rvm_ruby_require rvm_ruby_package_file rvm_ruby_name rvm_ruby_name rvm_ruby_args rvm_ruby_user_tag rvm_ruby_patch detected_rvm_ruby_name;
+    export __rvm_env_loaded next_token rvm_error_message rvm_gemset_name rvm_parse_break rvm_token rvm_action rvm_export_args rvm_gemset_separator rvm_expanding_aliases rvm_architectures rvm_patch_names rvm_tar_command rvm_tar_options rvm_ree_options rvm_patch_original_pwd rvm_project_rvmrc rvm_archive_extension rvm_autoinstall_bundler_flag rvm_codesign_identity rvm_expected_gemset_name;
+    if (( __rvm_env_loaded != 1 )); then
+        return 0;
+    fi;
+    if [[ -n "${BASH_VERSION:-}" ]] && ! __function_on_stack cd pushd popd; then
+        trap 'status=$? ; __rvm_teardown_final ; set +x ; return $status' 0 1 2 3 15;
+    fi;
+    if [[ -n "${ZSH_VERSION:-}" ]]; then
+        export rvm_zsh_clobber rvm_zsh_nomatch;
+        if setopt | \grep -s '^noclobber$' > /dev/null 2>&1; then
+            rvm_zsh_clobber=0;
+        else
+            rvm_zsh_clobber=1;
+        fi;
+        setopt clobber;
+        if setopt | \grep -s '^nonomatch$' > /dev/null 2>&1; then
+            rvm_zsh_nomatch=0;
+        else
+            rvm_zsh_nomatch=1;
+        fi;
+        setopt no_nomatch;
+    fi
+}
+__rvm_setup_cd () 
+{ 
+    typeset __cd_prefix __command;
+    if typeset -f smartcd > /dev/null 2> /dev/null; then
+        __cd_prefix="smartcd";
+    else
+        __cd_prefix="builtin";
+    fi;
+    function __rvm_after_cd () 
+    { 
+        typeset rvm_hook;
+        rvm_hook="after_cd";
+        if [[ -n "${rvm_scripts_path:-}" || -n "${rvm_path:-}" ]]; then
+            source "${rvm_scripts_path:-$rvm_path/scripts}/hook";
+        fi
+    };
+    function __rvm_setup_cd_function () 
+    { 
+        typeset __cd_prefix __command;
+        __cd_prefix=$1;
+        __command=$2;
+        eval "
+${__command}(){
+  if ${__cd_prefix} ${__command} \"\$@\"
+  then
+    [[ -n \"\${rvm_current_rvmrc:-""}\" && \"\$*\" == \".\" ]] && rvm_current_rvmrc=\"\" || true
+    __rvm_do_with_env_before
+    __rvm_project_rvmrc
+    __rvm_after_cd
+    __rvm_do_with_env_after
+    return 0
+  else
+    return \$?
+  fi
+}"
+    };
+    if [[ -n "${ZSH_VERSION:-}" ]]; then
+        autoload is-at-least;
+        if is-at-least 4.3.4 > /dev/null 2>&1; then
+            export -a chpwd_functions;
+            chpwd_functions=("${chpwd_functions[@]}" __rvm_do_with_env_before __rvm_project_rvmrc __rvm_after_cd __rvm_do_with_env_after);
+        else
+            for __command in cd popd pushd;
+            do
+                __rvm_setup_cd_function "${__cd_prefix}" "${__command}";
+            done;
+        fi;
+    else
+        for __command in cd popd pushd;
+        do
+            __rvm_setup_cd_function "${__cd_prefix}" "${__command}";
+        done;
+    fi
+}
+__rvm_setup_cd_function () 
+{ 
+    typeset __cd_prefix __command;
+    __cd_prefix=$1;
+    __command=$2;
+    eval "
+${__command}(){
+  if ${__cd_prefix} ${__command} \"\$@\"
+  then
+    [[ -n \"\${rvm_current_rvmrc:-""}\" && \"\$*\" == \".\" ]] && rvm_current_rvmrc=\"\" || true
+    __rvm_do_with_env_before
+    __rvm_project_rvmrc
+    __rvm_after_cd
+    __rvm_do_with_env_after
+    return 0
+  else
+    return \$?
+  fi
+}"
+}
+__rvm_sha256_for () 
+{ 
+    if builtin command -v sha256sum > /dev/null; then
+        echo "$1" | sha256sum | awk '{print $1}';
+    else
+        if builtin command -v sha256 > /dev/null; then
+            echo "$1" | sha256 | awk '{print $1}';
+        else
+            if builtin command -v shasum > /dev/null; then
+                echo "$1" | shasum -a256 | awk '{print $1}';
+            else
+                rvm_error "Neither sha256sum nor shasum found in the PATH";
+                return 1;
+            fi;
+        fi;
+    fi;
+    return 0
+}
+__rvm_sha256_for_contents () 
+{ 
+    if builtin command -v sha256sum > /dev/null; then
+        echo "$1" | cat - "$1" | sha256sum | awk '{print $1}';
+    else
+        if builtin command -v sha256 > /dev/null; then
+            echo "$1" | cat - "$1" | sha256 | awk '{print $1}';
+        else
+            if builtin command -v shasum > /dev/null; then
+                echo "$1" | cat - "$1" | shasum -a256 | awk '{print $1}';
+            else
+                rvm_error "Neither sha256sum nor shasum found in the PATH";
+                return 1;
+            fi;
+        fi;
+    fi;
+    return 0
+}
+__rvm_source_dir () 
+{ 
+    if [[ ${rvm_ruby_selected_flag:-0} -eq 0 ]]; then
+        __rvm_select;
+    fi;
+    if [[ -z "$rvm_ruby_src_path" ]]; then
+        rvm_error "No source directory exists for the default implementation.";
+    else
+        echo "$rvm_ruby_src_path";
+    fi;
+    return 0
+}
+__rvm_strings () 
+{ 
+    typeset strings ruby_strings;
+    ruby_strings=($(echo ${rvm_ruby_args:-$rvm_ruby_string}));
+    for rvm_ruby_string in "${ruby_strings[@]}";
+    do
+        strings="$strings $(__rvm_select ; echo $rvm_ruby_string)";
+    done;
+    echo $strings;
+    return 0
+}
+__rvm_strip () 
+{ 
+    \sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//' -e 's/[[:space:]]\{1,\}/ /g';
+    return $?
+}
+__rvm_teardown () 
+{ 
+    if builtin command -v __rvm_cleanup_tmp > /dev/null 2>&1; then
+        __rvm_cleanup_tmp;
+    fi;
+    export __rvm_env_loaded;
+    : __rvm_env_loaded:${__rvm_env_loaded:=${rvm_tmp_path:+1}}:;
+    : __rvm_env_loaded:${__rvm_env_loaded:=0}:;
+    : __rvm_env_loaded:$(( __rvm_env_loaded-=1 )):;
+    if [[ -z "${rvm_tmp_path:-}" ]] || (( __rvm_env_loaded > 0 )); then
+        return 0;
+    fi;
+    if [[ -n "${BASH_VERSION:-}" ]]; then
+        trap - 0 1 2 3 15;
+    fi;
+    if [[ -n "${ZSH_VERSION:-""}" ]]; then
+        (( rvm_zsh_clobber == 0 )) && setopt noclobber;
+        (( rvm_zsh_nomatch == 0 )) || setopt nomatch;
+        unset rvm_zsh_clobber rvm_zsh_nomatch;
+    fi;
+    if [[ -n "${rvm_stored_umask:-}" ]]; then
+        umask ${rvm_stored_umask};
+    fi;
+    unset rvm_head_flag rvm_ruby_selected_flag rvm_user_install_flag rvm_path_flag rvm_static_flag rvm_default_flag rvm_loaded_flag rvm_llvm_flag rvm_skip_autoreconf_flag rvm_18_flag rvm_19_flag rvm_force_autoconf_flag rvm_autoconf_flags rvm_dump_environment_flag rvm_verbose_flag rvm_debug_flag rvm_trace_flag rvm_pretty_print_flag rvm_create_flag rvm_remove_flag rvm_gemdir_flag rvm_reload_flag rvm_auto_reload_flag rvm_ignore_gemsets_flag rvm_install_on_use_flag;
+    unset rvm_gems_cache_path rvm_gems_path rvm_man_path rvm_ruby_gem_path rvm_ruby_log_path rvm_ruby_load_path rvm_gems_cache_path rvm_archives_path rvm_docs_path rvm_environments_path rvm_examples_path rvm_gems_path rvm_gemsets_path rvm_help_path rvm_hooks_path rvm_lib_path rvm_log_path rvm_patches_path rvm_repos_path rvm_rubies_path rvm_scripts_path rvm_src_path rvm_tmp_path rvm_user_path rvm_usr_path rvm_wrappers_path rvm_externals_path;
+    unset rvm_ruby_strings rvm_ruby_binary rvm_ruby_gem_home rvm_ruby_home rvm_ruby_interpreter rvm_ruby_irbrc rvm_ruby_major_version rvm_ruby_minor_version rvm_ruby_package_name rvm_ruby_patch_level rvm_ruby_release_version rvm_ruby_repo_url rvm_ruby_repo_branch rvm_ruby_revision rvm_ruby_tag rvm_ruby_sha rvm_ruby_version rvm_ruby_require rvm_ruby_package_file rvm_ruby_name rvm_ruby_name rvm_ruby_args rvm_ruby_user_tag rvm_ruby_patch detected_rvm_ruby_name;
+    unset __rvm_env_loaded next_token rvm_error_message rvm_gemset_name rvm_parse_break rvm_token rvm_action rvm_export_args rvm_gemset_separator rvm_expanding_aliases rvm_architectures rvm_patch_names rvm_tar_command rvm_tar_options rvm_ree_options rvm_patch_original_pwd rvm_project_rvmrc rvm_archive_extension rvm_autoinstall_bundler_flag rvm_codesign_identity rvm_expected_gemset_name;
+    if builtin command -v __rvm_cleanup_download > /dev/null 2>&1; then
+        __rvm_cleanup_download;
+    fi;
+    return 0
+}
+__rvm_teardown_final () 
+{ 
+    __rvm_env_loaded=1;
+    unset __rvm_project_rvmrc_lock;
+    __rvm_teardown
+}
+__rvm_trust_rvmrc () 
+{ 
+    __rvm_reset_rvmrc_trust "$1";
+    "$rvm_scripts_path/db" "$rvm_user_path/rvmrcs" "$(__rvm_rvmrc_key "$1")" "1;$(__rvm_md5_for_contents "$1")$(__rvm_sha256_for_contents "$1")" > /dev/null 2>&1;
+    return $?
+}
+__rvm_unset_exports () 
+{ 
+    typeset wrap_name name value;
+    while IFS== read -d "" wrap_name value; do
+        case "$wrap_name" in 
+            rvm_old_*)
+                name=${wrap_name#rvm_old_};
+                if [[ -n "${value:-}" ]]; then
+                    export $name="${value}";
+                else
+                    unset $name;
+                fi;
+                unset $wrap_name
+            ;;
+        esac;
+    done < <(printenv_null)
+}
+__rvm_unset_ruby_variables () 
+{ 
+    unset rvm_env_string rvm_ruby_string rvm_ruby_strings rvm_ruby_binary rvm_ruby_gem_home rvm_ruby_gem_path rvm_ruby_home rvm_ruby_interpreter rvm_ruby_irbrc rvm_ruby_log_path rvm_ruby_major_version rvm_ruby_minor_version rvm_ruby_package_name rvm_ruby_patch_level rvm_ruby_release_version rvm_ruby_repo_url rvm_ruby_repo_branch rvm_ruby_revision rvm_ruby_selected_flag rvm_ruby_tag rvm_ruby_version rvm_ruby_load_path rvm_ruby_require rvm_head_flag rvm_ruby_package_file rvm_ruby_configure rvm_ruby_name rvm_ruby_url rvm_ruby_global_gems_path rvm_ruby_args rvm_ruby_name rvm_llvm_flag;
+    __rvm_load_rvmrc
+}
+__rvm_untrust_rvmrc () 
+{ 
+    __rvm_reset_rvmrc_trust "$1";
+    "${rvm_scripts_path:-"$rvm_path/scripts"}/db" "$rvm_user_path/rvmrcs" "$(__rvm_rvmrc_key "$1")" "0;$(__rvm_md5_for_contents "$1")$(__rvm_sha256_for_contents "$1")" > /dev/null 2>&1
+}
+__rvm_usage () 
+{ 
+    __rvm_pager_or_cat_v "${rvm_path:-$HOME/.rvm}/README"
+}
+__rvm_use () 
+{ 
+    typeset new_path binary full_binary_path rvm_ruby_gem_home;
+    __rvm_select "$@" || return $?;
+    if [[ "system" == ${rvm_ruby_interpreter:="system"} ]]; then
+        __rvm_use_system;
+    else
+        if [[ ! -d "$rvm_ruby_home" ]]; then
+            if [[ ${rvm_install_on_use_flag:-0} -eq 1 ]]; then
+                rvm_warn "$rvm_ruby_string is not installed.";
+                "$rvm_scripts_path/manage" "install" "$rvm_ruby_string";
+            else
+                rvm_error "$rvm_ruby_string is not installed.";
+                rvm_log "To install do: 'rvm install $rvm_ruby_string'";
+                return 1;
+            fi;
+        fi;
+        if [[ ! -d "$rvm_ruby_gem_home" || -n "${rvm_expected_gemset_name}" ]]; then
+            if (( ${rvm_gemset_create_on_use_flag:=0} == 1 || ${rvm_create_flag:=0} == 1 )); then
+                rvm_warn "gemset $rvm_gemset_name is not existing, creating.";
+                "$rvm_scripts_path/gemsets" create "$rvm_gemset_name";
+            else
+                rvm_error "Gemset '${rvm_expected_gemset_name}' does not exist, 'rvm gemset create ${rvm_expected_gemset_name}' first, or append '--create'.";
+                return 2;
+            fi;
+        fi;
+        export GEM_HOME GEM_PATH MY_RUBY_HOME RUBY_VERSION IRBRC;
+        GEM_HOME="$rvm_ruby_gem_home";
+        GEM_PATH="$rvm_ruby_gem_path";
+        MY_RUBY_HOME="$rvm_ruby_home";
+        RUBY_VERSION="$rvm_ruby_string";
+        IRBRC="$rvm_ruby_irbrc";
+        unset BUNDLE_PATH;
+        if [[ "maglev" == "$rvm_ruby_interpreter" ]]; then
+            GEM_PATH="$GEM_PATH:$MAGLEV_HOME/lib/maglev/gems/1.8/";
+        fi;
+        [[ -n "${IRBRC:-}" ]] || unset IRBRC;
+        __rvm_ensure_has_environment_files;
+        if (( ${rvm_verbose_flag:=0} == 1 )); then
+            rvm_log "Using ${GEM_HOME/${rvm_gemset_separator:-'@'}/ with gemset }";
+        fi;
+        if [[ "$GEM_HOME" != "$rvm_ruby_global_gems_path" ]]; then
+            new_path="$GEM_HOME/bin:$rvm_ruby_global_gems_path/bin:$MY_RUBY_HOME/bin:${rvm_bin_path}:$(__rvm_remove_rvm_from_path ;printf "%b" "$PATH")";
+        else
+            new_path="$GEM_HOME/bin:$MY_RUBY_HOME/bin:${rvm_bin_path}:$(__rvm_remove_rvm_from_path ;printf "%b" "$PATH")";
+        fi;
+    fi;
+    [[ -z "${rvm_ruby_string:-}" ]] || export rvm_ruby_string;
+    [[ -z "${rvm_gemset_name:-}" ]] || export rvm_gemset_name;
+    if [[ -n "$new_path" ]]; then
+        export PATH="$new_path";
+        unset new_path;
+        builtin hash -r;
+    fi;
+    if [[ "$rvm_ruby_string" != "system" ]]; then
+        case "${rvm_rvmrc_flag:-0}" in 
+            rvmrc | versions_conf | ruby_version)
+                __rvm_set_${rvm_rvmrc_flag}
+            ;;
+        esac;
+        typeset environment_id;
+        environment_id="$(__rvm_env_string)";
+        if (( ${rvm_default_flag:=0} == 1 )) && [[ "default" != "${rvm_ruby_interpreter:-}" ]] && [[ "system" != "${rvm_ruby_interpreter:-}" ]]; then
+            "$rvm_scripts_path/alias" delete default >&/dev/null;
+            "$rvm_scripts_path/alias" create default "$environment_id" >&/dev/null;
+        fi;
+        rvm_default_flag=0;
+        if [[ -n "${rvm_wrapper_name:-}" ]]; then
+            "$rvm_scripts_path/wrapper" "$environment_id" "$rvm_wrapper_name" > /dev/null 2>&1;
+            rvm_wrapper_name="";
+        fi;
+        if [[ -n "${rvm_ruby_alias:-}" ]]; then
+            rvm_log "Attempting to alias $environment_id to $rvm_ruby_alias";
+            "$rvm_scripts_path/alias" delete "$rvm_ruby_alias" > /dev/null 2>&1;
+            rvm_alias_expanded=1 "$rvm_scripts_path/alias" create "$rvm_ruby_alias" "$environment_id" > /dev/null 2>&1;
+            ruby_alias="";
+            rvm_ruby_alias="";
+        fi;
+        if [[ "maglev" == "${rvm_ruby_interpreter:-""}" ]]; then
+            export MAGLEV_HOME="$rvm_ruby_home";
+            export GEMSTONE_GLOBAL_DIR=$MAGLEV_HOME;
+            if [[ -x "$MAGLEV_HOME/gemstone/bin/gslist" ]]; then
+                "$MAGLEV_HOME/gemstone/bin/gslist" -clv > /dev/null 2>&1;
+                result=$?;
+                if (( result == 1 )); then
+                    "$rvm_ruby_home/bin/maglev" start;
+                fi;
+            fi;
+        fi;
+    else
+        if (( ${rvm_default_flag:=0} == 1 )); then
+            if ! builtin command -v __rvm_reset >> /dev/null 2>&1; then
+                source "$rvm_scripts_path/functions/reset";
+                __rvm_reset;
+            fi;
+        fi;
+    fi;
+    rvm_hook="after_use";
+    source "$rvm_scripts_path/hook";
+    return 0
+}
+__rvm_use_system () 
+{ 
+    unset GEM_HOME GEM_PATH MY_RUBY_HOME RUBY_VERSION IRBRC;
+    new_path="$(__rvm_remove_rvm_from_path ; printf "%b" "$PATH"):${rvm_bin_path}";
+    if [[ -s "$rvm_path/config/system" ]]; then
+        \grep "MY_RUBY_HOME='$rvm_rubies_path" "$rvm_path/config/system" > /dev/null;
+        if (( $? == 0 )); then
+            if [[ -f "$rvm_path/config/system" ]]; then
+                \rm -f "$rvm_path/config/system";
+            fi;
+        else
+            source "$rvm_path/config/system";
+        fi;
+    fi;
+    if (( ${rvm_default_flag:=0} == 1 )); then
+        "$rvm_scripts_path/alias" delete default >&/dev/null;
+        \find "${rvm_bin_path}" -maxdepth 0 -name 'default_*' -delete;
+        \rm -f "$rvm_path/config/default";
+        \rm -f "$rvm_environments_path/default";
+        __rvm_rm_rf "$rvm_wrappers_path/default";
+    fi;
+    if (( ${rvm_user_install_flag:=0} == 0 )); then
+        for binary in ruby gem irb ri rdoc rake erb testrb;
+        do
+            full_binary_path="${rvm_bin_path}/$binary";
+            if [[ -L "$full_binary_path" ]]; then
+                \rm -f "$full_binary_path";
+            fi;
+        done;
+    fi;
+    if (( ${rvm_verbose_flag:=0} == 1 )); then
+        rvm_log "Now using system ruby.";
+    fi;
+    __rvm_remove_rvm_from_path;
+    new_path="$PATH:${rvm_bin_path}";
+    export rvm_ruby_string="system"
+}
+__rvm_using_gemset_globalcache () 
+{ 
+    "$rvm_scripts_path/db" "$rvm_user_path/db" "use_gemset_globalcache" | \grep '^true$' > /dev/null 2>&1;
+    return $?
+}
+__rvm_version () 
+{ 
+    __rvm_meta;
+    typeset IFS release;
+    IFS=':';
+    rvm_meta_authors="${rvm_meta_authors[*]}";
+    rvm_meta_authors="${rvm_meta_authors//:/, }";
+    echo -e "\nrvm ${rvm_meta_version} by ${rvm_meta_authors} [${rvm_meta_website}]\n"
+}
+__rvm_version_compare () 
+{ 
+    typeset v1d v2d dots counter IFS;
+    typeset -a transformer;
+    counter=1;
+    IFS="+";
+    v1d=$( printf -- $1 | \grep -o '\.' | wc -l );
+    v2d=$( printf -- $3 | \grep -o '\.' | wc -l );
+    if [[ $v1d -ge $v2d ]]; then
+        dots=$v1d;
+    else
+        dots=$v2d;
+    fi;
+    while (( dots >= 0 )); do
+        transformer+=("$(( 256 ** dots-- ))*\$$((counter++))");
+    done;
+    eval "$(
+    printf '[[ ';
+    printf $1 | \awk -F. "{ printf ${transformer[*]} }";
+    printf -- " $2 ";
+    printf $3 | \awk -F. "{ printf ${transformer[*]} }";
+    printf ' ]]'
+  )"
+}
+__rvm_warn_on_rubyopt () 
+{ 
+    if [[ -n "${RUBYOPT:-""}" ]]; then
+        rvm_warn "Please note: You have the RUBYOPT environment variable set and this             may interfere with normal rvm operations. We sugges unsetting it.";
+        return 1;
+    else
+        return 0;
+    fi
+}
+cd () 
+{ 
+    if builtin cd "$@"; then
+        [[ -n "${rvm_current_rvmrc:-}" && "$*" == "." ]] && rvm_current_rvmrc="" || true;
+        __rvm_do_with_env_before;
+        __rvm_project_rvmrc;
+        __rvm_after_cd;
+        __rvm_do_with_env_after;
+        return 0;
+    else
+        return $?;
+    fi
+}
+gem () 
+{ 
+    typeset result;
+    ( typeset rvmrc;
+    for rvmrc in /etc/rvmrc "${HOME:-}/.rvmrc";
+    do
+        [[ -s "${rvmrc}" ]] && source "${rvmrc}" || true;
+    done;
+    command gem "$@" ) || result=$?;
+    hash -r;
+    return ${result:-0}
+}
+is_a_function () 
+{ 
+    typeset -f $1 > /dev/null 2>&1 || return $?
+}
+is_parent_of () 
+{ 
+    typeset name pid ppid pname;
+    name=$1;
+    pid=$2;
+    while [[ -n "$pid" && "$pid" != "0" ]]; do
+        read ppid pname < <(ps -p $pid -o ppid= -o comm=);
+        if [[ -n "$ppid" && -n "$pname" ]]; then
+            if [[ "$pname" == "$name" ]]; then
+                echo $pid;
+                return 0;
+            else
+                pid=$ppid;
+            fi;
+        else
+            break;
+        fi;
+    done;
+    return 1
+}
+match () 
+{ 
+    case "$1" in 
+        $2)
+            return 0
+        ;;
+        *)
+            return 1
+        ;;
+    esac
+}
+popd () 
+{ 
+    if builtin popd "$@"; then
+        [[ -n "${rvm_current_rvmrc:-}" && "$*" == "." ]] && rvm_current_rvmrc="" || true;
+        __rvm_do_with_env_before;
+        __rvm_project_rvmrc;
+        __rvm_after_cd;
+        __rvm_do_with_env_after;
+        return 0;
+    else
+        return $?;
+    fi
+}
+printenv_null () 
+{ 
+    if printenv --null > /dev/null 2> /dev/null; then
+        printenv --null;
+    else
+        printenv | sed '/=/ { s/=.*$//; p; }; d;' | while read name; do
+            zero="\0";
+            eval "eval \"printf '%b' '$name=\$$name$zero'\"";
+        done;
+    fi
+}
+pushd () 
+{ 
+    if builtin pushd "$@"; then
+        [[ -n "${rvm_current_rvmrc:-}" && "$*" == "." ]] && rvm_current_rvmrc="" || true;
+        __rvm_do_with_env_before;
+        __rvm_project_rvmrc;
+        __rvm_after_cd;
+        __rvm_do_with_env_after;
+        return 0;
+    else
+        return $?;
+    fi
+}
+rvm () 
+{ 
+    typeset result current_result;
+    export -a rvm_ruby_args > /dev/null 2> /dev/null;
+    if (( ${rvm_ignore_rvmrc:=0} == 0 )); then
+        : rvm_stored_umask:${rvm_stored_umask:=$(umask)};
+        for rvmrc in /etc/rvmrc "$HOME/.rvmrc";
+        do
+            if [[ -f "$rvmrc" ]]; then
+                if \grep '^\s*rvm .*$' "$rvmrc" > /dev/null 2>&1; then
+                    printf "%b" "
+Error:
+        $rvmrc is for rvm settings only.
+        rvm CLI may NOT be called from within $rvmrc.
+        Skipping the loading of $rvmrc";
+                    return 1;
+                else
+                    source "$rvmrc";
+                fi;
+            fi;
+        done;
+    fi;
+    disk_version="$(cat "$rvm_path/VERSION") ($(cat "$rvm_path/RELEASE" 2>/dev/null))";
+    if [[ -s "$rvm_path/VERSION" && "${rvm_version:-}" != "${disk_version:-}" && "reload" != "${1:-}" ]]; then
+        if [[ ${rvm_auto_reload_flag:-0} -gt 0 ]]; then
+            __rvm_project_rvmrc_lock=0;
+            rvm_reload_flag=1;
+            source "${rvm_scripts_path:-${rvm_path}/scripts}/rvm";
+        else
+            printf "%b" "
+A RVM version ${disk_version} is installed yet ${rvm_version} is loaded.
+Please do one of the following:
+  * 'rvm reload'
+  * open a new shell
+  * 'echo rvm_auto_reload_flag=1 >> ~/.rvmrc' # for auto reload with msg.
+  * 'echo rvm_auto_reload_flag=2 >> ~/.rvmrc' # for silent auto reload.
+
+";
+            return 1;
+        fi;
+    fi;
+    __rvm_initialize;
+    __rvm_setup;
+    next_token="$1";
+    [[ $# -eq 0 ]] || shift;
+    __rvm_parse_args "$@";
+    result=$?;
+    rvm_action="${rvm_action:-usage}";
+    [[ $result -gt 0 ]] || case "$rvm_action" in 
+        use)
+            if rvm_is_a_shell_function; then
+                __rvm_use;
+            fi
+        ;;
+        srcdir)
+            __rvm_source_dir
+        ;;
+        strings)
+            __rvm_strings
+        ;;
+        version)
+            __rvm_version
+        ;;
+        ls | list)
+            "$rvm_scripts_path/list" "${rvm_ruby_args[@]}"
+        ;;
+        debug)
+            rvm_is_not_a_shell_function="${rvm_is_not_a_shell_function}" "$rvm_scripts_path/info" '' debug
+        ;;
+        usage)
+            __rvm_usage
+        ;;
+        benchmark)
+            source "$rvm_scripts_path/functions/benchmark";
+            __rvm_benchmark
+        ;;
+        inspect)
+            __rvm_inspect
+        ;;
+        update)
+            printf "%b" "ERROR: rvm update has been removed. See 'rvm get' and rvm 'rubygems' CLI API instead\n"
+        ;;
+        reset)
+            source "$rvm_scripts_path/functions/reset";
+            __rvm_reset
+        ;;
+        reboot)
+            source "$rvm_scripts_path/functions/cleanup";
+            __rvm_reboot
+        ;;
+        implode | seppuku)
+            source "$rvm_scripts_path/functions/implode";
+            __rvm_implode
+        ;;
+        get)
+            next_token="${1:-}";
+            (( $# > 0 )) && shift;
+            [[ "$next_token" == "${rvm_action}" ]] && shift;
+            tmpdir=${TMPDIR:-/tmp};
+            \cp -f "$rvm_scripts_path/get" $tmpdir/$$;
+            if "$SHELL" "$tmpdir/$$" "${rvm_ruby_args[@]}"; then
+                rvm_reload_flag=1;
+            else
+                rvm_error "Could not update RVM, get some help at #rvm IRC channel at freenode servers.";
+            fi;
+            \rm -f $tmpdir/$$
+        ;;
+        help | rtfm | env | current | list | monitor | notes | package | extract | pkg | requirements)
+            if (( $# > 0 )); then
+                next_token="$1";
+                shift;
+            else
+                next_token="";
+            fi;
+            if [[ "$next_token" == "${rvm_action}" ]]; then
+                shift;
+            fi;
+            "$rvm_scripts_path/${rvm_action}" "${rvm_ruby_args[@]}"
+        ;;
+        info)
+            rvm_is_not_a_shell_function="${rvm_is_not_a_shell_function}" "$rvm_scripts_path/${rvm_action}" "${rvm_ruby_args[@]}"
+        ;;
+        cleanup | tools | snapshot | disk-usage | repair | alias | docs | rubygems | migrate | upgrade)
+            __rvm_run_script "$rvm_action" "${rvm_ruby_args[@]}"
+        ;;
+        wrapper)
+            "$rvm_scripts_path/wrapper" "$rvm_ruby_string" "$rvm_wrapper_name" "${rvm_ruby_args[@]}";
+            unset rvm_wrapper_name
+        ;;
+        do)
+            old_rvm_ruby_string=${rvm_ruby_string:-};
+            unset rvm_ruby_string;
+            export rvm_ruby_strings;
+            "$rvm_scripts_path/set" "$rvm_action" "${rvm_ruby_args[@]}";
+            result=$?;
+            [[ -n "$old_rvm_ruby_string" ]] && rvm_ruby_string=$old_rvm_ruby_string;
+            unset old_rvm_ruby_string
+        ;;
+        rvmrc)
+            __rvm_rvmrc_tools "${rvm_ruby_args[@]}"
+        ;;
+        gemset)
+            if [[ ${rvm_use_flag:-0} -eq 1 ]]; then
+                __rvm_gemset_use;
+            else
+                export rvm_ruby_strings;
+                "$rvm_scripts_path/gemsets" "${rvm_ruby_args[@]}";
+                result=$?;
+                rvm_ruby_strings="";
+                if [[ ${rvm_delete_flag:-0} -eq 1 ]]; then
+                    gem_prefix="$(echo "${GEM_HOME:-""}" | \sed 's/'${rvm_gemset_separator:-"@"}'.*$//')";
+                    if [[ "${GEM_HOME:-""}" == "${gem_prefix}${rvm_gemset_separator:-"@"}${rvm_gemset_name}" ]]; then
+                        rvm_ruby_gem_home="$gem_prefix";
+                        GEM_HOME="$rvm_ruby_gem_home";
+                        GEM_PATH="$rvm_ruby_gem_home:$rvm_ruby_gem_home${rvm_gemset_separator:-"@"}global";
+                        export rvm_ruby_gem_home GEM_HOME GEM_PATH;
+                    fi;
+                    unset gem_prefix;
+                fi;
+            fi
+        ;;
+        reload)
+            rvm_reload_flag=1
+        ;;
+        tests | specs)
+            rvm_action="rake";
+            __rvm_do
+        ;;
+        remove)
+            export rvm_path;
+            if [[ -n "${rvm_ruby_strings}" ]]; then
+                "$rvm_scripts_path"/manage "$rvm_action" "${rvm_ruby_strings//*-- }";
+            else
+                "$rvm_scripts_path"/manage "$rvm_action";
+            fi;
+            rvm_ruby_string=default;
+            __rvm_use
+        ;;
+        fetch | uninstall | reinstall)
+            export rvm_path;
+            if [[ -n "${rvm_ruby_strings}" ]]; then
+                "$rvm_scripts_path"/manage "$rvm_action" "${rvm_ruby_strings//*-- }";
+            else
+                "$rvm_scripts_path"/manage "$rvm_action";
+            fi
+        ;;
+        try_install | install)
+            export rvm_path;
+            if [[ -n "${rvm_ruby_strings}" ]]; then
+                typeset save_ruby;
+                selected_ruby="$( __rvm_select && echo $rvm_env_string )";
+                if [[ -z "${selected_ruby}" ]]; then
+                    rvm_error "Could not detect ruby version/name for installation, please be more specific.";
+                    false;
+                else
+                    if (( ${rvm_force_flag:-0} == 0 )) && "$rvm_scripts_path"/list strings | grep "^${selected_ruby}$" > /dev/null; then
+                        rvm_log "Already installed ${selected_ruby}.
+To reinstall use:
+
+    rvm reinstall ${rvm_ruby_strings}
+";
+                    else
+                        "$rvm_scripts_path"/manage install "${rvm_ruby_strings}";
+                    fi;
+                fi;
+            else
+                rvm_error "Can not use or install all rubies.";
+                false;
+            fi
+        ;;
+        mount | automount)
+            "${rvm_scripts_path}/external" "$rvm_action" "${rvm_ruby_args[@]}"
+        ;;
+        export)
+            __rvm_export "$rvm_export_args"
+        ;;
+        unexport)
+            __rvm_unset_exports
+        ;;
+        error)
+            false
+        ;;
+        answer)
+            source "$rvm_scripts_path/functions/fun";
+            __rvm_Answer_to_the_Ultimate_Question_of_Life_the_Universe_and_Everything;
+            result=42
+        ;;
+        question)
+            source "$rvm_scripts_path/functions/fun";
+            __rvm_ultimate_question;
+            result=42
+        ;;
+        *)
+            if [[ -n "${rvm_action:-""}" ]]; then
+                rvm_error "unknown action '$rvm_action'";
+            else
+                __rvm_usage;
+            fi;
+            false
+        ;;
+    esac;
+    current_result=$?;
+    (( result > 0 )) || result=${current_result};
+    [[ $result -gt 0 ]] || case "$rvm_action" in 
+        reinstall | try_install | install)
+            if [[ $(ls -1 $rvm_rubies_path/*/bin/ruby | wc -l) -eq 1 ]] && [[ ! -f "${rvm_environments_path}/default" ]]; then
+                if rvm_is_a_shell_function; then
+                    rvm_default_flag=1 __rvm_use;
+                fi;
+            fi
+        ;;
+    esac;
+    current_result=$?;
+    (( result > 0 )) || result=${current_result};
+    if [[ ${rvm_reload_flag:-0} -eq 1 ]]; then
+        __rvm_project_rvmrc_lock=0;
+        source "$rvm_scripts_path/rvm";
+    fi;
+    typeset __local_rvm_trace_flag;
+    __local_rvm_trace_flag=${rvm_trace_flag:-0};
+    __rvm_teardown;
+    if (( __local_rvm_trace_flag > 0 )); then
+        set +o verbose;
+        set +o xtrace;
+        [[ -n "${ZSH_VERSION:-""}" ]] || set +o errtrace;
+    fi;
+    return ${result:-0}
+}
+rvm_debug () 
+{ 
+    if rvm_pretty_print stdout; then
+        printf "%b" "${rvm_debug_clr:-}$*${rvm_reset_clr:-}\n";
+    else
+        printf "%b" "$*\n";
+    fi
+}
+rvm_error () 
+{ 
+    if rvm_pretty_print stderr; then
+        printf "%b" "${rvm_error_clr:-}$*${rvm_reset_clr:-}\n";
+    else
+        printf "%b" "$*\n";
+    fi 1>&2
+}
+rvm_is_a_shell_function () 
+{ 
+    if (( ${rvm_is_not_a_shell_function:-0} > 0 )) && [[ "${1:-}" != "no_warning" ]]; then
+        if rvm_pretty_print stderr; then
+            printf "%b" "\n${rvm_notify_clr:-}RVM is not a function, selecting rubies with '${rvm_error_clr:-}rvm use ...${rvm_notify_clr:-}' will not work.${rvm_reset_clr:-}\n" 1>&2;
+        else
+            printf "%b" "\nRVM is not a function, selecting rubies with 'rvm use ...' will not work.\n" 1>&2;
+        fi;
+        if is_parent_of gnome-terminal $$ > /dev/null; then
+            rvm_log "Please visit https://rvm.io/integration/gnome-terminal/ for a solution.\n" 1>&2;
+        else
+            rvm_log "You need to change your terminal settings to allow shell login.
+Please visit https://rvm.io/workflow/screen/ for example.\n" 1>&2;
+        fi;
+    fi;
+    return ${rvm_is_not_a_shell_function:-0}
+}
+rvm_log () 
+{ 
+    if rvm_pretty_print stdout; then
+        printf "%b" "${rvm_notify_clr:-}$*${rvm_reset_clr:-}\n";
+    else
+        printf "%b" "$*\n";
+    fi
+}
+rvm_pretty_print () 
+{ 
+    case "${rvm_pretty_print_flag:=auto}" in 
+        0 | no)
+            return 1
+        ;;
+        1 | auto)
+            case "${TERM:-dumb}" in 
+                dumb | unknown)
+                    return 1
+                ;;
+            esac;
+            case "$1" in 
+                stdout)
+                    [[ -t 1 ]] || return 1
+                ;;
+                stderr)
+                    [[ -t 2 ]] || return 1
+                ;;
+                [[:digit:]])
+                    [[ -t $1 ]] || return 1
+                ;;
+                any)
+                    [[ -t 1 || -t 2 ]] || return 1
+                ;;
+                *)
+                    [[ -t 1 && -t 2 ]] || return 1
+                ;;
+            esac;
+            return 0
+        ;;
+        2 | force)
+            return 0
+        ;;
+    esac
+}
+rvm_warn () 
+{ 
+    if rvm_pretty_print stdout; then
+        printf "%b" "${rvm_warn_clr:-}$*${rvm_reset_clr:-}\n";
+    else
+        printf "%b" "$*\n";
+    fi
+}
+using_gcc () 
+{ 
+    env CC="/usr/bin/gcc" ARCHFLAGS="-arch x86_64" ARCHS="x86_64" $*
+}
