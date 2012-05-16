@@ -16,12 +16,15 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 class WelcomeController < ApplicationController
+  attr_accessor :user
   caches_action :robots
 
   def index
     @news = News.latest User.current
     @projects = Project.latest User.current
-    @user = User.new
+    
+    @user = session[:user].nil? ? User.new : session[:user]
+    session[:user] = nil
   end
 
   def robots

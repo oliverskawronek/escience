@@ -275,6 +275,7 @@ class AccountController < ApplicationController
       if block_given?
         yield
       else
+        session[:user] = user
         redirect_to :controller => "welcome", :action => "index"
       end
     end
