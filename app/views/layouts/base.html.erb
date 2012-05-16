@@ -59,43 +59,68 @@
 	<div class="inside">
 		<a href="http://localhost/htwk/"><div id="logo"></div></a>
 		<div class="clear"></div>
-	</div>	
-	<% if display_main_menu?(@project) %>
-	<div id="navigation">
-	    <%= render_main_menu(@project) %>
 	</div>
-	<% end %>
+	
+	<div id="main_navigation">
+		<%if User.current.name != 'Anonym' %>
+			<%= render_menu :top_menu if User.current.logged? || !Setting.login_required? -%>
+		<%end%>
+	    <div class="clear"></div>
+	</div>
+	<div id="navigation">
+		<div class="inside">
+		<%if User.current.name == 'Anonym' %>
+			<%= render_menu :top_menu if User.current.logged? || !Setting.login_required? -%>
+		<% else %>
+	    <%= render_menu :account_menu -%>
+	    <%end%>
+	    <div class="clear"></div>
+			<div id="navigation_group">
+				<div id="private">
+				Gast			</div>
+				<div id="group"></div>
+				<div id="community"></div>
+			</div>	    
 
+	    </div>
+	</div>
 </header>
 
 <%= tag('div', {:id => 'container', :class => ((has_content?(:sidebar_left) || has_content?(:sidebar_right)) ? '' : 'nosidebar')}, true) %>
-	<div class="container_inner container_16">
-	    <aside id="left" class="<%= has_content?(:sidebar_left) ? 'grid_3' : 'grid_2' %>">
+	<div class="container_inner container_9">
+	    <div id="left" class="<%= has_content?(:sidebar_left) ? 'grid_2' : 'grid_1' %>">
 	        <%= yield :sidebar_left %>
 	        <%= call_hook :view_layouts_base_sidebar %>
-	    </aside>
-	    <div id="main" class="<%= has_content?(:sidebar_left) ? 'grid_12' : 'grid_11' %>">
+	        &nbsp;
+	    </div>
+	    <div id="main" class="<%= has_content?(:sidebar_left) ? 'grid_7' : 'grid_6' %>">
 	        <%= render_flash_messages %>
 	        <%= yield %>
 	        <%= call_hook :view_layouts_base_content %>
 	        <div style="clear:both;"></div>
 	    </div>
-	    <aside id="right">
+	    <div id="right" class="grid_2">
 	        <%= yield :sidebar_right %>
 	        <%#= call_hook :view_layouts_base_sidebar %>
-	    </aside>
+	    </div>
+		<div class="clear"></div>
 	</div>
 </div>
-
 <div id="ajax-indicator" style="display:none;"><span><%= l(:label_loading) %></span></div>
 <div id="ajax-modal" style="display:none;"></div>
 
-<div id="footer">
-  <div class="copyright">@ 2012 eScience</div>
-  <div class="kontakt"></div>
-  <div class="Nutzungsbedingungen"></div>
-  <div class="Datenschutz"></div>
-  <div class="impressum"></div>
+<div id="footer">	
+	<div class="inside">
+		<div id="copyright">© eScience – Netzwerk Sachsen 2012</div>
+		<div id="miscellaneous">
+		   <ul>
+		      <li class="withborder"><a href="kontakt.html" title="Kontakt">Kontakt</a></li>
+		      <li class="withborder"><a href="nutzungsbedingungen.html" title="Nutzungsbedingungen">Nutzungsbedingungen</a></li>
+		      <li class="withborder"><a href="datenschutz.html" title="Datenschutz">Datenschutz</a></li>
+		      <li><a href="impressum.html" title="Impressum">Impressum</a></li>
+		   </ul>
+		</div> 
+	</div>
 </div>
 
 </div>

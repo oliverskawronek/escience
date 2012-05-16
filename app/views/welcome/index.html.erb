@@ -13,7 +13,7 @@
 
 <%if User.current.name == 'Anonym' %>
 <% content_for :sidebar_right do %>
-	<div id="login" class="grid_4">
+	<div id="login">
 		<div class="inner">
 			<% form_tag({:controller => 'account',:action=> "login"}) do %>
 				<h2>Anmeldung</h2>
@@ -34,7 +34,7 @@
 		</div>
 	</div>
 	
-	<div id="registration" class="grid_4">
+	<div id="registration">
 		<div class="inner">
 			<h2>Kostenlos Registrieren</h2>
 			<% labelled_form_for(@user, :url => {:controller => 'account', :action => 'register'}) do |f|%>
@@ -73,7 +73,7 @@
 	</div>
 <%end%>
 
-<article>
+<article class="article">
 	<div class="inside">
 		<h1>Das Forschungsnetzwerk Sachsen</h1>
 		<div class="column">
