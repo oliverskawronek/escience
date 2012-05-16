@@ -271,7 +271,12 @@ class AccountController < ApplicationController
       Mailer.deliver_account_activation_request(user)
       account_pending
     else
-      yield if block_given?
+      #yield if block_given?
+      if block_given?
+        yield
+      else
+        redirect_to :controller => "welcome", :action => "index"
+      end
     end
   end
 
