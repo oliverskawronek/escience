@@ -29,4 +29,5 @@
 /Gemfile.lock
 /Gemfile.local
 .DS_Store
-
+nbproject
+*/.svn
