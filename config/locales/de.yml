@@ -265,7 +265,7 @@ de:
   field_is_public: Öffentlich
   field_parent: Unterprojekt von
   field_is_in_roadmap: In der Roadmap anzeigen
-  field_login: Mitgliedsname
+  field_login: E-Mail
   field_mail_notification: Mailbenachrichtigung
   field_admin: Administrator
   field_last_login_on: Letzte Anmeldung
@@ -797,7 +797,7 @@ de:
   label_principal_search: "Nach Benutzer oder Gruppe suchen:"
   label_user_search: "Nach Benutzer suchen:"
 
-  button_login: Anmelden
+  button_login: Login
   button_submit: OK
   button_save: Speichern
   button_check_all: Alles auswählen

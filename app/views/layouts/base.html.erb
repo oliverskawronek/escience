@@ -24,64 +24,80 @@
 </head>
 <body class="<%=h body_css_classes %>">
 <div id="wrapper">
-<div id="wrapper2">
+<!--
 <div id="top-menu">
     <div id="account">
-        <%= render_menu :account_menu -%>
+        <%#= render_menu :account_menu -%>
     </div>
-    <%= content_tag(
+    <%#= content_tag(
            'div',
            "#{l(:label_logged_as)} #{link_to_user(User.current, :format => :username)}".html_safe,
            :id => 'loggedas') if User.current.logged? %>
-    <%= render_menu :top_menu if User.current.logged? || !Setting.login_required? -%>
+    <%#= render_menu :top_menu if User.current.logged? || !Setting.login_required? -%>
 </div>
+-->
 
-<div id="header">
+<header id="header">
+	<div class="bar"></div>
     <% if User.current.logged? || !Setting.login_required? %>
+        <!--
     <div id="quick-search">
-        <% form_tag({:controller => 'search', :action => 'index', :id => @project}, :method => :get ) do %>
-        <%= hidden_field_tag(controller.default_search_scope, 1, :id => nil) if controller.default_search_scope %>
+        <%# form_tag({:controller => 'search', :action => 'index', :id => @project}, :method => :get ) do %>
+        <%#= hidden_field_tag(controller.default_search_scope, 1, :id => nil) if controller.default_search_scope %>
         <label for='q'>
-          <%= link_to l(:label_search), {:controller => 'search', :action => 'index', :id => @project}, :accesskey => accesskey(:search) %>:
+          <%#= link_to l(:label_search), {:controller => 'search', :action => 'index', :id => @project}, :accesskey => accesskey(:search) %>:
         </label>
-        <%= text_field_tag 'q', @question, :size => 20, :class => 'small', :accesskey => accesskey(:quick_search) %>
-        <% end %>
-        <%= render_project_jump_box %>
+
+        <%#= text_field_tag 'q', @question, :size => 20, :class => 'small', :accesskey => accesskey(:quick_search) %>
+        <%# end %>
+        <%#= render_project_jump_box %>
     </div>
+    <h1><%#= page_header_title %></h1>
+        -->
     <% end %>
+	<div id="header_bg_bar"></div>
+	<div class="inside">
+		<a href="http://localhost/htwk/"><div id="logo"></div></a>
+		<div class="clear"></div>
+	</div>	
+	<% if display_main_menu?(@project) %>
+	<div id="navigation">
+	    <%= render_main_menu(@project) %>
+	</div>
+	<% end %>
 
-    <h1><%= page_header_title %></h1>
+</header>
 
-    <% if display_main_menu?(@project) %>
-    <div id="main-menu">
-        <%= render_main_menu(@project) %>
-    </div>
-    <% end %>
-</div>
-
-<%= tag('div', {:id => 'main', :class => (has_content?(:sidebar) ? '' : 'nosidebar')}, true) %>
-    <div id="sidebar">
-        <%= yield :sidebar %>
-        <%= call_hook :view_layouts_base_sidebar %>
-    </div>
-
-    <div id="content">
-        <%= render_flash_messages %>
-        <%= yield %>
-        <%= call_hook :view_layouts_base_content %>
-        <div style="clear:both;"></div>
-    </div>
+<%= tag('div', {:id => 'container', :class => ((has_content?(:sidebar_left) || has_content?(:sidebar_right)) ? '' : 'nosidebar')}, true) %>
+	<div class="container_inner container_16">
+	    <aside id="left" class="<%= has_content?(:sidebar_left) ? 'grid_3' : 'grid_2' %>">
+	        <%= yield :sidebar_left %>
+	        <%= call_hook :view_layouts_base_sidebar %>
+	    </aside>
+	    <div id="main" class="<%= has_content?(:sidebar_left) ? 'grid_12' : 'grid_11' %>">
+	        <%= render_flash_messages %>
+	        <%= yield %>
+	        <%= call_hook :view_layouts_base_content %>
+	        <div style="clear:both;"></div>
+	    </div>
+	    <aside id="right">
+	        <%= yield :sidebar_right %>
+	        <%#= call_hook :view_layouts_base_sidebar %>
+	    </aside>
+	</div>
 </div>
 
 <div id="ajax-indicator" style="display:none;"><span><%= l(:label_loading) %></span></div>
 <div id="ajax-modal" style="display:none;"></div>
 
 <div id="footer">
-  <div class="bgl"><div class="bgr">
-    Powered by <%= link_to Redmine::Info.app_name, Redmine::Info.url %> &copy; 2006-2012 Jean-Philippe Lang
-  </div></div>
+  <div class="copyright">@ 2012 eScience</div>
+  <div class="kontakt"></div>
+  <div class="Nutzungsbedingungen"></div>
+  <div class="Datenschutz"></div>
+  <div class="impressum"></div>
 </div>
-</div>
+
 </div>
 <%= call_hook :view_layouts_base_body_bottom %>
 </body>
