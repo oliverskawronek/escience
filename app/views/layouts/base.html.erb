@@ -10,6 +10,7 @@
 <%= favicon %>
 <%= stylesheet_link_tag 'application', :media => 'all' %>
 <%= stylesheet_link_tag 'rtl', :media => 'all' if l(:direction) == 'rtl' %>
+<%= stylesheet_link_tag 'private', :media => 'all' if User.current.name != 'Anonym'%>
 <%= javascript_heads %>
 <%= heads_for_theme %>
 <!--[if IE 6]>
@@ -56,8 +57,12 @@
         -->
     <% end %>
 	<div id="header_bg_bar"></div>
-	<div class="inside">
-		<a href="http://localhost/htwk/"><div id="logo"></div></a>
+	<div class="inside container_16">
+		<div id="logo" class="grid_3 prefix_12">
+			<a href="http://localhost/htwk/">
+				<img src="images/logo_e-science_network.png" />
+			</a>
+		</div>
 		<div class="clear"></div>
 	</div>
 	
@@ -68,38 +73,41 @@
 	    <div class="clear"></div>
 	</div>
 	<div id="navigation">
-		<div class="inside">
+		<div class="inside container_16">
+			<div class="grid_10 prefix_6">
 		<%if User.current.name == 'Anonym' %>
 			<%= render_menu :top_menu if User.current.logged? || !Setting.login_required? -%>
 		<% else %>
 	    <%= render_menu :account_menu -%>
 	    <%end%>
-	    <div class="clear"></div>
-			<div id="navigation_group">
-				<div id="private">
-				Gast			</div>
-				<div id="group"></div>
-				<div id="community"></div>
-			</div>	    
-
+		    </div>
+		    <div class="clear"></div>
 	    </div>
 	</div>
+	<div class="container_16">
+		<div id="navigation_group" class="<%= has_content?(:sidebar_left) ? 'grid_3' : 'grid_4 prefix_1' %>">
+			<div id="private"></div>
+			<div id="group"></div>
+			<div id="community"></div>
+		</div
+	</div>	    
+	
 </header>
 
 <%= tag('div', {:id => 'container', :class => ((has_content?(:sidebar_left) || has_content?(:sidebar_right)) ? '' : 'nosidebar')}, true) %>
-	<div class="container_inner container_9">
-	    <div id="left" class="<%= has_content?(:sidebar_left) ? 'grid_2' : 'grid_1' %>">
+	<div class="container_inner container_16">
+	    <div id="left" class="<%= has_content?(:sidebar_left) ? 'grid_3' : 'grid_2' %>">
 	        <%= yield :sidebar_left %>
 	        <%= call_hook :view_layouts_base_sidebar %>
 	        &nbsp;
 	    </div>
-	    <div id="main" class="<%= has_content?(:sidebar_left) ? 'grid_7' : 'grid_6' %>">
+	    <div id="main" class="<%= has_content?(:sidebar_left) ? 'grid_10' : 'grid_10' %>">
 	        <%= render_flash_messages %>
 	        <%= yield %>
 	        <%= call_hook :view_layouts_base_content %>
 	        <div style="clear:both;"></div>
 	    </div>
-	    <div id="right" class="grid_2">
+	    <div id="right" class="grid_3">
 	        <%= yield :sidebar_right %>
 	        <%#= call_hook :view_layouts_base_sidebar %>
 	    </div>

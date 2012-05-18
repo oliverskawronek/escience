@@ -40,11 +40,11 @@
 				<%= error_messages_for 'user' %>
 				
 				<div class="box tabular">
+					<%= f.text_field :firstname, :required => true %><br />
+					<%= f.text_field :lastname, :required => true %><br />
 					<%# if @user.auth_source_id.nil? %>
 					  	<%= f.text_field :login, :size => 25, :required => true %><br />
 					<%# end %>
-					<%= f.text_field :firstname, :required => true %><br />
-					<%= f.text_field :lastname, :required => true %><br />
 					<!--
 					<p><%= f.text_field :mail, :required => true %></p>
 					<p><%= f.select :language, lang_options_for_select %></p>
@@ -75,8 +75,8 @@
 <article class="article">
 	<div class="inside">
 		<h1>Das Forschungsnetzwerk Sachsen</h1>
-		<div class="column">
-		<p><br /><img style="float: right;" title="images/home_landkarte.png" src="images/home_landkarte.png" alt="/images/home_landkarte.png" width="367" height="286" />Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+		<div class="column" style="padding-right:50px">
+		<p><br /><img style="float: right;" title="images/grafik.png" src="images/grafik.png" alt="/images/grafik.png" width="280" height="220" />Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
 		</div>
 	</div>
 </article>

@@ -271,8 +271,8 @@ de:
   field_last_login_on: Letzte Anmeldung
   field_language: Sprache
   field_effective_date: Datum
-  field_password: Kennwort
-  field_new_password: Neues Kennwort
+  field_password: Passwort
+  field_new_password: Neues Passwort
   field_password_confirmation: Bestätigung
   field_version: Version
   field_type: Typ
@@ -488,7 +488,7 @@ de:
   label_please_login: Anmelden
   label_register: Registrieren
   label_login_with_open_id_option: oder mit OpenID anmelden
-  label_password_lost: Kennwort vergessen
+  label_password_lost: Passwort vergessen?
   label_home: Das Forschungsnetzwerk Sachsen
   label_my_page: Meine Seite
   label_my_account: Mein Konto
