@@ -81,8 +81,24 @@
 	</div>
 </article>
 
+<%else%>
+	<% content_for :sidebar_left do %>
+		<div id="login">
+		</div>
+	<%end%>
+	<% content_for :sidebar_right do %>
+		<div id="login">
+		</div>
+	<%end%>
+
+	<article class="article">
+		<div class="inside">
+			<h1>Das Forschungsnetzwerk Sachsen</h1>
+		</div>
+	</article>
 <%end%>
 
+<% if (User.current.name != 'Anonym') %>    
 <div class="splitcontentright">
     <% if @projects.any? %>
   <div class="projects box">
@@ -101,6 +117,7 @@
   <% end %>
     <%= call_hook(:view_welcome_index_right, :projects => @projects) %>
 </div>
+<%end%>
 
 <% content_for :header_tags do %>
 <%= stylesheet_link_tag 'scm' %>

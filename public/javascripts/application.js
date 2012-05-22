@@ -217,7 +217,7 @@ function checkFileSize(el, maxSize, message) {
 }
 
 function showTab(name) {
-  var f = $$('div#content .tab-content');
+  var f = $$('div#main .tab-content');
   for(var i=0; i<f.length; i++){
     Element.hide(f[i]);
   }

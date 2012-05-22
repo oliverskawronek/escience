@@ -151,18 +151,18 @@ Redmine::AccessControl.map do |map|
 end
 
 Redmine::MenuManager.map :top_menu do |menu|
-  menu.push :home, :home_path
-  menu.push :my_page, { :controller => 'my', :action => 'page' }, :if => Proc.new { User.current.logged? }
+  menu.push :home, :home_path, :html => {:class => "first"}, :if => Proc.new { !User.current.logged? }
+  menu.push :my, { :controller => 'my', :action => 'page' },:caption => :label_home_logged, :html => {:class => "first"} , :if => Proc.new { User.current.logged? }
   menu.push :projects, { :controller => 'projects', :action => 'index' }, :caption => :label_project_plural
   menu.push :administration, { :controller => 'admin', :action => 'index' }, :if => Proc.new { User.current.admin? }, :last => true
-  menu.push :help, Redmine::Info.help_url, :last => true
 end
 
 Redmine::MenuManager.map :account_menu do |menu|
   menu.push :login, :signin_path, :if => Proc.new { !User.current.logged? }
   menu.push :register, { :controller => 'account', :action => 'register' }, :if => Proc.new { !User.current.logged? && Setting.self_registration? }
-  menu.push :my_account, { :controller => 'my', :action => 'account' }, :if => Proc.new { User.current.logged? }
-  menu.push :logout, :signout_path, :if => Proc.new { User.current.logged? }
+  menu.push :my_account, { :controller => 'my', :action => 'account' }, :caption => Proc.new {"Hallo #{User.current.name}"}, :html => {:class => "first"} , :if => Proc.new { User.current.logged? }
+  menu.push :help, Redmine::Info.help_url
+  menu.push :logout, :signout_path, :html => {:class => "last withnoborder"}, :last => true , :if => Proc.new { User.current.logged? }
 end
 
 Redmine::MenuManager.map :application_menu do |menu|
@@ -189,8 +189,9 @@ Redmine::MenuManager.map :admin_menu do |menu|
 end
 
 Redmine::MenuManager.map :project_menu do |menu|
-  menu.push :overview, { :controller => 'projects', :action => 'show' }
-  menu.push :activity, { :controller => 'activities', :action => 'index' }
+  menu.push :overview, { :controller => 'projects', :action => 'show' }, :html => {:class => "first"}
+  menu.push :my, { :controller => 'my', :action => 'page' }
+  #menu.push :activity, { :controller => 'activities', :action => 'index' }
   menu.push :roadmap, { :controller => 'versions', :action => 'index' }, :param => :project_id,
               :if => Proc.new { |p| p.shared_versions.any? }
   menu.push :issues, { :controller => 'issues', :action => 'index' }, :param => :project_id, :caption => :label_issue_plural
@@ -199,15 +200,15 @@ Redmine::MenuManager.map :project_menu do |menu|
   menu.push :gantt, { :controller => 'gantts', :action => 'show' }, :param => :project_id, :caption => :label_gantt
   menu.push :calendar, { :controller => 'calendars', :action => 'show' }, :param => :project_id, :caption => :label_calendar
   menu.push :news, { :controller => 'news', :action => 'index' }, :param => :project_id, :caption => :label_news_plural
-  menu.push :documents, { :controller => 'documents', :action => 'index' }, :param => :project_id, :caption => :label_document_plural
   menu.push :wiki, { :controller => 'wiki', :action => 'show', :id => nil }, :param => :project_id,
               :if => Proc.new { |p| p.wiki && !p.wiki.new_record? }
+  menu.push :documents, { :controller => 'documents', :action => 'index' }, :param => :project_id, :caption => :label_document_plural
   menu.push :boards, { :controller => 'boards', :action => 'index', :id => nil }, :param => :project_id,
               :if => Proc.new { |p| p.boards.any? }, :caption => :label_board_plural
   menu.push :files, { :controller => 'files', :action => 'index' }, :caption => :label_file_plural, :param => :project_id
   menu.push :repository, { :controller => 'repositories', :action => 'show' },
               :if => Proc.new { |p| p.repository && !p.repository.new_record? }
-  menu.push :settings, { :controller => 'projects', :action => 'settings' }, :last => true
+  #menu.push :settings, { :controller => 'projects', :action => 'settings' }, :last => true
 end
 
 Redmine::Activity.map do |activity|

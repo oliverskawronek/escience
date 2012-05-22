@@ -65,7 +65,7 @@
   <%= call_hook(:view_projects_show_right, :project => @project) %>
 </div>
 
-<% content_for :sidebar do %>
+<% content_for :sidebar_left do %>
     <% if @total_hours.present? %>
     <h3><%= l(:label_spent_time) %></h3>
     <p><span class="icon icon-time"><%= l_hours(@total_hours) %></span></p>

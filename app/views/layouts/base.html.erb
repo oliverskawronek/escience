@@ -25,6 +25,7 @@
 </head>
 <body class="<%=h body_css_classes %>">
 <div id="wrapper">
+<div id="separate_footer">
 <!--
 <div id="top-menu">
     <div id="account">
@@ -58,9 +59,9 @@
     <% end %>
 	<div id="header_bg_bar"></div>
 	<div class="inside container_16">
-		<div id="logo" class="grid_3 prefix_12">
+		<div id="logo" class="grid_3 <%= (User.current.name == 'Anonym')? 'prefix_12' : 'prefix_13' %>">
 			<a href="http://localhost/htwk/">
-				<img src="images/logo_e-science_network.png" />
+				<img src="<%= Redmine::Utils.relative_url_root %>/images/logo_e-science_network.png" />
 			</a>
 		</div>
 		<div class="clear"></div>
@@ -68,16 +69,24 @@
 	
 	<div id="main_navigation">
 		<%if User.current.name != 'Anonym' %>
-			<%= render_menu :top_menu if User.current.logged? || !Setting.login_required? -%>
+		<div class="inside container_16">
+			<div class="grid_13 prefix_3">
+				<%= render_menu :top_menu if User.current.logged? || !Setting.login_required? -%>
+			<% if display_main_menu?(@project) %>
+		        <%= render_main_menu(@project) %>
+		    <% end %>
+		    </div>
+		    <div class="clear"></div>
+		</div>
 		<%end%>
-	    <div class="clear"></div>
 	</div>
 	<div id="navigation">
 		<div class="inside container_16">
-			<div class="grid_10 prefix_6">
 		<%if User.current.name == 'Anonym' %>
+			<div class="grid_10 prefix_6">
 			<%= render_menu :top_menu if User.current.logged? || !Setting.login_required? -%>
 		<% else %>
+			<div class="grid_13 prefix_3">
 	    <%= render_menu :account_menu -%>
 	    <%end%>
 		    </div>
@@ -85,7 +94,7 @@
 	    </div>
 	</div>
 	<div class="container_16">
-		<div id="navigation_group" class="<%= has_content?(:sidebar_left) ? 'grid_3' : 'grid_4 prefix_1' %>">
+		<div id="navigation_group" class="<%= (User.current.name != 'Anonym')? 'grid_3' : 'grid_4 prefix_1' %>">
 			<div id="private"></div>
 			<div id="group"></div>
 			<div id="community"></div>
@@ -96,19 +105,40 @@
 
 <%= tag('div', {:id => 'container', :class => ((has_content?(:sidebar_left) || has_content?(:sidebar_right)) ? '' : 'nosidebar')}, true) %>
 	<div class="container_inner container_16">
-	    <div id="left" class="<%= has_content?(:sidebar_left) ? 'grid_3' : 'grid_2' %>">
+	    <div id="left" class="<%= (User.current.name != 'Anonym') ? 'grid_3' : 'grid_2' %>">
 	        <%= yield :sidebar_left %>
 	        <%= call_hook :view_layouts_base_sidebar %>
 	        &nbsp;
 	    </div>
-	    <div id="main" class="<%= has_content?(:sidebar_left) ? 'grid_10' : 'grid_10' %>">
+	    <div id="main" class="<%= (User.current.name != 'Anonym') ? 'grid_10' : 'grid_10' %>">
 	        <%= render_flash_messages %>
 	        <%= yield %>
 	        <%= call_hook :view_layouts_base_content %>
 	        <div style="clear:both;"></div>
 	    </div>
 	    <div id="right" class="grid_3">
-	        <%= yield :sidebar_right %>
+	    	<% if (User.current.name != 'Anonym') %>
+		    <div id="quick-search">
+		        <% form_tag({:controller => 'search', :action => 'index', :id => @project}, :method => :get ) do %>
+		        <%= hidden_field_tag(controller.default_search_scope, 1, :id => nil) if controller.default_search_scope %>
+		        <%= text_field_tag 'q', @question, :placeholder => "Suchbegriff", :accesskey => accesskey(:quick_search) %>
+		        <%= submit_tag "" %>
+		        <% end %>
+		    </div>
+		    <div id="navigation_right_side">
+		    	<ul>
+		    		<li><%= link_to "Mein Profil", {:controller => 'my', :action => 'account'} %></li>
+		    		<li><%= link_to "Mitglieder", {:controller => 'my', :action => 'account'} %></li>
+		    	</ul>
+		    	<div class="splitter">Seitenspezifisch</div>
+		    	<ul>
+	        <%end%>		    	
+		        <%= yield :sidebar_right %>
+		    <% if (User.current.name != 'Anonym') %>    
+		    	</ul>
+	        </div>
+	        <%end%>		    	
+
 	        <%#= call_hook :view_layouts_base_sidebar %>
 	    </div>
 		<div class="clear"></div>
@@ -117,7 +147,10 @@
 <div id="ajax-indicator" style="display:none;"><span><%= l(:label_loading) %></span></div>
 <div id="ajax-modal" style="display:none;"></div>
 
-<div id="footer">	
+</div>
+</div>
+<div id="footer">
+	<div style="background-color:#fff; height:3px; width:100%"></div>
 	<div class="inside">
 		<div id="copyright">© eScience – Netzwerk Sachsen 2012</div>
 		<div id="miscellaneous">
@@ -129,8 +162,6 @@
 		   </ul>
 		</div> 
 	</div>
-</div>
-
 </div>
 <%= call_hook :view_layouts_base_body_bottom %>
 </body>
