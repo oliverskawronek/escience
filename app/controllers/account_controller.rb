@@ -148,7 +148,7 @@ class AccountController < ApplicationController
     if user.nil?
       invalid_credentials
     elsif user.new_record?
-      onthefly_creation_failed(user, {:login => user.login, :auth_source_id => user.auth_source_id })
+      onthefly_creation_failed(user, {:username => user.mail, :auth_source_id => user.auth_source_id })
     else
       # Valid user
       successful_authentication(user)
