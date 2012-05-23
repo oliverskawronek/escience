@@ -190,7 +190,6 @@ end
 
 Redmine::MenuManager.map :project_menu do |menu|
   menu.push :overview, { :controller => 'projects', :action => 'show' }, :html => {:class => "first"}
-  menu.push :my, { :controller => 'my', :action => 'page' }
   #menu.push :activity, { :controller => 'activities', :action => 'index' }
   menu.push :roadmap, { :controller => 'versions', :action => 'index' }, :param => :project_id,
               :if => Proc.new { |p| p.shared_versions.any? }

@@ -14,12 +14,14 @@
 <div id="profile">
 <fieldset id="information" class="box tabular">
   <legend><%=l(:label_information_plural)%></legend>
+  <%= f.select :salutation, {"Frau", "Herr"}, :required => true %>
+  <%= f.select :salutation, {"Frau" => "Frau", "Herr" => "Herr"}, :required => true %><br />
   <%= f.text_field :firstname, :required => true %><span class="distanceholder"></span>
   <%= f.text_field :lastname, :required => true %><br />
-  <!--
-  <%#= f.text_field :phone, :required => false %><span class="distanceholder"></span>
-  <%#= f.text_field :fax, :required => false %><br />
-  -->
+  <%= f.text_field :phone, :required => false %><span class="distanceholder"></span>
+  <%= f.text_field :fax, :required => false %><br />
+  <%= f.text_field :phone, :required => false %><span class="distanceholder"></span>
+  <%= f.text_field :fax, :required => false %><br />
   <%= f.text_field :mail, :required => true %><br />
   <%= f.select :language, lang_options_for_select %><br />
 

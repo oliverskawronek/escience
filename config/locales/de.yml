@@ -228,8 +228,11 @@ de:
   field_description: Beschreibung
   field_summary: Zusammenfassung
   field_is_required: Erforderlich
+  field_salutation: Anrede
   field_firstname: Vorname
   field_lastname: Nachname
+  field_phone: Telefon
+  field_fax: Telefax  
   field_mail: E-Mail
   field_filename: Datei
   field_filesize: Größe
