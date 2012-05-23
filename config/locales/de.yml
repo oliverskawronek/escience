@@ -224,16 +224,26 @@ de:
   gui_validation_error: 1 Fehler
   gui_validation_error_plural: "%{count} Fehler"
 
+  field_title_option_prof: Prof.
+  field_title_option_dr: Dr.
+  field_title_option_dipl: Dipl.
+  field_title_option_ma: M.A.
+  field_title_option_ba: B.A.
+
   field_name: Name
   field_description: Beschreibung
   field_summary: Zusammenfassung
   field_is_required: Erforderlich
   field_salutation: Anrede
+  field_title: Titel
   field_firstname: Vorname
   field_lastname: Nachname
   field_phone: Telefon
   field_fax: Telefax  
   field_mail: E-Mail
+  field_street: Straße  
+  field_city: Stadt  
+  field_zipcode: Postleitzahl  
   field_filename: Datei
   field_filesize: Größe
   field_downloads: Downloads

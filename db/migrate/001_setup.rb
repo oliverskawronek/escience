@@ -203,11 +203,12 @@ class Setup < ActiveRecord::Migration
       t.column "login", :string, :limit => 30, :default => "", :null => false
       t.column "hashed_password", :string, :limit => 40, :default => "", :null => false
       t.column "salutation", :string, :limit => 30, :default => "", :null => false
-      t.column "titel", :string, :limit => 30, :default => "", :null => false
+      t.column "title", :string, :limit => 30, :default => "", :null => false
       t.column "firstname", :string, :limit => 30, :default => "", :null => false
       t.column "lastname", :string, :limit => 30, :default => "", :null => false
       t.column "department", :string, :limit => 30, :default => "", :null => false
       t.column "street", :string, :limit => 30, :default => "", :null => false
+      t.column "city", :string, :limit => 30, :default => "", :null => false
       t.column "zipcode", :integer
       t.column "phone", :string, :limit => 30, :default => "", :null => false
       t.column "fax", :string, :limit => 30, :default => "", :null => false
