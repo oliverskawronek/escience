@@ -241,6 +241,7 @@ de:
   field_phone: Telefon
   field_fax: Telefax  
   field_mail: E-Mail
+  field_department: Institution
   field_street: Straße  
   field_city: Stadt  
   field_zipcode: Postleitzahl  
@@ -268,7 +269,7 @@ de:
   field_tracker: Tracker
   field_subject: Thema
   field_due_date: Abgabedatum
-  field_assigned_to: Zugewiesen an
+  field_assigned_to: Senden an
   field_priority: Priorität
   field_fixed_version: Zielversion
   field_user: Benutzer
@@ -492,7 +493,7 @@ de:
   label_issue_category_plural: Ticket-Kategorien
   label_issue_category_new: Neue Kategorie
   label_custom_field: Benutzerdefiniertes Feld
-  label_custom_field_plural: Benutzerdefinierte Felder
+  label_custom_field_plural: Benutzerdef. Felder
   label_custom_field_new: Neues Feld
   label_enumerations: Aufzählungen
   label_enumeration_new: Neuer Wert
@@ -508,6 +509,8 @@ de:
   label_my_account: Mein Konto
   label_my_projects: Meine Projekte
   label_my_page_block: Angezeigte Elemente
+  label_my_members: Mitglieder
+  label_privatearea: Privater Bereich
   label_administration: Administration
   label_login: Anmelden
   label_logout: Abmelden
@@ -551,12 +554,12 @@ de:
   label_file_added: Datei hinzugefügt
   label_report: Bericht
   label_report_plural: Berichte
-  label_news: News
-  label_news_new: News hinzufügen
-  label_news_plural: News
-  label_news_latest: Letzte News
-  label_news_view_all: Alle News anzeigen
-  label_news_added: News hinzugefügt
+  label_news: Neuigkeiten
+  label_news_new: Neuigkeit hinzufügen
+  label_news_plural: Neuigkeiten
+  label_news_latest: Letzte Neuigkeiten
+  label_news_view_all: Alle Neuigkeiten anzeigen
+  label_news_added: Neuigkeit hinzugefügt
   label_settings: Konfiguration
   label_overview: Übersicht
   label_version: Version

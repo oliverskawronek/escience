@@ -10,7 +10,7 @@
 		margin-left: 27px;
 		text-align:right;
 		vertical-align:bottom;
-		background:#7DB414 url(../images/privat_m_gruen.png) center bottom no-repeat;
+		background:#7db515 url(../images/privat_m_gruen.png) center bottom no-repeat;
 		-moz-border-radius:10px;
 		-webkit-border-radius:10px;
 		border-radius:10px;
@@ -66,7 +66,7 @@
 	
 	#quick-search input[type=text] {
 		width:120px;
-		height:13px;
+		height:14px;
 		padding: 2px;
 		border:0px solid #C4C4C4;
 		-moz-border-radius:5px;
@@ -87,7 +87,7 @@
 		float: right;
 	}
 	
-	#navigation_right_side {
+	.sidebar {
 		background-color:#F4F4F4;
 		-moz-border-radius-bottomright:10px;
 		-webkit-border-bottom-right-radius:10px;
@@ -99,42 +99,70 @@
 		padding-bottom: 10px;
 	}
 	
-	#navigation_right_side ul {
+	#sidebar_left {
+		-moz-border-radius-topleft:10px;
+		-webkit-border-top-left-radius:10px;
+		border-top-left-radius:10px;
+		-moz-border-radius-topright:10px;
+		-webkit-border-top-right-radius:10px;
+		border-top-right-radius:10px;
+	}
+	
+	.sidebar ul {
 		padding: 5px 10px 0px 10px;
 		margin:0px;
 		list-style-position:inside;
 	}
 	
-	#navigation_right_side li {
+	#admin-menu ul ul {
+		padding: 0;
+	}
+	
+	.sidebar li {
 		padding: 3px 5px;
 		list-style-type:disc;
 	}
 	
-	#navigation_right_side li.active,#navigation_right_side li:hover {
+	.sidebar li.active, .sidebar li:hover {
 		background-color:#DEDEDE;
 		-moz-border-radius:10px;
 		-webkit-border-radius:10px;
+		border: 0 solid;
 		border-radius:10px;
 		color:#B61634;
 	}
 	
-	#navigation_right_side a {
+	.sidebar a {
 		text-decoration:none;
 		color:#7D7D7D;
-		display: block;
+		display: inline-block;
 	}
 	
-	#navigation_right_side a:hover {
+	.sidebar a:hover {
 		color: #B61634;
 	}
 
-	#navigation_right_side .splitter {
+	#sidebar_right .splitter, .sidebar .headline {
 		background-color:#7DB414;
 		font-size: 15px;
 		font-weight: bold;
 		color: #F4F4F4;
+		height: 18px;
 		padding: 4px 10px;
+	}
+	
+	#sidebar_right .splitter {
 		margin-top: 8px;
+	}
+	
+	.sidebar .headline {
+		-moz-border-radius-topleft:10px;
+		-webkit-border-top-left-radius:10px;
+		border-top-left-radius:10px;
+		-moz-border-radius-topright:10px;
+		-webkit-border-top-right-radius:10px;
+		border-top-right-radius:10px;
+
 	}
 	
 	
@@ -251,19 +279,22 @@
 	}
 		
 	#header_bg_bar {
-		width:60.1%;
+		width:70.1%;
 		height:25px;
-		left:40%;
+		left:30%;
 		position:absolute;
 		background-color:#7DB414;
 		top:140px;
 	}
 	
 	#main_navigation {
-		margin-top: -25px;
 		margin-left: auto;
 		margin-right: auto;
 		width: 960px;
+	}
+	
+	#main_navigation .account_menu {
+		margin-top: -25px;		
 	}
 	
 	#main_navigation ul {
@@ -379,7 +410,16 @@
 	fieldset legend {
 		font-size:13pt;
 	}
+	
+	label {
+		padding-right: 5px;
+	}
 
+	fieldset label {
+		width: 48%;
+		display: inline-block
+	}
+	
 /* profile layout */	
 	.block-receiver .mypage-box{
 		border-radius:10px;

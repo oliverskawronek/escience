@@ -153,8 +153,8 @@ end
 Redmine::MenuManager.map :top_menu do |menu|
   menu.push :home, :home_path, :html => {:class => "first"}, :if => Proc.new { !User.current.logged? }
   menu.push :my, { :controller => 'my', :action => 'page' },:caption => :label_home_logged, :html => {:class => "first"} , :if => Proc.new { User.current.logged? }
-  menu.push :projects, { :controller => 'projects', :action => 'index' }, :caption => :label_project_plural
-  menu.push :administration, { :controller => 'admin', :action => 'index' }, :if => Proc.new { User.current.admin? }, :last => true
+  #menu.push :projects, { :controller => 'projects', :action => 'index' }, :caption => :label_project_plural
+  #menu.push :administration, { :controller => 'admin', :action => 'index' }, :if => Proc.new { User.current.admin? }, :last => true
 end
 
 Redmine::MenuManager.map :account_menu do |menu|
@@ -196,7 +196,7 @@ Redmine::MenuManager.map :project_menu do |menu|
   menu.push :issues, { :controller => 'issues', :action => 'index' }, :param => :project_id, :caption => :label_issue_plural
   menu.push :new_issue, { :controller => 'issues', :action => 'new' }, :param => :project_id, :caption => :label_issue_new,
               :html => { :accesskey => Redmine::AccessKeys.key_for(:new_issue) }
-  menu.push :gantt, { :controller => 'gantts', :action => 'show' }, :param => :project_id, :caption => :label_gantt
+  #menu.push :gantt, { :controller => 'gantts', :action => 'show' }, :param => :project_id, :caption => :label_gantt
   menu.push :calendar, { :controller => 'calendars', :action => 'show' }, :param => :project_id, :caption => :label_calendar
   menu.push :news, { :controller => 'news', :action => 'index' }, :param => :project_id, :caption => :label_news_plural
   menu.push :wiki, { :controller => 'wiki', :action => 'show', :id => nil }, :param => :project_id,
@@ -207,7 +207,7 @@ Redmine::MenuManager.map :project_menu do |menu|
   menu.push :files, { :controller => 'files', :action => 'index' }, :caption => :label_file_plural, :param => :project_id
   menu.push :repository, { :controller => 'repositories', :action => 'show' },
               :if => Proc.new { |p| p.repository && !p.repository.new_record? }
-  #menu.push :settings, { :controller => 'projects', :action => 'settings' }, :last => true
+  menu.push :settings, { :controller => 'projects', :action => 'settings' }, :last => true
 end
 
 Redmine::Activity.map do |activity|

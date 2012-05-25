@@ -5,9 +5,17 @@
 <div class="splitcontentleft">
 <fieldset class="box tabular">
   <legend><%=l(:label_information_plural)%></legend>
+  <p><%= f.select :salutation, {"Frau" => "Frau", "Herr" => "Herr"}, :required => true %><span class="distanceholder"></span>
+  <%= f.select :title, {"" => "", "Prof." => "Prof.", "Dr." => "Dr.", "Dipl." => "Dipl.", "M.A." => "M.A.", "B.A." => "B.A."}.sort{|x,y| x.last <=> y.last }, :required => true %></p>
   <p><%= f.text_field :mail, :required => true, :onblur => "$('user_login').value = $('user_mail').value;" %></p>
   <p><%= f.hidden_field :login, :required => true, :size => 25, :label => "Login"  %></p>
   <p><%= f.text_field :firstname, :required => true %><span class="distanceholder"></span><%= f.text_field :lastname, :required => true %></p>
+  <p><%= f.text_field :phone, :required => false %><span class="distanceholder"></span>
+  <%= f.text_field :fax, :required => false %></p>
+  <p style="padding-top:5px;"><%= f.text_field :department, :required => false %></p>
+  <p><%= f.text_field :street, :required => false, :style => "width:450px" %></p>
+  <p><%= f.text_field :city, :required => false %><span class="distanceholder"></span>
+  <%= f.text_field :zipcode, :required => false %></p>
   <p><%= f.select :language, lang_options_for_select %></p>
   <% if Setting.openid? %>
   <p><%= f.text_field :identity_url  %></p>

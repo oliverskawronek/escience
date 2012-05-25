@@ -1,6 +1,8 @@
-<div class="contextual">
-<%= link_to(l(:button_edit), edit_user_path(@user), :class => 'icon icon-edit') if User.current.admin? %>
-</div>
+<% content_for :sidebar_right do %>
+	<% if User.current.admin? %>
+	<li><%= link_to(l(:button_edit), edit_user_path(@user), :class => 'icon icon-edit') %></li>
+	<%end%>
+<%end%>
 
 <h2><%= avatar @user, :size => "50" %> <%=h @user.name %></h2>
 

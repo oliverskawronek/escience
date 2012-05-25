@@ -9,7 +9,11 @@
 		margin-bottom:10px;
 		text-align:left;
 	}
-			
+
+	#profile .membership label {
+		width: 100px;
+	}
+	
 	#profile .checkbox_container {
 		margin-top:0;
 		margin-bottom:0;
@@ -29,7 +33,7 @@
 	}
 	
 	#profile input[type=text] {
-		width:170px;
+		width:167px;
 	}
 	
 	#profile p {

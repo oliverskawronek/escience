@@ -1,8 +1,8 @@
-<div class="contextual">
+<% content_for :sidebar_right do %>
   <% if User.current.allowed_to?(:add_subprojects, @project) %>
-    <%= link_to l(:label_subproject_new), {:controller => 'projects', :action => 'new', :parent_id => @project}, :class => 'icon icon-add' %>
+    <li><%= link_to l(:label_subproject_new), {:controller => 'projects', :action => 'new', :parent_id => @project}, :class => 'icon icon-add' %></li>
   <% end %>
-</div>
+<%end%>
 
 <h2><%=l(:label_overview)%></h2>
 

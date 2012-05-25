@@ -1,5 +1,7 @@
-<% content_for :sidebar_left do %>
+<% content_for :sidebar_right do %>
+	<li>
 	<%= link_to(l(:button_change_password), {:action => 'password'}, :class => 'icon icon-passwd') if @user.change_password_allowed? %>
+	</li>
 	<%= call_hook(:view_my_account_contextual, :user => @user)%>
 	<%#= render :partial => 'sidebar' %>
 <% end %>
@@ -21,6 +23,7 @@
   <%= f.text_field :lastname, :required => true %><br />
   <%= f.text_field :phone, :required => false %><span class="distanceholder"></span>
   <%= f.text_field :fax, :required => false %><br />
+  <%= f.text_field :department, :required => false, :style => "width:450px" %><br />
   <%= f.text_field :street, :required => false, :style => "width:450px" %><br />
   <%= f.text_field :city, :required => false %><span class="distanceholder"></span>
   <%= f.text_field :zipcode, :required => false %><br />

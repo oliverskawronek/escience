@@ -1,10 +1,10 @@
-<div class="contextual">
+<% content_for :sidebar_right do %>
 <% if !@query.new_record? && @query.editable_by?(User.current) %>
-  <%= link_to l(:button_edit), edit_query_path(@query), :class => 'icon icon-edit' %>
-  <%= link_to l(:button_delete), query_path(@query), :confirm => l(:text_are_you_sure),
-              :method => :delete, :class => 'icon icon-del' %>
+  	<li><%= link_to l(:button_edit), edit_query_path(@query), :class => 'icon icon-edit' %></li>
+  	<li><%= link_to l(:button_delete), query_path(@query), :confirm => l(:text_are_you_sure),
+              :method => :delete, :class => 'icon icon-del' %></li>
 <% end %>
-</div>
+<%end%>
 
 <h2><%= @query.new_record? ? l(:label_issue_plural) : h(@query.name) %></h2>
 <% html_title(@query.new_record? ? l(:label_issue_plural) : @query.name) %>

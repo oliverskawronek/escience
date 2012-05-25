@@ -88,6 +88,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(:language => Setting.default_language, :mail_notification => Setting.default_notification_option)
+    puts "-------------- #{params[:user]}"
     @user.safe_attributes = params[:user]
     @user.admin = params[:user][:admin] || false
     @user.login = params[:user][:login]
