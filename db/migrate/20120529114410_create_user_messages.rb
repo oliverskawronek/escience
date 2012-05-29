@@ -6,7 +6,7 @@ class CreateUserMessages < ActiveRecord::Migration
       t.string :body
       t.string :receiver
       t.string :state
-
+      t.references :user
       t.timestamps
     end
   end

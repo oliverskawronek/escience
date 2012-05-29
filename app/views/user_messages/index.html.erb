@@ -17,7 +17,7 @@
     <td><%=h user_message.body %></td>
     <td><%=h user_message.receiver %></td>
     <td><%=h user_message.state %></td>
-    <td><%=h user_message.user.login %></td>
+    <td><%=h user_message.user.mail %></td>
     <td><%= link_to 'Show', user_message %></td>
     <td><%= link_to 'Edit', edit_user_message_path(user_message) %></td>
     <td><%= link_to 'Destroy', user_message, :confirm => 'Are you sure?', :method => :delete %></td>

@@ -84,6 +84,8 @@ class User < Principal
   before_save   :update_hashed_password
   before_destroy :remove_references_before_destroy
 
+  has_many :user_messages
+
   named_scope :in_group, lambda {|group|
     group_id = group.is_a?(Group) ? group.id : group.to_i
     { :conditions => ["#{User.table_name}.id IN (SELECT gu.user_id FROM #{table_name_prefix}groups_users#{table_name_suffix} gu WHERE gu.group_id = ?)", group_id] }

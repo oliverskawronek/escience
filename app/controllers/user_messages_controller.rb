@@ -1,4 +1,8 @@
 class UserMessagesController < ApplicationController
+
+  before_filter :require_login
+  
+
   # GET /user_messages
   # GET /user_messages.xml
   def index
@@ -42,7 +46,7 @@ class UserMessagesController < ApplicationController
   def create
     @user_message = UserMessage.new(params[:user_message])
     @user_message.user = User.current
-    @user_message.author = User.current.login
+    @user_message.author = User.current.mail
     
     respond_to do |format|
       if @user_message.save
