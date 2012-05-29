@@ -1,0 +1,28 @@
+<p>
+  <b>Author:</b>
+  <%=h @user_message.author %>
+</p>
+
+<p>
+  <b>Subject:</b>
+  <%=h @user_message.subject %>
+</p>
+
+<p>
+  <b>body:</b>
+  <%=h @user_message.body %>
+</p>
+
+<p>
+  <b>receiver:</b>
+  <%=h @user_message.receiver %>
+</p>
+
+<p>
+  <b>state:</b>
+  <%=h @user_message.state %>
+</p>
+
+
+<%= link_to 'Edit', edit_user_message_path(@user_message) %> |
+<%= link_to 'Back', user_messages_path %>
