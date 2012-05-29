@@ -106,13 +106,15 @@
 	    	<div id="sidebar_left" class="sidebar">
 		    	<div class="headline"><%= "Kommunikation" %></div>
 		        <%= render_menu :private_menu %>
-				<% if display_main_menu?(@project) %>
-		    	<div class="splitter"><%= "Projektspezifisch" %></div>
-			        <%= render_main_menu(@project) %>
-			    <% elsif User.current.admin? %>
-					<div class="splitter"><%= l:label_administration %></div>
-					<%= render_menu :admin_menu %>
-			    <% end %>
+			<% if display_main_menu?(@project) %>
+                            <div class="splitter"><%= "Projektspezifisch" %></div>
+			    <%= render_main_menu(@project) %>
+			<% elsif User.current.admin? %>
+                            <div class="splitter">
+                            <%= l :label_administration %>
+                            </div>
+                            <%= render_menu :admin_menu %>
+			<% end %>
 			    	    
 		        <%= yield :sidebar_left %>
 		        <%= call_hook :view_layouts_base_sidebar %>
@@ -168,7 +170,8 @@
 
 </div>
 </div>
-<div id="footer">
+</div>
+  <div id="footer">
 	<div style="background-color:#fff; height:3px; width:100%"></div>
 	<div class="inside">
 		<div id="copyright">© eScience – Netzwerk Sachsen 2012</div>
