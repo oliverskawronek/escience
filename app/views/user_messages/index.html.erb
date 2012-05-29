@@ -7,6 +7,7 @@
     <th>body</th>
     <th>receiver</th>
     <th>state</th>
+    <th>user</th>
   </tr>
 
 <% @user_messages.each do |user_message| %>
@@ -16,6 +17,7 @@
     <td><%=h user_message.body %></td>
     <td><%=h user_message.receiver %></td>
     <td><%=h user_message.state %></td>
+    <td><%=h user_message.user.login %></td>
     <td><%= link_to 'Show', user_message %></td>
     <td><%= link_to 'Edit', edit_user_message_path(user_message) %></td>
     <td><%= link_to 'Destroy', user_message, :confirm => 'Are you sure?', :method => :delete %></td>

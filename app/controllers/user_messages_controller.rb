@@ -41,7 +41,9 @@ class UserMessagesController < ApplicationController
   # POST /user_messages.xml
   def create
     @user_message = UserMessage.new(params[:user_message])
-
+    @user_message.user = User.current
+    @user_message.author = User.current.login
+    
     respond_to do |format|
       if @user_message.save
         format.html { redirect_to(@user_message, :notice => 'UserMessage was successfully created.') }
