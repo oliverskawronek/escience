@@ -1,5 +1,6 @@
 <%= render :partial => 'action_menu' %>
-
+<% @issue.write_attribute(:status_id, 2)
+ %>
 <h2><%= issue_heading(@issue) %></h2>
 
 <div class="<%= @issue.css_classes %> details">

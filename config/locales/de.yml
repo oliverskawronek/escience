@@ -451,6 +451,9 @@ de:
   project_module_calendar: Kalender
   project_module_gantt: Gantt
 
+  label_hello: Hallo
+  label_mymessage: Nachricht
+  label_mymessage_plural: Nachrichten
   label_user: Benutzer
   label_user_plural: Benutzer
   label_user_new: Neuer Benutzer

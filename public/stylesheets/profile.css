@@ -4,14 +4,24 @@
 	}
 	
 	#profile label {
-		width:70px;
+		width:75px;
 		display:inline-block;
 		margin-bottom:10px;
 		text-align:left;
+		padding-right: 0px;
 	}
-
+	
+	@-moz-document url-prefix(){ 
+		#profile label {
+			width:74px;
+		}
+	}
+		
 	#profile .membership label {
-		width: 100px;
+		width: 500px;
+		display: block;
+		margin: 0px;
+		
 	}
 	
 	#profile .checkbox_container {

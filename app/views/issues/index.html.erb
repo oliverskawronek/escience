@@ -9,6 +9,11 @@
 <h2><%= @query.new_record? ? l(:label_issue_plural) : h(@query.name) %></h2>
 <% html_title(@query.new_record? ? l(:label_issue_plural) : @query.name) %>
 
+
+
+
+<!-- DIES IST DER ORIGINAL QUELLCODE
+
 <% form_tag({ :controller => 'issues', :action => 'index', :project_id => @project },
             :method => :get, :id => 'query_form') do %>
     <%= hidden_field_tag 'set_filter', '1' %>
@@ -56,7 +61,32 @@
 <% if @issues.empty? %>
 <p class="nodata"><%= l(:label_no_data) %></p>
 <% else %>
+
 <%= render :partial => 'issues/list', :locals => {:issues => @issues, :query => @query} %>
+
+AB HIER BEGINN DER ERSATZ   -->
+
+
+
+<% assigned_issues = Issue.visible.open.find(:all,
+                                :conditions => {:assigned_to_id => ([User.current.id] + User.current.group_ids)},
+                                :limit => 10,
+                                :include => [ :status, :project, :tracker, :priority ],
+                                :order => "#{IssuePriority.table_name}.position DESC, #{Issue.table_name}.updated_on DESC") %>
+
+<%= render :partial => 'issues/list_simple', :locals => { :issues => assigned_issues } %>
+<% if assigned_issues.length > 0 %>
+
+<p class="small"><%= link_to l(:label_issue_view_all), :controller => 'issues',
+                                                       :action => 'index',
+                                                       :set_filter => 1,
+                                                       :assigned_to_id => 'me',
+                                                       :sort => 'priority:desc,updated_on:desc' %></p>
+
+<% end %>
+
+
+
 <p class="pagination"><%= pagination_links_full @issue_pages, @issue_count %></p>
 <% end %>
 

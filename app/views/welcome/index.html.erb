@@ -1,6 +1,6 @@
 <div class="splitcontentleft">
   <%= textilizable Setting.welcome_text %>
-  <% if @news.any? %>
+  <% if @news.any? && User.current.logged? %>
   <div class="news box">
   <h3><%=l(:label_news_latest)%></h3>
     <%= render :partial => 'news/news', :collection => @news %>
@@ -10,7 +10,7 @@
   <%= call_hook(:view_welcome_index_left, :projects => @projects) %>
 </div>
 
-<%if User.current.name == 'Anonym' || User.current.name == 'Anonymous' %>
+<%unless User.current.logged? %>
 <% content_for :sidebar_right do %>
 	<div id="login">
 		<div class="inner">
@@ -98,7 +98,7 @@
 	</article>
 <%end%>
 
-<% if (User.current.name != 'Anonym') %>    
+<% if User.current.logged? %>    
 <div class="splitcontentright">
     <% if @projects.any? %>
   <div class="projects box">
