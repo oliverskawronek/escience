@@ -6,16 +6,14 @@ class UserMessagesController < ApplicationController
   # GET /user_messages
   # GET /user_messages.xml
   def index
-    msgs = UserMessage.find_by_receiver_id(User.current.id)
-    p UserMessage.all
-    p msgs
+    msgs = UserMessage.find_by_sql("SELECT * FROM user_messages WHERE receiver_id=#{User.current.id}")
     if msgs.class != Array && !msgs.nil?
       @user_messages ||= []
       @user_messages << msgs
     else
       @user_messages = msgs
     end
-    
+
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @user_messages }
@@ -26,7 +24,9 @@ class UserMessagesController < ApplicationController
   # GET /user_messages/1.xml
   def show
     @user_message = UserMessage.find(params[:id])
-
+    @user_message.state = 0
+    @user_message.save!
+    
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @user_message }
@@ -79,9 +79,11 @@ class UserMessagesController < ApplicationController
     end
     @user_message = UserMessage.new()
     @user_message.body = params[:user_message]["body"]
+    @user_message.subject = params[:user_message]["subject"]
     @user_message.user = User.current
     @user_message.author = "#{User.current.lastname}, #{User.current.firstname}"
     @user_message.receiver_id = recv.id
+    @user_message.state = 1
 
     respond_to do |format|
       if @user_message.save

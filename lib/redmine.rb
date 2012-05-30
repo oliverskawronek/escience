@@ -161,7 +161,7 @@ Redmine::MenuManager.map :account_menu do |menu|
   menu.push :login, :signin_path, :if => Proc.new { !User.current.logged? }
   menu.push :register, { :controller => 'account', :action => 'register' }, :if => Proc.new { !User.current.logged? && Setting.self_registration? }
   menu.push :my_account, { :controller => 'my', :action => 'account' }, :caption => {"name" => Proc.new {"#{User.current.name}"}, "text" => :label_hello}, :html => {:class => "first"} , :if => Proc.new { User.current.logged? }
-  menu.push :issues, { :controller => 'issues', :action => 'index' }, :param => :project_id, :caption => {"value"=>Proc.new {"#{Issue.visible.open.count(:conditions => {:assigned_to_id => ([User.current.id] + User.current.group_ids)})}"},"text" => :label_mymessage}, :html => {:class => "newmessage"}, :if => Proc.new {Issue.visible.open.count(:conditions => {:assigned_to_id => ([User.current.id] + User.current.group_ids)}) > 0}
+  menu.push :issues, { :controller => 'user_messages', :action => 'index' }, :caption => {"value"=>Proc.new {"#{UserMessage.get_number_of_messages}"},"text" => :label_mymessage}, :html => {:class => "newmessage"}, :if => Proc.new {UserMessage.get_number_of_messages > 0}
   menu.push :help, Redmine::Info.help_url
   menu.push :logout, :signout_path, :html => {:class => "last withnoborder"}, :last => true , :if => Proc.new { User.current.logged? }
 end
@@ -190,8 +190,9 @@ Redmine::MenuManager.map :admin_menu do |menu|
 end
 
 Redmine::MenuManager.map :private_menu do |menu|
-  menu.push :my, { :controller => 'my', :action => 'page' },:caption => :label_overview, :if => Proc.new { User.current.logged? }
+  menu.push :my, { :controller => 'my', :action => 'page' },:caption => :label_organisation, :if => Proc.new { User.current.logged? }
   menu.push :projects, { :controller => 'projects', :action => 'index' }, :caption => :label_project_plural
+  menu.push :issues, { :controller => 'user_messages', :action => 'index' }, :caption => {"value_behind"=>Proc.new {"#{UserMessage.get_number_of_messages}"},"text" => :label_usermessage }, :html => {:class => "newmessage"}
 end
 
 Redmine::MenuManager.map :project_menu do |menu|
@@ -199,6 +200,7 @@ Redmine::MenuManager.map :project_menu do |menu|
   #menu.push :activity, { :controller => 'activities', :action => 'index' }
   menu.push :roadmap, { :controller => 'versions', :action => 'index' }, :param => :project_id,
               :if => Proc.new { |p| p.shared_versions.any? }
+
   menu.push :issues, { :controller => 'issues', :action => 'index' }, :param => :project_id, :caption => {"value"=>Proc.new {"#{Issue.visible.open.count(:conditions => {:assigned_to_id => ([User.current.id] + User.current.group_ids)})}"},"text" => :label_mymessage}, :html => {:class => "newmessage"}, :if => Proc.new {Issue.visible.open.count(:conditions => {:assigned_to_id => ([User.current.id] + User.current.group_ids)}) > 0}
 
   #menu.push :issues, { :controller => 'issues', :action => 'index' }, :param => :project_id, :caption => :label_issue_plural

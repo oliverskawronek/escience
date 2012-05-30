@@ -451,9 +451,11 @@ de:
   project_module_calendar: Kalender
   project_module_gantt: Gantt
 
+  label_organisation: Organisieren
   label_hello: Hallo
-  label_mymessage: Nachricht
-  label_mymessage_plural: Nachrichten
+  label_usermessage: Nachrichten
+  label_mymessage: neue Nachricht
+  label_mymessage_plural: neue Nachrichten
   label_user: Benutzer
   label_user_plural: Benutzer
   label_user_new: Neuer Benutzer
@@ -510,9 +512,11 @@ de:
   label_home_logged: Aktivitäten
   label_my: Übersicht
   label_my_account: Mein Konto
+  label_my_page: Mein Konto
   label_my_projects: Meine Projekte
   label_my_page_block: Angezeigte Elemente
   label_my_members: Mitglieder
+  label_my_inbox: Posteingang
   label_privatearea: Privater Bereich
   label_administration: Administration
   label_login: Anmelden

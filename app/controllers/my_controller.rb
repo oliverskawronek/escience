@@ -22,7 +22,9 @@ class MyController < ApplicationController
   helper :users
   helper :custom_fields
 
-  BLOCKS = { 'issuesassignedtome' => :label_assigned_to_me_issues,
+  BLOCKS = { 'projects' => :label_my_projects,
+             'inbox' => :label_my_inbox,
+  			 'issuesassignedtome' => :label_assigned_to_me_issues,
              'issuesreportedbyme' => :label_reported_issues,
              'issueswatched' => :label_watched_issues,
              'news' => :label_news_latest,

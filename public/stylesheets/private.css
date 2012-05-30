@@ -17,7 +17,6 @@
 		font-size:18pt;
 		font-weight:bold;
 		color:#fff;
-		behavior:url(../../plugins/css3pie/PIE.htc);
 		z-index:10;
 		background-size: 109px;
 	}
@@ -31,7 +30,6 @@
 		-moz-border-radius:10px;
 		-webkit-border-radius:10px;
 		border-radius:10px;
-		behavior:url(../../plugins/css3pie/PIE.htc);
 		background-size:72px;
 		z-index:5;
 	}
@@ -46,7 +44,6 @@
 		-moz-border-radius:10px;
 		-webkit-border-radius:10px;
 		border-radius:10px;
-		behavior:url(../../plugins/css3pie/PIE.htc);
 		background-size:72px;
 		z-index:5;
 	}
@@ -179,7 +176,6 @@
 		-moz-border-radius:10px;
 		-webkit-border-radius:10px;
 		border-radius:10px;
-		behavior:url(../../plugins/css3pie/PIE.htc);
 	}
 	
 	#navigation_private_akt h1 {
@@ -194,7 +190,6 @@
 		-webkit-border-top-right-radius:10px;
 		border-top-right-radius:10px;
 		color:#fff;
-		behavior:url(../../plugins/css3pie/PIE.htc);
 	}
 	
 	#navigation_private_akt ul {
@@ -216,7 +211,6 @@
 		-webkit-border-radius:10px;
 		border-radius:10px;
 		color:#B61634;
-		behavior:url(../../plugins/css3pie/PIE.htc);
 	}
 	
 	#navigation_private_akt a {
@@ -264,21 +258,18 @@
 		-moz-border-radius-bottomleft:5px;
 		-webkit-border-bottom-left-radius:5px;
 		border-bottom-left-radius:5px;
-		behavior:url(../../plugins/css3pie/PIE.htc);
 	}
 	
 	#navigation_mashups li.first:hover {
 		-moz-border-radius-bottomright:5px;
 		-webkit-border-bottom-right-radius:5px;
 		border-bottom-right-radius:5px;
-		behavior:url(../../plugins/css3pie/PIE.htc);
 	}
 	
 	#navigation_mashups li.first {
 		-moz-border-radius-topleft:10px;
 		-webkit-border-top-left-radius:10px;
 		border-top-left-radius:10px;
-		behavior:url(../../plugins/css3pie/PIE.htc);
 	}
 	
 	#navigation_mashups li.last {
@@ -329,7 +320,6 @@
 		-moz-border-radius-topleft:10px;
 		-webkit-border-top-left-radius:10px;
 		border-top-left-radius:10px;
-		behavior:url(../../plugins/css3pie/PIE.htc);
 	}
 	
 	#main_navigation li a.selected {
@@ -341,7 +331,6 @@
 		-moz-border-radius-bottomleft:5px;
 		-webkit-border-bottom-left-radius:5px;
 		border-bottom-left-radius:5px;
-		behavior:url(../../plugins/css3pie/PIE.htc);
 		font-weight:bold;
 	}
 	
@@ -354,7 +343,6 @@
 		-moz-border-radius-bottomleft:5px;
 		-webkit-border-bottom-left-radius:5px;
 		border-bottom-left-radius:5px;
-		behavior:url(../../plugins/css3pie/PIE.htc);
 		font-weight:bold;
 	}
 	
@@ -454,6 +442,36 @@
 		cursor:move;
 		background-color: #FAFAFA
 	}
+	
+	#list-top .mypage-box {
+		width: 180px;
+		margin-right: 20px;
+		float: left;
+		overflow:hidden;
+	}
+
+	#list-top .mypage-box.last {
+		margin-right: 0px;
+	}
+	
+	#list-top .mypage-box h3 {
+		margin-top: 0px;
+		background-color: #E9E9E9;
+		border: 0px solid black;
+		border-radius:10px;
+		-moz-border-radius:10px;
+		-webkit-border-radius:10px;	
+		padding: 4px 10px;	
+		color: #7D7D7D
+	}
+	
+	#list-top .mypage-box ul {
+		padding-left: 10px;
+		background-image: url(../images/calender_bg.png);
+		background-repeat: repeat;
+		background-position-y: 16px;
+		line-height: 15pt;
+	}
 		
 	a.close-icon {
 		display:block;
@@ -474,6 +492,7 @@
 		width: 30px;
 		display: inline-block;
 	}
+	
 	
 /* projects */
 	#new_project label {
