@@ -111,7 +111,7 @@
 			    <%= render_main_menu(@project) %>
 			<% elsif User.current.admin? %>
                             <div class="splitter">
-                            <%= l :label_administration %>
+                              <%= l :label_administration %>
                             </div>
                             <%= render_menu :admin_menu %>
 			<% end %>

@@ -6,8 +6,16 @@ class UserMessagesController < ApplicationController
   # GET /user_messages
   # GET /user_messages.xml
   def index
-    @user_messages = UserMessage.all
-
+    msgs = UserMessage.find_by_receiver_id(User.current.id)
+    p UserMessage.all
+    p msgs
+    if msgs.class != Array && !msgs.nil?
+      @user_messages ||= []
+      @user_messages << msgs
+    else
+      @user_messages = msgs
+    end
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @user_messages }
@@ -22,6 +30,21 @@ class UserMessagesController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @user_message }
+    end
+  end
+
+  def sent_messages
+    msgs = UserMessage.find_by_user_id(User.current.id)
+    if msgs.class != Array
+      @user_messages ||= []
+      @user_messages << msgs
+    else
+      @user_messages = msgs
+    end
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @user_messages }
     end
   end
 
@@ -44,10 +67,22 @@ class UserMessagesController < ApplicationController
   # POST /user_messages
   # POST /user_messages.xml
   def create
-    @user_message = UserMessage.new(params[:user_message])
+    p params[:user_message]["receiver"]
+    recv = User.find_by_mail(params[:user_message]["receiver"])
+    if recv.nil?
+      @user_massage = UserMessage.new()
+      respond_to do |format|
+        format.html { redirect_to(:action => 'new', :notice => 'Receiver not known') }
+        format.xml  { render :xml => @user_message.errors, :status => :unprocessable_entity }
+      end
+      return 
+    end
+    @user_message = UserMessage.new()
+    @user_message.body = params[:user_message]["body"]
     @user_message.user = User.current
-    @user_message.author = User.current.mail
-    
+    @user_message.author = "#{User.current.lastname}, #{User.current.firstname}"
+    @user_message.receiver_id = recv.id
+
     respond_to do |format|
       if @user_message.save
         format.html { redirect_to(@user_message, :notice => 'UserMessage was successfully created.') }

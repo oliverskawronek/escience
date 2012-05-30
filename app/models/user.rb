@@ -84,7 +84,8 @@ class User < Principal
   before_save   :update_hashed_password
   before_destroy :remove_references_before_destroy
 
-  has_many :user_messages
+  has_many :user_messages #User.current.user_messages --> sent
+  has_many :receivers, :through => :user_messages
 
   named_scope :in_group, lambda {|group|
     group_id = group.is_a?(Group) ? group.id : group.to_i
