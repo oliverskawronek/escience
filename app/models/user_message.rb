@@ -15,6 +15,22 @@ class UserMessage < ActiveRecord::Base
         user_messages.nil? ? 0 : user_messages.length
     end
 
+    def sent_directory
+      return "sent"
+    end
+
+    def received_directory
+      return "received"
+    end
+
+    def trash_directory
+      return "trash"
+    end
+
+    def archive_directory
+      return "archive"
+    end
+
     def self.get_names_of_sender
         #msgs = self.where("receiver_id = #{User.current.id}")
         msgs = self.find_by_sql("SELECT author, id, created_at FROM user_messages WHERE receiver_id = #{User.current.id} AND state = 1 ORDER BY created_at DESC")
