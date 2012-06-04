@@ -2,6 +2,11 @@ class UserMessage < ActiveRecord::Base
     belongs_to :user
     belongs_to :receiver, :class_name => "User", :foreign_key => "receiver_id"
 
+    # State:    0 read message
+    #           1 new message
+    #           2 deleted message
+    #           3 sent message (for getting Sent-Message)
+
     def self.get_number_of_messages
         #msgs = self.where("receiver_id = #{User.current.id}")
         msgs = self.find_by_sql("SELECT * FROM user_messages WHERE receiver_id = #{User.current.id} AND state = 1")
@@ -15,19 +20,19 @@ class UserMessage < ActiveRecord::Base
         user_messages.nil? ? 0 : user_messages.length
     end
 
-    def sent_directory
+    def self.sent_directory
       return "sent"
     end
 
-    def received_directory
+    def self.received_directory
       return "received"
     end
 
-    def trash_directory
+    def self.trash_directory
       return "trash"
     end
 
-    def archive_directory
+    def self.archive_directory
       return "archive"
     end
 

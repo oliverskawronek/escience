@@ -103,6 +103,7 @@
 	<div class="container_inner container_16">
 	    <div id="left" class="<%= (User.current.logged?) ? 'grid_3' : 'grid_2' %>">
 	    	<div id="sidebar_left" class="sidebar">
+	    	  <% if User.current.logged? %>
 		    	<div class="headline"><%= "Kommunikation" %></div>
 		        <%= render_menu :private_menu %>
 			<% if display_main_menu?(@project) %>
@@ -117,6 +118,7 @@
 			    	    
 		        <%= yield :sidebar_left %>
 		        <%= call_hook :view_layouts_base_sidebar %>
+		        <% end %>
 		        &nbsp;
 	    	</div>
 	    </div>

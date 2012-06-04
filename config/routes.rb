@@ -339,6 +339,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :roles, :except => :show, :collection => {:permissions => [:get, :post]}
   map.resources :enumerations, :except => :show
   map.resources :user_messages
+  map.connect 'user_messages/:id/search', :controller => 'search', :action => 'index', :conditions => {:method => :get}
 
   map.connect 'projects/:id/search', :controller => 'search', :action => 'index', :conditions => {:method => :get}
   map.connect 'search', :controller => 'search', :action => 'index', :conditions => {:method => :get}

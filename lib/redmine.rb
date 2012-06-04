@@ -192,7 +192,10 @@ end
 Redmine::MenuManager.map :private_menu do |menu|
   menu.push :my, { :controller => 'my', :action => 'page' },:caption => :label_organisation, :if => Proc.new { User.current.logged? }
   menu.push :projects, { :controller => 'projects', :action => 'index' }, :caption => :label_project_plural
-  menu.push :issues, { :controller => 'user_messages', :action => 'index' }, :caption => {"value_behind"=>Proc.new {"#{UserMessage.get_number_of_messages}"},"text" => :label_usermessage }, :html => {:class => "newmessage"}
+  menu.push :user_messages, { :controller => 'user_messages', :action => 'index' }, :caption => {"value_behind"=>Proc.new {"#{UserMessage.get_number_of_messages}"},"text" => :label_usermessage }, :html => {:class => "newmessage"}
+  menu.push :sent, { :controller => 'user_messages', :action => 'index', :directory => "sent" }, :caption => {"text" => :label_user_messages_sent }, :parent => :user_messages
+  menu.push :archive, { :controller => 'user_messages', :action => 'index', :directory => "archive"}, :caption => {"text" => :label_user_messages_archive }, :parent => :user_messages
+  menu.push :trash, { :controller => 'user_messages', :action => 'index', :directory => "trash" }, :caption => {"text" => :label_user_messages_trash }, :parent => :user_messages
 end
 
 Redmine::MenuManager.map :project_menu do |menu|

@@ -16,8 +16,8 @@ class CreateUserMessages < ActiveRecord::Migration
   end
 
   def self.down
-    drop_table :user_messages
     remove_index :user_messages, :receiver_id
     remove_index :user_messages, :user
+    drop_table :user_messages
   end
 end

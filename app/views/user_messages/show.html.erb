@@ -1,28 +1,19 @@
-<p>
-  <b>Author:</b>
-  <%=h @user_message.author %>
-</p>
+<h1><%= l(:label_user_messages_from)+" #{@user_message.author}" %></h1>
 
-<p>
-  <b>Subject:</b>
-  <%=h @user_message.subject %>
-</p>
+<div id="show_user_message">
+  <span class="subject"><%=h @user_message.subject %></span>
+  
+  <p>
+    <%=h @user_message.body %>
+  </p>
+</div>
 
-<p>
-  <b>body:</b>
-  <%=h @user_message.body %>
-</p>
+<% content_for :header_tags do %>
+  <%= stylesheet_link_tag 'user_message' %>
+<% end %>
 
-<p>
-  <b>receiver:</b>
-  <%=h @user_message.receiver %>
-</p>
-
-<p>
-  <b>state:</b>
-  <%=h @user_message.state %>
-</p>
-
-
-<%= link_to 'Edit', edit_user_message_path(@user_message) %> |
-<%= link_to 'Back', user_messages_path %>
+<% content_for :sidebar_right do %>
+  	<li><%= link_to l:label_back, user_messages_path %></li>
+  	<li><%= link_to(l(:label_user_messages_new), {:action => 'new'}, :class => 'icon icon-passwd') %></li>
+  	<li><%= link_to(l(:label_user_messages_delete), {:action => 'destroy'}, :confirm => self.l(:text_message_destroy_confirmation), :method => :delete) %></li>
+<%end%>

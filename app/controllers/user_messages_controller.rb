@@ -6,7 +6,18 @@ class UserMessagesController < ApplicationController
   # GET /user_messages
   # GET /user_messages.xml
   def index
-    msgs = UserMessage.find_by_sql("SELECT * FROM user_messages WHERE receiver_id=#{User.current.id}")
+    if !params[:directory].nil?
+      where = "AND directory = "
+      where += case params[:directory]
+        when "trash" then "'#{UserMessage.trash_directory}'" 
+        when "sent" then "'#{UserMessage.sent_directory}'"
+        when "archive" then "'#{UserMessage.archive_directory}'"
+        when "received" then "'#{UserMessage.received_directory}' AND state<>3"
+        else "'' AND state<>3"
+      end
+    else where = "AND state<>3"
+    end 
+    msgs = UserMessage.find_by_sql("SELECT * FROM user_messages WHERE receiver_id=#{User.current.id} #{where} ORDER BY created_at DESC")
     if msgs.class != Array && !msgs.nil?
       @user_messages ||= []
       @user_messages << msgs
@@ -84,10 +95,15 @@ class UserMessagesController < ApplicationController
     @user_message.author = "#{User.current.lastname}, #{User.current.firstname}"
     @user_message.receiver_id = recv.id
     @user_message.state = 1
+    @user_message.directory = UserMessage.received_directory
+
+    @user_message_clone = @user_message.clone
+    @user_message_clone.state = 3
+    @user_message_clone.directory = UserMessage.sent_directory
 
     respond_to do |format|
-      if @user_message.save
-        format.html { redirect_to(@user_message, :notice => 'UserMessage was successfully created.') }
+      if (@user_message.save && @user_message_clone.save)
+        format.html { redirect_to(:action => 'new', :notice => 'UserMessage was successfully created.') }
         format.xml  { render :xml => @user_message, :status => :created, :location => @user_message }
       else
         format.html { render :action => "new" }
@@ -116,7 +132,10 @@ class UserMessagesController < ApplicationController
   # DELETE /user_messages/1.xml
   def destroy
     @user_message = UserMessage.find(params[:id])
-    @user_message.destroy
+    @user_message.state = 2
+    @user_message.directory = UserMessage.trash_directory
+    @user_message.save
+    #@user_message.destroy
 
     respond_to do |format|
       format.html { redirect_to(user_messages_url) }

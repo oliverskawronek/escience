@@ -508,6 +508,7 @@ de:
   label_register: Registrieren
   label_login_with_open_id_option: oder mit OpenID anmelden
   label_password_lost: Passwort vergessen?
+  label_back: Zurück
   label_home: Startseite
   label_home_logged: Aktivitäten
   label_my: Übersicht
@@ -517,6 +518,17 @@ de:
   label_my_page_block: Angezeigte Elemente
   label_my_members: Mitglieder
   label_my_inbox: Posteingang
+  label_user_messages: Eigene Nachrichten
+  label_user_messages_new: Neue Nachricht
+  label_user_messages_delete: Nachricht löschen
+  label_user_messages_trash: gelöscht
+  label_user_messages_sent: gesendet
+  label_user_messages_archive: archiviert
+  label_user_messages_receiver: Empfänger
+  label_user_messages_subject: Thema
+  label_user_messages_body: Inhalt (max 2000 Zeichen)
+  label_user_messages_send: Nachricht senden
+  label_user_messages_from: Nachricht von
   label_privatearea: Privater Bereich
   label_administration: Administration
   label_login: Anmelden
@@ -876,6 +888,7 @@ de:
 
   field_active: Aktiv
 
+  text_message_destroy_confirmation: Sind Sie sicher, dass sie diese Nachricht löschen wollen?
   text_select_mail_notifications: Bitte wählen Sie die Aktionen aus, für die eine Mailbenachrichtigung gesendet werden soll.
   text_regexp_info: z. B. ^[A-Z0-9]+$
   text_min_max_length_info: 0 heißt keine Beschränkung

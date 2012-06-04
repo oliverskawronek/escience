@@ -169,6 +169,14 @@
 
 	}
 	
+	.sidebar .menu-children {
+  	padding: 1px 10px 0 10px;
+	}
+	
+	.sidebar .menu-children li {
+  	padding: 1px 5px;
+	}
+	
 	
 	/* Style sheet private_left_side */
 	#navigation_private_akt {
