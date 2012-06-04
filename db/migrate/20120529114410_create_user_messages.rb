@@ -5,7 +5,8 @@ class CreateUserMessages < ActiveRecord::Migration
       t.string :subject
       t.text :body, :limit => 16384
       t.string :receiver_list
-      t.string :state
+      t.integer :state
+      t.string :directory
       t.references :user
       t.references :receiver
       t.timestamps
