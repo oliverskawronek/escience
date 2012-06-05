@@ -105,6 +105,24 @@
 		border-top-right-radius:10px;
 	}
 	
+	#sidebar_left select {
+  	width: 160px;
+  	overflow: hidden;
+  	border: none;
+  	background-color: #7DB414;
+  	-moz-border-radius: 0px;
+  	-webkit-border-radius: 0px;
+  	-khtml-border-radius: 0px;
+  	border-radius: 0px;
+  	color: #F4F4F4;
+  	padding: 10px 0px; 
+  	font-size: 15px;
+  	font-weight: bold;
+  	margin-top: 10px;
+  	font-family: HelveticaNeue-Light, 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-s;
+
+	}
+	
 	.sidebar ul {
 		padding: 5px 10px 0px 10px;
 		margin:0px;

@@ -454,8 +454,12 @@ de:
   label_organisation: Organisieren
   label_hello: Hallo
   label_usermessage: Nachrichten
-  label_mymessage: neue Nachricht
-  label_mymessage_plural: neue Nachrichten
+  label_usermessage_announce: neue Nachricht
+  label_usermessage_announce_plural: neue Nachrichten
+  label_mymessage: Arbeitsanweisung
+  label_mymessage_plural: Arbeitsanweisungen
+  label_projectspec: Projektspezifisch
+  label_communication: Kommunikation
   label_user: Benutzer
   label_user_plural: Benutzer
   label_user_new: Neuer Benutzer
@@ -520,6 +524,7 @@ de:
   label_my_inbox: Posteingang
   label_user_messages: Eigene Nachrichten
   label_user_messages_new: Neue Nachricht
+  label_user_messages_emptytrash: Nachrichten entfernen
   label_user_messages_delete: Nachricht löschen
   label_user_messages_trash: gelöscht
   label_user_messages_sent: gesendet
@@ -769,7 +774,7 @@ de:
   label_added_time_by: "Von %{author} vor %{age} hinzugefügt"
   label_updated_time_by: "Von %{author} vor %{age} aktualisiert"
   label_updated_time: "Vor %{value} aktualisiert"
-  label_jump_to_a_project: Zu einem Projekt springen...
+  label_jump_to_a_project: Projekt wählen
   label_file_plural: Dateien
   label_changeset_plural: Changesets
   label_default_columns: Standard-Spalten
@@ -889,6 +894,12 @@ de:
   field_active: Aktiv
 
   text_message_destroy_confirmation: Sind Sie sicher, dass sie diese Nachricht löschen wollen?
+  text_message_emptytrash_confirmation: Sind Sie sicher, dass sie alle gelöschten Nachrichten dauerhaft entfernen wollen?
+  text_message_emptytrash_done: Ihre alten Nachrichten wurden erfolgreich gelöscht.
+  text_message_emptytrash_error: Leider trat beim Löschen Ihrer alten Nachrichten ein Fehler auf.
+  text_message_archive_confirmation: Möchten Sie diese Nachricht wirklich archivieren?
+  text_message_archive_done: Die Nachricht wurde erfolgreich ins Archiv verschoben.
+  text_message_delete_done: Die Nachricht wurde erfolgreich gelöscht.
   text_select_mail_notifications: Bitte wählen Sie die Aktionen aus, für die eine Mailbenachrichtigung gesendet werden soll.
   text_regexp_info: z. B. ^[A-Z0-9]+$
   text_min_max_length_info: 0 heißt keine Beschränkung
