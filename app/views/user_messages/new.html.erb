@@ -8,15 +8,15 @@
     <%= f.text_field :receiver %>
   </p>
   <p>
-    <%= f.label l:label_user_messages_subject %><br />
+    <%= f.label l(:label_user_messages_subject) %><br />
     <%= f.text_field :subject %>
   </p>
   <p>
-    <%= f.label l:label_user_messages_body %><br />
+    <%= f.label l(:label_user_messages_body) %><br />
     <%= f.text_area :body %>
   </p>
   <p>
-    <%= f.submit l:label_user_messages_send %>
+    <%= f.submit l(:label_user_messages_send) %>
   </p>
 <% end %>
 
@@ -25,5 +25,5 @@
 <% end %>
 
 <% content_for :sidebar_right do %>
-  	<li><%= link_to l:label_back, user_messages_path %></li>
+  	<li><%= link_to l(:label_back), user_messages_path %></li>
 <%end%>
