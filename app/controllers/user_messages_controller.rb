@@ -66,7 +66,10 @@ class UserMessagesController < ApplicationController
   # GET /user_messages/new.xml
   def new
     @user_message = UserMessage.new
-
+    if !params[:id].nil?
+      @user_message_reply = UserMessage.find(params[:id])
+      @user_message.receiver = @user_message_reply.receiver
+    end
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @user_message }
@@ -81,36 +84,51 @@ class UserMessagesController < ApplicationController
   # POST /user_messages
   # POST /user_messages.xml
   def create
-    p params[:user_message]["receiver"]
-    recv = User.find_by_mail(params[:user_message]["receiver"])
-    if recv.nil?
-      @user_massage = UserMessage.new()
+    noerror = true
+    unless params[:user_message]["receiver"].nil?
+      @receiver_arr = params[:user_message]["receiver"].split(",")
+      @receiver_arr.each do |receiver_id|
+        recv = User.find_by_id(receiver_id)
+        if recv.nil?
+          @user_massage = UserMessage.new()
+          respond_to do |format|
+            format.html { redirect_to(:action => 'new', :notice => 'Receiver not known') }
+            format.xml  { render :xml => @user_message.errors, :status => :unprocessable_entity }
+          end
+          return 
+        end
+        @user_message = UserMessage.new()
+        @user_message.body = params[:user_message]["body"]
+        @user_message.subject = params[:user_message]["subject"]
+        @user_message.user = User.current
+        @user_message.author = "#{User.current.lastname}, #{User.current.firstname}"
+        @user_message.receiver_id = recv.id
+        @user_message.state = 1
+        @user_message.directory = UserMessage.received_directory
+    
+        @user_message_clone = @user_message.clone
+        @user_message_clone.state = 3
+        @user_message_clone.directory = UserMessage.sent_directory
+        noerror &= @user_message.save
+        noerror &= @user_message_clone.save
+      end
+    end
+    if (params[:user_message]["body"].empty? || params[:user_message]["subject"].empty?)
+#      @user_massage = UserMessage.new()
+#      @user_message.body = "#{User.current.firstname} #{User.current.lastname}"
       respond_to do |format|
-        format.html { redirect_to(:action => 'new', :notice => 'Receiver not known') }
+        format.html { redirect_to(request.referer, :notice => l(:text_message_sent_error_fields)) }
         format.xml  { render :xml => @user_message.errors, :status => :unprocessable_entity }
       end
-      return 
-    end
-    @user_message = UserMessage.new()
-    @user_message.body = params[:user_message]["body"]
-    @user_message.subject = params[:user_message]["subject"]
-    @user_message.user = User.current
-    @user_message.author = "#{User.current.lastname}, #{User.current.firstname}"
-    @user_message.receiver_id = recv.id
-    @user_message.state = 1
-    @user_message.directory = UserMessage.received_directory
-
-    @user_message_clone = @user_message.clone
-    @user_message_clone.state = 3
-    @user_message_clone.directory = UserMessage.sent_directory
-
-    respond_to do |format|
-      if (@user_message.save && @user_message_clone.save)
-        format.html { redirect_to(:action => 'new', :notice => 'UserMessage was successfully created.') }
-        format.xml  { render :xml => @user_message, :status => :created, :location => @user_message }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @user_message.errors, :status => :unprocessable_entity }
+    else
+      respond_to do |format|
+        if (noerror)
+          format.html { redirect_to(request.referer, :notice => l(:text_message_sent_done)) }
+          format.xml  { render :xml => @user_message, :status => :created, :location => @user_message }
+        else
+          format.html { render :action => "new", :notice => l(:text_message_sent_done) }
+          format.xml  { render :xml => @user_message.errors, :status => :unprocessable_entity }
+        end
       end
     end
   end
@@ -140,7 +158,7 @@ class UserMessagesController < ApplicationController
     else
       @user_message.state = 2
       @user_message.directory = UserMessage.trash_directory
-      #@user_message.save
+      @user_message.save
     end
 
     respond_to do |format|

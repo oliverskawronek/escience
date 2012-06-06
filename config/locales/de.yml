@@ -524,6 +524,7 @@ de:
   label_my_inbox: Posteingang
   label_user_messages: Eigene Nachrichten
   label_user_messages_new: Neue Nachricht
+  label_user_messages_reply: Nachricht beantworten
   label_user_messages_emptytrash: Nachrichten entfernen
   label_user_messages_delete: Nachricht löschen
   label_user_messages_trash: gelöscht
@@ -897,6 +898,8 @@ de:
   text_message_emptytrash_confirmation: Sind Sie sicher, dass sie alle gelöschten Nachrichten dauerhaft entfernen wollen?
   text_message_emptytrash_done: Ihre alten Nachrichten wurden erfolgreich gelöscht.
   text_message_emptytrash_error: Leider trat beim Löschen Ihrer alten Nachrichten ein Fehler auf.
+  text_message_sent_done: Ihre Nachricht wurden erfolgreich versandt.
+  text_message_sent_error_fields: Es wurden nicht alle Felder befüllt. Bitte tuen Sie dies jetzt.
   text_message_archive_confirmation: Möchten Sie diese Nachricht wirklich archivieren?
   text_message_archive_done: Die Nachricht wurde erfolgreich ins Archiv verschoben.
   text_message_delete_done: Die Nachricht wurde erfolgreich gelöscht.
