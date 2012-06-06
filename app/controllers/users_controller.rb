@@ -61,6 +61,21 @@ class UsersController < ApplicationController
     end	
   end
 
+  def user_search
+    if params[:q].nil? || params[:q]== '' || params[:q].split('').length < 3
+      @users = []
+    else
+          @users = User.find(:all,
+                :select => "firstname, lastname, id",
+                :conditions => ['lastname LIKE ? OR firstname LIKE ?',
+                                "#{params[:q]}%", "#{params[:q]}%"],:limit => 5, :order => 'lastname')
+    end
+    respond_to do |format|
+      format.js # user_search.js.erb
+      format.json { render :json => @users }
+    end
+  end
+
   def show
     # show projects based on current user visibility
     @memberships = @user.memberships.all(:conditions => Project.visible_condition(User.current))
