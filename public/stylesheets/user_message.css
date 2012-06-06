@@ -80,15 +80,29 @@ a.link_to_message {
   -khtml-border-radius: 0 5px 5px 0;
   border-radius: 0 5px 5px 0;
   border: 1px solid #F4F4F4;
+}
+
+.user_message_links div.delete {
   background: #FAFAFA url(../images/close.png) center center no-repeat;
 }
 
-.user_message_links div:hover {
+.user_message_links div.delete:hover {
   background: url(../images/close_hl.png) center center no-repeat;
   background-color: #F4F4F4;  
 }
 
-#new_user_message_link {
+.user_message_links div.archive {
+  background: #FAFAFA url(../images/archive.png) center center no-repeat;
+  height: 20px;
+  margin-top: 3px;
+}
+
+.user_message_links div.archive:hover {
+  background: url(../images/archive_hl.png) center center no-repeat;
+  background-color: #F4F4F4;  
+}
+
+#new_user_message_link, #emptytrash_user_message_link {
   float: right;
   margin-top: 5px;
 }
@@ -96,7 +110,17 @@ a.link_to_message {
 #new_user_message_link div {
   width: 30px;
   height: 20px;
-  background: #FAFAFA url(../images/new_message.png) center center no-repeat;
+  background: url(../images/new_message.png) center center no-repeat;
+}
+
+#emptytrash_user_message_link div {
+  width: 30px;
+  height: 29px;
+  background: url(../images/emptytrash.png) center center no-repeat;
+}
+
+#emptytrash_user_message_link div:hover {
+  background: url(../images/emptytrash_hl.png) center center no-repeat;
 }
 
 #new_user_message p {

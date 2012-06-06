@@ -104,17 +104,19 @@
 	    <div id="left" class="<%= (User.current.logged?) ? 'grid_3' : 'grid_2' %>">
 	    	<div id="sidebar_left" class="sidebar">
 	    	  <% if User.current.logged? %>
-		    	<div class="headline"><%= "Kommunikation" %></div>
+		    	<div class="headline"><%= l(:label_communication) %></div>
 		        <%= render_menu :private_menu %>
-			<% if display_main_menu?(@project) %>
-                            <div class="splitter"><%= "Projektspezifisch" %></div>
-			    <%= render_main_menu(@project) %>
-			<% elsif User.current.admin? %>
-                            <div class="splitter">
-                              <%= l :label_administration %>
-                            </div>
-                            <%= render_menu :admin_menu %>
-			<% end %>
+	          <%= render_project_jump_box %>
+		        <%# if display_main_menu?(@project) %>
+		          <!--div class="splitter"><%= l(:label_projectspec) %></div-->
+		        <%# end %>
+		          <%= render_main_menu(@project) %>
+		        <% if User.current.admin? %>
+              <div class="splitter">
+                <%= l :label_administration %>
+              </div>
+              <%= render_menu :admin_menu %>
+      			<% end %>
 			    	    
 		        <%= yield :sidebar_left %>
 		        <%= call_hook :view_layouts_base_sidebar %>

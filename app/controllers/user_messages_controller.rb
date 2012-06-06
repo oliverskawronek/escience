@@ -6,18 +6,21 @@ class UserMessagesController < ApplicationController
   # GET /user_messages
   # GET /user_messages.xml
   def index
+    dir = "received"
     if !params[:directory].nil?
-      where = "AND directory = "
-      where += case params[:directory]
-        when "trash" then "'#{UserMessage.trash_directory}'" 
-        when "sent" then "'#{UserMessage.sent_directory}'"
-        when "archive" then "'#{UserMessage.archive_directory}'"
-        when "received" then "'#{UserMessage.received_directory}' AND state<>3"
-        else "'' AND state<>3"
+      dir = case params[:directory]
+        when "trash" then UserMessage.trash_directory
+        when "sent" then UserMessage.sent_directory
+        when "archive" then UserMessage.archive_directory
+        when "received" then UserMessage.received_directory
+        else ""
       end
-    else where = "AND state<>3"
-    end 
-    msgs = UserMessage.find_by_sql("SELECT * FROM user_messages WHERE receiver_id=#{User.current.id} #{where} ORDER BY created_at DESC")
+      @directory = dir
+    end
+    where = "directory = "
+    where += (dir == "sent")? "'#{dir}' AND user_id=#{User.current.id}" : "'#{dir}' AND state<>3 AND receiver_id=#{User.current.id}"
+    where += (dir == "trash")? " AND state=2" : " AND state<>2"
+    msgs = UserMessage.find_by_sql("SELECT * FROM user_messages WHERE #{where} ORDER BY created_at DESC")
     if msgs.class != Array && !msgs.nil?
       @user_messages ||= []
       @user_messages << msgs
@@ -132,13 +135,43 @@ class UserMessagesController < ApplicationController
   # DELETE /user_messages/1.xml
   def destroy
     @user_message = UserMessage.find(params[:id])
-    @user_message.state = 2
-    @user_message.directory = UserMessage.trash_directory
+    if !params[:directory].nil? && params[:directory] == UserMessage.trash_directory
+      @user_message.destroy
+    else
+      @user_message.state = 2
+      @user_message.directory = UserMessage.trash_directory
+      #@user_message.save
+    end
+
+    respond_to do |format|
+      format.html { redirect_to(request.referer, :notice => l(:text_message_delete_done)) }
+      format.xml  { head :ok }
+    end
+  end
+
+  def archive
+    @user_message = UserMessage.find(params[:id])
+    @user_message.directory = UserMessage.archive_directory
+    if (@user_message.state == 2) 
+      @user_message.state = 0
+    end
     @user_message.save
     #@user_message.destroy
 
     respond_to do |format|
-      format.html { redirect_to(user_messages_url) }
+      format.html { redirect_to(request.referer, :notice => l(:text_message_archive_done)) }
+      format.xml  { head :ok }
+    end
+  end
+  
+  def emptytrash
+    err = UserMessage.delete_all "user_id=#{User.current.id} AND state=2"
+    respond_to do |format|
+      if !err
+        format.html { redirect_to(request.referer, :notice => l(:text_message_emptytrash_done)) }
+      else
+        format.html { redirect_to(request.referer, :notice => l(:text_message_emptytrash_error)) }
+      end
       format.xml  { head :ok }
     end
   end
