@@ -65,13 +65,26 @@ class UsersController < ApplicationController
   def user_search
     if params[:q].nil? || params[:q]== '' || params[:q].split('').length < 3
       @users = []
+    elsif User.current.admin
+      @users = User.find(:all,
+        :select => "firstname, lastname, id",
+        :conditions => ['(lastname LIKE ? OR firstname LIKE ?) AND id <> ?',
+        "#{params[:q]}%", "#{params[:q]}%", "#{User.current.id}"],:limit => 5, :order => 'lastname')
     else
-          @users = User.find(:all,
-                :select => "firstname, lastname, id",
-                :conditions => ['lastname LIKE ? OR firstname LIKE ?',
-                                "#{params[:q]}%", "#{params[:q]}%"],:limit => 5, :order => 'lastname')
+      @users = User.find_by_sql(["SELECT u.firstname, u.lastname, u.id
+                                   FROM users u, projects p, members m
+                                   WHERE (lastname LIKE ? OR firstname LIKE ?)
+                                   AND m.user_id = u.id
+                                   AND p.status=1
+                                   AND p.id = m.project_id
+                                   AND p.id IN (?)
+                                   AND u.id <> ?
+                                   ","#{params[:q]}%", "#{params[:q]}%",
+                                   "#{User.current.projects.map{|p| p.id}.join(",")}",
+                                   User.current.id])
     end
     respond_to do |format|
+      format.xml { render :xml => @users }
       format.js # user_search.js.erb
       format.json { render :json => @users }
     end
