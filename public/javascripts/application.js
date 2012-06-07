@@ -191,6 +191,7 @@ function addFileField() {
   s.update(fields.down('span').innerHTML);
   s.down('input.file').name = "attachments[" + fileFieldCount + "][file]";
   s.down('input.description').name = "attachments[" + fileFieldCount + "][description]";
+  s.down('input.meta_information').name = "attachments[" + fileFieldCount + "][meta_information]";
   fields.appendChild(s);
 }
 

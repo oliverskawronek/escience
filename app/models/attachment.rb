@@ -199,6 +199,20 @@ class Attachment < ActiveRecord::Base
   def self.attach_files(obj, attachments)
     result = obj.save_attachments(attachments, User.current)
     obj.attach_saved_attachments
+    result[:files].each_with_index do |att,count|
+      meta = MetaInformation.new
+      p
+      p
+      p
+      p "check attachment attachments[#{(count + 1).to_s}][meta_information] #{attachments[(count + 1).to_s]["meta_information"]}"
+      p
+      p
+      p
+      meta.meta_information = attachments[(count + 1).to_s]["meta_information"]
+      meta.attachment = att
+      meta.user = User.current
+      meta.save!
+    end
     result
   end
 
