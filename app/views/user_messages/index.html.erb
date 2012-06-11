@@ -7,7 +7,7 @@
 
 <% @user_messages.each do |user_message| %>
 <% link_to(user_message, :class => "link_to_message") do %>
-<div class="user_message<%= (user_message.state == 1)? " unread" : "" %>">
+<div class="user_message<%= (user_message.state == 1)? " unread" : "" %><%= (user_message.state == 4)? " answered" : "" %>">
   <div class="author"><%= user_message.author %></div>
   <div class="date"><%= user_message.created_at.strftime("%d.%m.%y %H:%M") %></div>
   <div class="subject"><%= user_message.subject %></div>

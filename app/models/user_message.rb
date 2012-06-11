@@ -6,6 +6,7 @@ class UserMessage < ActiveRecord::Base
     #           1 new message
     #           2 deleted message
     #           3 sent message (for getting Sent-Message)
+    #           4 answered message
 
     def self.get_number_of_messages
         #msgs = self.where("receiver_id = #{User.current.id}")

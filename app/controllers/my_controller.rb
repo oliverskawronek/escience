@@ -191,4 +191,12 @@ class MyController < ApplicationController
     end
     render :nothing => true
   end
+  
+  def members
+    respond_to do |format|
+      format.html {
+        @projects = Project.visible.find(:all, :order => 'lft')
+      }
+    end
+  end
 end

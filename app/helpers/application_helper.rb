@@ -239,9 +239,16 @@ module ApplicationHelper
     return unless User.current.logged?
     projects = User.current.memberships.collect(&:project).compact.uniq
     if projects.any?
-      s = '<select onchange="if (this.value != \'\') { window.location = this.value; }">' +
+      if @project.nil?
+        project_name = l(:label_projectspec)
+      else 
+        project_name = "#{@project}"
+      end
+      s = '<div id="projects_styled" class="styled_select "><span>'+project_name+'</span><b><i></i></b></div>' +
+          '<select onchange="if (this.value != \'\') { window.location = this.value; }" style="opacity: 0; margin-bottom: 4px; ">' +
             "<option value=''>#{ l(:label_jump_to_a_project) }</option>" +
             '<option value="" disabled="disabled">---</option>'
+            
       s << project_tree_options_for_select(projects, :selected => @project) do |p|
         { :value => url_for(:controller => 'projects', :action => 'show', :id => p, :jump => current_menu_item) }
       end
@@ -910,6 +917,22 @@ module ApplicationHelper
   def lang_options_for_select(blank=true)
     (blank ? [["(auto)", ""]] : []) +
       valid_languages.collect{|lang| [ ll(lang.to_s, :general_lang_name), lang.to_s]}.sort{|x,y| x.last <=> y.last }
+  end
+
+  def gender_options_for_select(blank=true)
+    result = []
+    (::I18n.t('field_salutation_vals')).each do |key, val|
+      result += [[val,key.to_s]]
+    end
+    return result
+  end
+  
+  def title_options_for_select(blank=true)
+    result = (blank ? [["", ""]] : [])
+    (::I18n.t('field_title_vals')).each do |key, val|
+      result += [[val,key.to_s]]
+    end
+    result.sort
   end
 
   def label_tag_for(name, option_tags = nil, options = {})

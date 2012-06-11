@@ -33,6 +33,20 @@
   background-image: -o-linear-gradient(left, #06C 2%, #F4F4F4 2%);
 }
 
+.user_message.answered {
+  background-image: -moz-linear-gradient(left, rgba(201,227,189,0.2) 2%, #fafafa 2%);
+  background-image: -webkit-linear-gradient(left, rgba(105,191,65,0.2) 2%, #fafafa 2%);
+  background-image: -ms-linear-gradient(left, rgba(201,227,189,0.2) 2%, #fafafa 2%);
+  background-image: -o-linear-gradient(left, rgba(201,227,189,0.2) 2%, #fafafa 2%);
+}
+
+.user_message.answered:hover {
+  background-image: -moz-linear-gradient(left, rgba(201,227,189,0.5) 2%, #F4F4F4 2%);
+  background-image: -webkit-linear-gradient(left, rgba(201,227,189,0.5) 2%, #F4F4F4 2%);
+  background-image: -ms-linear-gradient(left, rgba(201,227,189,0.5) 2%, #F4F4F4 2%);
+  background-image: -o-linear-gradient(left, rgba(201,227,189,0.5) 2%, #F4F4F4 2%);
+}
+
 
 a.link_to_message {
   text-decoration: none;

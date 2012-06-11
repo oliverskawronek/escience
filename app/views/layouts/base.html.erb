@@ -92,7 +92,7 @@
 	</div>
 	<div class="container_16">
 		<div id="navigation_group" class="<%= (User.current.logged?)? 'grid_3' : 'grid_4 prefix_1' %>">
-			<div id="private"></div>
+			<div id="private" class="<%= (User.current.logged? && User.female)? 'female' : 'male' %>"></div>
 			<div id="group"></div>
 			<div id="community"></div>
 		</div>
@@ -106,9 +106,8 @@
 	    	  <% if User.current.logged? %>
 		    	<div class="headline"><%= l(:label_communication) %></div>
 		        <%= render_menu :private_menu %>
-	          <%= render_project_jump_box %>
 		        <%# if display_main_menu?(@project) %>
-		          <!--div class="splitter"><%= l(:label_projectspec) %></div-->
+		          <div class="splitter"><%= render_project_jump_box %></div>
 		        <%# end %>
 		          <%= render_main_menu(@project) %>
 		        <% if User.current.admin? %>

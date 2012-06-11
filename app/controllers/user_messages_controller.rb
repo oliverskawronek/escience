@@ -67,8 +67,9 @@ class UserMessagesController < ApplicationController
   def new
     @user_message = UserMessage.new
     if !params[:id].nil?
-      @user_message_reply = UserMessage.find(params[:id])
-      @user_message.receiver = @user_message_reply.receiver
+      @user_message_reply_id = UserMessage.find(params[:id]).user_id
+      user = User.find(@user_message_reply_id)
+      @user_message_reply = " log('#{user.firstname} #{user.lastname}');" 
     end
     respond_to do |format|
       format.html # new.html.erb

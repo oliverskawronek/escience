@@ -16,8 +16,8 @@
 <div id="profile">
 <fieldset id="information" class="box tabular">
   <legend><%=l(:label_information_plural)%></legend>
-  <%= f.select :salutation, {"Frau" => "Frau", "Herr" => "Herr"}, :required => true %><span class="distanceholder"></span>
-  <%= f.select :title, {"" => "", "Prof." => "Prof.", "Dr." => "Dr.", "Dipl." => "Dipl.", "M.A." => "M.A.", "B.A." => "B.A."}.sort{|x,y| x.last <=> y.last }, :required => true %><br />
+  <%= f.select :salutation, gender_options_for_select, :required => true %><span class="distanceholder"></span>
+  <%= f.select :title, title_options_for_select, :required => true %><br />
   <%= f.text_field :mail, :required => true, :style => "width:450px" %><br />
   <%= f.text_field :firstname, :required => true %><span class="distanceholder"></span>
   <%= f.text_field :lastname, :required => true %><br />

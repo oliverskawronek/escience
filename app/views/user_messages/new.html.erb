@@ -8,7 +8,7 @@
     	<div id="log" class="ui-widget-content"></div>
     	<input id="user_message_receiver_visible" />
     	<%= f.hidden_field :receiver %>
-    	<%= hidden_field_tag("buffer") %>
+    	<%= hidden_field_tag("buffer", @user_message_reply_id) %>
     </div>
   </p>
   <p>
@@ -81,8 +81,8 @@
 			close: function() {
 				$j( this ).removeClass( "ui-corner-top" ).addClass( "ui-corner-all" );
 			}
-		});
-	});
+		});'+@user_message_reply+
+'});
 	      ' %>
 <% end %>
 

@@ -235,7 +235,16 @@ de:
   field_summary: Zusammenfassung
   field_is_required: Erforderlich
   field_salutation: Anrede
+  field_salutation_vals:
+    male: Herr
+    female: Frau
   field_title: Titel
+  field_title_vals:
+    bachelor: B.A.
+    master: M.A.
+    diploma: Dipl.
+    professor: Prof.
+    doctor: Dr.
   field_firstname: Vorname
   field_lastname: Nachname
   field_phone: Telefon
@@ -473,13 +482,13 @@ de:
     other: "%{count} Projekte"
   label_project_all: Alle Projekte
   label_project_latest: Neueste Projekte
-  label_issue: Ticket
-  label_issue_new: Neues Ticket
-  label_issue_plural: Tickets
-  label_issue_view_all: Alle Tickets anzeigen
-  label_issues_by: "Tickets von %{value}"
-  label_issue_added: Ticket hinzugefügt
-  label_issue_updated: Ticket aktualisiert
+  label_issue: Arbeitsanweisung
+  label_issue_new: Neues Anweisung
+  label_issue_plural: Arbeitsanweisungen
+  label_issue_view_all: Alle Arbeitsanweisungen anzeigen
+  label_issues_by: "Arbeitsanweisung von %{value}"
+  label_issue_added: Arbeitsanweisung hinzugefügt
+  label_issue_updated: Arbeitsanweisung aktualisiert
   label_document: Dokument
   label_document_new: Neues Dokument
   label_document_plural: Dokumente

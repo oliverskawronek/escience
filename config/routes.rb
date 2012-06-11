@@ -78,6 +78,8 @@ ActionController::Routing::Routes.draw do |map|
 
   map.connect 'my/account', :controller => 'my', :action => 'account',
               :conditions => {:method => [:get, :post]}
+  map.connect 'my/members', :controller => 'my', :action => 'members',
+              :conditions => {:method => [:get, :post]}
   map.connect 'my/page', :controller => 'my', :action => 'page',
               :conditions => {:method => :get}
   # Redirects to my/page
