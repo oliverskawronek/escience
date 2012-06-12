@@ -18,8 +18,8 @@
 class UsersController < ApplicationController
   layout 'admin'
 
-  before_filter :require_admin, :except => [:show, :user_search]
-  before_filter :require_login, :only => :user_search
+  before_filter :require_admin, :except => [:show, :user_search, :member_search]
+  before_filter :require_login, :only => [:user_search, :member_search]
   before_filter :find_user, :only => [:show, :edit, :update, :destroy, :edit_membership, :destroy_membership]
   accept_api_auth :index, :show, :create, :update, :destroy
 
@@ -89,6 +89,63 @@ class UsersController < ApplicationController
       format.json { render :json => @users }
     end
   end
+
+  
+  def member_search
+    if params[:q].nil? || params[:q]== '' || params[:q].split('').length < 3
+      @users = []
+    elsif User.current.admin
+      @users = User.find(:all,
+        :select => "firstname, lastname, id",
+        :conditions => ['(lastname LIKE ? OR firstname LIKE ?) AND id <> ?',
+        "#{params[:q]}%", "#{params[:q]}%", "#{User.current.id}"],:limit => 5, :order => 'lastname')
+    else
+      @projects = []
+      @allusers = []
+      others = User.find_by_sql(["SELECT u.firstname, u.lastname, u.id, p.name
+                                 FROM users u, projects p, members m
+                                 WHERE (u.lastname LIKE ? OR u.firstname LIKE ?)
+                                 AND m.user_id = u.id
+                                 AND p.status=1
+                                 AND p.id = m.project_id
+                                 AND p.id IN (?)
+                                 AND u.id <> ?
+                                 ","#{params[:q]}%", "#{params[:q]}%",
+                                 "#{User.current.projects.map{|p| p.id}.join(",")}",
+                                 User.current.id])
+      project_list = Project.visible.find(:all, :order => 'lft')
+      project_list.each do |project|
+        users = []
+        user_projects = project.users_by_role
+        user_projects.each do |user_project|
+          role = ""
+          user_project.each do |user_roles|
+            if user_roles.class.to_s == "Role"
+              role = user_roles.name
+            elsif user_roles.class.to_s == "Array"
+              user_roles.each do |user|
+                if !(others.detect {|v| v.id == user.id}).nil?
+                  users += [[user, role]]
+                  @allusers += [[user, role]]
+                end
+              end
+            end
+          end
+        end
+        if !users.empty?
+          users.sort! { |a,b| a[0].lastname.downcase <=> b[0].lastname.downcase }
+          @projects += [[project.name, users]]
+        end
+      end
+      @allusers.sort! { |a,b| a[0].lastname.downcase <=> b[0].lastname.downcase }
+    end
+    respond_to do |format|
+      format.xml { render :xml => @users }
+      format.js # user_search.js.erb
+      format.json { render :json => @projects }
+    end
+  end
+    
 
   def show
     # show projects based on current user visibility

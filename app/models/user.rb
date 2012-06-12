@@ -373,6 +373,22 @@ class User < Principal
     end
   end
 
+  def male
+    if (@current_user.salutation == 'female' || @current_user.salutation != '')
+      return false
+    else 
+      return true
+    end
+  end
+
+  def female
+    if (User.current.salutation == 'male' || User.current.salutation == '')
+      return false
+    else 
+      return true
+    end
+  end
+
   def logged?
     true
   end
@@ -566,22 +582,6 @@ class User < Principal
   
   def self.current
     @current_user ||= User.anonymous
-  end
-
-  def self.male
-    if (@current_user.salutation == 'female' || @current_user.salutation != '')
-      return false
-    else 
-      return true
-    end
-  end
-
-  def self.female
-    if (@current_user.salutation == 'male' || @current_user.salutation == '')
-      return true
-    else 
-      return false
-    end
   end
 
   # Returns the anonymous user.  If the anonymous user does not exist, it is created.  There can be only

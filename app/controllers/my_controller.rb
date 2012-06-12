@@ -193,9 +193,47 @@ class MyController < ApplicationController
   end
   
   def members
+    user_list = User.find_by_sql(["SELECT u.firstname, u.lastname, u.id
+                               FROM users u, projects p, members m
+                               WHERE m.user_id = u.id
+                               AND p.status=1
+                               AND p.id = m.project_id
+                               AND p.id IN (?)
+                               AND u.admin = 0
+                               AND u.id <> ?
+                               ",
+                               "#{User.current.projects.map{|p| p.id}.join(",")}",
+                               User.current.id])
     respond_to do |format|
       format.html {
-        @projects = Project.visible.find(:all, :order => 'lft')
+        project_list = Project.visible.find(:all, :order => 'lft')
+        @projects = []
+        @allusers = []
+        project_list.each do |project|
+          users = []
+          user_projects = project.users_by_role
+          user_projects.each do |user_project|
+            role = ""
+            user_project.each do |user_roles|
+              if user_roles.class.to_s == "Role"
+                role = user_roles.name
+              elsif user_roles.class.to_s == "Array"
+                user_roles.each do |user|
+                  if !(user_list.detect {|v| v.id == user.id}).nil?
+                    users += [[user, role]]
+                    @allusers += [user]
+                  end
+                end
+              end
+            end
+          end
+          if !users.empty?
+            users.sort! { |a,b| a[0].lastname.downcase <=> b[0].lastname.downcase }
+            @projects += [[project.name, users]]
+          end
+        end
+        @allusers.sort! { |a,b| a.lastname.downcase <=> b.lastname.downcase }
+        @allusers.uniq!
       }
     end
   end

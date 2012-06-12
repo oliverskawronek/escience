@@ -9,6 +9,7 @@
     	<input id="user_message_receiver_visible" />
     	<%= f.hidden_field :receiver %>
     	<%= hidden_field_tag("buffer", @user_message_reply_id) %>
+    	<%= hidden_field_tag("reply_mail", @user_message_reply_mail) %>
     </div>
   </p>
   <p>

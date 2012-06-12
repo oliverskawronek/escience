@@ -66,10 +66,14 @@ class UserMessagesController < ApplicationController
   # GET /user_messages/new.xml
   def new
     @user_message = UserMessage.new
+    @user_message_reply_mail = params[:reply]
+    @user_message_reply = ""
     if !params[:id].nil?
-      @user_message_reply_id = UserMessage.find(params[:id]).user_id
-      user = User.find(@user_message_reply_id)
-      @user_message_reply = " log('#{user.firstname} #{user.lastname}');" 
+      user = User.find(params[:id])
+      if !user.nil?
+        @user_message_reply_id = user.id
+        @user_message_reply = " log('#{user.firstname} #{user.lastname}');"
+      end
     end
     respond_to do |format|
       format.html # new.html.erb
@@ -124,6 +128,11 @@ class UserMessagesController < ApplicationController
     else
       respond_to do |format|
         if (noerror)
+          if !params[:reply_mail].nil?
+            reply_mail = UserMessage.find(params[:reply_mail])
+            reply_mail.state = 4
+            reply_mail.save
+          end
           format.html { redirect_to(request.referer, :notice => l(:text_message_sent_done)) }
           format.xml  { render :xml => @user_message, :status => :created, :location => @user_message }
         else

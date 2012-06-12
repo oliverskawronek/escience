@@ -113,6 +113,7 @@ ActionController::Routing::Routes.draw do |map|
   end
   map.resources :users
   map.connect 'usersearch', :controller => 'users', :action => 'user_search'
+  map.connect 'membersearch', :controller => 'users', :action => 'member_search'
   # For nice "roadmap" in the url for the index action
   map.connect 'projects/:project_id/roadmap', :controller => 'versions', :action => 'index'
 

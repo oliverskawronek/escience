@@ -92,7 +92,7 @@
 	</div>
 	<div class="container_16">
 		<div id="navigation_group" class="<%= (User.current.logged?)? 'grid_3' : 'grid_4 prefix_1' %>">
-			<div id="private" class="<%= (User.current.logged? && User.female)? 'female' : 'male' %>"></div>
+			<div id="private" class="<%= (User.current.logged? && User.current.female)? 'female' : 'male' %>"></div>
 			<div id="group"></div>
 			<div id="community"></div>
 		</div>
@@ -140,10 +140,7 @@
 		        <% end %>
 		    </div>
 		    <div id="sidebar_right" class="sidebar">
-		    	<ul>
-		    		<li><%= link_to "Mein Konto", {:controller => 'my', :action => 'account'}, :caption => :label_my_account %></li>
-		    		<li><%= link_to "Mitglieder", {:controller => 'my', :action => 'account'}, :caption => :label_my_members %></li>
-		    	</ul>
+		    	<%= render_menu :sidebarright_menu %>
 		    	<div class="splitter">Seitenspezifisch</div>
 		    <%else%>
 			    <div id="sidebar_right" class="sidebar">
