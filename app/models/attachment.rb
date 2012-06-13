@@ -197,24 +197,29 @@ class Attachment < ActiveRecord::Base
   # :files => array of the attached files
   # :unsaved => array of the files that could not be attached
   def self.attach_files(obj, attachments)
-    result = obj.save_attachments(attachments, User.current)
+    saveable = {}
+    len = attachments.length
+
+    for count in 1..len
+      next if attachments.nil?
+      next if attachments[count.to_s].nil?
+      next if attachments[count.to_s]["meta_information"].nil? || attachments[count.to_s]["meta_information"] == ''
+      saveable[count.to_s] = attachments[count.to_s]
+    end
+
+    result = obj.save_attachments(saveable, User.current)
     obj.attach_saved_attachments
+
     result[:files].each_with_index do |att,count|
       meta = MetaInformation.new
-      p
-      p
-      p
-      p "check attachment attachments[#{(count + 1).to_s}][meta_information] #{attachments[(count + 1).to_s]["meta_information"]}"
-      p
-      p
-      p
-      meta.meta_information = attachments[(count + 1).to_s]["meta_information"]
+      
+      meta.meta_information = result[:meta_informations][count]
       meta.attachment = att
       meta.user = User.current
       meta.save!
-    end
+    end if !(result[:files].nil?)
     result
-  end
+ end
 
   def self.latest_attach(attachments, filename)
     attachments.sort_by(&:created_on).reverse.detect {
