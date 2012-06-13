@@ -1,0 +1,19 @@
+<% @projects.each do |project| %>
+  <h3><%= project[0] %></h3>
+  <table>
+  <% project[1].each do |user| %>
+    <tr>
+      <td>
+    <% link_to (:controller => 'users', :action => 'show', :id => user[0].id) do %>
+      <%= (!user[0].salutation.empty?) ? l("field_salutation_vals.#{user[0].salutation}")+" " : "" %>
+      <%= (!user[0].title.empty?) ? l("field_title_vals.#{user[0].title}") : "" %>
+      <%= user[0].name %> (<%= user[1] %>)
+    <% end %>
+      </td>    
+      <td>
+        <div class="sendMessage"><%= self.link_to("go", {:controller => 'user_messages', :action => 'new', :id => user[0].id}) %></div>
+      </td>
+    </tr>
+  <% end %>
+  </table>
+<% end %>

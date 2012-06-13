@@ -211,8 +211,7 @@ class MyController < ApplicationController
         @allusers = []
         project_list.each do |project|
           users = []
-          user_projects = project.users_by_role
-          user_projects.each do |user_project|
+          project.users_by_role.each do |user_project|
             role = ""
             user_project.each do |user_roles|
               if user_roles.class.to_s == "Role"

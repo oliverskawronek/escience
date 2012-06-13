@@ -60,4 +60,16 @@ module UsersHelper
     end
     tabs
   end
+  
+  def member_tabs
+    tabs = [{:name => 'members', :partial => 'users/members', :label => :label_memberlist_all},
+            {:name => 'membersgrouped', :partial => 'users/membersgrouped', :label => :label_memberlist_grouped},
+            {:name => 'membersearch', :partial => 'users/membersearch', :label => :label_memberlist_search}
+            ]
+    if Group.all.any?
+      tabs.insert 1, {:name => 'groups', :partial => 'users/groups', :label => :label_group_plural}
+    end
+    tabs
+  end
+    
 end

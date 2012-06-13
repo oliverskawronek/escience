@@ -4,99 +4,10 @@
 <h2><%=l(:label_my_members)%></h2>
 <%= error_messages_for 'user' %>
 
-<table>
-<% @allusers.each do |user| %>
-    <tr>
-      <td>
-    <% link_to (:controller => 'users', :action => 'show', :id => user.id) do %>
-      <%= (!user.salutation.empty?) ? l("field_salutation_vals.#{user.salutation}")+" " : "" %>
-      <%= (!user.title.empty?) ? l("field_title_vals.#{user.title}") : "" %>
-      <%= user.name %>
-    <% end %>
-      </td>    
-      <td>
-        <div class="sendMessage"><%= self.link_to("go", {:controller => 'user_messages', :action => 'new', :id => user.id}) %></div>
-      </td>
-    </tr>
-<% end %>
-</table>
-
-<% @projects.each do |project| %>
-  <h3><%= project[0] %></h3>
-  <table>
-  <% project[1].each do |user| %>
-    <tr>
-      <td>
-    <% link_to (:controller => 'users', :action => 'show', :id => user[0].id) do %>
-      <%= (!user[0].salutation.empty?) ? l("field_salutation_vals.#{user[0].salutation}")+" " : "" %>
-      <%= (!user[0].title.empty?) ? l("field_title_vals.#{user[0].title}") : "" %>
-      <%= user[0].name %> (<%= user[1] %>)
-    <% end %>
-      </td>    
-      <td>
-        <div class="sendMessage"><%= self.link_to("go", {:controller => 'user_messages', :action => 'new', :id => user[0].id}) %></div>
-      </td>
-    </tr>
-  <% end %>
-  </table>
-<% end %>
-
-    <div class="ui-widget" id="recipient_autocomplete">
-    	<input id="user_message_receiver_visible" />
-    </div>
-    <div id="ausgabe"></div>
+<%= render_tabs member_tabs %>
 
 
-<% content_for :header_tags do %>
-  <%= stylesheet_link_tag 'user_message' %>
-  <%= javascript_include_tag 'visualsearch/dependencies' %>
-  <%= javascript_tag '
-  var $j = $.noConflict();
-	$j(function() {
-		$j( "#user_message_receiver_visible" ).autocomplete({
-			source: function( request, response ) {
-				$j.ajax({
-					url: "'+url_for(:controller => "users", :action => "member_search")+'",
-  				dataType: "json",
-					data: {
-						maxRows: 12,
-						q: request.term
-					},
-					success: function( data ) {
-					  $j("#ausgabe").html("");
-						response( $j.map( data, function( item ) {
-						  console.log(item);
-					    var $element = $j("<div class=\'project\' />");
-					    $element.append($j("<h3>").text(item[0]));
-					    var $tbl = $j("<table>");
-					    for (var i = 0; i < item[1].length; i++) {
-                $tbl.append($j("<tr>").append($j("<td>").text(item[1][i][0][\'firstname\']+" "+item[1][i][0][\'lastname\']+" ("+item[1][i][1]+")"),$j("<td>").append("<a href=\'/user_messages/new?id="+item[1][i][0][\'id\']+"\'>go</a>")));
-              }
-
-              $element.append($tbl);
-  						$j("#ausgabe").append($element);
-  						return false;
-						}));
-					}
-				});
-			},
-			minLength: 2,
-			select: function( event, ui ) {
-				log(ui.item.label);
-				return false;
-			},
-			open: function() {
-				$j( this ).removeClass( "ui-corner-all" ).addClass( "ui-corner-top" );
-			},
-			close: function() {
-				$j( this ).removeClass( "ui-corner-top" ).addClass( "ui-corner-all" );
-			}
-		});
-});' %>
-<% end %>
-
-
-<% html_title(l(:label_my_account)) -%>
-<% content_for :header_tags do %>
-  <%= stylesheet_link_tag 'profile' %>
-<% end %>
+<% html_title(l(:label_my_members)) -%>
+<%# content_for :header_tags do %>
+  <%#= stylesheet_link_tag 'profile' %>
+<%# end %>

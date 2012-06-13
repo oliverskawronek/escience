@@ -462,6 +462,8 @@ de:
 
   label_organisation: Organisieren
   label_hello: Hallo
+  label_specific: Seitenspezifisch
+  label_specific_none: Keine spezifischen Links
   label_usermessage: Nachrichten
   label_usermessage_announce: neue Nachricht
   label_usermessage_announce_plural: neue Nachrichten
@@ -547,6 +549,9 @@ de:
   label_user_messages_send: Nachricht senden
   label_user_messages_from: Nachricht von
   label_privatearea: Privater Bereich
+  label_memberlist_all: Gesamte Liste
+  label_memberlist_grouped: nach Projekten gruppiert
+  label_memberlist_search: Suche
   label_administration: Administration
   label_login: Anmelden
   label_logout: Abmelden
@@ -709,6 +714,7 @@ de:
   label_roadmap_overdue: "%{value} verspätet"
   label_roadmap_no_issues: Keine Tickets für diese Version
   label_search: Suche
+  label_search_plural: Suchen
   label_result_plural: Resultate
   label_all_words: Alle Wörter
   label_wiki: Wiki
