@@ -416,12 +416,13 @@
 		-moz-border-radius:10px;
 		-webkit-border-radius:10px;
 		border-radius:10px;
-		padding: 10px 20px;
+		padding: 3px 20px 10px 20px;
 		background-color: #FAFAFA;
 	}
 
 	fieldset legend {
 		font-size:13pt;
+		margin-left: -10px;
 	}
 	
 	label {
@@ -573,6 +574,80 @@
   	width: 150px;
   	font-size: 12px;
 	}
+	
+	.controller-my.action-page .mypage-box p {
+  	max-height: 55px;
+  	overflow: hidden;
+	}
+	
+	.action-members fieldset {
+	  padding-top: 3px;
+	}
+
+	.action-members .openUser, .action-members .sendMessage {
+	  float: right;
+  	width:13px;
+  	height: 10px;
+  	margin-left: 5px;
+  	background-position: 50% 0%;
+	}
+	.action-members .openUser {
+  	background-image: url("../images/show.png");
+  }
+  
+	.action-members .sendMessage {
+  	background-image: url("../images/sendmessage.png");
+	}
+
+	.action-members .openUser:hover, .action-members .sendMessage:hover {
+  	background-position: 50% 100%;
+	}
+
+	.action-members #member_search {
+  	width: 86%;
+  	margin-top: -3px;
+  	float: right;
+  	margin-bottom: 20px;
+	}
+	
+	.controller-users.action-show #main label {
+  	width: 55px;
+  	display: inline-block;
+  	text-align: left;
+	}
+
+	.controller-users.action-show #main ul, .controller-projects.action-show #main ul {
+	  margin-left: 0px;
+	  padding-left: 0px;
+	}
+
+	.controller-users.action-show .user_information_main {
+	  float: left;
+	  margin-left: 30px;
+	}
+
+	.controller-users.action-show h4 {
+	 margin-bottom: 2px;
+	}
+	
+	.controller-users.action-show dl {
+    margin-top: 2px;
+	}
+
+	.controller-projects.action-show div.wiki {
+  	margin-bottom: 30px;
+	}	
+		
+	.controller-projects.action-show div.wiki p {
+  	font-style: italic;
+  	padding: 0 20px;
+  	text-justify: block;
+	}
+
+	.controller-projects.action-show div.wiki ul {
+	   padding-left: 20px !important;
+	}
+	
 	
         #css
         .jbar{

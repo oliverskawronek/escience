@@ -178,9 +178,9 @@ de:
   notice_email_error: "Beim Senden einer E-Mail ist ein Fehler aufgetreten (%{value})."
   notice_feeds_access_key_reseted: Ihr Atom-Zugriffsschlüssel wurde zurückgesetzt.
   notice_api_access_key_reseted: Ihr API-Zugriffsschlüssel wurde zurückgesetzt.
-  notice_failed_to_save_issues: "%{count} von %{total} ausgewählten Tickets konnte(n) nicht gespeichert werden: %{ids}."
+  notice_failed_to_save_issues: "%{count} von %{total} ausgewählten Arbeitsansweisungen konnte(n) nicht gespeichert werden: %{ids}."
   notice_failed_to_save_members: "Benutzer konnte nicht gespeichert werden: %{errors}."
-  notice_no_issue_selected: "Kein Ticket ausgewählt! Bitte wählen Sie die Tickets, die Sie bearbeiten möchten."
+  notice_no_issue_selected: "Kein Ticket ausgewählt! Bitte wählen Sie die Arbeitsansweisungen, die Sie bearbeiten möchten."
   notice_account_pending: "Ihr Konto wurde erstellt und wartet jetzt auf die Genehmigung des Administrators."
   notice_default_data_loaded: Die Standard-Konfiguration wurde erfolgreich geladen.
   notice_unable_delete_version: Die Version konnte nicht gelöscht werden.
@@ -192,16 +192,16 @@ de:
   error_scm_command_failed: "Beim Zugriff auf das Projektarchiv ist ein Fehler aufgetreten: %{value}"
   error_scm_annotate: "Der Eintrag existiert nicht oder kann nicht annotiert werden."
   error_issue_not_found_in_project: 'Das Ticket wurde nicht gefunden oder gehört nicht zu diesem Projekt.'
-  error_no_tracker_in_project: Diesem Projekt ist kein Tracker zugeordnet. Bitte überprüfen Sie die Projekteinstellungen.
+  error_no_tracker_in_project: Diesem Projekt ist keine Aufgabenart zugeordnet. Bitte überprüfen Sie die Projekteinstellungen.
   error_no_default_issue_status: Es ist kein Status als Standard definiert. Bitte überprüfen Sie Ihre Konfiguration (unter "Administration -> Ticket-Status").
   error_can_not_delete_custom_field: Kann das benutzerdefinierte Feld nicht löschen.
-  error_can_not_delete_tracker: Dieser Tracker enthält Tickets und kann nicht gelöscht werden.
+  error_can_not_delete_tracker: Diese Aufgabenart enthält Arbeitsansweisungen und kann nicht gelöscht werden.
   error_can_not_remove_role: Diese Rolle wird verwendet und kann nicht gelöscht werden.
   error_can_not_reopen_issue_on_closed_version: Das Ticket ist einer abgeschlossenen Version zugeordnet und kann daher nicht wieder geöffnet werden.
   error_can_not_archive_project: Dieses Projekt kann nicht archiviert werden.
   error_issue_done_ratios_not_updated: Der Ticket-Fortschritt wurde nicht aktualisiert.
-  error_workflow_copy_source: Bitte wählen Sie einen Quell-Tracker und eine Quell-Rolle.
-  error_workflow_copy_target: Bitte wählen Sie die Ziel-Tracker und -Rollen.
+  error_workflow_copy_source: Bitte wählen Sie eine Quell-Aufgabenart und eine Quell-Rolle.
+  error_workflow_copy_target: Bitte wählen Sie die Ziel-Aufgabenart und -Rollen.
   error_unable_delete_issue_status: "Der Ticket-Status konnte nicht gelöscht werden."
   error_unable_to_connect: Fehler beim Verbinden (%{value})
   warning_attachments_not_saved: "%{count} Datei(en) konnten nicht gespeichert werden."
@@ -214,8 +214,8 @@ de:
   mail_body_account_information: Ihre Konto-Informationen
   mail_subject_account_activation_request: "Antrag auf %{value} Kontoaktivierung"
   mail_body_account_activation_request: "Ein neuer Benutzer (%{value}) hat sich registriert. Sein Konto wartet auf Ihre Genehmigung:"
-  mail_subject_reminder: "%{count} Tickets müssen in den nächsten %{days} Tagen abgegeben werden"
-  mail_body_reminder: "%{count} Tickets, die Ihnen zugewiesen sind, müssen in den nächsten %{days} Tagen abgegeben werden:"
+  mail_subject_reminder: "%{count} Arbeitsansweisungen müssen in den nächsten %{days} Tagen abgegeben werden"
+  mail_body_reminder: "%{count} Arbeitsansweisungen, die Ihnen zugewiesen sind, müssen in den nächsten %{days} Tagen abgegeben werden:"
   mail_subject_wiki_content_added: "Wiki-Seite '%{id}' hinzugefügt"
   mail_body_wiki_content_added: "Die Wiki-Seite '%{id}' wurde von %{author} hinzugefügt."
   mail_subject_wiki_content_updated: "Wiki-Seite '%{id}' erfolgreich aktualisiert"
@@ -253,7 +253,8 @@ de:
   field_department: Institution
   field_street: Straße  
   field_city: Stadt  
-  field_zipcode: Postleitzahl  
+  field_zipcode: Postleitzahl 
+  field_adress: Anschrift
   field_filename: Datei
   field_filesize: Größe
   field_downloads: Downloads
@@ -275,7 +276,7 @@ de:
   field_notes: Kommentare
   field_is_closed: Ticket geschlossen
   field_is_default: Standardeinstellung
-  field_tracker: Tracker
+  field_tracker: Aufgabenart
   field_subject: Thema
   field_due_date: Abgabedatum
   field_assigned_to: Senden an
@@ -323,7 +324,7 @@ de:
   field_is_filter: Als Filter benutzen
   field_issue_to: Zugehöriges Ticket
   field_delay: Pufferzeit
-  field_assignable: Tickets können dieser Rolle zugewiesen werden
+  field_assignable: Arbeitsansweisungen können dieser Rolle zugewiesen werden
   field_redirect_existing_links: Existierende Links umleiten
   field_estimated_hours: Geschätzter Aufwand
   field_column_names: Spalten
@@ -348,7 +349,7 @@ de:
   setting_login_required: Authentifizierung erforderlich
   setting_self_registration: Anmeldung ermöglicht
   setting_attachment_max_size: Max. Dateigröße
-  setting_issues_export_limit: Max. Anzahl Tickets bei CSV/PDF-Export
+  setting_issues_export_limit: Max. Anzahl Arbeitsansweisungen bei CSV/PDF-Export
   setting_mail_from: E-Mail-Absender
   setting_bcc_recipients: E-Mails als Blindkopie (BCC) senden
   setting_plain_text_mail: Nur reinen Text (kein HTML) senden
@@ -371,7 +372,7 @@ de:
   setting_per_page_options: Objekte pro Seite
   setting_user_format: Benutzer-Anzeigeformat
   setting_activity_days_default: Anzahl Tage pro Seite der Projekt-Aktivität
-  setting_display_subprojects_issues: Tickets von Unterprojekten im Hauptprojekt anzeigen
+  setting_display_subprojects_issues: Arbeitsansweisungen von Unterprojekten im Hauptprojekt anzeigen
   setting_enabled_scm: Aktivierte Versionskontrollsysteme
   setting_mail_handler_body_delimiters: "Schneide E-Mails nach einer dieser Zeilen ab"
   setting_mail_handler_api_enabled: Abruf eingehender E-Mails aktivieren
@@ -401,15 +402,15 @@ de:
   permission_manage_project_activities: Aktivitäten (Zeiterfassung) verwalten
   permission_manage_versions: Versionen verwalten
   permission_manage_categories: Ticket-Kategorien verwalten
-  permission_view_issues: Tickets anzeigen
-  permission_add_issues: Tickets hinzufügen
-  permission_edit_issues: Tickets bearbeiten
+  permission_view_issues: Anweisung anzeigen
+  permission_add_issues: Anweisung hinzufügen
+  permission_edit_issues: Anweisung bearbeiten
   permission_manage_issue_relations: Ticket-Beziehungen verwalten
   permission_add_issue_notes: Kommentare hinzufügen
   permission_edit_issue_notes: Kommentare bearbeiten
   permission_edit_own_issue_notes: Eigene Kommentare bearbeiten
-  permission_move_issues: Tickets verschieben
-  permission_delete_issues: Tickets löschen
+  permission_move_issues: Anweisungen verschieben
+  permission_delete_issues: Anweisungen löschen
   permission_manage_public_queries: Öffentliche Filter verwalten
   permission_save_queries: Filter speichern
   permission_view_gantt: Gantt-Diagramm ansehen
@@ -471,6 +472,8 @@ de:
   label_mymessage_plural: Arbeitsanweisungen
   label_projectspec: Projektspezifisch
   label_communication: Kommunikation
+  label_description: Beschreibung
+  label_forproject: für das Projekt
   label_user: Benutzer
   label_user_plural: Benutzer
   label_user_new: Neuer Benutzer
@@ -484,11 +487,11 @@ de:
     other: "%{count} Projekte"
   label_project_all: Alle Projekte
   label_project_latest: Neueste Projekte
-  label_issue: Arbeitsanweisung
-  label_issue_new: Neues Anweisung
+  label_issue: Arbeitsanweisungen
+  label_issue_new: Neue Anweisung
   label_issue_plural: Arbeitsanweisungen
   label_issue_view_all: Alle Arbeitsanweisungen anzeigen
-  label_issues_by: "Arbeitsanweisung von %{value}"
+  label_issues_by: "Arbeitsanweisungen von %{value}"
   label_issue_added: Arbeitsanweisung hinzugefügt
   label_issue_updated: Arbeitsanweisung aktualisiert
   label_document: Dokument
@@ -502,9 +505,9 @@ de:
   label_member: Mitglied
   label_member_new: Neues Mitglied
   label_member_plural: Mitglieder
-  label_tracker: Tracker
-  label_tracker_plural: Tracker
-  label_tracker_new: Neuer Tracker
+  label_tracker: Aufgabenart
+  label_tracker_plural: Aufgabenarten
+  label_tracker_new: Neue Aufgabenart
   label_workflow: Workflow
   label_issue_status: Ticket-Status
   label_issue_status_plural: Ticket-Status
@@ -556,7 +559,7 @@ de:
   label_login: Anmelden
   label_logout: Abmelden
   label_help: Hilfe
-  label_reported_issues: Gemeldete Tickets
+  label_reported_issues: Gemeldete Arbeitsanweisungen
   label_assigned_to_me_issues: Mir zugewiesen
   label_last_login: Letzte Anmeldung
   label_registered_on: Angemeldet am
@@ -712,7 +715,7 @@ de:
   label_roadmap: Roadmap
   label_roadmap_due_in: "Fällig in %{value}"
   label_roadmap_overdue: "%{value} verspätet"
-  label_roadmap_no_issues: Keine Tickets für diese Version
+  label_roadmap_no_issues: Keine Arbeitsanweisungen für diese Version
   label_search: Suche
   label_search_plural: Suchen
   label_result_plural: Resultate
@@ -728,7 +731,7 @@ de:
   label_preview: Vorschau
   label_feed_plural: Feeds
   label_changes_details: Details aller Änderungen
-  label_issue_tracking: Tickets
+  label_issue_tracking: Arbeitsanweisung
   label_spent_time: Aufgewendete Zeit
   label_overall_spent_time: Aufgewendete Zeit aller Projekte anzeigen
   label_f_hour: "%{value} Stunde"
@@ -744,8 +747,8 @@ de:
   label_options: Optionen
   label_copy_workflow_from: Workflow kopieren von
   label_permissions_report: Berechtigungsübersicht
-  label_watched_issues: Beobachtete Tickets
-  label_related_issues: Zugehörige Tickets
+  label_watched_issues: Beobachtete Anweisungen
+  label_related_issues: Zugehörige Anweisungen
   label_applied_status: Zugewiesener Status
   label_loading: Lade...
   label_relation_new: Neue Beziehung
@@ -797,7 +800,7 @@ de:
   label_changeset_plural: Changesets
   label_default_columns: Standard-Spalten
   label_no_change_option: (Keine Änderung)
-  label_bulk_edit_selected_issues: Alle ausgewählten Tickets bearbeiten
+  label_bulk_edit_selected_issues: Alle ausgewählten Arbeitsanbweisungen bearbeiten
   label_theme: Stil
   label_default: Standard
   label_search_titles_only: Nur Titel durchsuchen
@@ -846,7 +849,7 @@ de:
   label_copy_source: Quelle
   label_copy_target: Ziel
   label_copy_same_as_target: So wie das Ziel
-  label_display_used_statuses_only: Zeige nur Status an, die von diesem Tracker verwendet werden
+  label_display_used_statuses_only: Zeige nur Status an, die von dieser Aufgabenart verwendet werden
   label_api_access_key: API-Zugriffsschlüssel
   label_missing_api_access_key: Der API-Zugriffsschlüssel fehlt.
   label_api_access_key_created_on: Der API-Zugriffsschlüssel wurde vor %{value} erstellt
@@ -939,7 +942,7 @@ de:
   text_caracters_maximum: "Max. %{count} Zeichen."
   text_caracters_minimum: "Muss mindestens %{count} Zeichen lang sein."
   text_length_between: "Länge zwischen %{min} und %{max} Zeichen."
-  text_tracker_no_workflow: Kein Workflow für diesen Tracker definiert.
+  text_tracker_no_workflow: Kein Workflow für dieser Aufgabenart definiert.
   text_unallowed_characters: Nicht erlaubte Zeichen
   text_comma_separated: Mehrere Werte erlaubt (durch Komma getrennt).
   text_line_separated: Mehrere Werte sind erlaubt (eine Zeile pro Wert).
@@ -947,14 +950,14 @@ de:
   text_issue_added: "Ticket %{id} wurde erstellt von %{author}."
   text_issue_updated: "Ticket %{id} wurde aktualisiert von %{author}."
   text_wiki_destroy_confirmation: Sind Sie sicher, dass Sie dieses Wiki mit sämtlichem Inhalt löschen möchten?
-  text_issue_category_destroy_question: "Einige Tickets (%{count}) sind dieser Kategorie zugeodnet. Was möchten Sie tun?"
+  text_issue_category_destroy_question: "Einige Arbeitsanweisungen (%{count}) sind dieser Kategorie zugeodnet. Was möchten Sie tun?"
   text_issue_category_destroy_assignments: Kategorie-Zuordnung entfernen
-  text_issue_category_reassign_to: Tickets dieser Kategorie zuordnen
-  text_user_mail_option: "Für nicht ausgewählte Projekte werden Sie nur Benachrichtigungen für Dinge erhalten, die Sie beobachten oder an denen Sie beteiligt sind (z. B. Tickets, deren Autor Sie sind oder die Ihnen zugewiesen sind)."
-  text_no_configuration_data: "Rollen, Tracker, Ticket-Status und Workflows wurden noch nicht konfiguriert.\nEs ist sehr zu empfehlen, die Standard-Konfiguration zu laden. Sobald sie geladen ist, können Sie sie abändern."
+  text_issue_category_reassign_to: Arbeitsanweisungen dieser Kategorie zuordnen
+  text_user_mail_option: "Für nicht ausgewählte Projekte werden Sie nur Benachrichtigungen für Dinge erhalten, die Sie beobachten oder an denen Sie beteiligt sind (z. B. Arbeitsansweisungen, deren Autor Sie sind oder die Ihnen zugewiesen sind)."
+  text_no_configuration_data: "Rollen, Aufgabenarten, Arbeitsanweisungs-Status und Workflows wurden noch nicht konfiguriert.\nEs ist sehr zu empfehlen, die Standard-Konfiguration zu laden. Sobald sie geladen ist, können Sie sie abändern."
   text_load_default_configuration: Standard-Konfiguration laden
   text_status_changed_by_changeset: "Status geändert durch Changeset %{value}."
-  text_issues_destroy_confirmation: 'Sind Sie sicher, dass Sie die ausgewählten Tickets löschen möchten?'
+  text_issues_destroy_confirmation: 'Sind Sie sicher, dass Sie die ausgewählten Arbeitsansweisungen löschen möchten?'
   text_select_project_modules: 'Bitte wählen Sie die Module aus, die in diesem Projekt aktiviert sein sollen:'
   text_default_administrator_account_changed: Administrator-Kennwort geändert
   text_file_repository_writable: Verzeichnis für Dateien beschreibbar
@@ -1038,13 +1041,13 @@ de:
   label_issue_note_added: Notiz hinzugefügt
   label_issue_status_updated: Status aktualisiert
   label_issue_priority_updated: Priorität aktualisiert
-  label_issues_visibility_own: Tickets die folgender User erstellt hat oder die ihm zugewiesen sind
+  label_issues_visibility_own: Arbeitsansweisungen die folgender User erstellt hat oder die ihm zugewiesen sind
   field_issues_visibility: Ticket Sichtbarkeit
-  label_issues_visibility_all: Alle Tickets
-  permission_set_own_issues_private: Eigene Tickets privat oder öffentlich markieren
+  label_issues_visibility_all: Alle Arbeitsansweisungen
+  permission_set_own_issues_private: Eigene Arbeitsansweisungen privat oder öffentlich markieren
   field_is_private: Privat
-  permission_set_issues_private: Tickets privat oder öffentlich markieren
-  label_issues_visibility_public: Alle öffentlichen Tickets
+  permission_set_issues_private: Arbeitsansweisungen privat oder öffentlich markieren
+  label_issues_visibility_public: Alle öffentlichen Arbeitsansweisungen
   text_issues_destroy_descendants_confirmation: Dies wird auch %{count} Unteraufgabe/n löschen.
   field_commit_logs_encoding: Kodierung der Commit-Log-Meldungen
   field_scm_path_encoding: Pfad Kodierung
@@ -1087,7 +1090,7 @@ de:
   label_parent_revision: Parent
   label_child_revision: Child
   error_scm_annotate_big_text_file: Der Eintrag kann nicht umgesetzt werden, da er die maximale Textlänge überschreitet.
-  setting_default_issue_start_date_to_creation_date: Aktuelles Datum als Beginn für neue Tickets verwenden
+  setting_default_issue_start_date_to_creation_date: Aktuelles Datum als Beginn für neue Arbeitsansweisungen verwenden
   button_edit_section: Diesen Bereich bearbeiten
   setting_repositories_encodings: Encoding von Anhängen und Repositories
   description_all_columns: Alle Spalten
@@ -1096,20 +1099,20 @@ de:
   error_attachment_too_big: Diese Datei kann nicht hochgeladen werden, da sie die maximale Dateigröße von (%{max_size}) überschreitet.
   notice_failed_to_save_time_entries: "Gescheitert %{count} Zeiteinträge für %{total} von ausgewählten: %{ids} zu speichern." 
   label_x_issues:
-    zero:  0 Tickets
-    one:   1 Ticket
-    other: "%{count} Tickets"
+    zero:  0 Anweisungen
+    one:   1 Anweisung
+    other: "%{count} Anweisungen"
   label_repository_new: Neues Repository
   field_repository_is_default: Haupt-Repository
   label_copy_attachments: Anhänge Kopieren
   label_item_position: "%{position}/%{count}"
   label_completed_versions: Abgeschlossene Versionen
   field_multiple: Mehrer Werte
-  setting_commit_cross_project_ref: Erlauben auf Tickets aller anderen Projekte zu referenzieren
+  setting_commit_cross_project_ref: Erlauben auf Arbeitsansweisungen aller anderen Projekte zu referenzieren
   text_issue_conflict_resolution_add_notes: Meine Änderungen übernehmen und alle anderen Änderungen verwerfen
   text_issue_conflict_resolution_overwrite: Meine Änderungen trotzdem übernehmen (vorherige Notizen bleiben erhalten aber manche können überschrieben werden)
   notice_issue_update_conflict: Das Ticket wurde von einem anderen Nutzer überarbeitet während Ihrer Bearbeitung.
   text_issue_conflict_resolution_cancel: Meine Änderungen verwerfen und %{link} neu anzeigen
-  permission_manage_related_issues: Zugehörige Tickets verwalten
+  permission_manage_related_issues: Zugehörige Arbeitsansweisungen verwalten
   field_ldap_filter: LDAP Filter
   label_search_for_watchers: Nach hinzufügbaren Beobachtern suchen

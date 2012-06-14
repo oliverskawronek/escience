@@ -1,18 +1,15 @@
 <% content_for :sidebar_right do %>
-<% if !@query.new_record? && @query.editable_by?(User.current) %>
+  <% if !@query.new_record? && @query.editable_by?(User.current) %>
   	<li><%= link_to l(:button_edit), edit_query_path(@query), :class => 'icon icon-edit' %></li>
   	<li><%= link_to l(:button_delete), query_path(@query), :confirm => l(:text_are_you_sure),
               :method => :delete, :class => 'icon icon-del' %></li>
-<% end %>
+  <% end %>
 <%end%>
 
 <h2><%= @query.new_record? ? l(:label_issue_plural) : h(@query.name) %></h2>
 <% html_title(@query.new_record? ? l(:label_issue_plural) : @query.name) %>
 
 
-
-
-<!-- DIES IST DER ORIGINAL QUELLCODE
 
 <% form_tag({ :controller => 'issues', :action => 'index', :project_id => @project },
             :method => :get, :id => 'query_form') do %>
@@ -24,7 +21,8 @@
         <%= render :partial => 'queries/filters', :locals => {:query => @query} %>
       </div>
     </fieldset>
-    <fieldset class="collapsible collapsed">
+   
+    <fieldset class="collapsible collapsed" style="display:none;">
       <legend onclick="toggleFieldset(this);"><%= l(:label_options) %></legend>
       <div style="display: none;">
         <table>
@@ -43,6 +41,7 @@
         </table>
       </div>
     </fieldset>
+
     </div>
     <p class="buttons hide-when-print">
 
@@ -64,7 +63,6 @@
 
 <%= render :partial => 'issues/list', :locals => {:issues => @issues, :query => @query} %>
 
-AB HIER BEGINN DER ERSATZ   -->
 
 
 
@@ -74,7 +72,7 @@ AB HIER BEGINN DER ERSATZ   -->
                                 :include => [ :status, :project, :tracker, :priority ],
                                 :order => "#{IssuePriority.table_name}.position DESC, #{Issue.table_name}.updated_on DESC") %>
 
-<%= render :partial => 'issues/list_simple', :locals => { :issues => assigned_issues } %>
+<%#= render :partial => 'issues/list_simple', :locals => { :issues => assigned_issues } %>
 <% if assigned_issues.length > 0 %>
 
 <p class="small"><%= link_to l(:label_issue_view_all), :controller => 'issues',
@@ -90,13 +88,13 @@ AB HIER BEGINN DER ERSATZ   -->
 <p class="pagination"><%= pagination_links_full @issue_pages, @issue_count %></p>
 <% end %>
 
-<% other_formats_links do |f| %>
-  <%= f.link_to 'Atom', :url => params.merge(:key => User.current.rss_key) %>
-  <%= f.link_to 'CSV', :url => params, :onclick => "showModal('csv-export-options', '330px'); return false;" %>
-  <%= f.link_to 'PDF', :url => params %>
-<% end %>
+<%# other_formats_links do |f| %>
+  <%#= f.link_to 'Atom', :url => params.merge(:key => User.current.rss_key) %>
+  <%#= f.link_to 'CSV', :url => params, :onclick => "showModal('csv-export-options', '330px'); return false;" %>
+  <%#= f.link_to 'PDF', :url => params %>
+<%# end %>
 
-<div id="csv-export-options" style="display:none;">
+<!--div id="csv-export-options" style="display:none;">
   <h3 class="title"><%= l(:label_export_options, :export_format => 'CSV') %></h3>
   <% form_tag(params.merge({:format => 'csv',:page=>nil}), :method => :get, :id => 'csv-export-form') do %>
   <p>
@@ -111,7 +109,7 @@ AB HIER BEGINN DER ERSATZ   -->
     <%= submit_tag l(:button_cancel), :name => nil, :onclick => "hideModal(this);", :type => 'button' %>
   </p>
   <% end %>
-</div>
+</div-->
 
 <% end %>
 <%= call_hook(:view_issues_index_bottom, { :issues => @issues, :project => @project, :query => @query }) %>
