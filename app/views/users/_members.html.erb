@@ -9,22 +9,23 @@
    sorted_users = sorted_users.sort { |a,b| b[1] <=> a[1] }
 %>
    
-<table>
 <% sorted_users.each do |letter, users| %>
-  <tr><td><%= letter %></td></tr>
+<fieldset>
+  <legend><%= letter %></legend>
+  <table width="100%">
   <% users.each do |user| %>
     <tr>
       <td>
-    <% link_to (:controller => 'users', :action => 'show', :id => user.id) do %>
       <%= (!user.salutation.empty?) ? l("field_salutation_vals.#{user.salutation}")+" " : "" %>
       <%= (!user.title.empty?) ? l("field_title_vals.#{user.title}") : "" %>
-      <%= user.name %>
-    <% end %>
+      <%= user.name %> <%= (!user.department.empty?) ? "(#{user.department})" : "" %>
       </td>    
-      <td>
-        <div class="sendMessage"><%= self.link_to("go", {:controller => 'user_messages', :action => 'new', :id => user.id}) %></div>
+      <td width="50">
+        <% link_to (:controller => 'users', :action => 'show', :id => user.id) do %><div class="openUser"></div><% end %>
+        <% link_to(:controller => 'user_messages', :action => 'new', :id => user.id) do %><div class="sendMessage"></div><% end %>
       </td>
     </tr>
   <% end %>
+  </table>
+</fieldset>
 <% end %>
-</table>

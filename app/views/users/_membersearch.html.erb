@@ -1,6 +1,8 @@
-<div class="ui-widget" id="recipient_autocomplete">
-	<input id="user_message_receiver_visible" />
+<div class="description">
+  Bitte geben Sie das zu suchende Mitglied in das Eingabefeld ein. Es wird automatisch anhand der Eingabe (mindestens 3 Zeichen) das Ergebnis generiert.
 </div>
+<div style="height:20px;"></div>
+<label>Suchanfrage:</label> <input id="member_search" />
 <div id="ausgabe"></div>
 
 
@@ -9,7 +11,7 @@
   <%= javascript_tag '
   var $j = $.noConflict();
 	$j(function() {
-		$j( "#user_message_receiver_visible" ).autocomplete({
+		$j( "#member_search" ).autocomplete({
 			source: function( request, response ) {
 				$j.ajax({
 					url: "'+url_for(:controller => "users", :action => "member_search")+'",
@@ -22,11 +24,11 @@
 					  $j("#ausgabe").html("");
 						response( $j.map( data, function( item ) {
 						  console.log(item);
-					    var $element = $j("<div class=\'project\' />");
-					    $element.append($j("<h3>").text(item[0]));
-					    var $tbl = $j("<table>");
+					    var $element = $j("<fieldset class=\'project\' />");
+					    $element.append($j("<legend>").text(item[0]));
+					    var $tbl = $j("<table width=\"100%\">");
 					    for (var i = 0; i < item[1].length; i++) {
-                $tbl.append($j("<tr>").append($j("<td>").text(item[1][i][0][\'firstname\']+" "+item[1][i][0][\'lastname\']+" ("+item[1][i][1]+")"),$j("<td>").append("<a href=\'/user_messages/new?id="+item[1][i][0][\'id\']+"\'>go</a>")));
+                $tbl.append($j("<tr>").append($j("<td>").text(item[1][i][0][\'firstname\']+" "+item[1][i][0][\'lastname\']+" ("+item[1][i][1]+")"),$j("<td width=\"50\">").append("<a href=\''+url_for(:controller => "users", :action => "index")+'/"+item[1][i][0][\'id\']+"\'><div class=\"openUser\"></div></a>","<a href=\''+url_for(:controller => "user_messages", :action => "new")+'?id="+item[1][i][0][\'id\']+"\'><div class=\"sendMessage\"></div></a>")));
               }
 
               $element.append($tbl);
