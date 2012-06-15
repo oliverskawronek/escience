@@ -1125,7 +1125,7 @@ module ApplicationHelper
   end
 
   def favicon
-    "<link rel='shortcut icon' href='#{image_path('/favicon.ico')}' />".html_safe
+    "<link rel='shortcut icon' href='#{image_path('/logo_e-science_network.ico')}' />".html_safe
   end
 
   def robot_exclusion_tag
