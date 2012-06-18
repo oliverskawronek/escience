@@ -318,6 +318,7 @@ de:
   field_start_page: Hauptseite
   field_subproject: Unterprojekt von
   field_hours: Stunden
+  field_hours_short: h
   field_activity: Aktivität
   field_spent_on: Datum
   field_identifier: Kennung
@@ -471,6 +472,7 @@ de:
   label_mymessage: Arbeitsanweisung
   label_mymessage_plural: Arbeitsanweisungen
   label_projectspec: Projektspezifisch
+  label_knowledge: Wissensräume
   label_communication: Kommunikation
   label_description: Beschreibung
   label_forproject: für das Projekt
@@ -536,7 +538,7 @@ de:
   label_my_page: Mein Konto
   label_my_projects: Meine Projekte
   label_my_page_block: Angezeigte Elemente
-  label_my_members: Mitglieder
+  label_my_members: Kontaktliste
   label_my_inbox: Posteingang
   label_user_messages: Eigene Nachrichten
   label_user_messages_new: Neue Nachricht
@@ -555,6 +557,7 @@ de:
   label_memberlist_all: Gesamte Liste
   label_memberlist_grouped: nach Projekten gruppiert
   label_memberlist_search: Suche
+  label_memberlist_searchit: Suchanfrage
   label_administration: Administration
   label_login: Anmelden
   label_logout: Abmelden
@@ -914,6 +917,7 @@ de:
 
   field_active: Aktiv
 
+  text_member_search: Bitte geben Sie das zu suchende Mitglied in das Eingabefeld ein. Es wird automatisch anhand der Eingabe (mindestens 3 Zeichen) das Ergebnis generiert.
   text_message_destroy_confirmation: Sind Sie sicher, dass sie diese Nachricht löschen wollen?
   text_message_emptytrash_confirmation: Sind Sie sicher, dass sie alle gelöschten Nachrichten dauerhaft entfernen wollen?
   text_message_emptytrash_done: Ihre alten Nachrichten wurden erfolgreich gelöscht.
@@ -982,9 +986,9 @@ de:
   text_zoom_in: Zoom in
   text_zoom_out: Zoom out
 
-  default_role_manager: Manager
-  default_role_developer: Entwickler
-  default_role_reporter: Reporter
+  default_role_manager: ManagerIn
+  default_role_developer: EntwicklerIn
+  default_role_reporter: ReporterIn
   default_tracker_bug: Fehler
   default_tracker_feature: Feature
   default_tracker_support: Unterstützung
@@ -1004,7 +1008,7 @@ de:
   default_activity_design: Design
   default_activity_development: Entwicklung
 
-  enumeration_issue_priorities: Ticket-Prioritäten
+  enumeration_issue_priorities: Anweisungs-Prioritäten
   enumeration_doc_categories: Dokumentenkategorien
   enumeration_activities: Aktivitäten (Zeiterfassung)
   enumeration_system_activity: System-Aktivität

@@ -33,7 +33,7 @@ require 'diff'
 # TODO: still being worked on
 class WikiController < ApplicationController
   default_search_scope :wiki_pages
-  before_filter :find_wiki, :authorize
+  before_filter :find_wiki, :authorize, :except => :show_all
   before_filter :find_existing_or_new_page, :only => [:show, :edit, :update]
   before_filter :find_existing_page, :only => [:rename, :protect, :history, :diff, :annotate, :add_attachment, :destroy]
 
@@ -47,6 +47,17 @@ class WikiController < ApplicationController
     load_pages_for_index
     @pages_by_parent_id = @pages.group_by(&:parent_id)
   end
+
+  def show_all
+    projects = Project.find( :all, :conditions => {:is_public =>1})
+    if projects.class != Array
+      @projects ||= [projects]
+    else
+      @projects = projects
+    end
+    return @projects  
+  end
+
 
   # List of page, by last update
   def date_index

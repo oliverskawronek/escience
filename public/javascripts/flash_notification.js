@@ -1,9 +1,8 @@
 (function( jQuery, undefined ) {
    jQuery.notification = function(options) {
 	var opts = jQuery.extend({}, {type: 'notice', time: 3000}, options);
-        var o    = opts;
-
-	timeout          = setTimeout('jQuery.notification.removebar()', o.time);
+        var o            = opts;
+        timeout          = setTimeout('jQuery.notification.removebar()', o.time);
         var message_span = jQuery('<span />').addClass('jbar-content').html(o.message);
         var wrap_bar     = jQuery('<div />').addClass('jbar jbar-top').css("cursor", "pointer");
 

@@ -319,7 +319,7 @@
 	}
 	
 	#main_navigation li a {
-		width:100px;
+		width:120px;
 		height:15px;
 		float:left;
 		padding-top:3px;
@@ -435,7 +435,7 @@
 	}
 	
 	textarea {
-		width: 100%;
+		width: 98%;
 	}
 	
 /* profile layout */	
