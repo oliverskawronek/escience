@@ -12,6 +12,7 @@ rescue_from ActionView::MissingTemplate do |exception|
 end
 
 def show
+  @user = session[:user].nil? ? User.new : session[:user]
   render :template => current_page
 end
 
