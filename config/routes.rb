@@ -349,6 +349,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.connect 'info/news', :controller => 'welcome', :action => 'news', :conditions => {:method => :get}
   map.connect 'info/events', :controller => 'welcome', :action => 'events', :conditions => {:method => :get}
+  map.connect 'knowledge', :controller => 'wiki', :action => 'show_all', :conditions => {:method => :get}
   map.connect 'knowledge/show', :controller => 'wiki', :action => 'show', :conditions => {:method => :get}
   map.connect 'knowledge/index', :controller => 'wiki', :action => 'index', :conditions => {:method => :get}
   map.connect 'knowledge/date_index', :controller => 'wiki', :action => 'date_index', :conditions => {:method => :get}

@@ -51,17 +51,6 @@ class WikiController < ApplicationController
   def show_all
     p params
     if params[:q]
-      @result = Wiki.find_by_sql(["SELECT pages.id
-                                   FROM wiki_pages pages, wiki_contents content, wikis, projects
-                                   WHERE content.page_id = pages.id
-                                   AND pages.wiki_id = wikis.id
-                                   AND wikis.project_id IN (?)
-                                   AND (content.text LIKE ?
-                                   OR pages.title LIKE ?)
-                                   GROUP BY pages.id
-                                   ", "#{User.current.projects.map{|p| p.id}.join(",")}","%#{params[:q]}%", "%#{params[:q]}%"])
-                                   
-
       @question = params[:q] || ""
       @question.strip!
       @all_words = params[:all_words] ? params[:all_words].present? : true

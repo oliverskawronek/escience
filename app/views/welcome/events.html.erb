@@ -1,0 +1,34 @@
+<article class="article">
+  <h1><%= l(:label_events) %></h1>
+
+<% 
+calendar = @calendar
+day = calendar.enddt
+while day >= calendar.startdt %>
+<% calendar.events_on(day).each do |i| %>
+  <% if i.is_a? Issue %>
+  <div class="<%= i.css_classes %> <%= 'starting' if day == i.start_date %> <%= 'ending' if day == i.due_date %> tooltip">
+  <%= i.subject %>
+  <%= i.description%><br/>
+  <%= "<strong>#{l(:field_start_date)}</strong> #{format_date(i.start_date)}<br />".html_safe +
+      "<strong>#{l(:field_due_date)}</strong>: #{format_date(i.due_date)}" %>
+      
+  </div>
+  <% else %>
+  <span class="icon icon-package">
+    <%= h("#{i.project} -") unless @project && @project == i.project %>
+    <%= link_to_version i%>
+  </span>
+  <% end %>
+<% end %>
+
+<% day = day - 1 
+end %>
+
+</article>
+
+<% content_for :sidebar_right do %>
+  <%= render :partial => 'sidebar' %>
+<% end %>
+
+<% html_title(l(:label_calendar)) -%>

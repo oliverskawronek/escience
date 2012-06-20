@@ -1,11 +1,6 @@
 <% content_for :sidebar_right do %>
-<% if @project && User.current.allowed_to?(:manage_news, @project) %>
-	<li><%= link_to(l(:label_news_new),
-            new_project_news_path(@project),
-            :class => 'icon icon-add',
-            :onclick => 'Element.show("add-news"); Form.Element.focus("news_title"); return false;')  %></li>
-<%end%>
-<%end%>
+  <%= render :partial => 'sidebar' %>
+<% end %>
 
 <div id="add-news" style="display:none;">
 <h2><%=l(:label_news_new)%></h2>
@@ -24,30 +19,25 @@
 <div id="preview" class="wiki"></div>
 </div>
 
-<h2><%=l(:label_news_plural)%></h2>
-
-<% if @newss.empty? %>
-<p class="nodata"><%= l(:label_no_data) %></p>
-<% else %>
-<% @newss.each do |news| %>
-    <h3><%= avatar(news.author, :size => "24") %><%= link_to_project(news.project) + ': ' unless news.project == @project %>
-    <%= link_to h(news.title), news_path(news) %>
-    <%= "(#{l(:label_x_comments, :count => news.comments_count)})" if news.comments_count > 0 %></h3>
-    <p class="author"><%= authoring news.created_on, news.author %></p>
-    <div class="wiki">
-    <%= textilizable(news, :description) %>
-    </div>
-<% end %>
-<% end %>
-<p class="pagination"><%= pagination_links_full @news_pages %></p>
-
-<% other_formats_links do |f| %>
-  <%= f.link_to 'Atom', :url => {:project_id => @project, :key => User.current.rss_key} %>
-<% end %>
-
-<% content_for :header_tags do %>
-  <%= auto_discovery_link_tag(:atom, params.merge({:format => 'atom', :page => nil, :key => User.current.rss_key})) %>
-  <%= stylesheet_link_tag 'scm' %>
-<% end %>
-
+<article class="article">
+  <h1><%=l(:label_news_plural)%></h1>
+  <% if @newss.empty? %>
+  <p class="nodata"><%= l(:label_no_data) %></p>
+  <% else %>
+  <% @newss.each do |news| %>
+      <h3>
+      <%= h(news.title) %>
+      <%= "(#{l(:label_x_comments, :count => news.comments_count)})" if news.comments_count > 0 %></h3>
+      <p class="author"><%= authoring news.created_on, news.author %></p>
+      <div class="wiki">
+      <%= textilizable(news, :description) %>
+      </div>
+  <% end %>
+  <% end %>
+  <p class="pagination"><%= pagination_links_full @news_pages %></p>
+  
+  <% content_for :header_tags do %>
+    <%= stylesheet_link_tag 'scm' %>
+  <% end %>
+</article>
 <% html_title(l(:label_news_plural)) -%>
