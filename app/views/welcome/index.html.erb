@@ -14,6 +14,7 @@
   <%= render :partial => 'sidebar' %>
 <% end %>
 
+<%unless User.current.logged? %>
 <article class="article">
 	<div class="inside">
 		<h1>Das Forschungsnetzwerk Sachsen</h1>
