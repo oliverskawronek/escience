@@ -53,7 +53,7 @@
 					  
 					<%= f.password_field :password, :size => 25, :required => true %><br />
 					<%= f.password_field :password_confirmation, :size => 25, :required => true %>
-					<%= check_box_tag :confirm, :required => true %><span id="confirmation"><%= l(:field_confirmation) %></span>
+					<%= check_box_tag :confirm, true %><span id="confirmation"><%= l(:field_confirmation) %></span>
 					
 					<!--
 					<%# if Setting.openid? %>

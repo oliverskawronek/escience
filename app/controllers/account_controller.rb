@@ -88,8 +88,10 @@ class AccountController < ApplicationController
       @user = User.new(:language => Setting.default_language)
     else
       @user = User.new
+      @user.confirm = params[:confirm]
       @user.safe_attributes = params[:user]
-          
+      p params
+
       @user.mail = params[:user][:login];
       @user.admin = false
       @user.register
