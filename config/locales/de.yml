@@ -526,8 +526,8 @@ de:
   label_enumeration_new: Neuer Wert
   label_information: Information
   label_information_plural: Informationen
-  label_please_login: Anmelden
-  label_register: Registrieren
+  label_please_login: Anmeldung
+  label_register: Kostenlos Registrieren
   label_login_with_open_id_option: oder mit OpenID anmelden
   label_password_lost: Passwort vergessen?
   label_back: Zurück
@@ -603,6 +603,7 @@ de:
   label_file_added: Datei hinzugefügt
   label_report: Bericht
   label_report_plural: Berichte
+  label_events: Termine
   label_news: Neuigkeiten
   label_news_new: Neuigkeit hinzufügen
   label_news_plural: Neuigkeiten

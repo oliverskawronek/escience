@@ -15,7 +15,7 @@
 	<div id="login">
 		<div class="inner">
 			<% form_tag({:controller => 'account',:action=> "login"}) do %>
-				<h2>Anmeldung</h2>
+				<h2><%= l(:label_login)%></h2>
 				<%= back_url_hidden_field_tag %>
 				<%= text_field_tag 'username', nil, :tabindex => '1', :placeholder => l(:field_login) %><br />
 				<%= password_field_tag 'password', nil, :tabindex => '2', :placeholder => l(:field_password) %>
@@ -35,7 +35,7 @@
 	
 	<div id="registration">
 		<div class="inner">
-			<h2>Kostenlos Registrieren</h2>
+			<h2><%= l(:label_register)%></h2>
 			<% labelled_form_for(@user, :url => {:controller => 'account', :action => 'register'}) do |f|%>
 				<%= error_messages_for 'user' %>
 				
