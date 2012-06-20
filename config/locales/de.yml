@@ -256,7 +256,7 @@ de:
   field_zipcode: Postleitzahl 
   field_adress: Anschrift
   field_confirm: AGB & Datenschutz
-  field_confirmation: Ich akzeptiere die <a href="/protection">Datenschutzbe- stimmungen</a> und <a href="/agb">AGB</a> des eScience – Forschungsnetzwerk Sachsen
+  field_confirmation: Ich akzeptiere die <a href="/static/datenschutz.html">Datenschutzbe- stimmungen</a> und <a href="/static/agb.html">AGB</a> des eScience – Forschungsnetzwerk Sachsen
   field_filename: Datei
   field_filesize: Größe
   field_downloads: Downloads
