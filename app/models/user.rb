@@ -79,7 +79,7 @@ class User < Principal
   validates_confirmation_of :password, :allow_nil => true
   validates_inclusion_of :mail_notification, :in => MAIL_NOTIFICATION_OPTIONS.collect(&:first), :allow_blank => true
   validate :validate_password_length
-  validates_acceptance_of :confirm, :allow_nil => false, :accept => "true"
+  validates_acceptance_of :confirm, :allow_nil => false, :accept => true
 #  validates_confirmation_of :confirm
 
   before_create :set_mail_notification

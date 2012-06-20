@@ -88,7 +88,7 @@ class AccountController < ApplicationController
       @user = User.new(:language => Setting.default_language)
     else
       @user = User.new
-      @user.confirm = params[:confirm]
+      @user.confirm = true if params[:confirm] == "true"
       @user.safe_attributes = params[:user]
       p params
 
