@@ -27,6 +27,41 @@ class WelcomeController < ApplicationController
     session[:user] = nil
   end
 
+  def news
+    @news = News.latest User.current
+    @projects = Project.latest User.current
+    
+    @user = session[:user].nil? ? User.new : session[:user]
+    session[:user] = nil
+
+    case params[:format]
+    when 'xml', 'json'
+      @offset, @limit = api_offset_and_limit
+    else
+      @limit =  10
+    end
+
+    scope = @project ? @project.news.visible : News.visible
+
+    @news_count = scope.count
+    @news_pages = Paginator.new self, @news_count, @limit, params['page']
+    @offset ||= @news_pages.current.offset
+    @newss = scope.all(:include => [:author, :project],
+                                       :order => "#{News.table_name}.created_on DESC",
+                                       :offset => @offset,
+                                       :limit => @limit)
+
+  end
+
+  def events
+    @news = News.latest User.current
+    @projects = Project.latest User.current
+    
+    @user = session[:user].nil? ? User.new : session[:user]
+    session[:user] = nil
+  end
+
+
   def robots
     @projects = Project.all_public.active
     render :layout => false, :content_type => 'text/plain'
