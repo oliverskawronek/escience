@@ -346,7 +346,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :user_messages
   map.connect 'user_messages/:id/search', :controller => 'search', :action => 'index', :conditions => {:method => :get}
   map.connect 'user_messages/:id/archive', :controller => 'user_messages', :action => 'archive', :conditions => {:method => :get}
-  map.connect 'knowledge', :controller => 'wiki', :action => 'show_all'
+  map.connect 'knowledge', :controller => 'wiki', :action => 'show_all', :conditions => {:method => :get}
   map.connect 'knowledge/show', :controller => 'wiki', :action => 'show', :conditions => {:method => :get}
   map.connect 'knowledge/index', :controller => 'wiki', :action => 'index', :conditions => {:method => :get}
   map.connect 'knowledge/date_index', :controller => 'wiki', :action => 'date_index', :conditions => {:method => :get}

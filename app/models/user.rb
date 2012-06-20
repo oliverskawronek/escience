@@ -67,7 +67,7 @@ class User < Principal
   LOGIN_LENGTH_LIMIT = 60
   MAIL_LENGTH_LIMIT = 60
 
-  validates_presence_of :login, :firstname, :lastname, :mail, :if => Proc.new { |user| !user.is_a?(AnonymousUser) }
+  validates_presence_of :firstname, :lastname, :mail, :confirm, :if => Proc.new { |user| !user.is_a?(AnonymousUser) }
   validates_uniqueness_of :login, :if => Proc.new { |user| user.login_changed? && user.login.present? }, :case_sensitive => false
   validates_uniqueness_of :mail, :if => Proc.new { |user| !user.mail.blank? }, :case_sensitive => false
   # Login must contain lettres, numbers, underscores only
@@ -79,6 +79,8 @@ class User < Principal
   validates_confirmation_of :password, :allow_nil => true
   validates_inclusion_of :mail_notification, :in => MAIL_NOTIFICATION_OPTIONS.collect(&:first), :allow_blank => true
   validate :validate_password_length
+#  validates_acceptance_of :confirm, :allow_nil => false, :accept => "1"
+#  validates_confirmation_of :confirm
 
   before_create :set_mail_notification
   before_save   :update_hashed_password

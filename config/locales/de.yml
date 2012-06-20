@@ -251,10 +251,12 @@ de:
   field_fax: Telefax  
   field_mail: E-Mail
   field_department: Institution
-  field_street: Straße  
+  field_street: Straße/H-Nr.  
   field_city: Stadt  
   field_zipcode: Postleitzahl 
   field_adress: Anschrift
+  field_confirm: AGB & Datenschutz
+  field_confirmation: Ich akzeptiere die <a href="/protection">Datenschutzbe- stimmungen</a> und <a href="/agb">AGB</a> des eScience – Forschungsnetzwerk Sachsen
   field_filename: Datei
   field_filesize: Größe
   field_downloads: Downloads
@@ -529,7 +531,7 @@ de:
   label_login_with_open_id_option: oder mit OpenID anmelden
   label_password_lost: Passwort vergessen?
   label_back: Zurück
-  label_home: Startseite
+  label_home: Start
   label_home_logged: Aktivitäten
   label_meta_information: Meta-Informationen
   label_meta_information_description: Geben Sie hier Stichworte für eine Suche ein

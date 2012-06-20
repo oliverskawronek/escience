@@ -89,6 +89,7 @@ class AccountController < ApplicationController
     else
       @user = User.new
       @user.safe_attributes = params[:user]
+          
       @user.mail = params[:user][:login];
       @user.admin = false
       @user.register

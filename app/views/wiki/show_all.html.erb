@@ -1,40 +1,33 @@
-<%  @projects.each do |project|
-      wiki = project.wiki
-      pages = wiki.pages.all(:order => 'title')
-      p pages
-      @pages_by_parent_id = pages.group_by(&:parent_id) %>
-
-<div class="contextual">
-<%= watcher_tag(wiki, User.current) %>
-</div>
-
-<h2><%= l(:label_index_by_title) %></h2>
-
-<% if pages.empty? %>
-<p class="nodata"><%= l(:label_no_data) %></p>
-<% end %>
-
-<%= render_page_hierarchy(@pages_by_parent_id, nil, :timestamp => true) %>
+<h2><%= l(:label_knowledge) %></h2>
 
 <% content_for :sidebar_right do %>
   <%= render :partial => 'sidebar' %>
 <% end %>
 
-<% unless pages.empty? %>
-<% other_formats_links do |f| %>
-  <%= f.link_to 'Atom',
-                :url => {:controller => 'activities', :action => 'index',
-                         :id => project, :show_wiki_edits => 1,
-                         :key => User.current.rss_key} %>
-  <% if User.current.allowed_to?(:export_wiki_pages, project) %>
-  <%#= f.link_to('PDF', :url => {:action => 'export', :format => 'pdf'}) %>
-  <%#= f.link_to('HTML', :url => {:action => 'export'}) %>
-  <% end %>
-<% end %>
+<% form_tag({:controller => 'wiki', :action => 'show_all'}, :method => :get ) do %>
+  <%= hidden_field_tag(:wiki_pages, 1, :id => nil) %>
+  <%= text_field_tag 'q', @question, :placeholder => l(:label_search_plural), :accesskey => accesskey(:quick_search) %>
+  <%= submit_tag "Suchen" %>
 <% end %>
 
-<%end %>
+<% p @result
+  if !@results.nil? && @results.size > 0 %>
+    <div id="search-results-counts">
+    <%= render_results_by_type(@results_by_type) unless @scope.size == 1 %>
+    </div>
 
+    <h3><%= l(:label_result_plural) %> (<%= @results_by_type.values.sum %>)</h3>
+    <dl id="search-results">
+      <% @results.each do |e| %>
+        <%= p e %>
+        <dt class="<%= e.event_type %>"><%= content_tag('span', h(e.project), :class => 'project') unless @project == e.project %> <%= link_to highlight_tokens(truncate(h(e.event_title), :length => 255), @tokens), e.event_url %></dt>
+        <dd><span class="description"><%= highlight_tokens(h(e.event_description), @tokens) %></span>
+        <span class="author"><%= format_time(e.event_datetime) %></span></dd>
+      <% end %>
+    </dl>
+<% else %>
+  <p> Keine Ergebnisse gefunden für die Suchanfrage gefunden.</p>
+<% end %>
 
 <% content_for :header_tags do %>
 <%= auto_discovery_link_tag(

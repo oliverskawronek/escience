@@ -234,6 +234,17 @@ module ApplicationHelper
     end
   end
 
+  def shorten (string, count = 30)
+			if string.length > count 
+				shortened = string[0, count]
+				splitted = shortened.split(/ /)
+				words = splitted.length
+				splitted.join(" ") + '...'
+			else 
+				string
+			end
+		end
+
   # Renders the project quick-jump box
   def render_project_jump_box
     return unless User.current.logged?
@@ -244,6 +255,9 @@ module ApplicationHelper
       else 
         project_name = "#{@project}"
       end
+            
+      project_name = shorten(project_name,14)
+      
       s = '<div id="projects_styled" class="styled_select "><span>'+project_name+'</span><b><i></i></b></div>' +
           '<select onchange="if (this.value != \'\') { window.location = this.value; }" style="opacity: 0; margin-bottom: 4px; ">' +
             "<option value=''>#{ l(:label_jump_to_a_project) }</option>" +
@@ -841,7 +855,7 @@ module ApplicationHelper
         anchor = "#{anchor}-#{idx}"
       end
       @parsed_headings << [level, anchor, item]
-      "<a name=\"#{anchor}\"></a>\n<h#{level} #{attrs}>#{content}<a href=\"##{anchor}\" class=\"wiki-anchor\">&para;</a></h#{level}>"
+      "<a name=\"#{anchor}\"></a>\n<h#{level} #{attrs}>#{content}<!--a href=\"##{anchor}\" class=\"wiki-anchor\">&para;</a--></h#{level}>"
     end
   end
 
