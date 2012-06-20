@@ -402,6 +402,8 @@ ActionController::Routing::Routes.draw do |map|
                 :conditions => {:method => :get}
   end
 
+  map.connect 'static/:id', :controller => 'pages', :action => 'show', :conditions => {:method => :get}, :requirements => { :id => /.+/ }
+
   map.connect 'uploads.:format', :controller => 'attachments', :action => 'upload', :conditions => {:method => :post}
 
   map.connect 'robots.txt', :controller => 'welcome',
@@ -409,5 +411,4 @@ ActionController::Routing::Routes.draw do |map|
 
   # Used for OpenID
   map.root :controller => 'account', :action => 'login'
-  
 end

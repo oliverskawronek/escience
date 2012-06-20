@@ -87,4 +87,4 @@ Dir.glob File.expand_path("../vendor/plugins/*/Gemfile", __FILE__) do |file|
 end
 
 gem "thin"
-gem "SyslogLogger"
+gem "SyslogLogger"  # in production mode log to syslog
