@@ -220,6 +220,7 @@ class UsersController < ApplicationController
   def update
     @user.admin = params[:user][:admin] if params[:user][:admin]
     @user.login = params[:user][:login] if params[:user][:login]
+    @user.confirm = params[:user][:confirm] if params[:user][:confirm]
     if params[:user][:password].present? && (@user.auth_source_id.nil? || params[:user][:auth_source_id].blank?)
       @user.password, @user.password_confirmation = params[:user][:password], params[:user][:password_confirmation]
     end
