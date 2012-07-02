@@ -128,6 +128,7 @@
 	        <%= yield %>
 	        <%= call_hook :view_layouts_base_content %>
 	        <div style="clear:both;"></div>
+	       <div id="ajax-modal" style="display:none;"></div>
 	    </div>
 	    <div id="right" class="grid_3">
 	    	<% if User.current.logged? %>
@@ -159,7 +160,6 @@
 	</div>
 </div>
 <div id="ajax-indicator" style="display:none;"><span><%= l(:label_loading) %></span></div>
-<div id="ajax-modal" style="display:none;"></div>
 
 </div>
 </div>

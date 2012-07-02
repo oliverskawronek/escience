@@ -42,6 +42,7 @@
 <%= link_to_attachments @news %>
 <br />
 
+<% if (@comments.any? || @news.commentable?) %>
 <div id="comments" style="margin-bottom:16px;">
 <h3 class="comments"><%= l(:label_comment_plural) %></h3>
 <% @comments.each do |comment| %>
@@ -52,7 +53,7 @@
     </div>
     <h4><%= avatar(comment.author, :size => "24") %><%= authoring comment.created_on, comment.author %></h4>
     <%= textilizable(comment.comments) %>
-<% end if @comments.any? %>
+<% end %>
 </div>
 
 <% if @news.commentable? %>
@@ -65,6 +66,8 @@
 <p><%= submit_tag l(:button_add) %></p>
 <% end %>
 <% end %>
+<% end %>
+
 
 <% html_title @news.title -%>
 

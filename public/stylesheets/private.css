@@ -438,6 +438,18 @@
 		width: 98%;
 	}
 	
+	select#membership_project_id {
+  	max-width: 550px;
+	}
+	
+	#notified-projects p {
+  	clear: both;
+	}
+	
+	#modalbg {
+  	height: 0px !important;
+	}
+	
 /* profile layout */	
 	.block-receiver .mypage-box{
 		border-radius:10px;

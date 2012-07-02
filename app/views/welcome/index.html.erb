@@ -1,15 +1,3 @@
-<div class="splitcontentleft">
-  <%= textilizable Setting.welcome_text %>
-  <% if @news.any? && User.current.logged? %>
-  <div class="news box">
-  <h3><%=l(:label_news_latest)%></h3>
-    <%= render :partial => 'news/news', :collection => @news %>
-    <%= link_to l(:label_news_view_all), :controller => 'news' %>
-  </div>
-  <% end %>
-  <%= call_hook(:view_welcome_index_left, :projects => @projects) %>
-</div>
-
 <% content_for :sidebar_right do %>
   <%= render :partial => 'sidebar' %>
 <% end %>
@@ -20,7 +8,7 @@
 		<h1>Das Forschungsnetzwerk Sachsen</h1>
 		<div class="column" style="padding-right:50px">
 		<p><br /><img style="float: right;" title="images/grafik.png" src="images/grafik.png" alt="/images/grafik.png" width="280" height="220" />
-                  Diese Plattform bietet einen virtuellen Raum mit anderen Wissenschaftlern zu kommu - nizieren, zusammen neue  Erkenntnisse zu gewinnen und gemeinsame Ressourcen für Forschungszwecke zu entwickeln und teilen. Neben Werkzeuge zur Arbeitsorganisation und Koordinierung von Aktivitäten finden Sie hier umfangreiches Wissen, Medieninhalte und Dokumentationen, sowie Software und Daten für wissenschaftliche Experimente. Sie entscheiden selbst, was, womit und mit wem Sie forschen.  Eine starke Community ist stets an Ihrer Seite. </p>
+                  Diese Plattform bietet einen virtuellen Raum mit anderen Wissenschaftlern zu kommunizieren, zusammen neue  Erkenntnisse zu gewinnen und gemeinsame Ressourcen für Forschungszwecke zu entwickeln und teilen. Neben Werkzeuge zur Arbeitsorganisation und Koordinierung von Aktivitäten finden Sie hier umfangreiches Wissen, Medieninhalte und Dokumentationen, sowie Software und Daten für wissenschaftliche Experimente. Sie entscheiden selbst, was, womit und mit wem Sie forschen. Eine starke Community ist stets an Ihrer Seite. </p>
 		</div>
 	</div>
 </article>
@@ -36,6 +24,18 @@
 		</div>
 	<%end%>	
 <%end%>
+
+<div class="splitcontentleft">
+  <%= textilizable Setting.welcome_text %>
+  <% if @news.any? && User.current.logged? %>
+  <div class="news box">
+  <h3><%=l(:label_news_latest)%></h3>
+    <%= render :partial => 'news/news', :collection => @news %>
+    <%= link_to l(:label_news_view_all), :controller => 'news' %>
+  </div>
+  <% end %>
+  <%= call_hook(:view_welcome_index_left, :projects => @projects) %>
+</div>
 
 <% if User.current.logged? %>    
 <div class="splitcontentright">
