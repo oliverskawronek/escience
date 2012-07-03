@@ -90,55 +90,60 @@ class UserMessagesController < ApplicationController
   # POST /user_messages.xml
   def create
     noerror = true
-    unless params[:user_message]["receiver"].nil?
-      @receiver_arr = params[:user_message]["receiver"].split(",")
-      @receiver_arr.each do |receiver_id|
-        recv = User.find_by_id(receiver_id)
-        if recv.nil?
-          @user_massage = UserMessage.new()
-          respond_to do |format|
-            format.html { redirect_to(:action => 'new', :notice => 'Receiver not known') }
-            format.xml  { render :xml => @user_message.errors, :status => :unprocessable_entity }
+    notice = ""
+    p params[:user_message]["receiver"]
+    if (params[:user_message]["receiver"].empty? || params[:user_message]["subject"].empty? || params[:user_message]["body"].empty?) 
+      noerror = false;
+      notice = l(:error_empty_message)
+      @user_message_reply = notice
+    else 
+      unless params[:user_message]["receiver"].nil?
+        @receiver_arr = params[:user_message]["receiver"].split(",")
+        @receiver_arr.each do |receiver_id|
+          recv = User.find_by_id(receiver_id)
+          if recv.nil?
+            @user_massage = UserMessage.new()
+            flash[:notice] = l(:error_receiver_unknown)
+            respond_to do |format|
+              format.html { redirect_to(:action => 'new', :notice => 'Receiver not known') }
+              format.xml  { render :xml => @user_message.errors, :status => :unprocessable_entity }
+            end
+            return 
           end
-          return 
+          @user_message = UserMessage.new()
+          @user_message.body = params[:user_message]["body"]
+          @user_message.subject = params[:user_message]["subject"]
+          @user_message.user = User.current
+          @user_message.author = "#{User.current.lastname}, #{User.current.firstname}"
+          @user_message.receiver_id = recv.id
+          @user_message.state = 1
+          @user_message.directory = UserMessage.received_directory
+      
+          @user_message_clone = @user_message.clone
+          @user_message_clone.state = 3
+          @user_message_clone.directory = UserMessage.sent_directory
+          noerror &= @user_message.save
+          noerror &= @user_message_clone.save
         end
-        @user_message = UserMessage.new()
-        @user_message.body = params[:user_message]["body"]
-        @user_message.subject = params[:user_message]["subject"]
-        @user_message.user = User.current
-        @user_message.author = "#{User.current.lastname}, #{User.current.firstname}"
-        @user_message.receiver_id = recv.id
-        @user_message.state = 1
-        @user_message.directory = UserMessage.received_directory
-    
-        @user_message_clone = @user_message.clone
-        @user_message_clone.state = 3
-        @user_message_clone.directory = UserMessage.sent_directory
-        noerror &= @user_message.save
-        noerror &= @user_message_clone.save
       end
     end
-    if (params[:user_message]["body"].empty? || params[:user_message]["subject"].empty?)
-#      @user_massage = UserMessage.new()
-#      @user_message.body = "#{User.current.firstname} #{User.current.lastname}"
+    
+    if (!noerror)
+      flash[:notice] = notice
       respond_to do |format|
-        format.html { redirect_to(request.referer, :notice => l(:text_message_sent_error_fields)) }
+        format.html { redirect_to(request.referer) }
         format.xml  { render :xml => @user_message.errors, :status => :unprocessable_entity }
       end
     else
       respond_to do |format|
-        if (noerror)
-          if !params[:reply_mail].nil?
-            reply_mail = UserMessage.find(params[:reply_mail])
-            reply_mail.state = 4
-            reply_mail.save
-          end
-          format.html { redirect_to(request.referer, :notice => l(:text_message_sent_done)) }
-          format.xml  { render :xml => @user_message, :status => :created, :location => @user_message }
-        else
-          format.html { render :action => "new", :notice => l(:text_message_sent_done) }
-          format.xml  { render :xml => @user_message.errors, :status => :unprocessable_entity }
+        if !params[:reply_mail].nil? && !params[:reply_mail].empty?
+          reply_mail = UserMessage.find(params[:reply_mail])
+          reply_mail.state = 4
+          reply_mail.save
         end
+        flash[:notice] = l(:text_message_sent_done)
+        format.html { redirect_to(request.referer) }
+        format.xml  { render :xml => @user_message, :status => :created, :location => @user_message }
       end
     end
   end

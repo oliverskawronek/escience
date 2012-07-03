@@ -186,6 +186,7 @@ de:
   notice_unable_delete_version: Die Version konnte nicht gelöscht werden.
   notice_unable_delete_time_entry: Der Zeiterfassungseintrag konnte nicht gelöscht werden.
   notice_issue_done_ratios_updated: Der Ticket-Fortschritt wurde aktualisiert.
+  notice_no_search_result: Keine Ergebnisse für die Suchanfrage gefunden.
 
   error_can_t_load_default_data: "Die Standard-Konfiguration konnte nicht geladen werden: %{value}"
   error_scm_not_found: Eintrag und/oder Revision existiert nicht im Projektarchiv.
@@ -204,6 +205,8 @@ de:
   error_workflow_copy_target: Bitte wählen Sie die Ziel-Aufgabenart und -Rollen.
   error_unable_delete_issue_status: "Der Ticket-Status konnte nicht gelöscht werden."
   error_unable_to_connect: Fehler beim Verbinden (%{value})
+  error_empty_message: Bitte befüllen Sie die nötigen Eingabefelder.
+  
   warning_attachments_not_saved: "%{count} Datei(en) konnten nicht gespeichert werden."
 
   mail_subject_lost_password: "Ihr %{value} Kennwort"
@@ -286,6 +289,7 @@ de:
   field_parent: Unterprojekt von
   field_is_in_roadmap: In der Roadmap anzeigen
   field_login: E-Mail
+  field_rep_login: Benutzername
   field_mail_notification: Mailbenachrichtigung
   field_admin: Administrator
   field_last_login_on: Letzte Anmeldung
@@ -914,6 +918,7 @@ de:
 
   field_active: Aktiv
 
+  text_personalize_account: Hier haben Sie die Möglichkeit Ihre Übersichtsseite anzupassen. Wählen Sie anzuzeigende Elemente aus und verändern Sie deren Reihenfolge.
   text_member_search: Bitte geben Sie das zu suchende Mitglied in das Eingabefeld ein. Es wird automatisch anhand der Eingabe (mindestens 3 Zeichen) das Ergebnis generiert.
   text_message_destroy_confirmation: Sind Sie sicher, dass sie diese Nachricht löschen wollen?
   text_message_emptytrash_confirmation: Sind Sie sicher, dass sie alle gelöschten Nachrichten dauerhaft entfernen wollen?
@@ -1103,8 +1108,8 @@ de:
     zero:  0 Anweisungen
     one:   1 Anweisung
     other: "%{count} Anweisungen"
-  label_repository_new: Neues Repository
-  field_repository_is_default: Haupt-Repository
+  label_repository_new: Neues Projektarchiv
+  field_repository_is_default: Haupt-Projektarchiv
   label_copy_attachments: Anhänge Kopieren
   label_item_position: "%{position}/%{count}"
   label_completed_versions: Abgeschlossene Versionen

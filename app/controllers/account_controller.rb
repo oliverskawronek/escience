@@ -90,7 +90,7 @@ class AccountController < ApplicationController
       @user = User.new
       @user.confirm = true if params[:confirm] == "true"
       @user.safe_attributes = params[:user]
-      p params
+#      p params
 
       @user.mail = params[:user][:login];
       @user.admin = false
@@ -103,7 +103,8 @@ class AccountController < ApplicationController
           session[:auth_source_registration] = nil
           self.logged_user = @user
           flash[:notice] = l(:notice_account_activated)
-          redirect_to :controller => 'my', :action => 'account'
+          redirect_to(home_url)
+#          redirect_to :controller => 'my', :action => 'account'
         end
       else
         @user.login = params[:user][:login]
@@ -292,6 +293,7 @@ class AccountController < ApplicationController
 
   def account_pending
     flash[:notice] = l(:notice_account_pending)
-    redirect_to :action => 'login'
+    redirect_to :controller => 'welcome', :action => 'index'
+#    redirect_to :action => 'login'
   end
 end

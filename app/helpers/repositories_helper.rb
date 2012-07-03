@@ -126,7 +126,7 @@ module RepositoriesHelper
     method = repository.class.name.demodulize.underscore + "_field_tags"
     if repository.is_a?(Repository) &&
         respond_to?(method) && method != 'repository_field_tags'
-      send(method, form, repository)
+       send(method, form, repository)
     end
   end
 
@@ -162,7 +162,7 @@ module RepositoriesHelper
                        :disabled => (repository && !repository.root_url.blank?)) +
                        '<br />'.html_safe +
                        '(file:///, http://, https://, svn://, svn+[tunnelscheme]://)') +
-      content_tag('p', form.text_field(:login, :size => 30)) +
+      content_tag('p', form.text_field(:login, :size => 30, :label => l(:field_rep_login))) +
       content_tag('p', form.password_field(
                             :password, :size => 30, :name => 'ignore',
                             :value => ((repository.new_record? || repository.password.blank?) ? '' : ('x'*15)),
