@@ -224,12 +224,6 @@ de:
   gui_validation_error: 1 Fehler
   gui_validation_error_plural: "%{count} Fehler"
 
-  field_title_option_prof: Prof.
-  field_title_option_dr: Dr.
-  field_title_option_dipl: Dipl.
-  field_title_option_ma: M.A.
-  field_title_option_ba: B.A.
-
   field_name: Name
   field_description: Beschreibung
   field_summary: Zusammenfassung

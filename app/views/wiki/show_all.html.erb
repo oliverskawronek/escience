@@ -7,7 +7,7 @@
 <% form_tag({:controller => 'wiki', :action => 'show_all'}, :method => :get ) do %>
   <%= hidden_field_tag(:wiki_pages, 1, :id => nil) %>
   <%= text_field_tag 'q', @question, :placeholder => l(:label_search_plural), :accesskey => accesskey(:quick_search) %>
-  <%= submit_tag "Suchen" %>
+  <%= submit_tag l(:label_search) %>
 <% end %>
 
 <% p @result
@@ -26,7 +26,7 @@
       <% end %>
     </dl>
 <% else %>
-  <p> Keine Ergebnisse gefunden für die Suchanfrage gefunden.</p>
+  <p> <%= l(:notice_no_search_result)%></p>
 <% end %>
 
 <% content_for :header_tags do %>

@@ -38,7 +38,7 @@ function removeBlock(block) {
 <div class="contextual"><%= link_to l(:button_back), {:action => 'page'}, :class => 'icon icon-cancel' %>
 </div>
 <h2><%=l(:label_my_page)%></h2>
-<p>Hier haben Sie die Möglichkeit Ihre Übersichtsseite anzupassen. Wählen Sie anzuzeigende Elemente aus und verändern Sie deren Reihenfolge.</p>
+<p><%=l(:text_personalize_account)%></p>
 <div>
 <% form_tag({:action => "add_block"}, :id => "block-form") do %>
 <%= label_tag('block-select', l(:label_my_page_block)) %>:
