@@ -4,11 +4,7 @@
         var o            = opts;
         timeout          = setTimeout('jQuery.notification.removebar()', o.time);
         var message_span = jQuery('<span />').addClass('jbar-content').html(o.message);
-        var wrap_bar     = jQuery('<div />').addClass('jbar jbar-top').css("cursor", "pointer");
-
-    	if (o.type == 'error') {
-        	wrap_bar.css({"color": "#D8000C"})
-        };
+        var wrap_bar     = jQuery('<div />').addClass('jbar jbar-top '+o.type).css("cursor", "pointer");
 
 	wrap_bar.click(function(){
         	jQuery.notification.removebar()
