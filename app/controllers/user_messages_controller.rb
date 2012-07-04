@@ -1,8 +1,10 @@
 class UserMessagesController < ApplicationController
 
-  before_filter :require_login
-  
+  EMAIL_REGEX=/(?:[a-z0-9!#\$%&'*+\/=?^_`{|}~-]+(?:\.[a-z0-9!#\$%&'*+\/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/
 
+  before_filter :is_author?, :only => [:update, :show, :destroy, :edit, :archive]
+  before_filter :require_login, :only => [:index, :create, :update, :show, :sent_messages, :new, :destroy, :emptytrash, :edit, :archive]
+  
   # GET /user_messages
   # GET /user_messages.xml
   def index
@@ -34,6 +36,37 @@ class UserMessagesController < ApplicationController
     end
   end
 
+  def contact_message
+    @user_message = UserMessage.new()
+    
+    respond_to do |format|
+      format.html # contact_message.html.erb
+    end
+  end
+
+  def send_contact_message
+
+    email = params[:email]
+    if email.match(EMAIL_REGEX).nil?
+      flash[:notice] = l(:text_message_sent_error_fields)
+    else
+      @user_message = UserMessage.new()
+      contact = User.find(1)
+      @user_message.receiver_id = contact.id
+      @user_message.author = contact.id
+      @user_message.user_id = contact.id
+      flash[:notice] = l(:text_message_sent_done)
+      @user_message.body = params[:user_message]["body"]
+      @user_message.subject = "from #{email} #{params[:user_message]["subject"]}"
+      @user_message.state = 1
+      @user_message.directory = UserMessage.received_directory
+      @user_message.save!
+    end
+    respond_to do |format|
+      format.html { redirect_to(request.referer) }
+    end
+  end
+  
   # GET /user_messages/1
   # GET /user_messages/1.xml
   def show
@@ -110,21 +143,21 @@ class UserMessagesController < ApplicationController
             end
             return 
           end
-          @user_message = UserMessage.new()
-          @user_message.body = params[:user_message]["body"]
-          @user_message.subject = params[:user_message]["subject"]
-          @user_message.user = User.current
-          @user_message.author = "#{User.current.lastname}, #{User.current.firstname}"
-          @user_message.receiver_id = recv.id
-          @user_message.state = 1
-          @user_message.directory = UserMessage.received_directory
-      
-          @user_message_clone = @user_message.clone
-          @user_message_clone.state = 3
-          @user_message_clone.directory = UserMessage.sent_directory
-          noerror &= @user_message.save
-          noerror &= @user_message_clone.save
-        end
+        @user_message = UserMessage.new()
+        @user_message.body = params[:user_message]["body"]
+        @user_message.subject = params[:user_message]["subject"]
+        @user_message.user = User.current
+        @user_message.author = User.current
+        @user_message.receiver_id = recv.id
+        @user_message.state = 1
+        @user_message.directory = UserMessage.received_directory
+    
+        @user_message_clone = @user_message.clone
+        @user_message_clone.state = 3
+        @user_message_clone.author = recv.id
+        @user_message_clone.directory = UserMessage.sent_directory
+        noerror &= @user_message.save
+        noerror &= @user_message_clone.save
       end
     end
     
@@ -208,4 +241,21 @@ class UserMessagesController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  private
+
+  def is_author?
+    @user_message = UserMessage.find(params[:id])
+    if !(@user_message.read_attribute("author").to_i == User.current.id.to_i)
+      render_403
+      return false 
+    end
+    return true
+  end
+
+    # State:    0 read message
+    #           1 new message
+    #           2 deleted message
+    #           3 sent message (for getting Sent-Message)
+    #           4 answered message
 end

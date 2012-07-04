@@ -341,11 +341,14 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :custom_fields, :except => :show
   map.resources :roles, :except => :show, :collection => {:permissions => [:get, :post]}
   map.resources :enumerations, :except => :show
+
+  map.connect 'user_message/contact_message', :controller => 'user_messages', :action => 'contact_message', :conditions => {:method => :get}
+  map.connect 'user_message/send_contact_message', :controller => 'user_messages', :action => 'send_contact_message', :conditions => {:method => :post}
   map.connect 'user_messages/emptytrash', :controller => 'user_messages', :action => 'emptytrash', :conditions => {:method => :get}
   map.connect 'user_messages/reply', :controller => 'user_messages', :action => 'reply', :conditions => {:method => :get}
   map.resources :user_messages
-  map.connect 'user_messages/:id/search', :controller => 'search', :action => 'index', :conditions => {:method => :get}
-  map.connect 'user_messages/:id/archive', :controller => 'user_messages', :action => 'archive', :conditions => {:method => :get}
+  map.connect 'user_messages/:id/search', :controller => 'search', :action => 'index', :id => /\d+/, :conditions => {:method => :get}
+  map.connect 'user_messages/:id/archive', :controller => 'user_messages', :action => 'archive', :id => /\d+/, :conditions => {:method => :get}
 
   map.connect 'info/news', :controller => 'welcome', :action => 'news', :conditions => {:method => :get}
   map.connect 'info/events', :controller => 'welcome', :action => 'events', :conditions => {:method => :get}

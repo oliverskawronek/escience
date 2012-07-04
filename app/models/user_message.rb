@@ -50,4 +50,14 @@ class UserMessage < ActiveRecord::Base
         user_messages
     end
 
+
+    def author
+      begin
+        author = User.find(self.read_attribute("author"))
+        return "#{author.lastname}, #{author.firstname}"
+      rescue ActiveRecord::RecordNotFound
+        return self.read_attribute("author")
+      end
+    end
+
 end

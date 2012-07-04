@@ -12,6 +12,17 @@
 <%= stylesheet_link_tag 'rtl', :media => 'all' if l(:direction) == 'rtl' %>
 <%= stylesheet_link_tag 'private', :media => 'all' if User.current.logged?%>
 <%= javascript_heads %>
+<%= javascript_tag '
+// Jquery Funtion um alle Externen Links zu selektieren
+function externalLinks() {
+  return $j(\'a[href^=http]:not("[href^=\' + document.domain + \']"):not(":has(\\\'img\\\')")\');
+}
+
+// Alle selektierten Externen Links werden mit den Attribute \'_blank\' erweitert und mit einem Title-Tag versehen.
+$j(document).ready(function() { externalLinks().attr({
+    target: "_blank"
+  })});'
+%>
 <%= heads_for_theme %>
 <!--[if IE 6]>
     <style type="text/css">
@@ -170,7 +181,7 @@
 		<div id="copyright">© eScience – Netzwerk Sachsen 2012</div>
 		<div id="miscellaneous">
 		   <ul>
-		      <li class="withborder"><a href="/static/kontakt.html" title="Kontakt">Kontakt</a></li>
+		      <li class="withborder"><% link_to(:controller => 'user_messages', :action => 'contact_message') do %>Kontakt<%end%></li>
 		      <li class="withborder"><a href="/static/agb.html" title="Nutzungsbedingungen">Nutzungsbedingungen</a></li>
 		      <li class="withborder"><a href="/static/datenschutz.html" title="Datenschutz">Datenschutz</a></li>
 		      <li><a href="/static/impressum.html" title="Impressum">Impressum</a></li>
