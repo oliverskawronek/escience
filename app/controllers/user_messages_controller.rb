@@ -158,9 +158,9 @@ class UserMessagesController < ApplicationController
         @user_message_clone.directory = UserMessage.sent_directory
         noerror &= @user_message.save
         noerror &= @user_message_clone.save
+        end
       end
     end
-    
     if (!noerror)
       flash[:notice] = notice
       respond_to do |format|
