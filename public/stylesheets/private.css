@@ -661,6 +661,10 @@
 	}
 	
 	
+	.controller-issues.action-show #issue_project_id {
+  	width: 300px;
+	}
+	
         #css
         .jbar{
             height:50px;
