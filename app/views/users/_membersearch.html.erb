@@ -7,13 +7,18 @@
 
 
 <% content_for :header_tags do %>
-  <%= javascript_include_tag 'visualsearch/dependencies' %>
+  <%= javascript_include_tag 'visualsearch/jquery.ui.core.js' %>
+  <%= javascript_include_tag 'visualsearch/jquery.ui.position.js' %>
+  <%= javascript_include_tag 'visualsearch/jquery.ui.widget.js' %>
+  <%= javascript_include_tag 'visualsearch/jquery.ui.autocomplete.js' %>
+  <%= javascript_include_tag 'visualsearch/underscore-1.1.5.js' %>
+  <%= javascript_include_tag 'visualsearch/backbone-0.5.0.js' %>
   <%= javascript_tag '
-  var $j = $.noConflict();
-	$j(function() {
-		$j( "#member_search" ).autocomplete({
+  var $js = jQuery.noConflict();
+	$js(function() {
+		$js( "#member_search" ).autocomplete({
 			source: function( request, response ) {
-				$j.ajax({
+				$js.ajax({
 					url: "'+url_for(:controller => "users", :action => "member_search")+'",
   				dataType: "json",
 					data: {
@@ -21,18 +26,18 @@
 						q: request.term
 					},
 					success: function( data ) {
-					  $j("#ausgabe").html("");
-						response( $j.map( data, function( item ) {
+					  $js("#ausgabe").html("");
+						response( $js.map( data, function( item ) {
 						  console.log(item);
-					    var $element = $j("<fieldset class=\'project\' />");
-					    $element.append($j("<legend>").text(item[0]));
-					    var $tbl = $j("<table width=\"100%\">");
+					    var $element = $js("<fieldset class=\'project\' />");
+					    $element.append($js("<legend>").text(item[0]));
+					    var $tbl = $js("<table width=\"100%\">");
 					    for (var i = 0; i < item[1].length; i++) {
-                $tbl.append($j("<tr>").append($j("<td>").text(item[1][i][0][\'firstname\']+" "+item[1][i][0][\'lastname\']+" ("+item[1][i][1]+")"),$j("<td width=\"50\">").append("<a href=\''+url_for(:controller => "users", :action => "index")+'/"+item[1][i][0][\'id\']+"\'><div class=\"openUser\"></div></a>","<a href=\''+url_for(:controller => "user_messages", :action => "new")+'?id="+item[1][i][0][\'id\']+"\'><div class=\"sendMessage\"></div></a>")));
+                $tbl.append($js("<tr>").append($js("<td>").text(item[1][i][0][\'firstname\']+" "+item[1][i][0][\'lastname\']+" ("+item[1][i][1]+")"),$js("<td width=\"50\">").append("<a href=\''+url_for(:controller => "users", :action => "index")+'/"+item[1][i][0][\'id\']+"\'><div class=\"openUser\"></div></a>","<a href=\''+url_for(:controller => "user_messages", :action => "new")+'?id="+item[1][i][0][\'id\']+"\'><div class=\"sendMessage\"></div></a>")));
               }
 
               $element.append($tbl);
-  						$j("#ausgabe").append($element);
+  						$js("#ausgabe").append($element);
   						return false;
 						}));
 					}
@@ -44,10 +49,10 @@
 				return false;
 			},
 			open: function() {
-				$j( this ).removeClass( "ui-corner-all" ).addClass( "ui-corner-top" );
+				$js( this ).removeClass( "ui-corner-all" ).addClass( "ui-corner-top" );
 			},
 			close: function() {
-				$j( this ).removeClass( "ui-corner-top" ).addClass( "ui-corner-all" );
+				$js( this ).removeClass( "ui-corner-top" ).addClass( "ui-corner-all" );
 			}
 		});
 });' %>

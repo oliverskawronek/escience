@@ -1,5 +1,105 @@
 /* The main calendar widget.  DIV containing a table. */
 
+.controller-calendars .filter label, .controller-calendars .add-filter label{
+  display: inline-block;
+  width: auto;
+}
+
+.controller-calendars select.values_project_id {
+  max-width: 200px;
+}
+
+.controller-calendars .selectors {
+  float: left;
+  margin-top: 10px;
+}
+
+.controller-calendars .selectors label {
+  width: auto;
+}
+
+.controller-calendars .buttons {
+  margin-top: 8px;
+  float: right;
+}
+
+.controller-calendars .buttons div {
+  float: right;
+  padding: 5px 15px;
+  margin-left: 10px;
+  background-color: #7DB414;
+  border: 0;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.controller-calendars .buttons div:hover {
+  background: linear-gradient(90,#7DB414,#759B68);
+  background: -moz-linear-gradient(90,#7DB414,#759B68);
+  background: -webkit-gradient(linear,50% 100%,50% 0%,color-stop(0,#759B68),color-stop(1,#7DB414));
+  background: -o-linear-gradient(90,#7DB414,#759B68);
+}
+
+.controller-calendars .buttons a {
+  color: white;
+  text-decoration: none;
+}
+
+#changeMonth .prev, #changeMonth .next {
+  background-color: #FAFAFA;
+  float: left;
+  border: solid #F0F0F0;
+  padding: 3px 20px;
+}
+
+#changeMonth .prev {
+  -moz-border-radius: 0 0 0 5px;
+  -webkit-border-radius: 0 0 0 5px;
+  -khtml-border-radius: 0 0 0 5px;
+  border-radius: 0 0 0 5px;
+  border-top-width: 0px;
+  border-right-width: 0px;
+  border-bottom-width: 2px;
+  border-left-width: 2px;
+}
+
+#changeMonth .next {
+  -moz-border-radius: 0 0 5px 0;
+  -webkit-border-radius: 0 0 5px 0;
+  -khtml-border-radius: 0 0 5px 0;
+  border-radius: 0 0 5px 0;
+  border-top-width: 0px;
+  border-right-width: 2px;
+  border-bottom-width: 2px;
+  border-left-width: 2px;
+}
+
+#changeMonth .prev:hover, #changeMonth .next:hover {
+  background-color: #DEDEDE;
+}
+
+#changeMonth a {
+  color: #7D7D7D;
+  text-decoration: none;
+}
+
+#changeMonth {
+  float: left;
+  position: relative;
+  margin-top: -10px;
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+
+.controller-calendars .infobox {
+ display: none;
+ height: 1px;
+ width: 1px; 
+}
+
+
 img.calendar-trigger {
     cursor: pointer;
     vertical-align: middle;
