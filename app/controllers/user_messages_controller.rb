@@ -19,10 +19,7 @@ class UserMessagesController < ApplicationController
       end
       @directory = dir
     end
-    where = "directory = "
-    where += (dir == "sent")? "'#{dir}' AND user_id=#{User.current.id}" : "'#{dir}' AND state<>3 AND receiver_id=#{User.current.id}"
-    where += (dir == "trash")? " AND state=2" : " AND state<>2"
-    msgs = UserMessage.find_by_sql("SELECT * FROM user_messages WHERE #{where} ORDER BY created_at DESC")
+    msgs = UserMessage.find(:all, :conditions => ["author = :u AND directory = :dir",{:u => User.current.id, :dir => dir} ],:order => "created_at DESC")
     if msgs.class != Array && !msgs.nil?
       @user_messages ||= []
       @user_messages << msgs
@@ -143,21 +140,21 @@ class UserMessagesController < ApplicationController
             end
             return 
           end
-        @user_message = UserMessage.new()
-        @user_message.body = params[:user_message]["body"]
-        @user_message.subject = params[:user_message]["subject"]
-        @user_message.user = User.current
-        @user_message.author = User.current
-        @user_message.receiver_id = recv.id
-        @user_message.state = 1
-        @user_message.directory = UserMessage.received_directory
-    
-        @user_message_clone = @user_message.clone
-        @user_message_clone.state = 3
-        @user_message_clone.author = recv.id
-        @user_message_clone.directory = UserMessage.sent_directory
-        noerror &= @user_message.save
-        noerror &= @user_message_clone.save
+          @user_message = UserMessage.new()
+          @user_message.body = params[:user_message]["body"]
+          @user_message.subject = params[:user_message]["subject"]
+          @user_message.user = User.current
+          @user_message.author = User.current
+          @user_message.receiver_id = recv.id
+          @user_message.state = 3
+          @user_message.directory = UserMessage.sent_directory
+
+          @user_message_clone = @user_message.clone
+          @user_message_clone.state = 1
+          @user_message_clone.author = recv.id
+          @user_message_clone.directory = UserMessage.received_directory
+          noerror &= @user_message.save
+          noerror &= @user_message_clone.save
         end
       end
     end
