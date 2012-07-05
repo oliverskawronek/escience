@@ -10,7 +10,7 @@ class UserMessage < ActiveRecord::Base
 
     def self.get_number_of_messages
         #msgs = self.where("receiver_id = #{User.current.id}")
-        msgs = self.find_by_sql("SELECT * FROM user_messages WHERE receiver_id = #{User.current.id} AND state = 1")
+        msgs = self.find_by_sql("SELECT * FROM user_messages WHERE author = #{User.current.id} AND state = 1")
         #msgs = self.find_by_receiver_id(User.current.id)
         if msgs.class != Array && !msgs.nil?
           user_messages ||= []
