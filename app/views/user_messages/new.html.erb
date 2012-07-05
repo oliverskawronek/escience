@@ -36,9 +36,9 @@
   
   <%= javascript_tag '
   	$j(function() {
-		function log( message ) {
-			var element = $j( "<div class=\'name_element element_"+$j("#buffer").val()+"\' />" ).text( message ).prependTo( "#log" );
-			var delete_item = $j( "<div class=\'delete_button element_"+$j("#buffer").val()+"\' />" ).prependTo( element ).click(function(){
+		function log(message, id) {
+			var element = $j( "<div class=\'name_element element_"+id+"\' />" ).text( message ).prependTo( "#log" );
+			var delete_item = $j( "<div class=\'delete_button element_"+id+"\' />" ).prependTo( element ).click(function(){
 			 var id = $j(this).attr(\'class\').split(\' \')[1].substring(8);
 			 var olddata_arr = $j("#user_message_receiver").val().split(\',\');
 			 if (olddata_arr.length == 0) {
@@ -51,8 +51,8 @@
 		  });
 			$j( "#log" ).scrollTop( 0 );
 			var olddata = $j("#user_message_receiver").val();
-			if (olddata != "") olddata = olddata+","+$j("#buffer").val();
-			else olddata = $j("#buffer").val();
+			if (olddata != "") olddata = olddata+","+id;
+			else olddata = id;
 			$j("#user_message_receiver").val(olddata);
 			$j("#user_message_receiver_visible").val("");
 		}
@@ -68,8 +68,8 @@
 					},
 					success: function( data ) {
 						response( $j.map( data, function( item ) {
-						  $j("#buffer").val(item.id);
 							return {
+							  id: item.id,
 								label: item.firstname + " " +item.lastname
 							}
 						}));
@@ -78,7 +78,7 @@
 			},
 			minLength: 2,
 			select: function( event, ui ) {
-				log(ui.item.label);
+				log(ui.item.label, ui.item.id);
 				return false;
 			},
 			open: function() {
