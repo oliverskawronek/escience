@@ -1,4 +1,10 @@
-<h1><%= l(:label_user_messages_from)+" #{@user_message.author}" %></h1>
+  <%if !(@user_message.author == @user_message.user_id) %>
+    <% name = "#{@user_message.user.lastname}, #{@user_message.user.firstname}" %>
+  <%else%>
+    <% name = "#{@user_message.receiver.lastname}, #{@user_message.receiver.firstname}" %>
+  <%end%>
+
+<h1><%= "#{l(:label_user_messages_from)} #{name}" %></h1>
 
 <div id="show_user_message">
   <span class="subject"><%=h @user_message.subject %></span>
