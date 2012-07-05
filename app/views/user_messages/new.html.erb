@@ -35,32 +35,31 @@
   <%= javascript_include_tag 'visualsearch/backbone-0.5.0.js' %>
   
   <%= javascript_tag '
-  var $js = jQuery.noConflict();
-	$js(function() {
+  	$j(function() {
 		function log( message ) {
-			var element = $js( "<div class=\'name_element element_"+$js("#buffer").val()+"\' />" ).text( message ).prependTo( "#log" );
-			var delete_item = $js( "<div class=\'delete_button element_"+$js("#buffer").val()+"\' />" ).prependTo( element ).click(function(){
-			 var id = $js(this).attr(\'class\').split(\' \')[1].substring(8);
-			 var olddata_arr = $js("#user_message_receiver").val().split(\',\');
+			var element = $j( "<div class=\'name_element element_"+$j("#buffer").val()+"\' />" ).text( message ).prependTo( "#log" );
+			var delete_item = $j( "<div class=\'delete_button element_"+$j("#buffer").val()+"\' />" ).prependTo( element ).click(function(){
+			 var id = $j(this).attr(\'class\').split(\' \')[1].substring(8);
+			 var olddata_arr = $j("#user_message_receiver").val().split(\',\');
 			 if (olddata_arr.length == 0) {
-			   $js("#user_message_receiver").val("");
+			   $j("#user_message_receiver").val("");
 			 } else {
-  			 olddata_arr.splice($js.inArray(id, olddata_arr), 1 );
-  			 $js("#user_message_receiver").val(olddata_arr.join(\',\'));
-  			 $js(this).parent().remove();
+  			 olddata_arr.splice($j.inArray(id, olddata_arr), 1 );
+  			 $j("#user_message_receiver").val(olddata_arr.join(\',\'));
+  			 $j(this).parent().remove();
 			 }
 		  });
-			$js( "#log" ).scrollTop( 0 );
-			var olddata = $js("#user_message_receiver").val();
-			if (olddata != "") olddata = olddata+","+$js("#buffer").val();
-			else olddata = $js("#buffer").val();
-			$js("#user_message_receiver").val(olddata);
-			$js("#user_message_receiver_visible").val("");
+			$j( "#log" ).scrollTop( 0 );
+			var olddata = $j("#user_message_receiver").val();
+			if (olddata != "") olddata = olddata+","+$j("#buffer").val();
+			else olddata = $j("#buffer").val();
+			$j("#user_message_receiver").val(olddata);
+			$j("#user_message_receiver_visible").val("");
 		}
 
-		$js( "#user_message_receiver_visible" ).autocomplete({
+		$j( "#user_message_receiver_visible" ).autocomplete({
 			source: function( request, response ) {
-				$js.ajax({
+				$j.ajax({
 					url: "'+url_for(:controller => "users", :action => "user_search")+'",
   				dataType: "json",
 					data: {
@@ -68,8 +67,8 @@
 						q: request.term
 					},
 					success: function( data ) {
-						response( $js.map( data, function( item ) {
-						  $js("#buffer").val(item.id);
+						response( $j.map( data, function( item ) {
+						  $j("#buffer").val(item.id);
 							return {
 								label: item.firstname + " " +item.lastname
 							}
@@ -83,10 +82,10 @@
 				return false;
 			},
 			open: function() {
-				$js( this ).removeClass( "ui-corner-all" ).addClass( "ui-corner-top" );
+				$j( this ).removeClass( "ui-corner-all" ).addClass( "ui-corner-top" );
 			},
 			close: function() {
-				$js( this ).removeClass( "ui-corner-top" ).addClass( "ui-corner-all" );
+				$j( this ).removeClass( "ui-corner-top" ).addClass( "ui-corner-all" );
 			}
 		});'+@user_message_reply+
 '});
