@@ -35,6 +35,46 @@
   cursor: pointer;
 }
 
+.controller-calendars table.cal td {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px solid #F0F0F0;
+}
+
+.controller-calendars table.cal td div.td_box {
+  height: 60px;
+  overflow: hidden;
+}
+
+.controller-calendars table.cal td.event {
+  background-color: #7DB414;
+  color: #ffffff;
+}
+
+.controller-calendars table.cal td.week-number {
+  font-weight: bold;
+  border: none;
+}
+
+.controller-calendars table.cal td.weekend {
+  background-color: #FAFAFA;  
+}
+
+.controller-calendars table.cal td.today {
+  border-color: #7DB414;  
+}
+
+.controller-calendars table.cal td:hover {
+  border-color: #7DB414;  
+}
+
+.controller-calendars table.cal td p {
+  margin: 2px;
+  padding: 2px 0;
+}
+
 .controller-calendars .buttons div:hover {
   background: linear-gradient(90,#7DB414,#759B68);
   background: -moz-linear-gradient(90,#7DB414,#759B68);
@@ -49,9 +89,13 @@
 
 #changeMonth .prev, #changeMonth .next {
   background-color: #FAFAFA;
+  background-image: -moz-linear-gradient(top, #a3a3a3 0%, #EFEFEF 30%);
+  background-image: -webkit-linear-gradient(top, #a3a3a3 0%, #EFEFEF 30%);
+  background-image: -ms-linear-gradient(top, #a3a3a3 0%, #EFEFEF 30%);
+  background-image: -o-linear-gradient(top, #a3a3a3 0%, #EFEFEF 30%);
   float: left;
-  border: solid #F0F0F0;
-  padding: 3px 20px;
+  border: solid #D3D3D3;
+  font-size: 13px;
 }
 
 #changeMonth .prev {
@@ -78,11 +122,17 @@
 
 #changeMonth .prev:hover, #changeMonth .next:hover {
   background-color: #DEDEDE;
+  background-image: -moz-linear-gradient(top, #939393 0%, #DEDEDE 30%);
+  background-image: -webkit-linear-gradient(top, #939393 0%, #DEDEDE 30%);
+  background-image: -ms-linear-gradient(top, #939393 0%, #DEDEDE 30%);
+  background-image: -o-linear-gradient(top, #939393 0%, #DEDEDE 30%);
 }
 
 #changeMonth a {
   color: #7D7D7D;
   text-decoration: none;
+  display: block;
+  padding: 3px 20px;
 }
 
 #changeMonth {
@@ -95,10 +145,48 @@
 
 .controller-calendars .infobox {
  display: none;
- height: 1px;
- width: 1px; 
+ position: absolute;
+ z-index: 10;
+ margin: 0 0 0 20px;
+ background: #ffffff;
+ padding: 10px;
+ max-width: 400px;
+ -moz-border-radius: 10px;
+ -webkit-border-radius: 10px;
+ -khtml-border-radius: 10px;
+ border-radius: 10px;
+ border: 1px solid #DADADA;
+ color: #7D7D7D;
+ height: auto !important;
 }
 
+.controller-calendars .infobox .tip.notlast {
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid #ADADAD;
+}
+
+.controller-calendars .infobox td {
+  border: none !important;
+}
+
+.controller-calendars .infobox td.show_issue div {
+  background-image: url('../images/show.png');
+  width:13px;
+  height: 10px;
+  background-position: 100% 0%;
+  margin-right: 5px;
+}
+
+.controller-calendars .infobox td.show_issue div:hover {
+  background-position: 100% 100%;
+}
+
+.controller-calendars .infobox h2 {
+  font-size: 18px;
+  margin: 0px;
+  padding: 0px;
+}
 
 img.calendar-trigger {
     cursor: pointer;

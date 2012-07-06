@@ -82,10 +82,21 @@ module ApplicationHelper
         subject = truncate(subject, :length => options[:truncate])
       end
     end
-    s = link_to "#{h(issue.tracker)} ##{issue.id}", {:controller => "issues", :action => "show", :id => issue},
+    if options[:link_text].nil?
+      link_text = "#{h(issue.tracker)} ##{issue.id}"
+    else
+      link_text = options[:link_text]
+    end
+
+    if options[:link_text] != false
+      s = link_to(link_text, {:controller => "issues", :action => "show", :id => issue},
                                                  :class => issue.css_classes,
-                                                 :title => title
-    s << h(": #{subject}") if subject
+                                                 :title => title)
+    else 
+      s = ""
+    end
+    
+    s << h("#{subject}") if subject
     s = h("#{issue.project} - ") + s if options[:project]
     s
   end
@@ -144,10 +155,11 @@ module ApplicationHelper
   #   link_to_project(project, {:only_path => false}, :class => "project") # => 3rd arg adds html options
   #   link_to_project(project, {}, :class => "project") # => html options with default url (project overview)
   #
-  def link_to_project(project, options={}, html_options = nil)
+  def link_to_project(project, options={}, html_options = nil, trunc = nil)
     if project.active?
       url = {:controller => 'projects', :action => 'show', :id => project}.merge(options)
-      link_to(h(project), url, html_options)
+      projectname = !trunc.nil? ? truncate(h(project), trunc) : h(project)
+      link_to(projectname, url, html_options)
     else
       h(project)
     end

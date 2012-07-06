@@ -1,32 +1,45 @@
 <table class="cal" width="100%">
 <thead>
-<tr><th scope="col" title="<%= l(:label_week) %>" class="week-number"></th><% 7.times do |i| %><th scope="col"><%= day_name( (calendar.first_wday+i)%7 ) %></th><% end %></tr>
+<tr><th scope="col" title="<%= l(:label_week) %>" class="week-number">KW</th><% 7.times do |i| %><th scope="col" width="80" align="center"><%= day_name( (calendar.first_wday+i)%7 ) %></th><% end %></tr>
 </thead>
 <tbody>
 <tr>
 <% day = calendar.startdt
 while day <= calendar.enddt %>
 <%= ("<td  valign='top' class='week-number' title='#{ l(:label_week) }'><p>#{(day+(11-day.cwday)%7).cweek}</p></td>".html_safe) if day.cwday == calendar.first_wday %>
-<td class="<%= day.month==calendar.month ? 'even' : 'odd' %><%= ' today' if Date.today == day %>" valign="top">
-<p class="day-num"><%= day.day %></p>
-<% calendar.events_on(day).each do |i| %>
-  <p class="show" id="show_<%= i.id%>">
-    <%= h("#{i.project}") %>
-    <%= link_to_issue i, :truncate => 30 %>
+<td class="<%= day.month==calendar.month ? 'even' : 'odd' %><%= ' today' if Date.today == day %><%= calendar.events_on(day).empty? ? ' noevent' : ' event' %><%= ' weekend' if (((day.wday)%7 == 6) || ((day.wday)%7 == 0)) %>" valign="top" <%= 'id="day_'+day.to_s+'"' if (!calendar.events_on(day).empty?) %>>
+<div class="td_box">
+  <p class="day-num"><%= day.day %></p>
+  <p>
+  <% calendar.events_on(day).each do |i| %>
+    <%= truncate(h(i.project),12) %>
+  <% end %>
   </p>
-  <div class="infobox" id="info_<%= i.id%>">
-    <% if i.is_a? Issue %>
-    <div class="<%= i.css_classes %> <%= 'starting' if day == i.start_date %> <%= 'ending' if day == i.due_date %> tooltip">
-    <span class="tip"><%= render_issue_tooltip i %></span>
-    </div>
-    <% else %>
-    <span class="icon icon-package">
-      <%= h("#{i.project} -") unless @project && @project == i.project %>
-      <%= link_to_version i%>
-    </span>
-    <% end %>
+
+  <div class="infobox" id="info_<%= day.to_s %>">
+    <table>
+      <% calendar.events_on(day).each do |i| %>
+      <tr>
+        <% if i.is_a? Issue %>
+        <td class="show_issue"><%= link_to_issue(i,{:subject => false, :link_text => "<div></div>"}) %></td>
+        <td>
+            <!-- div class="<%= i.css_classes %> <%= 'starting' if day == i.start_date %> <%= 'ending' if day == i.due_date %> tooltip"-->
+            <%= p calendar.events_on(day).size()%>
+            <div class="tip<%= " notlast" if (i != (calendar.events_on(day).last())) %>"><%= render_issue_tooltip i %>
+            </div>
+          <% else %>
+            <span class="icon icon-package">
+              <%= h("#{i.project} -") unless @project && @project == i.project %>
+              <%= link_to_version i%>
+            </span>
+        </td>
+        <% end %>
+      </tr>
+      <% end %>
+    </table>
   </div>
-<% end %>
+
+</div>
 </td>
 <%= '</tr><tr>'.html_safe if day.cwday==calendar.last_wday and day!=calendar.enddt %>
 <% day = day + 1
@@ -34,3 +47,20 @@ end %>
 </tr>
 </tbody>
 </table>
+
+<%= javascript_tag "
+  var $j = jQuery.noConflict();
+	$j(function() {
+		$j('.event').each(function(obj) {
+		  $j(this).hover(function() {
+		    id = $j(this).attr('id').substring(4);
+		    $j('#info_'+id).css('display','block');
+		    console.log($j('#info_'+id));
+		  }, function () {
+		    id = $j(this).attr('id').substring(4);
+		    $j('#info_'+id).css('display','none');
+		    console.log($j('#info_'+id));
+		  });
+		});
+  });
+  "%>
