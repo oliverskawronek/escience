@@ -6,29 +6,31 @@
 <% end %>
 
 <% @user_messages.each do |user_message| %>
-<% link_to(user_message, :class => "link_to_message") do %>
-<div class="user_message<%= (user_message.state == 1)? " unread" : "" %><%= (user_message.state == 4)? " answered" : "" %>">
-  <%if !(user_message.author == user_message.user_id) %>
-    <div class="author"><%= "#{user_message.user.lastname}, #{user_message.user.firstname}" %></div>
-  <%else%>
-    <div class="author"><%= "#{user_message.receiver.lastname}, #{user_message.receiver.firstname}" %></div>
-  <%end%>
-  
-  <div class="date"><%= user_message.created_at.strftime("%d.%m.%y %H:%M") %></div>
-  <div class="subject"><%= user_message.subject %></div>
-  <div class="message"><%=h user_message.body %></div>
-</div>
-<% end %>
-<div class="user_message_links">  
-  <% link_to({:controller => "user_messages", :action => "destroy", :id => user_message.id, :directory => @directory}, :confirm => self.l(:text_message_destroy_confirmation), :method => :delete) do %>
-  <div class="delete"></div>
+  <% link_to(user_message, :class => "link_to_message") do %>
+    <div class="user_message<%= (user_message.state == 1)? " unread" : "" %><%= (user_message.state == 4)? " answered" : "" %>">
+
+    <div class="author">
+      <% if(@directory == 'sent') %>
+        <%= render :partial => 'sent', :locals => { :user_message => user_message } %>
+      <% else %>
+        <%= render :partial => 'received', :locals => { :user_message => user_message } %>
+      <% end %>
+    </div>
+    <div class="date"><%= user_message.created_at.strftime("%d.%m.%y %H:%M") %></div>
+    <div class="subject"><%= user_message.subject %></div>
+    <div class="message"><%=h user_message.body %></div>
+  </div>
   <% end %>
-  <% if @directory != "archive" && @directory != "sent" %>
-    <% link_to({:controller => "user_messages", :action => "archive", :id => user_message.id}, :confirm => self.l(:text_message_archive_confirmation)) do %>
-    <div class="archive"></div>
+  <div class="user_message_links">
+    <% link_to({:controller => "user_messages", :action => "destroy", :id => user_message.id, :directory => @directory}, :confirm => self.l(:text_message_destroy_confirmation), :method => :delete) do %>
+    <div class="delete"></div>
     <% end %>
-  <% end %>
-</div>
+    <% if @directory != "archive" && @directory != "sent" %>
+      <% link_to({:controller => "user_messages", :action => "archive", :id => user_message.id}, :confirm => self.l(:text_message_archive_confirmation)) do %>
+      <div class="archive"></div>
+      <% end %>
+    <% end %>
+  </div>
 <% end unless @user_messages.nil? %>
 
 <% content_for :header_tags do %>
