@@ -11,7 +11,10 @@
 <%= stylesheet_link_tag 'application', :media => 'all' %>
 <%= stylesheet_link_tag 'rtl', :media => 'all' if l(:direction) == 'rtl' %>
 <%= stylesheet_link_tag 'private', :media => 'all' if User.current.logged?%>
+<%= stylesheet_link_tag 'jquery.qtip.min', :media => 'all' %>
 <%= javascript_heads %>
+
+<% issues = l(:tooltip_sidebar_issues_explain, :position => Issue.visible.open.count(:conditions => {:assigned_to_id => ([User.current.id] + User.current.group_ids)})) if Issue.visible.open.count(:conditions => {:assigned_to_id => ([User.current.id] + User.current.group_ids)})>0 %>
 <%= javascript_tag '
 // Jquery Funtion um alle Externen Links zu selektieren
 function externalLinks() {
@@ -19,9 +22,19 @@ function externalLinks() {
 }
 
 // Alle selektierten Externen Links werden mit den Attribute \'_blank\' erweitert und mit einem Title-Tag versehen.
-$j(document).ready(function() { externalLinks().attr({
-    target: "_blank"
-  })});'
+$j(document).ready(function() { 
+  externalLinks().attr({target: "_blank"})
+});
+$j(function() {addToolTip(".sidebar .my","'+l(:tooltip_sidebar_organize)+'")});
+$j(function() {addToolTip(".sidebar .projects","'+l(:tooltip_sidebar_projects)+'")});
+$j(function() {addToolTip(".sidebar .user-messages","'+l(:tooltip_sidebar_user_messages)+'")});
+$j(function() {addToolTip(".sidebar .sent","'+l(:tooltip_sidebar_sent)+'")});
+$j(function() {addToolTip(".sidebar .archive","'+l(:tooltip_sidebar_archive)+'")});
+$j(function() {addToolTip(".sidebar .trash","'+l(:tooltip_sidebar_trash)+'")});
+$j(function() {addToolTip(".sidebar .issues","'+l(:tooltip_sidebar_issues)+'<br/>'+issues+'")});
+$j(function() {addToolTip(".sidebar .calendar","'+l(:tooltip_sidebar_calendar)+'")});
+'
+
 %>
 <%= heads_for_theme %>
 <!--[if IE 6]>

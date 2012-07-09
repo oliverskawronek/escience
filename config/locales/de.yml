@@ -1124,3 +1124,14 @@ de:
   field_ldap_filter: LDAP Filter
   label_search_for_watchers: Nach hinzufügbaren Beobachtern suchen
   lable_click_user_message_to_admin: klicken Sie hier, wenn die Weiterleitung nicht funktioniert
+  
+  
+  tooltip_sidebar_organize: Verschaffen Sie sich einen Überblick über Ihr eScience (Ihre Projekte, Posteingang usw.). 
+  tooltip_sidebar_projects: Verwalten Sie Ihre Projekte, legen Sie neue an oder ändern Sie die Einstellungen.
+  tooltip_sidebar_user_messages: Ihr Posteingang für interne Nachrichten auf der eScience-Plattform. 
+  tooltip_sidebar_sent: Finden Sie die Nachrichten, die Sie verfasst haben. 
+  tooltip_sidebar_archive: Alle wichtigen Nachrichten, die Sie für archivierungswürdig halten.
+  tooltip_sidebar_trash: Der Papierkorb für Ihre internen Nachrichten auf der eScience-Plattform
+  tooltip_sidebar_issues: Sehen Sie die Arbeitsanweisungen, die Ihnen in den einzelnen Projekt zugeordnet wurden.
+  tooltip_sidebar_issues_explain: "Die %{position} in Klammern teilt Ihnen mit, dass Sie %{position} Arbeitsanweisungen noch nicht angesehen haben."
+  tooltip_sidebar_calendar: Verschaffen Sie sich einen Überblick über die Stichtage der Arbeitsanweisungen.

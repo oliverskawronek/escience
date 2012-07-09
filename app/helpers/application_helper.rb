@@ -1136,6 +1136,10 @@ module ApplicationHelper
     tags << javascript_include_tag("jquery.jbar.js")
     tags << "\n".html_safe
     tags << javascript_include_tag("flash_notification.js")
+    tags << "\n".html_safe
+    tags << javascript_include_tag("jquery.qtip.min.js")
+    tags << "\n".html_safe
+    tags << javascript_include_tag("escience.js")
     #tags << "\n".html_safe
     #tags << javascript_include_tag("jquery-ui-1.8.17.custom.min.js")
     #tags << "\n".html_safe
