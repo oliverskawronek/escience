@@ -66,9 +66,9 @@ module UsersHelper
             {:name => 'contact_membersgrouped', :partial => 'users/contact_membersgrouped', :label => :label_memberlist_grouped},
             {:name => 'contact_membersearch', :partial => 'users/contact_membersearch', :label => :label_memberlist_search}
             ]
-    if Group.all.any?
-      tabs.insert 1, {:name => 'groups', :partial => 'users/groups', :label => :label_group_plural}
-    end
+    #if Group.all.any?
+    #  tabs.insert 1, {:name => 'groups', :partial => 'users/groups', :label => :label_group_plural}
+    #end
     tabs
   end
     
