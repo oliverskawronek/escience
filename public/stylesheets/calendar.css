@@ -144,20 +144,29 @@
 }
 
 .controller-calendars .infobox {
- display: none;
- position: absolute;
- z-index: 10;
- margin: 0 0 0 20px;
- background: #ffffff;
- padding: 10px;
- max-width: 400px;
- -moz-border-radius: 10px;
- -webkit-border-radius: 10px;
- -khtml-border-radius: 10px;
- border-radius: 10px;
- border: 1px solid #DADADA;
- color: #7D7D7D;
- height: auto !important;
+  visibility: hidden;
+  position: absolute;
+  z-index: 10;
+  background: #ffffff;
+  padding: 10px;
+  max-width: 400px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -khtml-border-radius: 10px;
+  border-radius: 10px;
+  border: 1px solid #DADADA;
+  color: #7D7D7D;
+  height: auto !important;
+  margin: 10px 0 0 10px;
+}
+
+.controller-calendars .linkToInfo.box {
+  background-image: url("../images/cal_element.png");
+  background-repeat: no-repeat;
+  float:left; 
+  margin-left:2px;
+  width:15px; 
+  height:15px;  
 }
 
 .controller-calendars .infobox .tip.notlast {
@@ -168,6 +177,11 @@
 
 .controller-calendars .infobox td {
   border: none !important;
+}
+
+.controller-calendars .infobox td.show_issue {
+  vertical-align: top;
+  padding-top: 7px;
 }
 
 .controller-calendars .infobox td.show_issue div {
