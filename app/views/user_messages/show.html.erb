@@ -1,10 +1,12 @@
-  <%if !(@user_message.author == @user_message.user_id) %>
-    <% name = "#{@user_message.user.lastname}, #{@user_message.user.firstname}" %>
-  <%else%>
-    <% name = "#{@user_message.receiver.lastname}, #{@user_message.receiver.firstname}" %>
-  <%end%>
 
-<h1><%= "#{l(:label_user_messages_from)} #{name}" %></h1>
+
+<h1>
+  <% if @user_message.directory == 'sent' %>
+    <%= "#{l(:label_user_messages_to)} #{render :partial => 'sent', :locals => {:user_message => @user_message}}" %>
+  <%else%>
+    <%= "#{l(:label_user_messages_from)} #{render :partial => 'received', :locals => {:user_message => @user_message}}" %>
+  <%end%>
+</h1>
 
 <div id="show_user_message">
   <span class="subject"><%=h @user_message.subject %></span>

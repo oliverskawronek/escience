@@ -572,6 +572,7 @@ en:
   label_user_messages_body: Content (max. of 2000 characters)
   label_user_messages_send: Send message
   label_user_messages_from: message from
+  label_user_messages_to: message sent to
   label_privatearea: Private area
   label_memberlist_all: entire list
   label_memberlist_grouped: grouped by projects

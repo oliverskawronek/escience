@@ -228,9 +228,22 @@ class UserMessagesController < ApplicationController
   end
   
   def emptytrash
-    err = UserMessage.delete_all "user_id=#{User.current.id} AND state=2"
+    del_msg = UserMessage.destroy_all("author=#{User.current.id} AND state=2")
+
+    if del_msg.class != Array
+      _del_msg ||= []
+      _del_msg << del_msg
+      del_msg = _del_msg
+    end
+    error = false
+    del_msg.each do |e|
+      if !e.destroyed?
+        error = true
+      end
+    end
+
     respond_to do |format|
-      if !err
+      if !error
         format.html { redirect_to(request.referer, :notice => l(:text_message_emptytrash_done)) }
       else
         format.html { redirect_to(request.referer, :notice => l(:text_message_emptytrash_error)) }

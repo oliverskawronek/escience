@@ -51,7 +51,7 @@ class UserMessage < ActiveRecord::Base
     end
 
 
-    def author
+    def author_name
       begin
         author = User.find(self.read_attribute("author"))
         return "#{author.lastname}, #{author.firstname}"

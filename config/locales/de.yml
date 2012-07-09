@@ -553,6 +553,7 @@ de:
   label_user_messages_body: Inhalt (max 2000 Zeichen)
   label_user_messages_send: Nachricht senden
   label_user_messages_from: Nachricht von
+  label_user_messages_to: Nachricht an
   label_privatearea: Privater Bereich
   label_memberlist_all: Gesamte Liste
   label_memberlist_grouped: nach Projekten gruppiert
