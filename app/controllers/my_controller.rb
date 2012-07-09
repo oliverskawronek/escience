@@ -192,7 +192,7 @@ class MyController < ApplicationController
     render :nothing => true
   end
   
-  def members
+  def contact_members
     user_list = User.find_by_sql(["SELECT u.firstname, u.lastname, u.id
                                FROM users u, projects p, members m
                                WHERE m.user_id = u.id

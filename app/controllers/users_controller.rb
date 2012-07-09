@@ -18,8 +18,8 @@
 class UsersController < ApplicationController
   layout 'admin'
 
-  before_filter :require_admin, :except => [:show, :user_search, :member_search]
-  before_filter :require_login, :only => [:user_search, :member_search,:show]
+  before_filter :require_admin, :except => [:show, :user_search, :contact_member_search]
+  before_filter :require_login, :only => [:user_search, :contact_member_search,:show]
   before_filter :find_user, :only => [:show, :edit, :update, :destroy, :edit_membership, :destroy_membership]
   accept_api_auth :index, :show, :create, :update, :destroy
 
@@ -91,7 +91,7 @@ class UsersController < ApplicationController
   end
 
   
-  def member_search
+  def contact_member_search
     others = []
     if params[:q].nil? || params[:q]== '' || params[:q].split('').length < 3
       others = []
