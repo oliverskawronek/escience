@@ -125,7 +125,7 @@
 		list-style-type:disc;
 	}
 	
-	.sidebar li.active, .sidebar li:hover {
+	.sidebar li.active, .sidebar li:hover, .sidebar .selected {
 		background-color:#DEDEDE;
 		-moz-border-radius:10px;
 		-webkit-border-radius:10px;
