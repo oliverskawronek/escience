@@ -14,7 +14,7 @@
 <%= stylesheet_link_tag 'jquery.qtip.min', :media => 'all' %>
 <%= javascript_heads %>
 
-<% issues = l(:tooltip_sidebar_issues_explain, :position => Issue.visible.open.count(:conditions => {:assigned_to_id => ([User.current.id] + User.current.group_ids)})) if Issue.visible.open.count(:conditions => {:assigned_to_id => ([User.current.id] + User.current.group_ids)})>0 %>
+<% issues = Issue.visible.open.count(:conditions => {:assigned_to_id => ([User.current.id] + User.current.group_ids)})>0 ?  l(:tooltip_sidebar_issues_explain, :position => Issue.visible.open.count(:conditions => {:assigned_to_id => ([User.current.id] + User.current.group_ids)})) : "" %>
 <%= javascript_tag '
 // Jquery Funtion um alle Externen Links zu selektieren
 function externalLinks() {
