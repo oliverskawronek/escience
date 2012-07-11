@@ -18,7 +18,7 @@
 <%= javascript_tag '
 // Jquery Funtion um alle Externen Links zu selektieren
 function externalLinks() {
-  return $j(\'a[href^=http]:not("[href^=\' + document.domain + \']"):not(":has(\\\'img\\\')")\');
+  return $j(\'a[href^=http]:not("[href^=\\\'\' + document.domain + \'\\\']"):not(":has(\\\'img\\\')")\');
 }
 
 // Alle selektierten Externen Links werden mit den Attribute \'_blank\' erweitert und mit einem Title-Tag versehen.
